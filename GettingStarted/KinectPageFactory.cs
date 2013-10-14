@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Interop;
+using Przewodnik.Views;
 
-namespace GettingStarted
+namespace Przewodnik
 {
     public class KinectPageFactory
     {

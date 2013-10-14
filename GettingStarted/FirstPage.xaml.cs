@@ -14,8 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect;
+using Przewodnik.Views;
 
-namespace GettingStarted
+namespace Przewodnik
 {
 
     partial class FirstPage : IKinectPage

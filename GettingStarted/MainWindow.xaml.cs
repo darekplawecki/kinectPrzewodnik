@@ -14,17 +14,26 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect;
+using Przewodnik.Views;
+using Przewodnik.Utilities;
 
-namespace GettingStarted
+namespace Przewodnik
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private const int MinimumScreenWidth = 1920;
+        private const int MinimumScreenHeight = 1080;
+
         private KinectSensorChooser sensorChooser;
         private Navigator navigator;
         private KinectPageFactory pageFactory;
+
+        private readonly MouseMovementDetector movementDetector;
+
 
         public MainWindow()
         {
@@ -32,6 +41,9 @@ namespace GettingStarted
             Loaded += OnLoaded;
             navigator = new Navigator(this);
             pageFactory = new KinectPageFactory(navigator);
+
+            this.movementDetector = new MouseMovementDetector(this);
+            this.movementDetector.Start();
         }
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
@@ -40,8 +52,35 @@ namespace GettingStarted
             this.sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
             sensorChooserUi.KinectSensorChooser = this.sensorChooser as KinectSensorChooser;
             this.sensorChooser.Start();
+
+            // check resolution
+            double height = SystemParameters.PrimaryScreenHeight;
+            double width = SystemParameters.PrimaryScreenWidth;
+            if (width < MinimumScreenWidth || height < MinimumScreenHeight)
+            {
+                MessageBoxResult continueResult = MessageBox.Show(Properties.Resources.SmallerScreenResolutionMessage, Properties.Resources.SmallerScreenResolutionTitle, MessageBoxButton.YesNo);
+                if (continueResult == MessageBoxResult.No)
+                {
+                    this.Close();
+                }
+            }
+
         }
 
+        protected override void OnKeyUp(KeyEventArgs e)
+        {
+            if (null == e)
+            {
+                throw new ArgumentNullException("e");
+            }
+
+            if (Key.Escape == e.Key)
+            {
+                this.Close();
+            }
+
+            base.OnKeyUp(e);
+        }
 
 
         private void SensorChooserOnKinectChanged(object sender, KinectChangedEventArgs args)
@@ -96,7 +135,7 @@ namespace GettingStarted
             }
             if (!error)
             {
-                kinectRegion.KinectSensor = args.NewSensor;
+                KinectRegion.KinectSensor = args.NewSensor;
             }
         }
 
@@ -115,5 +154,6 @@ namespace GettingStarted
             PageContentGrid.Children.Clear();
             PageContentGrid.Children.Add(grid);
         }
+
     }
 }

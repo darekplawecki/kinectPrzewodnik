@@ -1,4 +1,6 @@
-﻿namespace GettingStarted
+﻿using Przewodnik.Views;
+
+namespace Przewodnik
 {
     public class Navigator
     {
