@@ -24,7 +24,7 @@ namespace Przewodnik.Views
 
         private void OpenThird(object sender, RoutedEventArgs e)
         {
-            IKinectPage first = pageFactory.GetFirstPage();
+            IKinectPage first = pageFactory.GetSleepScreen();
             pageFactory.NavigateTo(first);
         }
 

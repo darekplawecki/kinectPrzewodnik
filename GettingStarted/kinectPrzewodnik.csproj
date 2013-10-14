@@ -81,7 +81,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="FirstPage.xaml">
+    <Compile Include="Views\ThirdPage.cs" />
+    <Page Include="Views\MainMenu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SleepScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -94,12 +99,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utilities\MouseMovementDetector.cs" />
+    <Compile Include="Views\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\IKinectPage.cs" />
     <Compile Include="KinectPageFactory.cs" />
     <Compile Include="Navigator.cs" />
-    <Compile Include="Views\ThirdPage.cs" />
-    <Compile Include="FirstPage.xaml.cs">
-      <DependentUpon>FirstPage.xaml</DependentUpon>
+    <Compile Include="Views\SleepScreen.xaml.cs">
+      <DependentUpon>SleepScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\SecondPage.cs" />
     <Compile Include="MainWindow.xaml.cs">

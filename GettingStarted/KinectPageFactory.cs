@@ -12,7 +12,8 @@ namespace Przewodnik
     {
         private Navigator navigator;
 
-        private IKinectPage firstPage;
+        private IKinectPage _mainMenu;
+        private IKinectPage _sleepScreen;
         private IKinectPage secondPage;
         private IKinectPage thirdPage;
 
@@ -22,11 +23,20 @@ namespace Przewodnik
             this.navigator = navigator;
         }
 
-        public IKinectPage GetFirstPage()
+
+        public IKinectPage GetMainMenu()
         {
-            if (firstPage == null) firstPage = new FirstPage(this);
-            return firstPage;
+            if (_mainMenu == null) _mainMenu = new MainMenu(this);
+            return _mainMenu;
         }
+
+        public IKinectPage GetSleepScreen()
+        {
+            if (_sleepScreen == null) _sleepScreen = new SleepScreen(this);
+            return _sleepScreen;
+        }
+
+
 
         public IKinectPage GetSecondGrid()
         {

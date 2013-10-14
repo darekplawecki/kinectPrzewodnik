@@ -15,7 +15,7 @@
         </Grid>
         <k:KinectRegion Name="KinectRegion">
             <Grid Name="PageContentGrid" Margin="0, 100, 0, 0">
-            <k:KinectTileButton Label="Wciśnij mnie!" HorizontalAlignment="Left" Click="StartAction"></k:KinectTileButton>
+                <k:KinectTileButton Label="Wciśnij mnie!" HorizontalAlignment="Left" Click="StartAction"></k:KinectTileButton>
                 <k:KinectCircleButton Label="Circle" HorizontalAlignment="Right" Height="200" Click="StartAction">Hi</k:KinectCircleButton>
             </Grid>
 

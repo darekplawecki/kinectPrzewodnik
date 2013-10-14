@@ -49,7 +49,7 @@ namespace Przewodnik.Utilities
             set
             {
                 bool oldValue = this._isMoving;
-                this._isMoving = value;
+                _isMoving = value;
 
                 if ((oldValue != value) && (OnMovingChanged != null))
                 {

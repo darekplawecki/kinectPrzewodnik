@@ -32,7 +32,7 @@ namespace Przewodnik
         private Navigator navigator;
         private KinectPageFactory pageFactory;
 
-        private readonly MouseMovementDetector movementDetector;
+        private MouseMovementDetector _movementDetector;
 
 
         public MainWindow()
@@ -42,8 +42,11 @@ namespace Przewodnik
             navigator = new Navigator(this);
             pageFactory = new KinectPageFactory(navigator);
 
-            this.movementDetector = new MouseMovementDetector(this);
-            this.movementDetector.Start();
+            _movementDetector = new MouseMovementDetector(this);
+            _movementDetector.OnMovingChanged += OnIsMouseMovingChanged;
+            _movementDetector.Start();
+
+            SetView(pageFactory.GetSleepScreen().GetView());
         }
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
@@ -82,6 +85,21 @@ namespace Przewodnik
             base.OnKeyUp(e);
         }
 
+        private void OnIsMouseMovingChanged(object sender, EventArgs e)
+        {
+            if (_movementDetector.IsMoving == true) Wake();
+            else Sleep();
+        }
+
+        public void Wake()
+        {
+            SetView(pageFactory.GetMainMenu().GetView());
+        }
+        public void Sleep()
+        {
+            IKinectPage first = pageFactory.GetSleepScreen();
+            pageFactory.NavigateTo(first);
+        }
 
         private void SensorChooserOnKinectChanged(object sender, KinectChangedEventArgs args)
         {
@@ -145,8 +163,7 @@ namespace Przewodnik
             UserViewer.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
             UserViewer.VerticalAlignment = System.Windows.VerticalAlignment.Top;
 
-            IKinectPage secondGrid = pageFactory.GetSecondGrid();
-            SetView(secondGrid.GetView());
+            SetView(pageFactory.GetSleepScreen().GetView());
         }
 
         public void SetView(Grid grid)

@@ -1,0 +1,9 @@
+﻿<Grid
+    x:Class="Przewodnik.Views.MainMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             Background="Red" Name="MainMenuGrid">
+    <StackPanel Margin="20" Background="Blue">
+        <TextBlock x:Name="firstTextBlock" FontSize="30" >Menu główne</TextBlock>
+    </StackPanel>
+</Grid>
