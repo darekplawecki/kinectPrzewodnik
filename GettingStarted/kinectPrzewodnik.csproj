@@ -81,6 +81,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Utilities\EngagementStateManager.cs" />
+    <Compile Include="Utilities\EventQueueSection.cs" />
+    <Compile Include="Utilities\KinectController.cs" />
+    <Compile Include="Utilities\PromptState.cs" />
+    <Compile Include="Utilities\UserActivityMeter.cs" />
+    <Compile Include="Utilities\UserActivityRecord.cs" />
     <Compile Include="Views\ThirdPage.cs" />
     <Page Include="Views\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -1,0 +1,9 @@
+﻿<Grid
+    x:Class="Przewodnik.Views.SleepScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             Background="Red" Name="SleepScreenGrid">
+    <StackPanel Margin="20" Background="Blue">
+        <TextBlock x:Name="firstTextBlock" FontSize="30" >Sleep screen - INSTAGRAM</TextBlock>
+    </StackPanel>
+</Grid>

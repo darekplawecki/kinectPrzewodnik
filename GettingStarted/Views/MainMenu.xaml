@@ -1,9 +1,11 @@
 ﻿<Grid
     x:Class="Przewodnik.Views.MainMenu"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                             Background="Red" Name="MainMenuGrid">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:k="http://schemas.microsoft.com/kinect/2013"
+        Background="Red" Name="MainMenuGrid">
     <StackPanel Margin="20" Background="Blue">
         <TextBlock x:Name="firstTextBlock" FontSize="30" >Menu główne</TextBlock>
+        <k:KinectTileButton Label="Link 1" Click="OpenThird" HorizontalAlignment="Left"></k:KinectTileButton>
     </StackPanel>
 </Grid>

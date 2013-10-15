@@ -14,6 +14,11 @@ namespace Przewodnik.Views
             this.pageFactory = pageFactory;
         }
 
+        private void OpenThird(object sender, RoutedEventArgs e)
+        {
+            pageFactory.NavigateTo(pageFactory.GetThirdGrid());
+        }
+
         public Grid GetView()
         {
             //MessageBox.Show((AnotherGrid == null).ToString());

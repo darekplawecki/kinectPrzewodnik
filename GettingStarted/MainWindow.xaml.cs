@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect;
 using Przewodnik.Views;
@@ -32,7 +22,9 @@ namespace Przewodnik
         private Navigator navigator;
         private KinectPageFactory pageFactory;
 
-        private MouseMovementDetector _movementDetector;
+        //private readonly KinectController _controller = new KinectController();
+
+        private readonly MouseMovementDetector _movementDetector;
 
 
         public MainWindow()
@@ -155,15 +147,6 @@ namespace Przewodnik
             {
                 KinectRegion.KinectSensor = args.NewSensor;
             }
-        }
-
-        private void StartAction(object sender, RoutedEventArgs e)
-        {
-            UserViewer.Height = 100;
-            UserViewer.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
-            UserViewer.VerticalAlignment = System.Windows.VerticalAlignment.Top;
-
-            SetView(pageFactory.GetSleepScreen().GetView());
         }
 
         public void SetView(Grid grid)
