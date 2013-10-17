@@ -61,6 +61,15 @@ namespace Przewodnik.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Type {0} does not support event: {1}.
+        /// </summary>
+        internal static string CommandOnEventException {
+            get {
+                return ResourceManager.GetString("CommandOnEventException", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Podnieś rękę, aby rozpoczać..
         /// </summary>
         internal static string EngagementHandoffGetStarted {
@@ -70,7 +79,7 @@ namespace Przewodnik.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Podnieś rękę, aby przejąć kontrolę..
+        ///   Looks up a localized string similar to Wciśnij przycisk aby odblokować.
         /// </summary>
         internal static string EngagementHandoffKeepControl {
             get {

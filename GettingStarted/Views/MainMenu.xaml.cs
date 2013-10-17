@@ -14,17 +14,16 @@ namespace Przewodnik.Views
             this.pageFactory = pageFactory;
         }
 
-        private void OpenThird(object sender, RoutedEventArgs e)
-        {
-            pageFactory.NavigateTo(pageFactory.GetThirdGrid());
-        }
-
         public Grid GetView()
         {
-            //MessageBox.Show((AnotherGrid == null).ToString());
             return MainMenuGrid;
         }
-  
+
+        private void touristAttractions_Click(object sender, RoutedEventArgs e)
+        {
+            IKinectPage attractions = pageFactory.GetAttractionsGrid();
+            pageFactory.NavigateTo(attractions);
+        }
     }
 
 

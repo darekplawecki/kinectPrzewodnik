@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Microsoft.Kinect.Toolkit.Controls;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace Przewodnik.Views
@@ -14,10 +15,22 @@ namespace Przewodnik.Views
             this.pageFactory = pageFactory;
         }
 
+        private void OpenMainMenu(object sender, RoutedEventArgs e)
+        {
+            pageFactory.NavigateTo(pageFactory.GetMainMenu());
+        }
+
         public Grid GetView()
         {
             return SleepScreenGrid;
         }
+
+        private void SleepScreen_OnLoaded(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
   
     }
 

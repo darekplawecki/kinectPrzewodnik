@@ -13,6 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -63,6 +63,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.Interaction.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -81,20 +82,51 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\InvertibleBooleanToPromptStateConverter.cs" />
+    <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\MultiplicationConverter.cs" />
+    <Compile Include="Utilities\CommandOnEventAssociation.cs" />
+    <Compile Include="Utilities\CommandOnEventHelper.cs" />
     <Compile Include="Utilities\EngagementStateManager.cs" />
     <Compile Include="Utilities\EventQueueSection.cs" />
     <Compile Include="Utilities\KinectController.cs" />
+    <Compile Include="Controls\PromptControl.cs" />
     <Compile Include="Utilities\PromptState.cs" />
     <Compile Include="Utilities\UserActivityMeter.cs" />
     <Compile Include="Utilities\UserActivityRecord.cs" />
-    <Compile Include="Views\ThirdPage.cs" />
+    <Compile Include="Utilities\ViewModelBase.cs" />
+    <Page Include="Views\AttractionArticle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Views\AttractionArticle.xaml.cs">
+      <DependentUpon>AttractionArticle.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\Attractions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Views\Attractions.xaml.cs">
+      <DependentUpon>Attractions.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\MainMenu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Views\MainMenu.xaml.cs">
+      <DependentUpon>MainMenu.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\SleepScreen.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Views\SleepScreen.xaml.cs">
+      <DependentUpon>SleepScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\IKinectPage.cs" />
+    <Page Include="Controls\PromptControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -105,16 +137,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Utilities\MouseMovementDetector.cs" />
-    <Compile Include="Views\MainMenu.xaml.cs">
-      <DependentUpon>MainMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\IKinectPage.cs" />
     <Compile Include="KinectPageFactory.cs" />
     <Compile Include="Navigator.cs" />
-    <Compile Include="Views\SleepScreen.xaml.cs">
-      <DependentUpon>SleepScreen.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SecondPage.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -138,6 +162,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Content\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -163,6 +188,23 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\back.png" />
+    <Resource Include="Content\dzielnicaczterechswiatyn1.jpg" />
+    <Resource Include="Content\fontanna1.jpg" />
+    <Resource Include="Content\halastulecia1.jpg" />
+    <Resource Include="Content\ogrodbotaniczny1.jpg" />
+    <Resource Include="Content\ogrodjaponski1.jpg" />
+    <Resource Include="Content\ostrowtumski1.jpg" />
+    <Resource Include="Content\palackrolewski1.jpg" />
+    <Resource Include="Content\panoramaraclawicka1.jpg" />
+    <Resource Include="Content\rynek1.jpg" />
+    <Resource Include="Content\rynek2.jpg" />
+    <Resource Include="Content\rynek3.jpg" />
+    <Resource Include="Content\rynek4.jpg" />
+    <Resource Include="Content\wyspaslodowa1.jpg" />
+    <Resource Include="Content\zoo1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

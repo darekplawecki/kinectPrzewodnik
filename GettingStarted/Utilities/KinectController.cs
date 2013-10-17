@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Composition;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -13,11 +14,14 @@ using Microsoft.Kinect.Toolkit.Controls;
 
 namespace Przewodnik.Utilities
 {
-    public class KinectController
+    [Export(typeof(KinectController))]
+    public class KinectController : ViewModelBase
     {
         private const double HandoffConfirmationStasisSeconds = 0.5;
 
-        private readonly KinectSensorChooser sensorChooser = new KinectSensorChooser();
+        private readonly KinectSensorChooser sensorChooser;
+
+        private Navigator _navigator;
 
         private readonly EngagementStateManager engagementStateManager = new EngagementStateManager();
 
@@ -74,48 +78,40 @@ namespace Przewodnik.Utilities
 
         public KinectController()
         {
-            this.QueryPrimaryUserCallback = this.OnQueryPrimaryUserCallback;
-            this.PreEngagementUserColors = new Dictionary<int, Color>();
-            this.PostEngagementUserColors = new Dictionary<int, Color>();
+            sensorChooser = new KinectSensorChooser();
 
-            this.engagementStateManager.TrackedUsersChanged += this.OnEngagementManagerTrackedUsersChanged;
-            this.engagementStateManager.CandidateUserChanged += this.OnEngagementManagerCandidateUserChanged;
-            this.engagementStateManager.EngagedUserChanged += this.OnEngagementManagerEngagedUserChanged;
-            this.engagementStateManager.PrimaryUserChanged += this.OnEngagementManagerPrimaryUserChanged;
+            QueryPrimaryUserCallback = this.OnQueryPrimaryUserCallback;
+            PreEngagementUserColors = new Dictionary<int, Color>();
+            PostEngagementUserColors = new Dictionary<int, Color>();
 
-            this.handoffConfirmationStasisTimer.Tick += this.OnHandoffConfirmationStasisTimerTick;
-            this.disengagementNavigationTimer.Tick += this.OnDisengagementNavigationTick;
+            engagementStateManager.TrackedUsersChanged += this.OnEngagementManagerTrackedUsersChanged;
+            engagementStateManager.CandidateUserChanged += this.OnEngagementManagerCandidateUserChanged;
+            engagementStateManager.EngagedUserChanged += this.OnEngagementManagerEngagedUserChanged;
+            engagementStateManager.PrimaryUserChanged += this.OnEngagementManagerPrimaryUserChanged;
 
-            this.shutdownCommand = new RelayCommand(this.Cleanup);
-            this.engagementConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementConfirmation);
-            this.engagementHandoffConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementHandoffConfirmation);
+            handoffConfirmationStasisTimer.Tick += this.OnHandoffConfirmationStasisTimerTick;
+            disengagementNavigationTimer.Tick += this.OnDisengagementNavigationTick;
 
-            this.sensorChooser.KinectChanged += this.SensorChooserOnKinectChanged;
-            this.sensorChooser.Start();
+            shutdownCommand = new RelayCommand(this.Cleanup);
+            engagementConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementConfirmation);
+            engagementHandoffConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementHandoffConfirmation);
+
+            sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
+            sensorChooser.Start();
         }
 
-        //public override NavigationManager NavigationManager
-        //{
-        //    get
-        //    {
-        //        return base.NavigationManager;
-        //    }
+        public Navigator Navigator
+        {
+            get
+            {
+                return _navigator;
+            }
 
-        //    protected set
-        //    {
-        //        if (null != base.NavigationManager)
-        //        {
-        //            base.NavigationManager.PropertyChanged -= this.OnNavigationManagerPropertyChanged;
-        //        }
-
-        //        base.NavigationManager = value;
-
-        //        if (null != base.NavigationManager)
-        //        {
-        //            base.NavigationManager.PropertyChanged += this.OnNavigationManagerPropertyChanged;
-        //        }
-        //    }
-        //}
+            set
+            {
+                _navigator = value;
+            }
+        }
 
         public KinectSensorChooser KinectSensorChooser
         {
@@ -167,7 +163,7 @@ namespace Przewodnik.Utilities
                 bool wasEngaged = this.isUserEngaged;
 
                 this.isUserEngaged = value;
-                //this.OnPropertyChanged("IsUserEngaged");
+                this.OnPropertyChanged("IsUserEngaged");
 
                 if (wasEngaged != this.isUserEngaged)
                 {
@@ -191,7 +187,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.isUserEngagementCandidate = value;
-                //this.OnPropertyChanged("IsUserEngagementCandidate");
+                this.OnPropertyChanged("IsUserEngagementCandidate");
 
                 this.UpdateUserActive();
                 this.UpdateStartBannerState();
@@ -210,7 +206,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.isUserActive = value;
-                //this.OnPropertyChanged("IsUserActive");
+                this.OnPropertyChanged("IsUserActive");
             }
         }
 
@@ -224,7 +220,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.isUserTracked = value;
-                //this.OnPropertyChanged("IsUserTracked");
+                this.OnPropertyChanged("IsUserTracked");
 
                 this.UpdateStartBannerState();
             }
@@ -240,7 +236,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.startBannerState = value;
-                //this.OnPropertyChanged("StartBannerState");
+                this.OnPropertyChanged("StartBannerState");
             }
         }
 
@@ -254,7 +250,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.engagementConfirmationState = value;
-                //this.OnPropertyChanged("EngagementConfirmationState");
+                this.OnPropertyChanged("EngagementConfirmationState");
             }
         }
 
@@ -268,7 +264,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.isEngagementHandoffBarrierEnabled = value;
-                //this.OnPropertyChanged("IsEngagementHandoffBarrierEnabled");
+                this.OnPropertyChanged("IsEngagementHandoffBarrierEnabled");
             }
         }
 
@@ -282,7 +278,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.leftHandoffMessageState = value;
-                //this.OnPropertyChanged("LeftHandoffMessageState");
+                this.OnPropertyChanged("LeftHandoffMessageState");
             }
         }
 
@@ -296,7 +292,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.leftHandoffMessageText = value;
-                //this.OnPropertyChanged("LeftHandoffMessageText");
+                this.OnPropertyChanged("LeftHandoffMessageText");
             }
         }
 
@@ -310,7 +306,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.leftHandoffMessageBrush = value;
-                //this.OnPropertyChanged("LeftHandoffMessageBrush");
+                this.OnPropertyChanged("LeftHandoffMessageBrush");
             }
         }
 
@@ -324,7 +320,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.leftHandoffConfirmationState = value;
-                //this.OnPropertyChanged("LeftHandoffConfirmationState");
+                this.OnPropertyChanged("LeftHandoffConfirmationState");
             }
         }
 
@@ -338,7 +334,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.rightHandoffMessageState = value;
-                //this.OnPropertyChanged("RightHandoffMessageState");
+                this.OnPropertyChanged("RightHandoffMessageState");
             }
         }
 
@@ -352,7 +348,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.rightHandoffMessageText = value;
-                //this.OnPropertyChanged("RightHandoffMessageText");
+                this.OnPropertyChanged("RightHandoffMessageText");
             }
         }
 
@@ -366,7 +362,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.rightHandoffMessageBrush = value;
-                //this.OnPropertyChanged("RightHandoffMessageBrush");
+                this.OnPropertyChanged("RightHandoffMessageBrush");
             }
         }
 
@@ -380,7 +376,7 @@ namespace Przewodnik.Utilities
             protected set
             {
                 this.rightHandoffConfirmationState = value;
-                //this.OnPropertyChanged("RightHandoffConfirmationState");
+                this.OnPropertyChanged("RightHandoffConfirmationState");
             }
         }
 
@@ -456,8 +452,10 @@ namespace Przewodnik.Utilities
             }
 
             // Whenever the Kinect sensor changes, we have no controlling user, so reset to attract screen
-            //to-do
-            //this.NavigationManager.NavigateToHome(DefaultNavigableContexts.AttractScreen);
+            
+            // NAVIGATE
+            _navigator.GoSleep();
+            //MessageBox.Show("Start programu = INSTAGRAM", "Navigate");
             this.IsUserEngaged = false;
         }
 
@@ -756,7 +754,10 @@ namespace Przewodnik.Utilities
                 if (this.IsUserEngaged)
                 {
                     // If there was no engaged user and now there is, initiate a navigation to the home screen.
-                    //this.NavigationManager.NavigateToHome(DefaultNavigableContexts.HomeScreen);
+
+                    // NAVIGATE
+                    _navigator.GoHome();
+                    //MessageBox.Show("Zalogowany = MENU GŁÓWNE", "Navigate");
                 }
                 else
                 {
@@ -777,7 +778,10 @@ namespace Przewodnik.Utilities
         {
             // If a user disengaged and nobody took control before timer expired, go back to attract screen
             this.disengagementNavigationTimer.Stop();
-            //this.NavigationManager.NavigateToHome(DefaultNavigableContexts.AttractScreen);
+
+            // NAVIGATE
+            _navigator.GoSleep();
+            //MessageBox.Show("Brak osoby nawigującej = INSTAGRAM", "Navigate");
         }
 
         private void OnNavigationManagerPropertyChanged(object sender, PropertyChangedEventArgs e)

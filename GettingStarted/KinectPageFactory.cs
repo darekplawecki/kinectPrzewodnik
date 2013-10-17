@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Interop;
-using Przewodnik.Views;
+﻿using Przewodnik.Views;
 
 namespace Przewodnik
 {
@@ -14,15 +8,14 @@ namespace Przewodnik
 
         private IKinectPage _mainMenu;
         private IKinectPage _sleepScreen;
-        private IKinectPage secondPage;
-        private IKinectPage thirdPage;
+        private IKinectPage _attractions;
+        private IKinectPage _attractionArticle;
 
 
         public KinectPageFactory(Navigator navigator)
         {
             this.navigator = navigator;
         }
-
 
         public IKinectPage GetMainMenu()
         {
@@ -36,18 +29,16 @@ namespace Przewodnik
             return _sleepScreen;
         }
 
-
-
-        public IKinectPage GetSecondGrid()
+        public IKinectPage GetAttractionsGrid()
         {
-            if(secondPage == null) secondPage = new SecondPage(this);
-            return secondPage;
+            if (_attractions == null) _attractions = new Attractions(this);
+            return _attractions;
         }
 
-        public IKinectPage GetThirdGrid()
+        public IKinectPage GetAttractionArticleGrid()
         {
-            if (thirdPage == null) thirdPage = new ThirdPage(this);
-            return thirdPage;
+            if (_attractionArticle == null) _attractionArticle = new AttractionArticle(this);
+            return _attractionArticle;
         }
 
         public void NavigateTo(IKinectPage page)

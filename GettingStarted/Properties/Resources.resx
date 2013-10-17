@@ -117,11 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CommandOnEventException" xml:space="preserve">
+    <value>Type {0} does not support event: {1}</value>
+  </data>
   <data name="EngagementHandoffGetStarted" xml:space="preserve">
     <value>Podnieś rękę, aby rozpoczać.</value>
   </data>
   <data name="EngagementHandoffKeepControl" xml:space="preserve">
-    <value>Podnieś rękę, aby przejąć kontrolę.</value>
+    <value>Wciśnij przycisk aby odblokować</value>
   </data>
   <data name="SmallerScreenResolutionMessage" xml:space="preserve">
     <value>Aplikacja jest przystosowana do rozdzielczości 1920 x 1080 px. Twoja rozdzielczość jest mniejsza, kontynuować?</value>

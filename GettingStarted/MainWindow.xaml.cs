@@ -2,52 +2,61 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Threading;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect;
+using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Views;
 using Przewodnik.Utilities;
+using System.Windows.Media;
 
 namespace Przewodnik
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
 
         private const int MinimumScreenWidth = 1920;
         private const int MinimumScreenHeight = 1080;
 
-        private KinectSensorChooser sensorChooser;
-        private Navigator navigator;
-        private KinectPageFactory pageFactory;
+        private Navigator _navigator;
+        private KinectPageFactory _pageFactory;
+        private static Action EmptyDelegate = delegate() { };
 
-        //private readonly KinectController _controller = new KinectController();
+        private KinectController _kinectController;
+        private MouseMovementDetector _movementDetector;
 
-        private readonly MouseMovementDetector _movementDetector;
 
-
-        public MainWindow()
+        public MainWindow(KinectController controller)
         {
             InitializeComponent();
             Loaded += OnLoaded;
-            navigator = new Navigator(this);
-            pageFactory = new KinectPageFactory(navigator);
+
+
+            _navigator = new Navigator(this);
+            _pageFactory = new KinectPageFactory(_navigator);
+
+            _navigator.SetMainMenu(_pageFactory.GetMainMenu());
+            _navigator.SetSleepScreen(_pageFactory.GetSleepScreen());
+
+
+            _kinectController = controller;
+            _kinectController.EngagedUserColor = (Color)this.Resources["EngagedUserColor"];
+            _kinectController.TrackedUserColor = (Color)this.Resources["TrackedUserColor"];
+            _kinectController.EngagedUserMessageBrush = (Brush)this.Resources["EngagedUserMessageBrush"];
+            _kinectController.TrackedUserMessageBrush = (Brush)this.Resources["TrackedUserMessageBrush"];
+            _kinectController.Navigator = _navigator;
+            kinectRegion.HandPointersUpdated += (sender, args) => _kinectController.OnHandPointersUpdated(this.kinectRegion.HandPointers);
+            DataContext = _kinectController;
+
 
             _movementDetector = new MouseMovementDetector(this);
             _movementDetector.OnMovingChanged += OnIsMouseMovingChanged;
             _movementDetector.Start();
-
-            SetView(pageFactory.GetSleepScreen().GetView());
         }
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            this.sensorChooser = new KinectSensorChooser();
-            this.sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
-            sensorChooserUi.KinectSensorChooser = this.sensorChooser as KinectSensorChooser;
-            this.sensorChooser.Start();
-
+            
             // check resolution
             double height = SystemParameters.PrimaryScreenHeight;
             double width = SystemParameters.PrimaryScreenWidth;
@@ -58,8 +67,14 @@ namespace Przewodnik
                 {
                     this.Close();
                 }
+                else
+                {
+                    MinHeight = height;
+                    MinWidth = width;
+                }
             }
 
+            _navigator.GoSleep();
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -79,80 +94,55 @@ namespace Przewodnik
 
         private void OnIsMouseMovingChanged(object sender, EventArgs e)
         {
-            if (_movementDetector.IsMoving == true) Wake();
-            else Sleep();
+            _kinectController.IsInEngagementOverrideMode = _movementDetector.IsMoving;
         }
 
         public void Wake()
         {
-            SetView(pageFactory.GetMainMenu().GetView());
+            AdjustUserViewer(false);
+            ShowBackButton(false);
+            SetView(_pageFactory.GetMainMenu().GetView());
         }
         public void Sleep()
         {
-            IKinectPage first = pageFactory.GetSleepScreen();
-            pageFactory.NavigateTo(first);
+            AdjustUserViewer(true);
+            ShowBackButton(false);
+            IKinectPage first = _pageFactory.GetSleepScreen();
+            SetView(first.GetView());
         }
 
-        private void SensorChooserOnKinectChanged(object sender, KinectChangedEventArgs args)
+        public void ShowBackButton(bool enable)
         {
-            bool error = false;
-            if (args.OldSensor != null)
-            {
-                try
-                {
-                    args.OldSensor.DepthStream.Range = DepthRange.Default;
-                    args.OldSensor.SkeletonStream.EnableTrackingInNearRange = false;
-                    args.OldSensor.DepthStream.Disable();
-                    args.OldSensor.SkeletonStream.Disable();
-                }
-                catch (InvalidOperationException)
-                {
-                    // KinectSensor might enter an invalid state while enabling/disabling streams or stream features.
-                    // E.g.: sensor might be abruptly unplugged.
-                    error = true;
-                }
-            }
+            if (enable) BackButton.Visibility = System.Windows.Visibility.Visible;
+            else BackButton.Visibility = System.Windows.Visibility.Hidden;
+        }
 
+        public void AdjustUserViewer(Boolean stretch)
+        {
+            //if (stretch)
+            //{
+            //    UserViewer.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+            //    UserViewer.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
+            //}
+            //else
+            //{
+            //    UserViewer.Height = 100;
+            //    UserViewer.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+            //    UserViewer.VerticalAlignment = System.Windows.VerticalAlignment.Top;
+            //}
 
-
-            if (args.NewSensor != null)
-            {
-                try
-                {
-                    args.NewSensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
-                    args.NewSensor.SkeletonStream.Enable();
-                    try
-                    {
-                        args.NewSensor.DepthStream.Range = DepthRange.Near;
-                        args.NewSensor.SkeletonStream.EnableTrackingInNearRange = true;
-                        args.NewSensor.SkeletonStream.TrackingMode = SkeletonTrackingMode.Seated;
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // Non Kinect for Windows devices do not support Near mode, so reset back to default mode.
-                        args.NewSensor.DepthStream.Range = DepthRange.Default;
-                        args.NewSensor.SkeletonStream.EnableTrackingInNearRange = false;
-                        //error = true;
-                    }
-                }
-
-                catch (InvalidOperationException)
-                {
-                    error = true;
-                    // KinectSensor might enter an invalid state while enabling/disabling streams or stream features.
-                    // E.g.: sensor might be abruptly unplugged.
-                }
-            }
-            if (!error)
-            {
-                KinectRegion.KinectSensor = args.NewSensor;
-            }
+            //TopTopGrid.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
         }
 
         public void SetView(Grid grid)
         {
             PageContentGrid.Children.Clear();
             PageContentGrid.Children.Add(grid);
+        }
+
+        private void BackAction(object sender, RoutedEventArgs e)
+        {
+            _navigator.GoBack();
         }
 
     }
