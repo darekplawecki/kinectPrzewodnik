@@ -20,7 +20,6 @@ namespace Przewodnik
 
         private Navigator _navigator;
         private KinectPageFactory _pageFactory;
-        private static Action EmptyDelegate = delegate() { };
 
         private KinectController _kinectController;
         private MouseMovementDetector _movementDetector;
@@ -33,8 +32,8 @@ namespace Przewodnik
             InitializeComponent();
             Loaded += OnLoaded;
 
-            _instagramAPI = new InstagramAPIManager();
-            _instagramAPI.saveRecentImages();
+            //_instagramAPI = new InstagramAPIManager();
+            //_instagramAPI.saveRecentImages();
 
             _navigator = new Navigator(this);
             _pageFactory = new KinectPageFactory(_navigator);
@@ -103,39 +102,18 @@ namespace Przewodnik
 
         public void Wake()
         {
-            AdjustUserViewer(false);
-            ShowBackButton(false);
-            SetView(_pageFactory.GetMainMenu().GetView());
+            TopRow.Height = new GridLength(150);
         }
         public void Sleep()
         {
-            AdjustUserViewer(true);
-            ShowBackButton(false);
-            IKinectPage first = _pageFactory.GetSleepScreen();
-            SetView(first.GetView());
+            TopRow.Height = new GridLength(0);
+            SetView(_pageFactory.GetSleepScreen().GetView());
         }
 
         public void ShowBackButton(bool enable)
         {
             if (enable) BackButton.Visibility = System.Windows.Visibility.Visible;
             else BackButton.Visibility = System.Windows.Visibility.Hidden;
-        }
-
-        public void AdjustUserViewer(Boolean stretch)
-        {
-            //if (stretch)
-            //{
-            //    UserViewer.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
-            //    UserViewer.VerticalAlignment = System.Windows.VerticalAlignment.Stretch;
-            //}
-            //else
-            //{
-            //    UserViewer.Height = 100;
-            //    UserViewer.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
-            //    UserViewer.VerticalAlignment = System.Windows.VerticalAlignment.Top;
-            //}
-
-            //TopTopGrid.Dispatcher.Invoke(DispatcherPriority.Render, EmptyDelegate);
         }
 
         public void SetView(Grid grid)

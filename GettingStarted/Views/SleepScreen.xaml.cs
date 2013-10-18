@@ -42,7 +42,7 @@ namespace Przewodnik.Views
         public SleepScreen(KinectPageFactory pageFactory)
         {
             InitializeComponent();
-
+            
             this.pageFactory = pageFactory;
             /*
             KinectTileButton button = new KinectTileButton();

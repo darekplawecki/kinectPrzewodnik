@@ -16,7 +16,6 @@
         <SolidColorBrush x:Key="EngagedUserMessageBrush" Color="#FF511C74"/>
         <SolidColorBrush x:Key="TrackedUserMessageBrush" Color="#FF00BCF2"/>
         <Color x:Key="PostEngagementBackgroundUserColor" A="#80" R="#BC" G="#BE" B="#C0"/>
-        <Color x:Key="PreEngagementBackgroundUserColor" A="#80" R="#40" G="#43" B="#46"/>
         <SolidColorBrush x:Key="PostEngagementBackgroundUserBrush" Color="{StaticResource PostEngagementBackgroundUserColor}"/>
         <DataTemplate x:Key="HandoffTextTemplate">
             <TextBlock Text="{Binding}" TextWrapping="Wrap" FontSize="30" Foreground="White" Margin="25 10" VerticalAlignment="Center" HorizontalAlignment="Left"/>
@@ -35,43 +34,6 @@
             IsCursorVisible="{Binding IsUserActive}"
             QueryPrimaryUserTrackingIdCallback="{Binding QueryPrimaryUserCallback}">
             <Grid>
-                
-                <!-- Big human frame -->
-                <c:PromptControl Style="{StaticResource ContentFade}"
-                                 State="{Binding IsUserActive, ConverterParameter=False, Converter={StaticResource InvertibleBooleanToPromptStateConverter}}">
-                    <k:KinectUserViewer DefaultUserColor="{StaticResource PreEngagementBackgroundUserColor}" UserColoringMode="Manual" UserColors="{Binding PreEngagementUserColors}"
-                                    ImageBackground="Transparent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
-                </c:PromptControl>
-
-                <c:PromptControl
-                    Text="Podnieś rękę aby rozpocząć"
-                    Foreground="White"
-                    Background="{StaticResource KinectPurpleBrush}"
-                    Style="{StaticResource StartBanner}"
-                    State="{Binding StartBannerState}"/>
-
-                <c:PromptControl
-                    Background="{StaticResource KinectPurpleBrush}"
-                    Style="{StaticResource EngagementConfirmation}"
-                    State="{Binding EngagementConfirmationState}">
-                    
-                    <k:KinectTileButton Background="{StaticResource KinectPurpleBrush}" Width="330" Height="330" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0">
-                        <u:CommandOnEventHelper.AssociationEntry>
-                            <u:CommandOnEventAssociation Command="{Binding EngagementConfirmationCommand}" Event="Click"/>
-                        </u:CommandOnEventHelper.AssociationEntry>
-                        <Grid>
-                            <TextBlock
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Background="Transparent"
-                                FontSize="40"
-                                Foreground="White"
-                                TextWrapping="Wrap"
-                                Text="Wciśnij aby rozpocząć"/>
-                        </Grid>
-                    </k:KinectTileButton>
-                </c:PromptControl>
-
 
                 <!-- Small human frame -->
                 <Border Width="128" Height="96" VerticalAlignment="Top" BorderBrush="{StaticResource PostEngagementBackgroundUserBrush}" BorderThickness="1"
@@ -79,10 +41,9 @@
                     <k:KinectUserViewer DefaultUserColor="{StaticResource PostEngagementBackgroundUserColor}" UserColoringMode="Manual" UserColors="{Binding PostEngagementUserColors}" ImageBackground="Transparent"/>
                 </Border>
 
-                
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="150"/>
+                        <RowDefinition Height="150" Name="TopRow"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -94,9 +55,9 @@
                             <Image Source="/Content/back.png"></Image>
                         </StackPanel>
                     </k:KinectCircleButton>
-                    
+
                     <Grid Name="PageContentGrid" Grid.Row="1" Grid.ColumnSpan="2"></Grid>
-               
+
                 </Grid>
                 
             </Grid>

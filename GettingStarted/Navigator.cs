@@ -35,6 +35,7 @@ namespace Przewodnik
             if (page.Equals(mainMenu))
             {
                 pagesHistory.Push(page);
+                mainWindow.Wake();
                 mainWindow.SetView(page.GetView());
                 mainWindow.ShowBackButton(false);
             }

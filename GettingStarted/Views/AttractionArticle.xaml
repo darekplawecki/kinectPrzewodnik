@@ -34,7 +34,7 @@
 
         </StackPanel>
 
-        <k:KinectScrollViewer VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Height="335" >
+        <k:KinectScrollViewer VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Height="335" HoverBackground="Transparent" >
             <TextBlock Margin="50,0,50,0" Name="descriptionTextBlock"  TextAlignment="Justify" VerticalAlignment="Top" TextWrapping="Wrap" MinWidth="100" MaxWidth="700" FontSize="25"></TextBlock>
         </k:KinectScrollViewer>
 

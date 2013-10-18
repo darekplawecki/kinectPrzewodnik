@@ -6,7 +6,7 @@
 
     <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" >Atrakcje turystyczne</TextBlock>
 
-    <k:KinectScrollViewer Margin="50 150 50 50" Name="AttractionsScrollViewer" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden" ContentMargin="0" MinWidth="220" MinHeight="300" >
+    <k:KinectScrollViewer Margin="50 150 50 50" Name="AttractionsScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" ContentMargin="0" MinWidth="220" MinHeight="300" Background="Transparent" HoverBackground="Transparent">
 
         <StackPanel Orientation="Horizontal">
 
