@@ -1,4 +1,11 @@
-﻿using Przewodnik.Views;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Interop;
+using Przewodnik.Views;
+using GettingStarted;
 
 namespace Przewodnik
 {
@@ -37,7 +44,13 @@ namespace Przewodnik
 
         public IKinectPage GetAttractionArticleGrid()
         {
-            if (_attractionArticle == null) _attractionArticle = new AttractionArticle(this);
+            if (_attractionArticle == null) _attractionArticle = new AttractionArticle(this, null);
+            return _attractionArticle;
+        }
+
+        public IKinectPage GetAttractionArticleGrid(String parameter)
+        {
+            _attractionArticle = new AttractionArticle(this, parameter);
             return _attractionArticle;
         }
 

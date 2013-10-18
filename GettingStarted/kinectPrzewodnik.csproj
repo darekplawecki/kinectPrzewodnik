@@ -85,6 +85,7 @@
     <Compile Include="Converters\InvertibleBooleanToPromptStateConverter.cs" />
     <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\MultiplicationConverter.cs" />
+    <Compile Include="Models\AttractionModel.cs" />
     <Compile Include="Utilities\CommandOnEventAssociation.cs" />
     <Compile Include="Utilities\CommandOnEventHelper.cs" />
     <Compile Include="Utilities\EngagementStateManager.cs" />
@@ -162,7 +163,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Content\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -191,7 +191,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Content\back.png" />
-    <Resource Include="Content\dzielnicaczterechswiatyn1.jpg" />
     <Resource Include="Content\fontanna1.jpg" />
     <Resource Include="Content\halastulecia1.jpg" />
     <Resource Include="Content\ogrodbotaniczny1.jpg" />
@@ -202,9 +201,28 @@
     <Resource Include="Content\rynek1.jpg" />
     <Resource Include="Content\rynek2.jpg" />
     <Resource Include="Content\rynek3.jpg" />
-    <Resource Include="Content\rynek4.jpg" />
     <Resource Include="Content\wyspaslodowa1.jpg" />
     <Resource Include="Content\zoo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\fontanna2.jpg" />
+    <Resource Include="Content\fontanna3.jpg" />
+    <Resource Include="Content\halastulecia2.jpg" />
+    <Resource Include="Content\halastulecia3.jpg" />
+    <Resource Include="Content\ogrodbotaniczny2.jpg" />
+    <Resource Include="Content\ogrodbotaniczny3.jpg" />
+    <Resource Include="Content\ogrodjaponski2.jpg" />
+    <Resource Include="Content\ogrodjaponski3.jpg" />
+    <Resource Include="Content\ostrowtumski2.jpg" />
+    <Resource Include="Content\ostrowtumski3.jpg" />
+    <Resource Include="Content\palackrolewski2.jpg" />
+    <Resource Include="Content\palackrolewski3.jpg" />
+    <Resource Include="Content\panoramaraclawicka2.jpg" />
+    <Resource Include="Content\panoramaraclawicka3.jpg" />
+    <Resource Include="Content\wyspaslodowa2.jpg" />
+    <Resource Include="Content\wyspaslodowa3.jpg" />
+    <Resource Include="Content\zoo2.jpg" />
+    <Resource Include="Content\zoo3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
