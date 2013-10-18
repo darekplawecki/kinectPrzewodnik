@@ -25,12 +25,16 @@ namespace Przewodnik
         private KinectController _kinectController;
         private MouseMovementDetector _movementDetector;
 
+        private InstagramAPIManager _instagramAPI;
+
 
         public MainWindow(KinectController controller)
         {
             InitializeComponent();
             Loaded += OnLoaded;
 
+            _instagramAPI = new InstagramAPIManager();
+            _instagramAPI.saveRecentImages();
 
             _navigator = new Navigator(this);
             _pageFactory = new KinectPageFactory(_navigator);

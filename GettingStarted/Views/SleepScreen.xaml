@@ -1,8 +1,173 @@
 ﻿<Grid
     x:Class="Przewodnik.Views.SleepScreen"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="SleepScreenGrid" Loaded="SleepScreen_OnLoaded">
-    <StackPanel Margin="20">
-        <TextBlock x:Name="firstTextBlock" FontSize="30" >Sleep screen - INSTAGRAM</TextBlock>
-    </StackPanel>
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Name="SleepScreenGrid"
+    xmlns:c="clr-namespace:Przewodnik.Controls"
+    xmlns:u="clr-namespace:Przewodnik.Utilities"
+    HorizontalAlignment="Stretch"
+    VerticalAlignment="Stretch"
+    Background="Black"
+    Loaded="SleepScreenGrid_Loaded">
+
+
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroup x:Name="NavigationStates1">
+
+            <VisualState x:Name="Normal1" />
+
+            <VisualState x:Name="NavigatedTo1">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel1"
+                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="NavigatedFrom1" />
+
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="NavigationStates2">
+
+            <VisualState x:Name="Normal2" />
+
+            <VisualState x:Name="NavigatedTo2">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel2"
+                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="NavigatedFrom2" />
+
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="NavigationStates3">
+
+            <VisualState x:Name="Normal3" />
+
+            <VisualState x:Name="NavigatedTo3">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel3"
+                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="NavigatedFrom3" />
+
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="NavigationStates4">
+
+            <VisualState x:Name="Normal4" />
+
+            <VisualState x:Name="NavigatedTo4">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel4"
+                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="NavigatedFrom4" />
+
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="NavigationStates5">
+
+            <VisualState x:Name="Normal5" />
+
+            <VisualState x:Name="NavigatedTo5">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel5"
+                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="NavigatedFrom5" />
+
+        </VisualStateGroup>
+        <VisualStateGroup x:Name="NavigationStates6">
+
+            <VisualState x:Name="Normal6" />
+
+            <VisualState x:Name="NavigatedTo6">
+                <Storyboard>
+                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel6"
+                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
+                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
+                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
+                    </DoubleAnimationUsingKeyFrames>
+                </Storyboard>
+            </VisualState>
+
+            <VisualState x:Name="NavigatedFrom6" />
+
+        </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Grid Name="InstagramGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl
+                x:Name="AttractCarousel1"
+                Grid.Row="0"
+                Grid.Column="0"
+                Content="{Binding CurrentImage1}">
+        </ContentControl>
+
+        <ContentControl
+                x:Name="AttractCarousel2"
+                Grid.Row="0"
+                Grid.Column="1"
+                Content="{Binding CurrentImage2}">
+        </ContentControl>
+
+        <ContentControl
+                x:Name="AttractCarousel3"
+                Grid.Row="0"
+                Grid.Column="2"
+                Content="{Binding CurrentImage3}">
+        </ContentControl>
+
+        <ContentControl
+                x:Name="AttractCarousel4"
+                Grid.Row="1"
+                Grid.Column="0"
+                Content="{Binding CurrentImage4}">
+        </ContentControl>
+
+        <ContentControl
+                x:Name="AttractCarousel5"
+                Grid.Row="1"
+                Grid.Column="1"
+                Content="{Binding CurrentImage5}">
+        </ContentControl>
+
+        <ContentControl
+                x:Name="AttractCarousel6"
+                Grid.Row="1"
+                Grid.Column="2"
+                Content="{Binding CurrentImage6}">
+        </ContentControl>
+
+    </Grid>
 </Grid>

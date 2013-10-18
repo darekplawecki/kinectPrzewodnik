@@ -49,6 +49,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="InstaSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\InstaSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Kinect, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\v1.8\Assemblies\Microsoft.Kinect.dll</HintPath>
@@ -62,9 +66,14 @@
     <Reference Include="Microsoft.Kinect.Toolkit.Interaction">
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.Interaction.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -88,8 +97,12 @@
     <Compile Include="Models\AttractionModel.cs" />
     <Compile Include="Utilities\CommandOnEventAssociation.cs" />
     <Compile Include="Utilities\CommandOnEventHelper.cs" />
+    <Compile Include="Utilities\CookieAwareWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utilities\EngagementStateManager.cs" />
     <Compile Include="Utilities\EventQueueSection.cs" />
+    <Compile Include="Utilities\InstagramAPIManager.cs" />
     <Compile Include="Utilities\KinectController.cs" />
     <Compile Include="Controls\PromptControl.cs" />
     <Compile Include="Utilities\PromptState.cs" />
@@ -223,6 +236,29 @@
     <Resource Include="Content\wyspaslodowa3.jpg" />
     <Resource Include="Content\zoo2.jpg" />
     <Resource Include="Content\zoo3.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Content\SleepScreen\Instagram\1.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\10.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\11.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\12.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\13.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\14.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\15.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\16.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\17.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\18.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\19.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\2.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\20.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\3.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\4.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\5.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\6.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\7.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\8.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
