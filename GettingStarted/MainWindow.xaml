@@ -9,7 +9,9 @@
         WindowState="Maximized"
         MinWidth="1920"
         MinHeight="1080"
-        WindowStyle="None">
+        WindowStyle="None"
+        Cursor="None">
+    
     <Window.Resources>
         <Color x:Key="EngagedUserColor" A="#80" R="#51" G="#1C" B="#74"/>
         <Color x:Key="TrackedUserColor" A="#80" R="#00" G="#BC" B="#F2"/>

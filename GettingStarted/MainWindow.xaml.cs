@@ -53,7 +53,7 @@ namespace Przewodnik
 
 
             _movementDetector = new MouseMovementDetector(this);
-            _movementDetector.OnMovingChanged += OnIsMouseMovingChanged;
+            _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
             _movementDetector.Start();
         }
 
@@ -97,6 +97,7 @@ namespace Przewodnik
 
         private void OnIsMouseMovingChanged(object sender, EventArgs e)
         {
+            WindowBezelHelper.UpdateBezel(this, _movementDetector.IsMoving);
             _kinectController.IsInEngagementOverrideMode = _movementDetector.IsMoving;
         }
 

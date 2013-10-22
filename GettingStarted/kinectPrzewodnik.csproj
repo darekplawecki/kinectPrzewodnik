@@ -113,6 +113,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Utilities\WindowBezelHelper.cs" />
     <Compile Include="Views\AttractionArticle.xaml.cs">
       <DependentUpon>AttractionArticle.xaml</DependentUpon>
     </Compile>

@@ -37,7 +37,7 @@ namespace Przewodnik.Utilities
             };
         }
 
-        public event EventHandler<EventArgs> OnMovingChanged;
+        public event EventHandler<EventArgs> IsMovingChanged;
 
         public bool IsMoving
         {
@@ -51,9 +51,9 @@ namespace Przewodnik.Utilities
                 bool oldValue = this._isMoving;
                 _isMoving = value;
 
-                if ((oldValue != value) && (OnMovingChanged != null))
+                if ((oldValue != value) && (IsMovingChanged != null))
                 {
-                    OnMovingChanged(this, EventArgs.Empty);
+                    IsMovingChanged(this, EventArgs.Empty);
                 }
             }
         }
