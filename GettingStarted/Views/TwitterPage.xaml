@@ -1,0 +1,20 @@
+﻿<Grid x:Class="GettingStarted.TwitterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:k="http://schemas.microsoft.com/kinect/2013"
+    Name="TwitterGrid">
+
+    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" >Atrakcje turystyczne</TextBlock>
+
+    <k:KinectScrollViewer Margin="50 150 50 50" Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" ContentMargin="0" MinWidth="220" MinHeight="300" Background="Transparent" HoverBackground="Transparent">
+
+        <StackPanel Orientation="Vertical">
+
+            <TextBlock Name="TwitterContent" Text=""></TextBlock>
+
+        </StackPanel>
+    </k:KinectScrollViewer>
+</Grid>
+
+
+

@@ -5,12 +5,16 @@
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
         Name="MainMenuGrid" >
     <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" HorizontalAlignment="Center">Przewodnik po Wrocławiu</TextBlock>
-    <StackPanel Margin="20 150 20 20">
+    <StackPanel Margin="20 150 20 20" Orientation="Horizontal">
         <k:KinectTileButton x:Name="touristAttractions" Height="200" Width="200"  
                             Content="Atrakcje&#x0a;turystyczne"
                             FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="touristAttractions_Click">
-        </k:KinectTileButton>
+            </k:KinectTileButton>
+        <k:KinectTileButton x:Name="TwitterPageButton" Height="200" Width="200"  
+                            Content="Twitter"
+                            FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
+                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="twitterPageButton_Click"/>
     </StackPanel>
 </Grid>
 

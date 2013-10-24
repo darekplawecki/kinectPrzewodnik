@@ -24,6 +24,13 @@ namespace Przewodnik.Views
             IKinectPage attractions = pageFactory.GetAttractionsGrid();
             pageFactory.NavigateTo(attractions);
         }
+
+        private void twitterPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            IKinectPage twitterPage = pageFactory.GetTwitterPageGrid();
+            pageFactory.NavigateTo(twitterPage);
+        }
+
     }
 
 

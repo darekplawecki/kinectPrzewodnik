@@ -17,6 +17,7 @@ namespace Przewodnik
         private IKinectPage _sleepScreen;
         private IKinectPage _attractions;
         private IKinectPage _attractionArticle;
+        private IKinectPage _twitterPage;
 
 
         public KinectPageFactory(Navigator navigator)
@@ -52,6 +53,12 @@ namespace Przewodnik
         {
             _attractionArticle = new AttractionArticle(this, parameter);
             return _attractionArticle;
+        }
+
+        public IKinectPage GetTwitterPageGrid()
+        {
+            _twitterPage = new TwitterPage(this);
+            return _twitterPage;
         }
 
         public void NavigateTo(IKinectPage page)
