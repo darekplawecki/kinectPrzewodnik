@@ -16,113 +16,66 @@
         <Color x:Key="PreEngagementBackgroundUserColor" A="#80" R="#40" G="#43" B="#46"/>
         
     </Grid.Resources>
-    
-    <VisualStateManager.VisualStateGroups>
-        <VisualStateGroup x:Name="NavigationStates1">
-
-            <VisualState x:Name="Normal1" />
-
-            <VisualState x:Name="NavigatedTo1">
-                <Storyboard>
-                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel1"
-                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
-                    </DoubleAnimationUsingKeyFrames>
-                </Storyboard>
-            </VisualState>
-
-            <VisualState x:Name="NavigatedFrom1" />
-
-        </VisualStateGroup>
-        <VisualStateGroup x:Name="NavigationStates2">
-
-            <VisualState x:Name="Normal2" />
-
-            <VisualState x:Name="NavigatedTo2">
-                <Storyboard>
-                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel2"
-                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
-                    </DoubleAnimationUsingKeyFrames>
-                </Storyboard>
-            </VisualState>
-
-            <VisualState x:Name="NavigatedFrom2" />
-
-        </VisualStateGroup>
-        <VisualStateGroup x:Name="NavigationStates3">
-
-            <VisualState x:Name="Normal3" />
-
-            <VisualState x:Name="NavigatedTo3">
-                <Storyboard>
-                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel3"
-                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
-                    </DoubleAnimationUsingKeyFrames>
-                </Storyboard>
-            </VisualState>
-
-            <VisualState x:Name="NavigatedFrom3" />
-
-        </VisualStateGroup>
-        <VisualStateGroup x:Name="NavigationStates4">
-
-            <VisualState x:Name="Normal4" />
-
-            <VisualState x:Name="NavigatedTo4">
-                <Storyboard>
-                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel4"
-                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
-                    </DoubleAnimationUsingKeyFrames>
-                </Storyboard>
-            </VisualState>
-
-            <VisualState x:Name="NavigatedFrom4" />
-
-        </VisualStateGroup>
-        <VisualStateGroup x:Name="NavigationStates5">
-
-            <VisualState x:Name="Normal5" />
-
-            <VisualState x:Name="NavigatedTo5">
-                <Storyboard>
-                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel5"
-                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
-                    </DoubleAnimationUsingKeyFrames>
-                </Storyboard>
-            </VisualState>
-
-            <VisualState x:Name="NavigatedFrom5" />
-
-        </VisualStateGroup>
-        <VisualStateGroup x:Name="NavigationStates6">
-
-            <VisualState x:Name="Normal6" />
-
-            <VisualState x:Name="NavigatedTo6">
-                <Storyboard>
-                    <DoubleAnimationUsingKeyFrames BeginTime="00:00:00" Storyboard.TargetName="AttractCarousel6"
-                                                                        Storyboard.TargetProperty="(UIElement.Opacity)">
-                        <SplineDoubleKeyFrame KeyTime="00:00:00" Value="0"/>
-                        <SplineDoubleKeyFrame KeyTime="00:00:01.500" Value="1"/>
-                    </DoubleAnimationUsingKeyFrames>
-                </Storyboard>
-            </VisualState>
-
-            <VisualState x:Name="NavigatedFrom6" />
-
-        </VisualStateGroup>
-    </VisualStateManager.VisualStateGroups>
 
     <Grid Name="InstagramGrid" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <Grid.Resources>
+            <DataTemplate x:Key="FadeTransition">
+                <Grid>
+                    <c:Transition x:Name="t"  Source="{Binding}" />
+                    <ContentControl x:Name="a" Visibility="Visible" Opacity="1" Content="{Binding ElementName=t, Path=DisplayA}" />
+                    <ContentControl x:Name="b" Visibility="Hidden" Opacity="1" Content="{Binding ElementName=t, Path=DisplayB}" />
+                </Grid>
+                <DataTemplate.Triggers>
+                    <DataTrigger Binding="{Binding ElementName=t, Path=State}" Value="A">
+                        <Setter TargetName="a" Property="Panel.ZIndex" Value="1" />
+                        <Setter TargetName="a" Property="Visibility" Value="Visible" />
+                        <DataTrigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="a" Storyboard.TargetProperty="Opacity"
+												From="0" To="1" Duration="0:0:0.5" FillBehavior="HoldEnd" />
+                                    <ObjectAnimationUsingKeyFrames 
+									Storyboard.TargetName="b"
+									Storyboard.TargetProperty="Visibility" 
+									Duration="0:0:0.5" FillBehavior="Stop"
+								>
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Visible</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </DataTrigger.EnterActions>
+                    </DataTrigger>
+                    <DataTrigger Binding="{Binding ElementName=t, Path=State}" Value="B">
+                        <Setter TargetName="b" Property="Panel.ZIndex" Value="1" />
+                        <Setter TargetName="b" Property="Visibility" Value="Visible" />
+                        <DataTrigger.EnterActions>
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="b" Storyboard.TargetProperty="Opacity"
+												 From="0" To="1" Duration="0:0:0.5" FillBehavior="HoldEnd" />
+                                    <ObjectAnimationUsingKeyFrames 
+									Storyboard.TargetName="a"
+									Storyboard.TargetProperty="Visibility" 
+									Duration="0:0:0.5" FillBehavior="Stop"
+								>
+                                        <DiscreteObjectKeyFrame KeyTime="0:0:0">
+                                            <DiscreteObjectKeyFrame.Value>
+                                                <Visibility>Visible</Visibility>
+                                            </DiscreteObjectKeyFrame.Value>
+                                        </DiscreteObjectKeyFrame>
+                                    </ObjectAnimationUsingKeyFrames>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </DataTrigger.EnterActions>
+                    </DataTrigger>
+                </DataTemplate.Triggers>
+            </DataTemplate>
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
@@ -137,42 +90,48 @@
                 x:Name="AttractCarousel1"
                 Grid.Row="0"
                 Grid.Column="0"
-                Content="{Binding CurrentImage1}">
+                Content="{Binding CurrentImage1}"
+                ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
         <ContentControl
                 x:Name="AttractCarousel2"
                 Grid.Row="0"
                 Grid.Column="1"
-                Content="{Binding CurrentImage2}">
+                Content="{Binding CurrentImage2}"
+                ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
         <ContentControl
                 x:Name="AttractCarousel3"
                 Grid.Row="0"
                 Grid.Column="2"
-                Content="{Binding CurrentImage3}">
+                Content="{Binding CurrentImage3}"
+                ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
         <ContentControl
                 x:Name="AttractCarousel4"
                 Grid.Row="1"
                 Grid.Column="0"
-                Content="{Binding CurrentImage4}">
+                Content="{Binding CurrentImage4}"
+                ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
         <ContentControl
                 x:Name="AttractCarousel5"
                 Grid.Row="1"
                 Grid.Column="1"
-                Content="{Binding CurrentImage5}">
+                Content="{Binding CurrentImage5}"
+                ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
         <ContentControl
                 x:Name="AttractCarousel6"
                 Grid.Row="1"
                 Grid.Column="2"
-                Content="{Binding CurrentImage6}">
+                Content="{Binding CurrentImage6}"
+                ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
     </Grid>
 

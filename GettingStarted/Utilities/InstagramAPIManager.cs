@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -45,14 +46,13 @@ namespace Przewodnik.Utilities
         public void saveRecentImages()
         {
             var users = new InstaSharp.Endpoints.Users.Authenticated(config, authInfo);
-            var result = users.Feed(user_name);
+            var result = users.Feed(user_name, 100);
 
             dynamic imagesList = JsonConvert.DeserializeObject(result.Json);
 
             string projectPath = Environment.CurrentDirectory;
             projectPath = projectPath.Substring(0, projectPath.Length - 9);
-            
-            var webClient = new WebClient();
+
             int count = 1;
             foreach (var data in imagesList.data)
             {
@@ -61,7 +61,6 @@ namespace Przewodnik.Utilities
                 img.Save(projectPath + "Content/SleepScreen/Instagram/" + count + ".jpg");
                 count++;
             }
-            webClient.Dispose();
         }
 
         private static System.Drawing.Image GetImageFromUrl(string url)
@@ -84,7 +83,7 @@ namespace Przewodnik.Utilities
             scopes.Add(Auth.Scope.basic);
 
             var link = InstaSharp.Auth.AuthLink(oAuthUri, clientId, redirectUri, scopes);
-
+            
             // User name in the specified node
             CookieAwareWebClient client = new CookieAwareWebClient();
             // We went to the login page
@@ -118,12 +117,12 @@ namespace Przewodnik.Utilities
             client.Headers["Accept-Language"] = "pl-PL";
             client.Headers["Accept"] = "text/html, application/xhtml+xml, */*";
             client.Headers["Cache-Control"] = "no-cache";
-
+            
             // request
             var result2 = client.UploadValues(loginLink, "POST", parameters);
-
             // Fasting data received code
             // New link is not on the api, and on instagram
+            
             string newPostLink = string.Format(
                 "https://instagram.com/oauth/authorize/?client_id={0}&redirect_uri=http://www.pwr.wroc.pl&response_type=code&scope=basic", clientId);
 
@@ -154,7 +153,6 @@ namespace Przewodnik.Utilities
             r = new System.Text.RegularExpressions.Regex(pattern);
             m = r.Match(location);
             string code = m.Groups[1].Value;
-
             // Finally, we get an authentication token
             var auth = new InstaSharp.Auth(config); //.OAuth(InstaSharpConfig.config);
 
