@@ -5,41 +5,44 @@
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
         Name="AttractionArticleGrid">
 
-
     <TextBlock  Name="titleTextBlock" Margin="50 50 50 150" FontSize="50"></TextBlock>
-    <StackPanel Orientation="Horizontal" Margin="50 150 50 50">
 
-        <StackPanel Orientation="Vertical">
-            <Image Name="bigImageSource"  Width="450" Height="250" Stretch="UniformToFill" HorizontalAlignment="Left"/>
+    <Grid Margin="50 150 50 50">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="3*" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-                <k:KinectTileButton  Width="150" Height="85" BorderThickness="0" Name="FirstImageButton" Click="KinectTileButton_Click">
-                    <StackPanel>
-                        <Image Name="firstImageSource" Width="150" Height="85" Stretch="UniformToFill" />
-                    </StackPanel>
-                </k:KinectTileButton>
+        <Image Grid.ColumnSpan="3" Grid.Row="0" Name="bigImageSource" Stretch="UniformToFill" HorizontalAlignment="Left"/>
 
-                <k:KinectTileButton  Width="150" Height="85" BorderThickness="0" Name="SecondImageButton" Click="KinectTileButton_Click">
-                    <StackPanel>
-                        <Image Name="secondImageSource" Width="150" Height="85" Stretch="UniformToFill" />
-                    </StackPanel>
-                </k:KinectTileButton>
-
-                <k:KinectTileButton  Width="150" Height="85" BorderThickness="0" Name="ThirdImageButton" Click="KinectTileButton_Click">
-                    <StackPanel>
-                        <Image Name="thirdImageSource" Width="150" Height="85" Stretch="UniformToFill" />
-                    </StackPanel>
-                </k:KinectTileButton>
+        <k:KinectTileButton Background="Transparent" Grid.Column="0" Grid.Row="1" Width="Auto" Height="Auto" VerticalContentAlignment="Top"  BorderThickness="0" Name="FirstImageButton" Click="KinectTileButton_Click">
+            <StackPanel>
+                <Image Name="firstImageSource"  Stretch="UniformToFill" />
             </StackPanel>
+        </k:KinectTileButton>
 
-        </StackPanel>
+        <k:KinectTileButton  Background="Transparent" Width="Auto" Height="Auto" VerticalContentAlignment="Top"  Grid.Column="1" Grid.Row="1"  BorderThickness="0" Name="SecondImageButton" Click="KinectTileButton_Click">
+            <StackPanel>
+                <Image Name="secondImageSource"  Stretch="Fill" />
+            </StackPanel>
+        </k:KinectTileButton>
 
-        <k:KinectScrollViewer VerticalScrollBarVisibility="Auto" VerticalAlignment="Top" Height="335" HoverBackground="Transparent" >
-            <TextBlock Margin="50,0,50,0" Name="descriptionTextBlock"  TextAlignment="Justify" VerticalAlignment="Top" TextWrapping="Wrap" MinWidth="100" MaxWidth="700" FontSize="25"></TextBlock>
+        <k:KinectTileButton Background="Transparent" Width="Auto" Height="Auto" VerticalContentAlignment="Top"  Grid.Column="2" Grid.Row="1" BorderThickness="0" Name="ThirdImageButton" Click="KinectTileButton_Click">
+            <StackPanel>
+                <Image Name="thirdImageSource" />
+            </StackPanel>
+        </k:KinectTileButton>
+
+        <k:KinectScrollViewer Grid.Column="3" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"  HoverBackground="Transparent" >
+            <TextBlock Margin="50,-100,50,-100" Name="descriptionTextBlock"  TextAlignment="Justify" VerticalAlignment="Top" TextWrapping="Wrap" FontSize="25"></TextBlock>
         </k:KinectScrollViewer>
 
-    </StackPanel>
+    </Grid>
+
 </Grid>
-
-
-    
