@@ -78,25 +78,25 @@ namespace Przewodnik.Views
             switch (parameter)
             {
                 case "Rynek":
-                    return new List<string> { "../Content/rynek1.jpg", "../Content/rynek2.jpg", "../Content/rynek3.jpg" };
+                    return new List<string> { "../Content/Attractions/rynek1.jpg", "../Content/Attractions/rynek2.jpg", "../Content/Attractions/rynek3.jpg" };
                 case "OstrówTumski":
-                    return new List<string> { "../Content/ostrowtumski1.jpg", "../Content/ostrowtumski2.jpg", "../Content/ostrowtumski3.jpg" };
+                    return new List<string> { "../Content/Attractions/ostrowtumski1.jpg", "../Content/Attractions/ostrowtumski2.jpg", "../Content/Attractions/ostrowtumski3.jpg" };
                 case "HalaStulecia":
-                    return new List<string> { "../Content/halastulecia1.jpg", "../Content/halastulecia2.jpg", "../Content/halastulecia3.jpg" };
+                    return new List<string> { "../Content/Attractions/halastulecia1.jpg", "../Content/Attractions/halastulecia2.jpg", "../Content/Attractions/halastulecia3.jpg" };
                 case "PałacKrólewski":
-                    return new List<string> { "../Content/palackrolewski1.jpg", "../Content/palackrolewski2.jpg", "../Content/palackrolewski3.jpg" };
+                    return new List<string> { "../Content/Attractions/palackrolewski1.jpg", "../Content/Attractions/palackrolewski2.jpg", "../Content/Attractions/palackrolewski3.jpg" };
                 case "PanoramaRacławicka":
-                    return new List<string> { "../Content/panoramaraclawicka1.jpg", "../Content/panoramaraclawicka2.jpg", "../Content/panoramaraclawicka3.jpg" };
+                    return new List<string> { "../Content/Attractions/panoramaraclawicka1.jpg", "../Content/Attractions/panoramaraclawicka2.jpg", "../Content/Attractions/panoramaraclawicka3.jpg" };
                 case "OgródJapoński":
-                    return new List<string> { "../Content/ogrodjaponski1.jpg", "../Content/ogrodjaponski2.jpg", "../Content/ogrodjaponski3.jpg" };
+                    return new List<string> { "../Content/Attractions/ogrodjaponski1.jpg", "../Content/Attractions/ogrodjaponski2.jpg", "../Content/Attractions/ogrodjaponski3.jpg" };
                 case "FontannaMultimedialna":
-                    return new List<string> { "../Content/fontanna1.jpg", "../Content/fontanna2.jpg", "../Content/fontanna3.jpg" };
+                    return new List<string> { "../Content/Attractions/fontanna1.jpg", "../Content/Attractions/fontanna2.jpg", "../Content/Attractions/fontanna3.jpg" };
                 case "WyspaSłodowa":
-                    return new List<string> { "../Content/wyspaslodowa1.jpg", "../Content/wyspaslodowa2.jpg", "../Content/wyspaslodowa3.jpg" };
+                    return new List<string> { "../Content/Attractions/wyspaslodowa1.jpg", "../Content/Attractions/wyspaslodowa2.jpg", "../Content/Attractions/wyspaslodowa3.jpg" };
                 case "ZOO":
-                    return new List<string> { "../Content/zoo1.jpg", "../Content/zoo2.jpg", "../Content/zoo3.jpg" };
+                    return new List<string> { "../Content/Attractions/zoo1.jpg", "../Content/Attractions/zoo2.jpg", "../Content/Attractions/zoo3.jpg" };
                 case "OgródBotaniczny":
-                    return new List<string> { "../Content/ogrodbotaniczny1.jpg", "../Content/ogrodbotaniczny2.jpg", "../Content/ogrodbotaniczny3.jpg" };
+                    return new List<string> { "../Content/Attractions/ogrodbotaniczny1.jpg", "../Content/Attractions/ogrodbotaniczny2.jpg", "../Content/Attractions/ogrodbotaniczny3.jpg" };
                 default:
                     return new List<string> { "smuteczek :( " };
             }

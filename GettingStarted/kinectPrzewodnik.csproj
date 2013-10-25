@@ -242,38 +242,38 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Content\back.png" />
-    <Resource Include="Content\fontanna1.jpg" />
-    <Resource Include="Content\halastulecia1.jpg" />
-    <Resource Include="Content\ogrodbotaniczny1.jpg" />
-    <Resource Include="Content\ogrodjaponski1.jpg" />
-    <Resource Include="Content\ostrowtumski1.jpg" />
-    <Resource Include="Content\palackrolewski1.jpg" />
-    <Resource Include="Content\panoramaraclawicka1.jpg" />
-    <Resource Include="Content\rynek1.jpg" />
-    <Resource Include="Content\rynek2.jpg" />
-    <Resource Include="Content\rynek3.jpg" />
-    <Resource Include="Content\wyspaslodowa1.jpg" />
-    <Resource Include="Content\zoo1.jpg" />
+    <Resource Include="Content\Attractions\fontanna1.jpg" />
+    <Resource Include="Content\Attractions\halastulecia1.jpg" />
+    <Resource Include="Content\Attractions\ogrodbotaniczny1.jpg" />
+    <Resource Include="Content\Attractions\ogrodjaponski1.jpg" />
+    <Resource Include="Content\Attractions\ostrowtumski1.jpg" />
+    <Resource Include="Content\Attractions\palackrolewski1.jpg" />
+    <Resource Include="Content\Attractions\panoramaraclawicka1.jpg" />
+    <Resource Include="Content\Attractions\rynek1.jpg" />
+    <Resource Include="Content\Attractions\rynek2.jpg" />
+    <Resource Include="Content\Attractions\rynek3.jpg" />
+    <Resource Include="Content\Attractions\wyspaslodowa1.jpg" />
+    <Resource Include="Content\Attractions\zoo1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Content\fontanna2.jpg" />
-    <Resource Include="Content\fontanna3.jpg" />
-    <Resource Include="Content\halastulecia2.jpg" />
-    <Resource Include="Content\halastulecia3.jpg" />
-    <Resource Include="Content\ogrodbotaniczny2.jpg" />
-    <Resource Include="Content\ogrodbotaniczny3.jpg" />
-    <Resource Include="Content\ogrodjaponski2.jpg" />
-    <Resource Include="Content\ogrodjaponski3.jpg" />
-    <Resource Include="Content\ostrowtumski2.jpg" />
-    <Resource Include="Content\ostrowtumski3.jpg" />
-    <Resource Include="Content\palackrolewski2.jpg" />
-    <Resource Include="Content\palackrolewski3.jpg" />
-    <Resource Include="Content\panoramaraclawicka2.jpg" />
-    <Resource Include="Content\panoramaraclawicka3.jpg" />
-    <Resource Include="Content\wyspaslodowa2.jpg" />
-    <Resource Include="Content\wyspaslodowa3.jpg" />
-    <Resource Include="Content\zoo2.jpg" />
-    <Resource Include="Content\zoo3.jpg" />
+    <Resource Include="Content\Attractions\fontanna2.jpg" />
+    <Resource Include="Content\Attractions\fontanna3.jpg" />
+    <Resource Include="Content\Attractions\halastulecia2.jpg" />
+    <Resource Include="Content\Attractions\halastulecia3.jpg" />
+    <Resource Include="Content\Attractions\ogrodbotaniczny2.jpg" />
+    <Resource Include="Content\Attractions\ogrodbotaniczny3.jpg" />
+    <Resource Include="Content\Attractions\ogrodjaponski2.jpg" />
+    <Resource Include="Content\Attractions\ogrodjaponski3.jpg" />
+    <Resource Include="Content\Attractions\ostrowtumski2.jpg" />
+    <Resource Include="Content\Attractions\ostrowtumski3.jpg" />
+    <Resource Include="Content\Attractions\palackrolewski2.jpg" />
+    <Resource Include="Content\Attractions\palackrolewski3.jpg" />
+    <Resource Include="Content\Attractions\panoramaraclawicka2.jpg" />
+    <Resource Include="Content\Attractions\panoramaraclawicka3.jpg" />
+    <Resource Include="Content\Attractions\wyspaslodowa2.jpg" />
+    <Resource Include="Content\Attractions\wyspaslodowa3.jpg" />
+    <Resource Include="Content\Attractions\zoo2.jpg" />
+    <Resource Include="Content\Attractions\zoo3.jpg" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

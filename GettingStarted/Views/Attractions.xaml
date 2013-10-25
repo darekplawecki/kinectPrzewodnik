@@ -12,70 +12,70 @@
 
             <k:KinectTileButton  Height="250" Width="300" Background="Plum" BorderThickness="0" Name="Rynek" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/rynek1.jpg" />
+                    <Image Source="../Content/Attractions/rynek1.jpg" />
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100" TextAlignment="Center">Rynek</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300" Background="Plum" BorderThickness="0" Name="OstrówTumski" Click="KinectTileButton_Click_1" >
                 <StackPanel>
-                    <Image Source="../Content/ostrowtumski1.jpg"/>
+                    <Image Source="../Content/Attractions/ostrowtumski1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100" TextAlignment="Center" Height="53">Ostrów Tumski</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300"  Name="HalaStulecia" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/halastulecia1.jpg"/>
+                    <Image Source="../Content/Attractions/halastulecia1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Hala Stulecia</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300"  Name="PałacKrólewski" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/palackrolewski1.jpg"/>
+                    <Image Source="../Content/Attractions/palackrolewski1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Pałac Królewski</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300" Name="PanoramaRacławicka" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/panoramaraclawicka1.jpg"/>
+                    <Image Source="../Content/Attractions/panoramaraclawicka1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Panorama Racławicka</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300" Name="OgródJapoński" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/ogrodjaponski1.jpg"/>
+                    <Image Source="../Content/Attractions/ogrodjaponski1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Ogród Japoński</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300"   Name="FontannaMultimedialna" Click="KinectTileButton_Click_1" >
                 <StackPanel>
-                    <Image Source="../Content/fontanna1.jpg"/>
+                    <Image Source="../Content/Attractions/fontanna1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Fontanna multimedialna</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300"  Name="WyspaSłodowa" Click="KinectTileButton_Click_1" >
                 <StackPanel>
-                    <Image Source="../Content/wyspaslodowa1.jpg"/>
+                    <Image Source="../Content/Attractions/wyspaslodowa1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Wyspa Słodowa</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300"  Name="ZOO" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/zoo1.jpg"/>
+                    <Image Source="../Content/Attractions/zoo1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">ZOO</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
 
             <k:KinectTileButton Height="250" Width="300"  Name="OgródBotaniczny" Click="KinectTileButton_Click_1">
                 <StackPanel>
-                    <Image Source="../Content/ogrodbotaniczny1.jpg"/>
+                    <Image Source="../Content/Attractions/ogrodbotaniczny1.jpg"/>
                     <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Ogród Botaniczny</TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
