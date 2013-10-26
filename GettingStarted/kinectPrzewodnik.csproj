@@ -116,11 +116,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Content\Attractions\AttractionContent.cs" />
     <Compile Include="Controls\Transition.cs" />
     <Compile Include="Converters\InvertibleBooleanToPromptStateConverter.cs" />
     <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\MultiplicationConverter.cs" />
     <Compile Include="Models\AttractionModel.cs" />
+    <Compile Include="Models\SleepScreenModel.cs" />
     <Compile Include="Models\TweetModel.cs" />
     <Compile Include="Utilities\CommandOnEventAssociation.cs" />
     <Compile Include="Utilities\CommandOnEventHelper.cs" />
@@ -143,6 +145,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Utilities\WindowBezelHelper.cs" />
+    <Compile Include="ViewModels\AttractionViewModel.cs" />
+    <Compile Include="ViewModels\SleepScreenViewModel.cs" />
     <Compile Include="Views\AttractionArticle.xaml.cs">
       <DependentUpon>AttractionArticle.xaml</DependentUpon>
     </Compile>
@@ -242,40 +246,10 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Content\back.png" />
-    <Resource Include="Content\Attractions\fontanna1.jpg" />
-    <Resource Include="Content\Attractions\halastulecia1.jpg" />
-    <Resource Include="Content\Attractions\ogrodbotaniczny1.jpg" />
-    <Resource Include="Content\Attractions\ogrodjaponski1.jpg" />
-    <Resource Include="Content\Attractions\ostrowtumski1.jpg" />
-    <Resource Include="Content\Attractions\palackrolewski1.jpg" />
-    <Resource Include="Content\Attractions\panoramaraclawicka1.jpg" />
-    <Resource Include="Content\Attractions\rynek1.jpg" />
-    <Resource Include="Content\Attractions\rynek2.jpg" />
-    <Resource Include="Content\Attractions\rynek3.jpg" />
-    <Resource Include="Content\Attractions\wyspaslodowa1.jpg" />
-    <Resource Include="Content\Attractions\zoo1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Content\Attractions\fontanna2.jpg" />
-    <Resource Include="Content\Attractions\fontanna3.jpg" />
-    <Resource Include="Content\Attractions\halastulecia2.jpg" />
-    <Resource Include="Content\Attractions\halastulecia3.jpg" />
-    <Resource Include="Content\Attractions\ogrodbotaniczny2.jpg" />
-    <Resource Include="Content\Attractions\ogrodbotaniczny3.jpg" />
-    <Resource Include="Content\Attractions\ogrodjaponski2.jpg" />
-    <Resource Include="Content\Attractions\ogrodjaponski3.jpg" />
-    <Resource Include="Content\Attractions\ostrowtumski2.jpg" />
-    <Resource Include="Content\Attractions\ostrowtumski3.jpg" />
-    <Resource Include="Content\Attractions\palackrolewski2.jpg" />
-    <Resource Include="Content\Attractions\palackrolewski3.jpg" />
-    <Resource Include="Content\Attractions\panoramaraclawicka2.jpg" />
-    <Resource Include="Content\Attractions\panoramaraclawicka3.jpg" />
-    <Resource Include="Content\Attractions\wyspaslodowa2.jpg" />
-    <Resource Include="Content\Attractions\wyspaslodowa3.jpg" />
-    <Resource Include="Content\Attractions\zoo2.jpg" />
-    <Resource Include="Content\Attractions\zoo3.jpg" />
+    <Resource Include="Content\play-overlay.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Content\SleepScreen\Instagram\1.jpg" />
     <Resource Include="Content\SleepScreen\Instagram\10.jpg" />
@@ -298,6 +272,40 @@
     <Resource Include="Content\SleepScreen\Instagram\8.jpg" />
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Attractions\fontanna1.jpg" />
+    <Resource Include="Content\Attractions\fontanna2.jpg" />
+    <Resource Include="Content\Attractions\fontanna3.jpg" />
+    <Resource Include="Content\Attractions\halastulecia1.jpg" />
+    <Resource Include="Content\Attractions\halastulecia2.jpg" />
+    <Resource Include="Content\Attractions\halastulecia3.jpg" />
+    <Resource Include="Content\Attractions\ogrodbotaniczny1.jpg" />
+    <Resource Include="Content\Attractions\ogrodbotaniczny2.jpg" />
+    <Resource Include="Content\Attractions\ogrodbotaniczny3.jpg" />
+    <Resource Include="Content\Attractions\ogrodjaponski1.jpg" />
+    <Resource Include="Content\Attractions\ogrodjaponski2.jpg" />
+    <Resource Include="Content\Attractions\ogrodjaponski3.jpg" />
+    <Resource Include="Content\Attractions\ostrowtumski1.jpg" />
+    <Resource Include="Content\Attractions\ostrowtumski2.jpg" />
+    <Resource Include="Content\Attractions\ostrowtumski3.jpg" />
+    <Resource Include="Content\Attractions\palackrolewski1.jpg" />
+    <Resource Include="Content\Attractions\palackrolewski2.jpg" />
+    <Resource Include="Content\Attractions\palackrolewski3.jpg" />
+    <Resource Include="Content\Attractions\panoramaraclawicka1.jpg" />
+    <Resource Include="Content\Attractions\panoramaraclawicka2.jpg" />
+    <Resource Include="Content\Attractions\panoramaraclawicka3.jpg" />
+    <Resource Include="Content\Attractions\rynek1.jpg" />
+    <Resource Include="Content\Attractions\rynek2.jpg" />
+    <Resource Include="Content\Attractions\rynek3.jpg" />
+    <Resource Include="Content\Attractions\wyspaslodowa1.jpg" />
+    <Resource Include="Content\Attractions\wyspaslodowa2.jpg" />
+    <Resource Include="Content\Attractions\wyspaslodowa3.jpg" />
+    <Resource Include="Content\Attractions\zoo1.jpg" />
+    <Resource Include="Content\Attractions\zoo2.jpg" />
+    <Resource Include="Content\Attractions\zoo3.jpg" />
+    <Content Include="Content\Cameras\Rynek.htm" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

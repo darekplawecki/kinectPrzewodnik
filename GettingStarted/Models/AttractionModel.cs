@@ -10,53 +10,26 @@ namespace Przewodnik.Models
 {
     public class AttractionModel
     {
-        public static String RYNEK_TITLE= "Rynek";
-        public static String OSTROW_TUMSKI_TITLE = "Ostrów Tumski";
-        public static String HALA_STULECIA_TITLE = "Hala Stulecia";
-        public static String PALAC_KROLEWSKI_TITLE = "Pałac Królewski";
-        public static String PANORAMA_RACLAWICKA_TITLE = "Panorama Racławicka";
-        public static String OGROD_JAPONSKI_TITLE = "Ogród Japoński";
-        public static String FONTANNA_TITLE = "Fontanna multimedialna";
-        public static String WYSPA_SLODOWA_TITLE = "Wyspa Słodowa";
-        public static String ZOO_TITLE = "ZOO";
-        public static String OGROD_BOTANICZNY_TITLE = "Ogród Botaniczny";
-        
-        public string description;
-        public List<string> photos;
+        public string Description { get; set; }
+        public List<string> Photos { get; set; }
+        public string Camera { get; set; }
+        public string Title { get; set; }
 
-        public AttractionModel()
+        public AttractionModel() 
         {
+            Description = string.Empty;
+            Photos = new List<string>();
+            Camera = string.Empty;
+            Title = string.Empty;
         }
 
-        public String getTitleFor(String parameter)
+        public AttractionModel(string description, List<string> photos, string camera, string title)
         {
-
-            switch (parameter)
-            {
-                case "Rynek":
-                    return RYNEK_TITLE;
-                case "OstrówTumski":
-                    return OSTROW_TUMSKI_TITLE;
-                case "HalaStulecia":
-                    return HALA_STULECIA_TITLE;
-                case "PałacKrólewski":
-                    return PALAC_KROLEWSKI_TITLE;
-                case "PanoramaRacławicka":
-                    return PANORAMA_RACLAWICKA_TITLE;
-                case "OgródJapoński":
-                    return OGROD_JAPONSKI_TITLE;
-                case "FontannaMultimedialna":
-                    return FONTANNA_TITLE;
-                case "WyspaSłodowa":
-                    return WYSPA_SLODOWA_TITLE;
-                case "ZOO":
-                    return ZOO_TITLE;
-                case "OgródBotaniczny":
-                    return OGROD_BOTANICZNY_TITLE;
-                default:
-                    return "smuteczek :( ";
-            }
-
+            this.Description = description;
+            this.Photos = photos;
+            this.Camera = camera;
+            this.Title = title;
         }
+
     }
 }

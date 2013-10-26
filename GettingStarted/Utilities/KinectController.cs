@@ -756,6 +756,7 @@ namespace Przewodnik.Utilities
                     // If there was no engaged user and now there is, initiate a navigation to the home screen.
 
                     // NAVIGATE
+                    //MessageBox.Show("Timer Stop");
                     _navigator.GoHome();
                     //MessageBox.Show("Zalogowany = MENU GŁÓWNE", "Navigate");
                 }
