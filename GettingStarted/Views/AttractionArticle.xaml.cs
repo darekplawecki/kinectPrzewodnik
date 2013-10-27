@@ -74,10 +74,10 @@ namespace Przewodnik.Views
             {
                 Frame frame = new Frame();
 
-                //string projectPath = Environment.CurrentDirectory;
-                //projectPath = projectPath.Substring(0, projectPath.Length - 9);
-
-                frame.Source = new Uri("C:/Users/Prezes/Documents/GitHub/kinectPrzewodnik/GettingStarted/Content/Cameras/Rynek.htm", UriKind.Relative);
+                string[] parts = Environment.CurrentDirectory.Split(new string[] { "bin\\" }, StringSplitOptions.None);
+                string projectPath = parts[0];
+                
+                frame.Source = new Uri(projectPath + viewModel.GetModel().Camera);
 
                 bigImageGrid.Children.Add(frame);
             }

@@ -85,12 +85,11 @@
             <ColumnDefinition Width="Auto"></ColumnDefinition>
             <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="{Binding dupa}" Foreground="White" Grid.Row="0" Grid.Column="0"/>
+        
         <ContentControl
                 x:Name="AttractCarousel1"
                 Grid.Row="0"
                 Grid.Column="0"
-                Content="{Binding CurrentImages[0]}"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -98,7 +97,6 @@
                 x:Name="AttractCarousel2"
                 Grid.Row="0"
                 Grid.Column="1"
-                Content="{Binding CurrentImages[1]}"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -106,7 +104,6 @@
                 x:Name="AttractCarousel3"
                 Grid.Row="0"
                 Grid.Column="2"
-                Content="{Binding CurrentImages[2]}"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -114,7 +111,6 @@
                 x:Name="AttractCarousel4"
                 Grid.Row="1"
                 Grid.Column="0"
-                Content="{Binding CurrentImages[3]}"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -122,7 +118,6 @@
                 x:Name="AttractCarousel5"
                 Grid.Row="1"
                 Grid.Column="1"
-                Content="{Binding CurrentImages[4]}"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -130,7 +125,6 @@
                 x:Name="AttractCarousel6"
                 Grid.Row="1"
                 Grid.Column="2"
-                Content="{Binding CurrentImages[5]}"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
     </Grid>

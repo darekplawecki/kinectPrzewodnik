@@ -15,19 +15,22 @@ namespace Przewodnik.ViewModels
 {
     class SleepScreenViewModel
     {
+        public DispatcherTimer tickTimer;
         internal const double TimerIntervalMilliseconds = 3000;
-        private SleepScreenModel model;
+
+        public ObservableCollection<SleepScreenModel> CurrentImages { get; set; }
+
         private ObservableCollection<Image> images;
         private string modelContentUri;
-        public DispatcherTimer tickTimer;
+
         private Random random;
         private int currentIndex = 0;
 
         public SleepScreenViewModel()
         {
-            model = new SleepScreenModel();
+            CurrentImages = new ObservableCollection<SleepScreenModel>();
 
-            this.modelContentUri = "Content/SleepScreen/Instagram";
+            this.modelContentUri = "Content\\SleepScreen\\Instagram";
             this.LoadModels(modelContentUri);
 
             this.random = new Random();
@@ -36,18 +39,12 @@ namespace Przewodnik.ViewModels
             this.tickTimer.Tick += ChangeImage;
         }
 
-        public List<Image> GetCurrentImages()
-        {
-            return model.CurrentImages;
-        }
-
-
         protected void LoadModels(string modelContentPath)
         {
             this.images = new ObservableCollection<Image>();
 
-            string projectPath = Environment.CurrentDirectory;
-            projectPath = projectPath.Substring(0, projectPath.Length - 9);
+            string[] parts = Environment.CurrentDirectory.Split(new string[] { "bin\\" }, StringSplitOptions.None);
+            string projectPath = parts[0];
 
             string[] files = Directory.GetFiles(projectPath + modelContentPath);
 
@@ -55,8 +52,6 @@ namespace Przewodnik.ViewModels
             {
                 this.images.Add(new Image() { Source = new BitmapImage(new Uri(files[i].ToString())) });
             }
-
-            
         }
 
         private void ChangeImage(object sender, EventArgs e)
@@ -65,45 +60,91 @@ namespace Przewodnik.ViewModels
             int idImage;
             if (DifferentImages())
             {
-                idImage = random.Next(0, 5);
+                idImage = random.Next(1, 7);
             }
             else
             {
                 idImage = IndexOfRepeatedImage();
                 this.currentIndex = this.currentIndex < this.images.Count - 1 ? ++this.currentIndex : 0;
             }
-
-            model.CurrentImages[idImage] = this.images[this.currentIndex];
+            switch (idImage)
+            {
+                case 1:
+                    CurrentImages[0].CurrentImage1 = this.images[this.currentIndex];
+                    break;
+                case 2:
+                    CurrentImages[0].CurrentImage2 = this.images[this.currentIndex];
+                    break;
+                case 3:
+                    CurrentImages[0].CurrentImage3 = this.images[this.currentIndex];
+                    break;
+                case 4:
+                    CurrentImages[0].CurrentImage4 = this.images[this.currentIndex];
+                    break;
+                case 5:
+                    CurrentImages[0].CurrentImage5 = this.images[this.currentIndex];
+                    break;
+                case 6:
+                    CurrentImages[0].CurrentImage6 = this.images[this.currentIndex];
+                    break;
+            }
         }
 
         private bool DifferentImages()
         {
-            foreach (Image i in model.CurrentImages)
-            {
-                if (i == images[currentIndex]) return false;
-            }
-            return true;
+            return CurrentImages[0].CurrentImage1 != this.images[this.currentIndex] &&
+                CurrentImages[0].CurrentImage2 != this.images[this.currentIndex] &&
+                CurrentImages[0].CurrentImage3 != this.images[this.currentIndex] &&
+                CurrentImages[0].CurrentImage4 != this.images[this.currentIndex] &&
+                CurrentImages[0].CurrentImage5 != this.images[this.currentIndex] &&
+                CurrentImages[0].CurrentImage6 != this.images[this.currentIndex];
         }
 
         private int IndexOfRepeatedImage()
         {
-            foreach (Image i in model.CurrentImages)
+            int index = 0;
+
+            if (CurrentImages[0].CurrentImage1 == this.images[this.currentIndex])
             {
-                if (i == images[currentIndex]) return model.CurrentImages.IndexOf(i);
+                index = 1;
             }
-            return 0;
+            else if (CurrentImages[0].CurrentImage2 == this.images[this.currentIndex])
+            {
+                index = 2;
+            }
+            else if (CurrentImages[0].CurrentImage3 == this.images[this.currentIndex])
+            {
+                index = 3;
+            }
+            else if (CurrentImages[0].CurrentImage4 == this.images[this.currentIndex])
+            {
+                index = 4;
+            }
+            else if (CurrentImages[0].CurrentImage5 == this.images[this.currentIndex])
+            {
+                index = 5;
+            }
+            else if (CurrentImages[0].CurrentImage6 == this.images[this.currentIndex])
+            {
+                index = 6;
+            }
+
+            return index;
         }
 
-        public void SleepScreenGrid_Loaded()
+        public void InitSleepScreen()
         {
             if (0 < this.images.Count)
             {
-                model.CurrentImages.Clear();
-                for (int i = 0; i < model.CurrentImages.Capacity; i++)
+                CurrentImages.Add(new SleepScreenModel
                 {
-                    model.CurrentImages.Add(new Image());
-                    model.CurrentImages[i] = images[i];
-                }
+                    CurrentImage1 = this.images[0],
+                    CurrentImage2 = this.images[1],
+                    CurrentImage3 = this.images[2],
+                    CurrentImage4 = this.images[3],
+                    CurrentImage5 = this.images[4],
+                    CurrentImage6 = this.images[5]
+                });
                 this.currentIndex = 5;
                 this.tickTimer.Start();
             }

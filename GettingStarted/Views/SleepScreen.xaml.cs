@@ -27,31 +27,12 @@ namespace Przewodnik.Views
 
         public SleepScreen(KinectPageFactory pageFactory)
         {
-            //MessageBox.Show("TWORZE SLEEP SREENA");
             InitializeComponent();
             this.pageFactory = pageFactory;
-            viewModel = new SleepScreenViewModel();
-            viewModel.SleepScreenGrid_Loaded();
-            InstagramGrid.DataContext = viewModel.GetCurrentImages();
-            /*
-            Binding binding = new Binding();
-            binding.Mode = BindingMode.OneTime;
-            binding.Path = new PropertyPath("CurrentImages[0]");
-            AttractCarousel1.SetBinding(ContentControl.ContentProperty, binding);
-            */
-            
-            AttractCarousel1.Content = viewModel.GetCurrentImages()[0];
-            AttractCarousel2.Content = viewModel.GetCurrentImages()[1];
-            AttractCarousel3.Content = viewModel.GetCurrentImages()[2];
-            AttractCarousel4.Content = viewModel.GetCurrentImages()[3];
-            AttractCarousel5.Content = viewModel.GetCurrentImages()[4];
-            AttractCarousel6.Content = viewModel.GetCurrentImages()[5];
-  
         }
 
         public void OpenMainMenu()
         {
-            //MessageBox.Show("OTWIERAM MAIN MENU");
             viewModel.tickTimer.Stop();
             pageFactory.NavigateTo(pageFactory.GetMainMenu());
         }
@@ -61,10 +42,42 @@ namespace Przewodnik.Views
             return SleepScreenGrid;
         }
 
-
         private void SleepScreenGrid_Loaded(object sender, RoutedEventArgs e)
         {
-            //viewModel.SleepScreenGrid_Loaded();
+            viewModel = new SleepScreenViewModel();
+            viewModel.InitSleepScreen();
+            InstagramGrid.DataContext = viewModel.CurrentImages[0];
+
+            Binding bin = new Binding();
+            bin.Path = new PropertyPath("CurrentImage1");
+            bin.Mode = BindingMode.OneWay;
+            BindingOperations.SetBinding(AttractCarousel1, ContentControl.ContentProperty, bin);
+
+            bin = new Binding();
+            bin.Path = new PropertyPath("CurrentImage2");
+            bin.Mode = BindingMode.OneWay;
+            BindingOperations.SetBinding(AttractCarousel2, ContentControl.ContentProperty, bin);
+
+            bin = new Binding();
+            bin.Path = new PropertyPath("CurrentImage3");
+            bin.Mode = BindingMode.OneWay;
+            BindingOperations.SetBinding(AttractCarousel3, ContentControl.ContentProperty, bin);
+
+            bin = new Binding();
+            bin.Path = new PropertyPath("CurrentImage4");
+            bin.Mode = BindingMode.OneWay;
+            BindingOperations.SetBinding(AttractCarousel4, ContentControl.ContentProperty, bin);
+
+            bin = new Binding();
+            bin.Path = new PropertyPath("CurrentImage5");
+            bin.Mode = BindingMode.OneWay;
+            BindingOperations.SetBinding(AttractCarousel5, ContentControl.ContentProperty, bin);
+
+            bin = new Binding();
+            bin.Path = new PropertyPath("CurrentImage6");
+            bin.Mode = BindingMode.OneWay;
+            BindingOperations.SetBinding(AttractCarousel6, ContentControl.ContentProperty, bin);
+            
         }
 
     }

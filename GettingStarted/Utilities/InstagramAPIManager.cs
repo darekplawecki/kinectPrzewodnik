@@ -50,15 +50,15 @@ namespace Przewodnik.Utilities
 
             dynamic imagesList = JsonConvert.DeserializeObject(result.Json);
 
-            string projectPath = Environment.CurrentDirectory;
-            projectPath = projectPath.Substring(0, projectPath.Length - 9);
+            string[] parts = Environment.CurrentDirectory.Split(new string[] { "bin\\" }, StringSplitOptions.None);
+            string projectPath = parts[0];
 
             int count = 1;
             foreach (var data in imagesList.data)
             {
                 string img_url = data.images.standard_resolution.url;
                 System.Drawing.Image img = GetImageFromUrl(img_url);
-                img.Save(projectPath + "Content/SleepScreen/Instagram/" + count + ".jpg");
+                img.Save(projectPath + "Content\\SleepScreen\\Instagram\\" + count + ".jpg");
                 count++;
             }
         }

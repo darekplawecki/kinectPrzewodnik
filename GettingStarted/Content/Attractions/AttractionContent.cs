@@ -30,16 +30,16 @@ namespace Przewodnik.Content.Attractions
         public static String ZOO_DESCRIPTION = "Misją wrocławskiego ZOO jest zachowanie różnorodności biologicznej w trosce o pełnowartościowy rozwój przyszłych pokoleń.\nWrocławski Ogród Zoologiczny na 33 ha powierzchni tworzy atrakcyjne, tematyczne ekspozycje fauny poszczególnych kontynentów (Pawilon Madagaskaru, Sahara, wybieg niedźwiedzi brunatnych, basen płetwonogich). Daje schronienie 4500 zwierzętom ponad 800 gatunków, w tym zagrożonym wyginięciem, a nawet nie występującym już w naturalnym środowisku. Trwa budowa kompleksu ekspozycji środowisk wodnych Afryki (Afrykarium).";
         public static String OGROD_BOTANICZNY_DESCRIPTION = "Ogród Botaniczny Uniwersytetu Wrocławskiego, nazywany oazą piękna i spokoju w sercu wielkiego miasta, to żywe muzeum, a zarazem ośrodek naukowy i dydaktyczny oraz ulubione miejsce wypoczynku wrocławian. Położony jest po północnej stronie katedry Św. Jana Chrzciciela i kościoła Św.Krzyża, częściowo w obrębie historycznego Ostrowa Tumskiego, w odległości ok. 2 km od Rynku. Jest drugim (po ogrodzie krakowskim ) najstarszym tego typu ogrodem w Polsce, wpisanym na listę zabytków woj. dolnośląskiego i mieszczącym się w granicach podlegającego szczególnej ochronie historycznego centrum Wrocławia.";
 
-        public static List<string> RYNEK_PHOTOS = new List<string> { "../Content/Attractions/rynek1.jpg", "../Content/Attractions/rynek2.jpg", "../Content/Attractions/rynek3.jpg" };
-        public static List<string> OSTROW_TUMSKI_PHOTOS = new List<string> { "../Content/Attractions/ostrowtumski1.jpg", "../Content/Attractions/ostrowtumski2.jpg", "../Content/Attractions/ostrowtumski3.jpg" };
-        public static List<string> HALA_STULECIA_PHOTOS = new List<string> { "../Content/Attractions/halastulecia1.jpg", "../Content/Attractions/halastulecia2.jpg", "../Content/Attractions/halastulecia3.jpg" };
-        public static List<string> PALAS_KROLEWSKI_PHOTOS = new List<string> { "../Content/Attractions/palackrolewski1.jpg", "../Content/Attractions/palackrolewski2.jpg", "../Content/Attractions/palackrolewski3.jpg" };
-        public static List<string> PANORAMA_RACLAWICKA_PHOTOS = new List<string> { "../Content/Attractions/panoramaraclawicka1.jpg", "../Content/Attractions/panoramaraclawicka2.jpg", "../Content/Attractions/panoramaraclawicka3.jpg" };
-        public static List<string> OGROD_JAPONSKI_PHOTOS = new List<string> { "../Content/Attractions/ogrodjaponski1.jpg", "../Content/Attractions/ogrodjaponski2.jpg", "../Content/Attractions/ogrodjaponski3.jpg" };
-        public static List<string> FONTANNA_PHOTOS = new List<string> { "../Content/Attractions/fontanna1.jpg", "../Content/Attractions/fontanna2.jpg", "../Content/Attractions/fontanna3.jpg" };
-        public static List<string> WYSPA_SLODOWA_PHOTOS = new List<string> { "../Content/Attractions/wyspaslodowa1.jpg", "../Content/Attractions/wyspaslodowa2.jpg", "../Content/Attractions/wyspaslodowa3.jpg" };
-        public static List<string> ZOO_PHOTOS = new List<string> { "../Content/Attractions/zoo1.jpg", "../Content/Attractions/zoo2.jpg", "../Content/Attractions/zoo3.jpg" };
-        public static List<string> OGROD_BOTANICZNY_PHOTOS = new List<string> { "../Content/Attractions/ogrodbotaniczny1.jpg", "../Content/Attractions/ogrodbotaniczny2.jpg", "../Content/Attractions/ogrodbotaniczny3.jpg" };
+        public static List<string> RYNEK_PHOTOS = new List<string> { "../Content/Attractions/Photos/rynek1.jpg", "../Content/Attractions/Photos/rynek2.jpg", "../Content/Attractions/Photos/rynek3.jpg" };
+        public static List<string> OSTROW_TUMSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/ostrowtumski1.jpg", "../Content/Attractions/Photos/ostrowtumski2.jpg", "../Content/Attractions/Photos/ostrowtumski3.jpg" };
+        public static List<string> HALA_STULECIA_PHOTOS = new List<string> { "../Content/Attractions/Photos/halastulecia1.jpg", "../Content/Attractions/Photos/halastulecia2.jpg", "../Content/Attractions/Photos/halastulecia3.jpg" };
+        public static List<string> PALAS_KROLEWSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/palackrolewski1.jpg", "../Content/Attractions/Photos/palackrolewski2.jpg", "../Content/Attractions/Photos/palackrolewski3.jpg" };
+        public static List<string> PANORAMA_RACLAWICKA_PHOTOS = new List<string> { "../Content/Attractions/Photos/panoramaraclawicka1.jpg", "../Content/Attractions/Photos/panoramaraclawicka2.jpg", "../Content/Attractions/Photos/panoramaraclawicka3.jpg" };
+        public static List<string> OGROD_JAPONSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/ogrodjaponski1.jpg", "../Content/Attractions/Photos/ogrodjaponski2.jpg", "../Content/Attractions/Photos/ogrodjaponski3.jpg" };
+        public static List<string> FONTANNA_PHOTOS = new List<string> { "../Content/Attractions/Photos/fontanna1.jpg", "../Content/Attractions/Photos/fontanna2.jpg", "../Content/Attractions/Photos/fontanna3.jpg" };
+        public static List<string> WYSPA_SLODOWA_PHOTOS = new List<string> { "../Content/Attractions/Photos/wyspaslodowa1.jpg", "../Content/Attractions/Photos/wyspaslodowa2.jpg", "../Content/Attractions/Photos/wyspaslodowa3.jpg" };
+        public static List<string> ZOO_PHOTOS = new List<string> { "../Content/Attractions/Photos/zoo1.jpg", "../Content/Attractions/Photos/zoo2.jpg", "../Content/Attractions/Photos/zoo3.jpg" };
+        public static List<string> OGROD_BOTANICZNY_PHOTOS = new List<string> { "../Content/Attractions/Photos/ogrodbotaniczny1.jpg", "../Content/Attractions/Photos/ogrodbotaniczny2.jpg", "../Content/Attractions/Photos/ogrodbotaniczny3.jpg" };
 
         public static String getTitleFor(String parameter)
         {
@@ -134,7 +134,7 @@ namespace Przewodnik.Content.Attractions
             switch (parameter)
             {
                 case "Rynek":
-                    return "../../../../Content/Cameras/Rynek.htm";
+                    return "Content\\Attractions\\Cameras\\Rynek.htm";
                 default:
                     return null;
             }
