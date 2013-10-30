@@ -6,6 +6,7 @@ using System.Windows.Threading;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit.Controls;
+using Przewodnik.Utilities.Twitter;
 using Przewodnik.Views;
 using Przewodnik.Utilities;
 using System.Windows.Media;
@@ -25,6 +26,7 @@ namespace Przewodnik
         private MouseMovementDetector _movementDetector;
 
         private InstagramAPIManager _instagramAPI;
+        private TwitterManager _twitterAPI;
 
 
         public MainWindow(KinectController controller)
@@ -34,6 +36,9 @@ namespace Przewodnik
 
             //_instagramAPI = new InstagramAPIManager();
             //_instagramAPI.saveRecentImages();
+
+            _twitterAPI = TwitterManager.Instance;
+            //_twitterAPI.GetHomeTimeline(); // this to be moved to loading screen
 
             _navigator = new Navigator(this);
             _pageFactory = new KinectPageFactory(_navigator);

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows;
+using Przewodnik.Utilities.Twitter;
 using Przewodnik.Views;
 
 namespace Przewodnik
@@ -41,6 +42,7 @@ namespace Przewodnik
             }
             else if (page.Equals(sleepScreen))
             {
+                TwitterManager.Instance.GetHomeTimeline();
                 mainWindow.Sleep();
                 mainWindow.ShowBackButton(false);
             }

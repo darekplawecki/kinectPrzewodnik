@@ -1,82 +1,78 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Microsoft.Kinect.Toolkit;
-using Microsoft.Kinect;
-using Przewodnik.Models;
-using Przewodnik.Utilities;
-using Przewodnik.Views;
-using Przewodnik;
-using Microsoft.Kinect.Toolkit.Controls;
+using Przewodnik.Utilities.Twitter;
 
-namespace GettingStarted
+namespace Przewodnik.Views
 {
 
     partial class TwitterPage : IKinectPage
     {
         private KinectPageFactory pageFactory;
         private TwitterManager twitterManager;
-        private List<TweetModel> tweets;
-        private String errorMessage;
 
         public TwitterPage(KinectPageFactory pageFactory)
         {
             InitializeComponent();
             this.pageFactory = pageFactory;
-            TwitterContent.Text = PrepareTwitterContent2();
+            PrepareTwitterContent();
+            //TwitterContent.Text = PrepareTwitterContent();
 
         }
 
-        //public string prepareTwitterContent()
-        //{
-        //    twitterManager = new TwitterManager();
-        //    try
-        //    {
-        //        tweets = twitterManager.GetHomeTimeline();
-        //    }
-        //    catch (TwitterConnectionException e)
-        //    {
-        //        return "Connection failed. Try again or ask service for help. Problem detail: " + e.Message;
-        //    }
-        //}
-
-        public string PrepareTwitterContent2()
+        public void PrepareTwitterContent()
         {
-            twitterManager = new TwitterManager();
+            twitterManager = TwitterManager.Instance;
             try
             {
-                return twitterManager.GetHomeTimeline2();
+                if (twitterManager.IsError)
+                {
+
+                    DealWithError();
+                }
+                else
+                {
+                    SetNewContent();
+                }
             }
             catch (TwitterConnectionException e)
             {
-                return "Connection failed. Try again or ask service for help. Problem detail: " + e.Message;
+                ErrorContent.Text = "Błąd w połączeniu :( Spróbuj ponownie później lub poproś obsługę o pomoc.";
+                TwitterContent.Text = e.Message;
             }
         }
+
+        private void SetNewContent()
+        {
+            MainList.ItemsSource = null;
+            MainList.ItemsSource = twitterManager.tweets;
+        }
+
+        private void DealWithError()
+        {
+            if (twitterManager.tweets != null)
+            {
+                SetNewContent();
+            }
+            else
+            {
+                ErrorContent.Text = "Błąd w połączeniu :( Spróbuj ponownie później lub poproś obsługę o pomoc.";
+                TwitterContent.Text = twitterManager.errorCode;
+            }
+        }
+
 
         public Grid GetView()
         {
             return TwitterGrid;
         }
 
-        private void KinectTileButton_Click_1(object sender, RoutedEventArgs e)
+        private void RefreshIt_Action(object sender, RoutedEventArgs e)
         {
-            //string parametr = ((KinectTileButton)sender).Name;
-            //IKinectPage attractionArticle = pageFactory.GetAttractionArticleGrid(parametr);
-            //pageFactory.NavigateTo(attractionArticle);
+            twitterManager = TwitterManager.Instance;
+            twitterManager.GetHomeTimeline();
+            PrepareTwitterContent();
         }
-
-
 
     }
 
