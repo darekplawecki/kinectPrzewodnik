@@ -1,5 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Utilities.Twitter;
 
 namespace Przewodnik.Views
@@ -23,7 +24,12 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-            TwitterPageButton.Content += TwitterManager.Instance.getLastDate();
+            //KinectTileButton bb = new KinectTileButton();
+            //bb.
+            TwitterPageButton.Content = "Twitter";// +  "\n"+TwitterManager.Instance.getLastDate();
+            TwitterLabel.Text = TwitterManager.Instance.GetLastDate();
+            //TwitterPageButton.Label = TwitterManager.Instance.getLastDate();
+            //TwitterPageButton.LabelTemplate.
         }
 
         private void touristAttractions_Click(object sender, RoutedEventArgs e)

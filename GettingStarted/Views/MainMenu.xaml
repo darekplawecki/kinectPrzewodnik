@@ -14,7 +14,11 @@
         <k:KinectTileButton x:Name="TwitterPageButton" Height="200" Width="200"  
                             Content="Twitter"
                             FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
-                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="twitterPageButton_Click"/>
+                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="twitterPageButton_Click">
+            <k:KinectTileButton.Label>
+                <TextBlock Name="TwitterLabel" FontSize="20" Text="Tyle temu" TextAlignment="Center" Width="200"></TextBlock>
+            </k:KinectTileButton.Label>
+            </k:KinectTileButton>
     </StackPanel>
 </Grid>
 

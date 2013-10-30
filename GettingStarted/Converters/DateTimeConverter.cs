@@ -17,7 +17,7 @@ namespace Przewodnik.Converters
             else
             {
                 DateTime when = (DateTime)value;
-                if (when.Date.Equals(DateTime.Now.Date)) result.Append("Dzisiaj, ");
+                if (when.Date.Equals(DateTime.Now.Date)) result.Append("");
                 else result.Append(when.ToString("DD MMMM YYYY, "));
 
                 TimeSpan ts = DateTime.Now.Subtract(when);

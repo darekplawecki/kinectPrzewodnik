@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Data;
+using Przewodnik.Converters;
 using Przewodnik.Models;
 using TweetinCore;
 using TweetinCore.Interfaces;
@@ -89,8 +91,10 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
 
         }
 
-        public String getLastDate()
+        public String GetLastDate()
         {
+            IValueConverter dateConverter = new DateTimeConverter();
+            return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
             return tweets[0].Date.ToString();
         }
     }

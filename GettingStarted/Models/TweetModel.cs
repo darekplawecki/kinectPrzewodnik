@@ -8,8 +8,6 @@ namespace Przewodnik.Models
 {
     public class TweetModel : ICloneable
     {
-        private String author;
-        private DateTime date;
         private String content;
 
         public String Author { get; set; }
