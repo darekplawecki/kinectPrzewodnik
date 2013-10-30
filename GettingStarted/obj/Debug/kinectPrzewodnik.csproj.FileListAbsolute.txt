@@ -183,3 +183,4 @@ C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przew
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csproj.GenerateResource.Cache
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.exe
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.pdb
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csprojResolveAssemblyReference.cache

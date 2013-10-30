@@ -74,6 +74,10 @@ namespace Przewodnik.Views
             PrepareTwitterContent();
         }
 
+        public void OnNavigateTo()
+        {
+
+        }
     }
 
 

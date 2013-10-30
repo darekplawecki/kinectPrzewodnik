@@ -88,5 +88,10 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
 
 
         }
+
+        public String getLastDate()
+        {
+            return tweets[0].Date.ToString();
+        }
     }
 }

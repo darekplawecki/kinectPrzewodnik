@@ -82,5 +82,11 @@ namespace Przewodnik.Views
                 bigImageGrid.Children.Add(frame);
             }
         }
+
+
+        public void OnNavigateTo()
+        {
+            
+        }
     }
 }

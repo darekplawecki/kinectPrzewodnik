@@ -80,6 +80,10 @@ namespace Przewodnik.Views
             
         }
 
+        public void OnNavigateTo()
+        {
+
+        }
     }
 }
 

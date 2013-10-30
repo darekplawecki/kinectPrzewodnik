@@ -43,7 +43,10 @@ namespace GettingStarted
             pageFactory.NavigateTo(attractionArticle);
         }
 
+        public void OnNavigateTo()
+        {
 
+        }
 
     }
 

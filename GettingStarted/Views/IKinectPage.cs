@@ -5,5 +5,8 @@ namespace Przewodnik.Views
     public interface IKinectPage
     {
         Grid GetView();
+
+        void OnNavigateTo();
+
     }
 }

@@ -12,7 +12,7 @@ namespace Przewodnik
         private Stack<IKinectPage> pagesHistory;
 
         private IKinectPage mainMenu;
-        private SleepScreen sleepScreen;
+        private IKinectPage sleepScreen;
 
 
         public Navigator(MainWindow mainWindow)
@@ -28,7 +28,7 @@ namespace Przewodnik
 
         public void SetSleepScreen(IKinectPage sleepScreen)
         {
-            this.sleepScreen = sleepScreen as SleepScreen;
+            this.sleepScreen = sleepScreen;
         }
 
         public void NavigateTo(IKinectPage page)
@@ -52,6 +52,7 @@ namespace Przewodnik
                 mainWindow.SetView(page.GetView());
                 mainWindow.ShowBackButton(true);
             }
+            page.OnNavigateTo();
         }
 
         public void GoBack()
@@ -74,8 +75,8 @@ namespace Przewodnik
 
         public void GoHome()
         {
+            (sleepScreen as SleepScreen).OpenMainMenu();
             NavigateTo(mainMenu);
-            sleepScreen.OpenMainMenu();
         }
 
     }
