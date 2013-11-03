@@ -1,0 +1,83 @@
+﻿<Grid x:Class="Przewodnik.Views.CalendarPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:k="http://schemas.microsoft.com/kinect/2013"
+      mc:Ignorable="d" 
+      x:Name="CalendarGrid">
+
+    <Grid ClipToBounds="True" Margin="50 0 50 50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="4*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock x:Name="titleTextBlock" FontSize="50" Grid.Column="0" Grid.Row="0"></TextBlock>
+
+        <StackPanel Orientation="Horizontal" Margin="0,-50,0,0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+            <k:KinectTileButton x:Name="Wszystkie" Content="Wszystkie" Width="100" Height="50" FontSize="20" Click="FilterAll_Click"/>
+            <k:KinectTileButton x:Name="Muzyka" Content="Muzyka" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Kino" Content="Kino" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Teatr" Content="Teatr" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Art" Content="Art" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Off" Content="Off" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="DJ" Content="DJ" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Sport" Content="Sport" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Dzieci" Content="Dzieci" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Nauka" Content="Nauka" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton x:Name="Inne" Content="Inne" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
+        </StackPanel>
+
+        <TextBlock x:Name="emptyBlock" Width="Auto" Text="Brak wydarzeń dla wybranej kategorii" 
+                   FontSize="20" FontWeight="Black" Visibility="Hidden" Grid.Column="0" Grid.Row="2" />
+
+        <k:KinectScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                              Background="Transparent" HoverBackground="Transparent"
+                              Grid.Column="0" Grid.Row="2">
+            <StackPanel Orientation="Vertical" Margin="0, -100, 0, -100">
+                <ListBox x:Name="EventList" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Margin="0,0,10,0" Width="Auto" Text="{Binding Hour}" FontWeight="Black" Foreground="Orange"></TextBlock>
+                                    <TextBlock Margin="0,0,10,0" Width="Auto" Text="{Binding Type}" FontWeight="Black" Foreground="Tomato" ></TextBlock>
+                                    <TextBlock Margin="0,0,10,0" Width="Auto" Text="{Binding Place}" FontWeight="Black" Foreground="Brown"></TextBlock>
+                                </StackPanel>
+                                <TextBlock Margin="0,0,0,20" Width="Auto" Text="{Binding Name}" FontWeight="Black" FontSize="16"></TextBlock>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </k:KinectScrollViewer>
+
+        <k:KinectScrollViewer Width="200" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" HoverBackground="Transparent">
+            <StackPanel Orientation="Vertical" Margin="0,-100,0,-100">
+                <k:KinectTileButton x:Name="day1" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"  />
+                <k:KinectTileButton x:Name="day2" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day3" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day4" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day5" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day6" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day7" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day8" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day9" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day10" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day11" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day12" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day13" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton x:Name="day14" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+            </StackPanel>
+        </k:KinectScrollViewer>
+
+    </Grid>
+</Grid>
+
+

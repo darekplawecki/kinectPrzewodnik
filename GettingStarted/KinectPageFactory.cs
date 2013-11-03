@@ -18,6 +18,7 @@ namespace Przewodnik
         private IKinectPage _attractions;
         private IKinectPage _attractionArticle;
         private IKinectPage _twitterPage;
+        private IKinectPage _calendarPage;
 
 
         public KinectPageFactory(Navigator navigator)
@@ -59,6 +60,12 @@ namespace Przewodnik
         {
             _twitterPage = new TwitterPage(this);
             return _twitterPage;
+        }
+
+        public IKinectPage GetCalendarPageGrid(String parameter)
+        {
+            _calendarPage = new CalendarPage(this, parameter);
+            return _calendarPage;
         }
 
         public void NavigateTo(IKinectPage page)

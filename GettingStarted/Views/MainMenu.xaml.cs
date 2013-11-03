@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Utilities.Twitter;
+using System;
 
 namespace Przewodnik.Views
 {
@@ -42,6 +43,13 @@ namespace Przewodnik.Views
         {
             IKinectPage twitterPage = pageFactory.GetTwitterPageGrid();
             pageFactory.NavigateTo(twitterPage);
+        }
+
+        private void calendarPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            string parameter = DateTime.Now.ToString("yyyy-MM-dd");
+            IKinectPage calendarPage = pageFactory.GetCalendarPageGrid(parameter);
+            pageFactory.NavigateTo(calendarPage);
         }
 
     }

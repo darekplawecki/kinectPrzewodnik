@@ -124,6 +124,7 @@
     <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\MultiplicationConverter.cs" />
     <Compile Include="Models\AttractionModel.cs" />
+    <Compile Include="Models\CalendarModel.cs" />
     <Compile Include="Models\SleepScreenModel.cs" />
     <Compile Include="Models\TweetModel.cs" />
     <Compile Include="Utilities\CommandOnEventAssociation.cs" />
@@ -150,6 +151,7 @@
     </Page>
     <Compile Include="Utilities\WindowBezelHelper.cs" />
     <Compile Include="ViewModels\AttractionViewModel.cs" />
+    <Compile Include="ViewModels\CalendarViewModel.cs" />
     <Compile Include="ViewModels\SleepScreenViewModel.cs" />
     <Compile Include="ViewModels\TwitterViewModel.cs" />
     <Compile Include="Views\AttractionArticle.xaml.cs">
@@ -162,6 +164,10 @@
     <Compile Include="Views\Attractions.xaml.cs">
       <DependentUpon>Attractions.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\CalendarPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\TwitterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -170,6 +176,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Views\CalendarPage.xaml.cs">
+      <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TwitterPage.xaml.cs">
       <DependentUpon>TwitterPage.xaml</DependentUpon>
     </Compile>
