@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -11,6 +12,8 @@ using System.Windows.Threading;
 using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect.Toolkit.Controls;
+using Microsoft.Kinect.Toolkit.Interaction;
+using Przewodnik.ViewModels;
 
 namespace Przewodnik.Utilities
 {
@@ -76,6 +79,24 @@ namespace Przewodnik.Utilities
         private PromptState rightHandoffConfirmationState = PromptState.Hidden;
 
 
+
+        private InteractionStream interactionStream;
+
+        private Joint leftHandJoint;
+
+        private Joint rightHandJoint;
+
+        private bool isLeftHandGrip;
+
+        private bool isRightHandGrip;
+
+        private InteractionHandEventType _leftHandInteractionType;
+
+        private InteractionHandEventType _rightHandInteractionType;
+
+        private UserInfo[] userInfos;
+
+
         public KinectController()
         {
             sensorChooser = new KinectSensorChooser();
@@ -112,6 +133,71 @@ namespace Przewodnik.Utilities
                 _navigator = value;
             }
         }
+
+
+
+        public Joint LeftHandJoint
+        {
+            get { return this.leftHandJoint; }
+            set
+            {
+                leftHandJoint = value;
+                OnPropertyChanged("LeftHandJoint");
+            }
+        }
+
+        public Joint RightHandJoint
+        {
+            get { return this.rightHandJoint; }
+            set
+            {
+                this.rightHandJoint = value;
+                OnPropertyChanged("RightHandJoint");
+            }
+        }
+
+        public bool IsLeftHandGrip
+        {
+            get { return this.isLeftHandGrip; }
+            set
+            {
+                this.isLeftHandGrip = value;
+                OnPropertyChanged("IsLeftHandGrip");
+            }
+        }
+
+        public bool IsRightHandGrip
+        {
+            get { return this.isRightHandGrip; }
+            set
+            {
+                this.isRightHandGrip = value;
+                OnPropertyChanged("IsRightHandGrip");
+            }
+        }
+
+        public InteractionHandEventType LeftHandInteractionType
+        {
+            get { return this._leftHandInteractionType; }
+            set
+            {
+                this._leftHandInteractionType = value;
+                OnPropertyChanged("LeftHandInteractionType");
+            }
+        }
+
+        public InteractionHandEventType RightHandInteractionType
+        {
+            get { return this._rightHandInteractionType; }
+            set
+            {
+                this._rightHandInteractionType = value;
+                OnPropertyChanged("RightHandInteractionType");
+            }
+        }
+
+
+
 
         public KinectSensorChooser KinectSensorChooser
         {
@@ -426,7 +512,10 @@ namespace Przewodnik.Utilities
             {
                 try
                 {
-                    newSensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
+                    //newSensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
+                    newSensor.DepthStream.Enable();
+                    newSensor.DepthFrameReady += new EventHandler<DepthImageFrameReadyEventArgs>(SensorSkeletonDepthFrameReady);
+
                     newSensor.SkeletonStream.Enable();
 
                     try
@@ -443,6 +532,12 @@ namespace Przewodnik.Utilities
 
                     newSensor.SkeletonStream.AppChoosesSkeletons = true;
                     newSensor.SkeletonFrameReady += this.OnSkeletonFrameReady;
+
+
+                    InteractionAdapter interactionAdapter = new InteractionAdapter();
+                    interactionStream = new InteractionStream(sensorChooser.Kinect, interactionAdapter);
+                    interactionStream.InteractionFrameReady += new EventHandler<InteractionFrameReadyEventArgs>(HandsInteractionFrameReady);
+                    userInfos = new UserInfo[InteractionFrame.UserInfoArrayLength];
                 }
                 catch (InvalidOperationException)
                 {
@@ -452,17 +547,32 @@ namespace Przewodnik.Utilities
             }
 
             // Whenever the Kinect sensor changes, we have no controlling user, so reset to attract screen
-            
+
             // NAVIGATE
             _navigator.GoSleep();
             //MessageBox.Show("Start programu = INSTAGRAM", "Navigate");
             this.IsUserEngaged = false;
         }
 
+        class InteractionAdapter : IInteractionClient
+        {
+            public InteractionInfo GetInteractionInfoAtLocation(int skeletonTrackingId, InteractionHandType handType, double x, double y)
+            {
+                var interactionInfo = new InteractionInfo
+                {
+                    IsPressTarget = false,
+                    IsGripTarget = false,
+                };
+
+                return interactionInfo;
+            }
+        }
+
         private void Cleanup()
         {
             this.sensorChooser.Stop();
         }
+
 
         private void OnSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
         {
@@ -495,6 +605,16 @@ namespace Przewodnik.Utilities
                     try
                     {
                         sensor.SkeletonStream.ChooseSkeletons(this.recommendedUserTrackingIds[0], this.recommendedUserTrackingIds[1]);
+
+                        Skeleton skeleton = GetPrimarySkeleton(skeletons);
+                        if (skeleton != null)
+                        {
+                            var accelerometerReading = sensorChooser.Kinect.AccelerometerGetCurrentReading();
+                            interactionStream.ProcessSkeleton(skeletons, accelerometerReading, timestamp);
+
+                            LeftHandJoint = skeleton.Joints[JointType.HandLeft];
+                            RightHandJoint = skeleton.Joints[JointType.HandRight];
+                        }
                     }
                     catch (InvalidOperationException)
                     {
@@ -504,6 +624,114 @@ namespace Przewodnik.Utilities
                 }
             }
         }
+
+        private void HandsInteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
+        {
+            using (InteractionFrame interactionFrame = e.OpenInteractionFrame())
+            {
+                if (interactionFrame != null)
+                {
+                    interactionFrame.CopyInteractionDataTo(this.userInfos);
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            foreach (UserInfo userInfo in userInfos)
+            {
+                foreach (InteractionHandPointer interactionHandPointer in userInfo.HandPointers)
+                {
+                    // track if the left hand or right hand is griped
+                    if (interactionHandPointer.HandType == InteractionHandType.Left)
+                    {
+                        switch (interactionHandPointer.HandEventType)
+                        {
+                            case InteractionHandEventType.Grip:
+                                this.LeftHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsLeftHandGrip = true;
+                                break;
+                            case InteractionHandEventType.GripRelease:
+                                this.LeftHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsLeftHandGrip = false;
+                                break;
+                        }
+
+                    }
+                    else if (interactionHandPointer.HandType == InteractionHandType.Right)
+                    {
+                        switch (interactionHandPointer.HandEventType)
+                        {
+                            case InteractionHandEventType.Grip:
+                                this.RightHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsRightHandGrip = true;
+                                break;
+                            case InteractionHandEventType.GripRelease:
+                                this.RightHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsRightHandGrip = false;
+                                break;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void SensorSkeletonDepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
+        {
+            // Even though we un-register all our event handlers when the sensor
+            // changes, there may still be an event for the old sensor in the queue
+            // due to the way the KinectSensor delivers events.  So check again here.
+            if (sensorChooser.Kinect != sender)
+            {
+                return;
+            }
+
+            using (DepthImageFrame depthFrame = e.OpenDepthImageFrame())
+            {
+                if (null != depthFrame)
+                {
+                    try
+                    {
+                        // Hand data to Interaction framework to be processed.
+                        interactionStream.ProcessDepth(depthFrame.GetRawPixelData(), depthFrame.Timestamp);
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        // DepthFrame functions may throw when the sensor gets
+                        // into a bad state.  Ignore the frame in that case.
+                    }
+                }
+            }
+        }
+
+        private Skeleton GetPrimarySkeleton(Skeleton[] skeletons)
+        {
+            Skeleton skeleton = null;
+            if (skeletons != null)
+            {
+                for (int i = 0; i < skeletons.Length; i++)
+                {
+                    if (skeletons[i].TrackingState == SkeletonTrackingState.Tracked)
+                    {
+                        if (skeleton == null)
+                        {
+                            skeleton = skeletons[i];
+                        }
+                        else
+                        {
+                            if (skeleton.Position.Z > skeletons[i].Position.Z)
+                            {
+                                skeleton = skeletons[i];
+                            }
+                        }
+                    }
+                }
+            }
+            return skeleton;
+        }
+
 
         private int OnQueryPrimaryUserCallback(int proposedTrackingId, IEnumerable<HandPointer> candidateHandPointers, long timestamp)
         {

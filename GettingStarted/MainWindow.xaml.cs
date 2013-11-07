@@ -22,7 +22,17 @@ namespace Przewodnik
         private Navigator _navigator;
         private KinectPageFactory _pageFactory;
 
-        private KinectController _kinectController;
+        private static KinectController _kinectController;
+        public static KinectController KinectController
+        {
+            get
+            {
+                if (_kinectController == null)
+                { _kinectController = new KinectController(); }
+                return _kinectController;
+            }
+        }
+
         private MouseMovementDetector _movementDetector;
 
         private InstagramAPIManager _instagramAPI;
@@ -92,10 +102,31 @@ namespace Przewodnik
                 throw new ArgumentNullException("e");
             }
 
-            if (Key.Escape == e.Key)
+            try
             {
-                this.Close();
+                switch (e.Key)
+                {
+                    case Key.Escape:
+                        {
+                            this.Close();
+                        } break;
+                    case Key.Up:
+                        {
+                            if (_kinectController.KinectSensorChooser.Kinect.ElevationAngle < _kinectController.KinectSensorChooser.Kinect.MaxElevationAngle)
+                                _kinectController.KinectSensorChooser.Kinect.ElevationAngle += 1;
+                        } break;
+                    case Key.Down:
+                        {
+                            if (_kinectController.KinectSensorChooser.Kinect.ElevationAngle > _kinectController.KinectSensorChooser.Kinect.MinElevationAngle)
+                                _kinectController.KinectSensorChooser.Kinect.ElevationAngle -= 1;
+                        } break;
+
+                }
             }
+            catch (Exception exception)
+            {
+            }
+
 
             base.OnKeyUp(e);
         }

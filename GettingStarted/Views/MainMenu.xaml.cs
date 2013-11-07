@@ -52,6 +52,12 @@ namespace Przewodnik.Views
             pageFactory.NavigateTo(calendarPage);
         }
 
+        private void mapPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            IKinectPage mapPage = pageFactory.GetMapPageGrid();
+            pageFactory.NavigateTo(mapPage);
+        }
+
     }
 
 

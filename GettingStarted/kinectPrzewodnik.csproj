@@ -67,6 +67,9 @@
     <Reference Include="Microsoft.Kinect.Toolkit.Interaction">
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.Interaction.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Maps.MapControl.WPF">
+      <HintPath>bin\Debug\Microsoft.Maps.MapControl.WPF.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Prism">
       <HintPath>..\packages\TweetinviAPI.0.8.3.1\lib\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
@@ -124,6 +127,7 @@
     <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\MultiplicationConverter.cs" />
     <Compile Include="Models\AttractionModel.cs" />
+    <Compile Include="Models\BingMap.cs" />
     <Compile Include="Models\CalendarModel.cs" />
     <Compile Include="Models\SleepScreenModel.cs" />
     <Compile Include="Models\TweetModel.cs" />
@@ -144,7 +148,6 @@
     <Compile Include="Utilities\Twitter\TwitterManager.cs" />
     <Compile Include="Utilities\UserActivityMeter.cs" />
     <Compile Include="Utilities\UserActivityRecord.cs" />
-    <Compile Include="Utilities\ViewModelBase.cs" />
     <Page Include="Views\AttractionArticle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,8 +155,10 @@
     <Compile Include="Utilities\WindowBezelHelper.cs" />
     <Compile Include="ViewModels\AttractionViewModel.cs" />
     <Compile Include="ViewModels\CalendarViewModel.cs" />
+    <Compile Include="ViewModels\MapViewModel.cs" />
     <Compile Include="ViewModels\SleepScreenViewModel.cs" />
     <Compile Include="ViewModels\TwitterViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
     <Compile Include="Views\AttractionArticle.xaml.cs">
       <DependentUpon>AttractionArticle.xaml</DependentUpon>
     </Compile>
@@ -168,6 +173,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\MapPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\TwitterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -178,6 +187,9 @@
     </Page>
     <Compile Include="Views\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TwitterPage.xaml.cs">
       <DependentUpon>TwitterPage.xaml</DependentUpon>

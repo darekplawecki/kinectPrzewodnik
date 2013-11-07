@@ -1,0 +1,64 @@
+﻿<Grid x:Class="Przewodnik.Views.MapPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ViewModels="clr-namespace:Przewodnik.ViewModels"
+    xmlns:k="http://schemas.microsoft.com/kinect/2013"
+    xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+    Name="MapPageGrid">
+
+    <Grid.DataContext>
+        <ViewModels:MapViewModel/>
+    </Grid.DataContext>
+
+    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" >Mapa</TextBlock>
+
+    <Grid x:Name="MapGrid" Margin="0 150 0 0">
+        <m:Map x:Name="MasterBingMap" CredentialsProvider="AoYws8aLN6--qMJ06VlJ6uj2rZWoiDKX1h7NESbZKANua_yepBlEBu3ZuybMUN9q" Center="{Binding MapCenterPoint, Mode=TwoWay}" ZoomLevel="{Binding MapZoomLevel,Mode=TwoWay}" Mode="Road">
+            <Canvas Width="100" Height="50" 
+              m:MapLayer.Position="51.105726, 17.030613" 
+              m:MapLayer.PositionOrigin="BottomCenter" Opacity="0.7" HorizontalAlignment="Center">
+                <Path Data="M 0,0 L 20,0 20,40 10,50 0,40 0,0" Fill="Red" Stroke="Wheat" StrokeThickness="2" />
+                <TextBlock FontSize="15" Foreground="Black" Margin="25 0 0 0">
+                    Opera<LineBreak/>
+                    Wrocławska
+                </TextBlock>
+            </Canvas>
+
+            <Canvas Width="100" Height="50" 
+              m:MapLayer.Position="51.109588, 17.032255" 
+              m:MapLayer.PositionOrigin="BottomCenter" Opacity="0.7" HorizontalAlignment="Center">
+                <Path Data="M 0,0 L 20,0 20,20 10,30 0,20 0,0" Fill="Red" Stroke="Wheat" StrokeThickness="2" />
+                <TextBlock FontSize="15" Foreground="Black" Margin="25 0 0 0">
+                    Ratusz
+                </TextBlock>
+            </Canvas>
+
+            <Canvas Width="100" Height="50" 
+              m:MapLayer.Position="51.113313, 17.004950" 
+              m:MapLayer.PositionOrigin="BottomCenter" Opacity="0.7" HorizontalAlignment="Center">
+                <Path Data="M 0,0 L 20,0 20,60 10,70 0,60 0,0" Fill="Red" Stroke="Wheat" StrokeThickness="2" />
+                <TextBlock FontSize="15" Foreground="Black" Margin="25 0 0 0">
+                    Muzeum<LineBreak/>
+                    współczesne<LineBreak/>
+                    Wrocław
+                </TextBlock>
+            </Canvas>
+
+            <Canvas Width="100" Height="50" 
+              m:MapLayer.Position="51.110178, 17.044595" 
+              m:MapLayer.PositionOrigin="BottomCenter" Opacity="0.7" HorizontalAlignment="Center">
+                <Path Data="M 0,0 L 20,0 20,40 10,50 0,40 0,0" Fill="Red" Stroke="Wheat" StrokeThickness="2" />
+                <TextBlock FontSize="15" Foreground="Black" Margin="25 0 0 0">
+                    Panorama<LineBreak/>
+                    Racławicka
+                </TextBlock>
+            </Canvas>
+        </m:Map>
+    </Grid>
+    
+    <StackPanel x:Name="LogMessage">
+        <TextBlock x:Name="testMessageLeftHand" Width="1000" Height="200" FontSize="20" Foreground="Black" HorizontalAlignment="Center" Text="{Binding TestMessageHand}" />
+    </StackPanel>
+
+
+</Grid>

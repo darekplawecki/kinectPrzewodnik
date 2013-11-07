@@ -24,6 +24,11 @@
                             FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
                             HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="calendarPageButton_Click"/>
 
+        <k:KinectTileButton x:Name="MapPageButton" Height="200" Width="200"  
+                            Content="Mapa"
+                            FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
+                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="mapPageButton_Click"/>
+        
     </StackPanel>
 </Grid>
 
