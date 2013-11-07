@@ -22,6 +22,7 @@ namespace Przewodnik.Views
         private KinectPageFactory pageFactory;
         private CalendarViewModel viewModel;
         private CalendarViewModel viewModelCopy;
+        string FILTER = "";
 
         public CalendarPage(KinectPageFactory pageFactory, String parameter)
         {
@@ -107,16 +108,45 @@ namespace Przewodnik.Views
             titleTextBlock.Text = GetDayWithPointAndDayOfWeek(DateTimeFormat(selectedDate));
 
             viewModel = new CalendarViewModel(DateTimeFormat(selectedDate));
-            EventList.ItemsSource = null;
-            EventList.ItemsSource = viewModel.modelList;
 
+            if (FILTER != "")
+            {
+                viewModelCopy = new CalendarViewModel();
+                for (int i = 0; i < viewModel.modelList.Count(); i++)
+                {
+                    if (viewModel.modelList[i].Type.Equals(FILTER))
+                    {
+                        viewModelCopy.modelList.Add(viewModel.modelList[i]);
+                    }
+                }
+
+                EventList.ItemsSource = null;
+                EventList.ItemsSource = viewModelCopy.modelList;
+
+                if (viewModelCopy.modelList.Count() == 0)
+                {
+                    emptyBlock.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    emptyBlock.Visibility = Visibility.Hidden;
+                }
+            }
+            else
+            {
+                EventList.ItemsSource = null;
+                EventList.ItemsSource = viewModel.modelList;
+            }
             ScrollViewer.ScrollToTop();
         }
+
+        
 
         private void Filter_Click(object sender, RoutedEventArgs e)
         {
             viewModelCopy = new CalendarViewModel();
             string filter = ((KinectTileButton)sender).Name.ToString();
+            FILTER = filter;
 
             for (int i = 0; i < viewModel.modelList.Count(); i++)
             {
