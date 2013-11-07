@@ -109,7 +109,7 @@ namespace Przewodnik.Views
 
             viewModel = new CalendarViewModel(DateTimeFormat(selectedDate));
 
-            if (FILTER != "")
+            if (FILTER != "" && FILTER!="Wszystkie")
             {
                 viewModelCopy = new CalendarViewModel();
                 for (int i = 0; i < viewModel.modelList.Count(); i++)
@@ -134,6 +134,7 @@ namespace Przewodnik.Views
             }
             else
             {
+                FILTER = "";
                 EventList.ItemsSource = null;
                 EventList.ItemsSource = viewModel.modelList;
             }
@@ -173,6 +174,7 @@ namespace Przewodnik.Views
 
         private void FilterAll_Click(object sender, RoutedEventArgs e)
         {
+            FILTER = "";
             EventList.ItemsSource = null;
             EventList.ItemsSource = viewModel.modelList;
             ScrollViewer.ScrollToTop();
