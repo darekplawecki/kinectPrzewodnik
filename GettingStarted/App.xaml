@@ -9,18 +9,53 @@
             
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <Style TargetType="TextBlock">
+                    
+                    <Style x:Key="OldTextBlock" TargetType="TextBlock">
                         <Setter Property="Foreground" Value="Black"/>
                         <Setter Property="Background" Value="Transparent"/>
                     </Style>
-                    <Style TargetType="Grid">
+                    <Style x:Key="OldGrid" TargetType="Grid">
                         <Setter Property="Background" Value="Transparent"/>
                     </Style>
-                    <Style TargetType="k:KinectTileButton">
+                    <Style x:Key="OldButton" TargetType="k:KinectTileButton">
                         <Setter Property="Background" Value="Plum"/>
                         <Setter Property="BorderThickness" Value="0"/>
                         <Setter Property="Foreground" Value="Black"/>
                     </Style>
+                    <SolidColorBrush x:Key="GrayColor" Color="#252525"/>
+                    <SolidColorBrush x:Key="BlueColor" Color="#3498db"/>
+                    <SolidColorBrush x:Key="YellowColor" Color="#e1b700"/>
+                    <SolidColorBrush x:Key="OrangeColor" Color="#e56c19"/>
+                    <SolidColorBrush x:Key="GreenColor" Color="#2ecc71"/>
+                    <SolidColorBrush x:Key="PurpleColor" Color="#8e44ad"/>
+                    <SolidColorBrush x:Key="LimeColor" Color="#1abc9c"/>
+                    <SolidColorBrush x:Key="RedColor" Color="#e74c3c"/>
+                    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="#FFFFFF"/>
+                        <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
+                        <Setter Property="TextWrapping" Value="Wrap"/>
+                        <Setter Property="FontWeight" Value="Light"/>
+                    </Style>
+                    <Style x:Key="BlockTitle" TargetType="TextBlock"></Style>
+                    <Style x:Key="BlockTitleSmaller" TargetType="TextBlock"></Style>
+                    <Style x:Key="BlockDescription" TargetType="TextBlock"></Style>
+                    <Style x:Key="Icon" TargetType="Image"></Style>
+                    <Thickness x:Key="BlockMargin"/>
+                    <Thickness x:Key="TextTopMargin"/>
+                    <Thickness x:Key="TextTopBottomMargin"/>
+                    <Thickness x:Key="FontSize18"/>
+                    <Thickness x:Key="AttractionBlockSize"/>
+                    <GridLength x:Key="TweetHeight"/>
+                    <GridLength x:Key="TweetWidth"/>
+                    <Style x:Key="PageTitle" TargetType="TextBlock"></Style>
+                    <Style TargetType="Grid" x:Key="TopRow">
+                        <Setter Property="Background" Value="#EBEBEB"/>
+                    </Style>
+                    <LinearGradientBrush x:Key="BackgroundGradientBrush" StartPoint="0.5, 1" EndPoint="0.5, 0">
+                        <GradientStop Color="#EBEBEB" Offset="0.0" />
+                        <GradientStop Color="#FFFFFF" Offset="0.5" />
+                        <GradientStop Color="#EBEBEB" Offset="1.0" />
+                    </LinearGradientBrush>
                 </ResourceDictionary>
                 <ResourceDictionary>
                     <converters:MultiplicationConverter x:Key="MultiplicationConverter" />
@@ -30,6 +65,7 @@
                     <SolidColorBrush x:Key="KinectPurpleBrush" Color="#FF511C74"/>
                 </ResourceDictionary>
                 <ResourceDictionary Source="Controls/PromptControlStyles.xaml" />
+                <!--<ResourceDictionary Source="Controls/KinectButtonStyles.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     

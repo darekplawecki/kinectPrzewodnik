@@ -21,17 +21,17 @@
         <TextBlock x:Name="titleTextBlock" FontSize="50" Grid.Column="0" Grid.Row="0"></TextBlock>
 
         <StackPanel Orientation="Horizontal" Margin="0,-50,0,0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-            <k:KinectTileButton x:Name="Wszystkie" Content="Wszystkie" Width="100" Height="50" FontSize="20" Click="FilterAll_Click"/>
-            <k:KinectTileButton x:Name="Muzyka" Content="Muzyka" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Kino" Content="Kino" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Teatr" Content="Teatr" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Art" Content="Art" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Off" Content="Off" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="DJ" Content="DJ" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Sport" Content="Sport" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Dzieci" Content="Dzieci" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Nauka" Content="Nauka" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton x:Name="Inne" Content="Inne" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Wszystkie" Content="Wszystkie" Width="100" Height="50" FontSize="20" Click="FilterAll_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Muzyka" Content="Muzyka" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Kino" Content="Kino" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Teatr" Content="Teatr" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Art" Content="Art" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Off" Content="Off" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="DJ" Content="DJ" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Sport" Content="Sport" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Dzieci" Content="Dzieci" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Nauka" Content="Nauka" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
+            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Inne" Content="Inne" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
         </StackPanel>
 
         <TextBlock x:Name="emptyBlock" Width="Auto" Text="Brak wydarzeń dla wybranej kategorii" 
@@ -60,20 +60,20 @@
 
         <k:KinectScrollViewer Width="200" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" HoverBackground="Transparent">
             <StackPanel Orientation="Vertical" Margin="0,-100,0,-100">
-                <k:KinectTileButton x:Name="day1" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"  />
-                <k:KinectTileButton x:Name="day2" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day3" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day4" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day5" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day6" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day7" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day8" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day9" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day10" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day11" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day12" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day13" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton x:Name="day14" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day1" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"  />
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day2" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day3" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}"  x:Name="day4" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day5" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day6" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day7" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day8" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day9" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day10" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day11" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day12" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day13" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day14" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
             </StackPanel>
         </k:KinectScrollViewer>
 

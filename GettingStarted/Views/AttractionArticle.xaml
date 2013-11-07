@@ -5,9 +5,21 @@
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
         x:Name="AttractionArticleGrid">
 
-    <TextBlock Margin="50 50 50 150" FontSize="50" Text="{Binding Title, Mode=OneWay}"/>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="0.22*"></RowDefinition>
+        <RowDefinition Height="0.7*"></RowDefinition>
+        <RowDefinition Height="0.08*"></RowDefinition>
+    </Grid.RowDefinitions>
 
-    <Grid ClipToBounds="True" Margin="50 150 50 50">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.07*"></ColumnDefinition>
+        <ColumnDefinition Width="0.86*"></ColumnDefinition>
+        <ColumnDefinition Width="0.07*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Style="{DynamicResource PageTitle}" Text="{Binding Title, Mode=OneWay}"/>
+
+    <Grid Grid.Row="1" Grid.Column="1" ClipToBounds="True">
         <Grid.RowDefinitions>
             <RowDefinition  Height="3*" />
             <RowDefinition  Height="*" />
@@ -54,7 +66,7 @@
         </k:KinectTileButton>
 
         <k:KinectScrollViewer Grid.Column="3" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"  HoverBackground="Transparent" >
-            <TextBlock Margin="50,-100,50,-100" Name="descriptionTextBlock"  Text="{Binding Description, Mode=OneWay}" TextAlignment="Justify" VerticalAlignment="Top" TextWrapping="Wrap" FontSize="25"></TextBlock>
+            <TextBlock Margin="30,-100,10,-100" Name="descriptionTextBlock" Style="{DynamicResource BlockTitle}" Foreground="{StaticResource GrayColor}" Text="{Binding Description, Mode=OneWay}" TextAlignment="Justify" VerticalAlignment="Top" ></TextBlock>
         </k:KinectScrollViewer>
 
     </Grid>

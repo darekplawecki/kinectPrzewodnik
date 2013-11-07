@@ -20,6 +20,8 @@ namespace Przewodnik.ViewModels
             model.Description = AttractionContent.getDescriptionFor(parameter);
             model.Photos = AttractionContent.getPhotosFor(parameter);
             model.Camera = AttractionContent.getCameraFor(parameter);
+            model.Color = AttractionContent.getColorFor(parameter);
+            model.Icon = AttractionContent.getIconFor(parameter);
         }
 
         public AttractionModel GetModel()

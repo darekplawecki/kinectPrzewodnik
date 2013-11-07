@@ -3,33 +3,170 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
-        Name="MainMenuGrid" >
-    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" HorizontalAlignment="Center">Przewodnik po Wrocławiu</TextBlock>
-    <StackPanel Margin="20 150 20 20" Orientation="Horizontal">
-        <k:KinectTileButton x:Name="touristAttractions" Height="200" Width="200"  
-                            Content="Atrakcje&#x0a;turystyczne"
-                            FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
-                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="touristAttractions_Click">
-            </k:KinectTileButton>
-        <k:KinectTileButton x:Name="TwitterPageButton" Height="200" Width="200"  
-                            Content="Twitter"
-                            FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
-                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="twitterPageButton_Click">
-                       <k:KinectTileButton.Label>
-                <TextBlock Name="TwitterLabel" FontSize="20" Text="Tyle temu" TextAlignment="Center" Width="200"></TextBlock>
-            </k:KinectTileButton.Label>
-            </k:KinectTileButton>
-        <k:KinectTileButton x:Name="CalendarPageButton" Height="200" Width="200"  
-                            Content="Kalendarium"
-                            FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
-                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="calendarPageButton_Click"/>
+    Name="MainMenuGrid" >
 
-        <k:KinectTileButton x:Name="MapPageButton" Height="200" Width="200"  
-                            Content="Mapa"
-                            FontSize="35" HorizontalAlignment="Center" VerticalAlignment="Center"  
-                            HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Click="mapPageButton_Click"/>
-        
-    </StackPanel>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="0.08*"></RowDefinition>
+        <RowDefinition Height="0.84*"></RowDefinition>
+        <RowDefinition Height="0.08*"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.07*"></ColumnDefinition>
+        <ColumnDefinition Width="0.86*"></ColumnDefinition>
+        <ColumnDefinition Width="0.07*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <Grid Grid.Row="1" Grid.Column="1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <k:KinectTileButton x:Name="TouristAttractionsButton"
+                            Margin="3"
+                            Grid.Row="0" Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            Width="Auto" Height="Auto" BorderThickness="0"
+                            HorizontalContentAlignment="Left"
+                            Background="{StaticResource BlueColor}"
+                            Click="touristAttractions_Click">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" Source="../Content/Design/Images/home_attractions.jpg"></Image>
+                <StackPanel Margin="{DynamicResource BlockMargin}" Grid.Column="1">
+                    <Image Source="../Content/Design/Images/ico_attractions.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Text="atrakcje turystyczne" Margin="{DynamicResource TextTopBottomMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    <TextBlock Text="Niezbędnik każdego turysty, czyli co warto zobaczyć i zwiedzić we Wrocławiu!" Style="{DynamicResource BlockDescription}"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </k:KinectTileButton>
+
+        <k:KinectTileButton x:Name="EventsButton"
+                            Margin="3"
+                            Grid.Row="0" Grid.Column="2"
+                            Width="Auto" Height="Auto"
+                            VerticalContentAlignment="Top"
+                            Background="{StaticResource YellowColor}"
+                            Click="calendarPageButton_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="../Content/Design/Images/home_events.jpg"></Image>
+                <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                    <Image Source="../Content/Design/Images/ico_events.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Text="wydarzenia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </k:KinectTileButton>
+
+        <k:KinectTileButton x:Name="TwitterButton"
+                            Margin="3"
+                            Grid.Row="0" Grid.Column="3"
+                            Grid.RowSpan="2"
+                            Width="Auto" Height="Auto"
+                            VerticalContentAlignment="Top" 
+                            Background="{StaticResource OrangeColor}"
+                            Click="twitterPageButton_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="../Content/Design/Images/home_twitter.jpg"></Image>
+                <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                    <Image Source="../Content/Design/Images/ico_twitter.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Text="twitter" Margin="{DynamicResource TextTopBottomMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="@wroclaw_info" Style="{DynamicResource BlockDescription}" FontWeight="Bold"></TextBlock>
+                        <TextBlock Grid.Row="1" Text="Bez nich wrocławska nauka, kultura i sztuka były zupełnie inne. Żegnamy wrocławian, którzy odeszli w ciągu..." Style="{DynamicResource BlockDescription}"></TextBlock>
+                        <TextBlock Grid.Row="2" Text="11 godzin temu" Style="{DynamicResource BlockDescription}" FontSize="{DynamicResource FontSize18}" FontWeight="Regular" FontStyle="Italic" HorizontalAlignment="Right"></TextBlock>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+        </k:KinectTileButton>
+
+        <k:KinectTileButton x:Name="WeatherButton"
+                            Margin="3"
+                            Grid.Row="1" Grid.Column="0"
+                            Width="Auto" Height="Auto" 
+                            VerticalContentAlignment="Top" 
+                            Background="{StaticResource GreenColor}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="../Content/Design/Images/home_weather.jpg"></Image>
+                <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                    <Image Source="../Content/Design/Images/ico_weather.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Text="pogoda" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </k:KinectTileButton>
+
+        <k:KinectTileButton x:Name="MapsButton"
+                            Margin="3"
+                            Grid.Row="1" Grid.Column="1"
+                            Width="Auto" Height="Auto" 
+                            VerticalContentAlignment="Bottom"
+                            Background="{StaticResource PurpleColor}"
+		            Click="mapPageButton_Click">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="0">
+                    <Image Source="../Content/Design/Images/ico_maps.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Text="plan miasta" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                </StackPanel>
+                <Image Grid.Row="1" Source="../Content/Design/Images/home_maps.jpg"></Image>
+            </Grid>
+
+        </k:KinectTileButton>
+
+        <k:KinectTileButton x:Name="ObjectsButton"
+                            Margin="3"
+                            Grid.Row="1" Grid.Column="2"
+                            Width="Auto" Height="Auto"
+                            VerticalContentAlignment="Top" 
+                            Background="{StaticResource LimeColor}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="../Content/Design/Images/home_objects.jpg"></Image>
+                <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                    <Image Source="../Content/Design/Images/ico_objects.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Text="obiekty" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                </StackPanel>
+            </Grid>
+
+        </k:KinectTileButton>
+    </Grid>
+
 </Grid>
 
 

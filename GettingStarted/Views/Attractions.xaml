@@ -4,80 +4,162 @@
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
     Name="AttractionsGrid">
 
-    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" >Atrakcje turystyczne</TextBlock>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="0.25*"></RowDefinition>
+        <RowDefinition Height="0.55*"></RowDefinition>
+        <RowDefinition Height="0.20*"></RowDefinition>
+    </Grid.RowDefinitions>
 
-    <k:KinectScrollViewer Margin="50 150 50 50" Name="AttractionsScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" ContentMargin="0" MinWidth="220" MinHeight="300" Background="Transparent" HoverBackground="Transparent">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.14*"></ColumnDefinition>
+        <ColumnDefinition Width="0.72*"></ColumnDefinition>
+        <ColumnDefinition Width="0.14*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="firstTextBlock" Style="{DynamicResource PageTitle}" >atrakcje turystyczne</TextBlock>
+
+    <k:KinectScrollViewer Grid.Row="1" Grid.Column="1" Name="AttractionsScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" ContentMargin="0" Background="Transparent" HoverBackground="Transparent">
 
         <StackPanel Orientation="Horizontal">
 
-            <k:KinectTileButton  Height="250" Width="300" Background="Plum" BorderThickness="0" Name="Rynek" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/rynek1.jpg" />
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100" TextAlignment="Center">Rynek</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource BlueColor}" BorderThickness="0" Name="Rynek" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/rynek1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/rynek.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="rynek" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300" Background="Plum" BorderThickness="0" Name="OstrówTumski" Click="KinectTileButton_Click_1" >
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/ostrowtumski1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100" TextAlignment="Center" Height="53">Ostrów Tumski</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource GreenColor}" BorderThickness="0" Name="OstrówTumski" Click="KinectTileButton_Click_1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/ostrowtumski1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/ostrowtumski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="ostrów tumski" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300"  Name="HalaStulecia" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/halastulecia1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Hala Stulecia</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource PurpleColor}"  Name="HalaStulecia" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/halastulecia1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/halastulecia.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="hala stulecia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300"  Name="PałacKrólewski" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/palackrolewski1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Pałac Królewski</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource YellowColor}" Name="PałacKrólewski" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/palackrolewski1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/palackrolewski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="pałac królewski" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300" Name="PanoramaRacławicka" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/panoramaraclawicka1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Panorama Racławicka</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource LimeColor}" Name="PanoramaRacławicka" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/panoramaraclawicka1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/panoramaraclawicka.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="panorama racławicka" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300" Name="OgródJapoński" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/ogrodjaponski1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Ogród Japoński</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource OrangeColor}" Name="OgródJapoński" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/ogrodjaponski1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/ogrodjaponski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="ogród japoński" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300"   Name="FontannaMultimedialna" Click="KinectTileButton_Click_1" >
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/fontanna1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Fontanna multimedialna</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource RedColor}"  Name="FontannaMultimedialna" Click="KinectTileButton_Click_1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/fontanna1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/fontanna.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="fontanna multimedialna" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}" FontSize="{DynamicResource BlockTitleSmaller}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300"  Name="WyspaSłodowa" Click="KinectTileButton_Click_1" >
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/wyspaslodowa1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Wyspa Słodowa</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource BlueColor}"  Name="WyspaSłodowa" Click="KinectTileButton_Click_1" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/wyspaslodowa1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/wyspaslodowa.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="wyspa słodowa" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300"  Name="ZOO" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/zoo1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">ZOO</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource GreenColor}"  Name="ZOO" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/zoo1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/zoo.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="zoo" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="250" Width="300"  Name="OgródBotaniczny" Click="KinectTileButton_Click_1">
-                <StackPanel>
-                    <Image Source="../Content/Attractions/Photos/ogrodbotaniczny1.jpg"/>
-                    <TextBlock FontSize="30" Foreground="Black" TextWrapping="Wrap" MinWidth="100" MaxWidth="300" MinHeight="100"  TextAlignment="Center" Height="53">Ogród Botaniczny</TextBlock>
-                </StackPanel>
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource PurpleColor}"  Name="OgródBotaniczny" Click="KinectTileButton_Click_1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/ogrodbotaniczny1_hover.jpg"></Image>
+                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
+                        <Image Source="../Content/Attractions/Icons/ogrodbotaniczny.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                        <TextBlock Text="ogród botaniczny" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    </StackPanel>
+                </Grid>
             </k:KinectTileButton>
 
         </StackPanel>

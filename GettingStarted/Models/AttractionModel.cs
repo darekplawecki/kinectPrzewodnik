@@ -14,21 +14,27 @@ namespace Przewodnik.Models
         public List<string> Photos { get; set; }
         public string Camera { get; set; }
         public string Title { get; set; }
+        public string Color { get; set; }
+        public string Icon { get; set; }
 
-        public AttractionModel() 
+        public AttractionModel()
         {
             Description = string.Empty;
             Photos = new List<string>();
             Camera = string.Empty;
             Title = string.Empty;
+            Color = string.Empty;
+            Icon = string.Empty;
         }
 
-        public AttractionModel(string description, List<string> photos, string camera, string title)
+        public AttractionModel(string description, List<string> photos, string camera, string title, string color, string icon)
         {
             this.Description = description;
             this.Photos = photos;
             this.Camera = camera;
             this.Title = title;
+            this.Color = color;
+            this.Icon = icon;
         }
 
     }

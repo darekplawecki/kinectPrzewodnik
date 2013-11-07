@@ -1,0 +1,39 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:k="http://schemas.microsoft.com/kinect/2013">
+
+    <!-- All KinectTileButtons play a sound on mouse/hand pointer enter and on selection -->
+    <Style TargetType="{x:Type k:KinectTileButton}">
+        <Style.Triggers>
+            <EventTrigger>
+                <EventTrigger.RoutedEvent>k:KinectRegion.HandPointerEnter</EventTrigger.RoutedEvent>
+                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav"/>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.MouseEnter">
+                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click">
+                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-select.wav" />
+            </EventTrigger>
+        </Style.Triggers>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+
+    <!-- All KinectCircleButtons play a sound on mouse/hand pointer enter and on selection -->
+    <Style TargetType="{x:Type k:KinectCircleButton}">
+        <Style.Triggers>
+            <EventTrigger>
+                <EventTrigger.RoutedEvent>k:KinectRegion.HandPointerEnter</EventTrigger.RoutedEvent>
+                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.MouseEnter">
+                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav" />
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Button.Click">
+                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-select.wav" />
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

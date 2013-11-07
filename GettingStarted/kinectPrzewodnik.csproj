@@ -148,6 +148,10 @@
     <Compile Include="Utilities\Twitter\TwitterManager.cs" />
     <Compile Include="Utilities\UserActivityMeter.cs" />
     <Compile Include="Utilities\UserActivityRecord.cs" />
+    <Page Include="Controls\KinectButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\AttractionArticle.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -299,6 +303,49 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Twitter\AlertMPK.jpg" />
+    <Resource Include="Content\Twitter\FaktyTVPWroclaw.jpg" />
+    <Resource Include="Content\Twitter\gazeta_wroclaw.jpg" />
+    <Resource Include="Content\Twitter\gaz_wroclawska.jpg" />
+    <Resource Include="Content\Twitter\StadionWroclaw.jpg" />
+    <Resource Include="Content\Twitter\TheWroclawInter.jpg" />
+    <Resource Include="Content\Twitter\wroclaw_info.jpg" />
+    <Resource Include="Content\Design\Images\back-button.png" />
+    <Resource Include="Content\Design\Images\home_attractions.jpg" />
+    <Resource Include="Content\Design\Images\home_events.jpg" />
+    <Resource Include="Content\Design\Images\home_maps.jpg" />
+    <Resource Include="Content\Design\Images\home_objects.jpg" />
+    <Resource Include="Content\Design\Images\home_twitter.jpg" />
+    <Resource Include="Content\Design\Images\home_weather.jpg" />
+    <Resource Include="Content\Design\Images\ico_attractions.png" />
+    <Resource Include="Content\Design\Images\ico_events.png" />
+    <Resource Include="Content\Design\Images\ico_maps.png" />
+    <Resource Include="Content\Design\Images\ico_objects.png" />
+    <Resource Include="Content\Design\Images\ico_twitter.png" />
+    <Resource Include="Content\Design\Images\ico_weather.png" />
+    <Resource Include="Content\Design\Images\logo.png" />
+    <Resource Include="Content\Attractions\Icons\fontanna.png" />
+    <Resource Include="Content\Attractions\Icons\halastulecia.png" />
+    <Resource Include="Content\Attractions\Icons\ogrodbotaniczny.png" />
+    <Resource Include="Content\Attractions\Icons\ogrodjaponski.png" />
+    <Resource Include="Content\Attractions\Icons\ostrowtumski.png" />
+    <Resource Include="Content\Attractions\Icons\palackrolewski.png" />
+    <Resource Include="Content\Attractions\Icons\panoramaraclawicka.png" />
+    <Resource Include="Content\Attractions\Icons\rynek.png" />
+    <Resource Include="Content\Attractions\Icons\wyspaslodowa.png" />
+    <Resource Include="Content\Attractions\Icons\zoo.png" />
+    <Resource Include="Content\Attractions\Photos\fontanna1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\halastulecia1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\ogrodbotaniczny1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\ogrodjaponski1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\ostrowtumski1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\palackrolewski1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\panoramaraclawicka1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\rynek1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\wyspaslodowa1_hover.jpg" />
+    <Resource Include="Content\Attractions\Photos\zoo1_hover.jpg" />
+    <Content Include="Content\Design\Sounds\button-enter.wav" />
+    <Content Include="Content\Design\Sounds\button-select.wav" />
     <Resource Include="Content\Attractions\Photos\fontanna1.jpg" />
     <Resource Include="Content\Attractions\Photos\fontanna2.jpg" />
     <Resource Include="Content\Attractions\Photos\fontanna3.jpg" />
@@ -331,7 +378,9 @@
     <Resource Include="Content\Attractions\Photos\zoo3.jpg" />
     <Content Include="Content\Attractions\Cameras\Rynek.htm" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Content\Attractions\Panoramas\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

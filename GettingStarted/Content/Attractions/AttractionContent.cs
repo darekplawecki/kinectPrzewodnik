@@ -30,16 +30,38 @@ namespace Przewodnik.Content.Attractions
         public static String ZOO_DESCRIPTION = "Misją wrocławskiego ZOO jest zachowanie różnorodności biologicznej w trosce o pełnowartościowy rozwój przyszłych pokoleń.\nWrocławski Ogród Zoologiczny na 33 ha powierzchni tworzy atrakcyjne, tematyczne ekspozycje fauny poszczególnych kontynentów (Pawilon Madagaskaru, Sahara, wybieg niedźwiedzi brunatnych, basen płetwonogich). Daje schronienie 4500 zwierzętom ponad 800 gatunków, w tym zagrożonym wyginięciem, a nawet nie występującym już w naturalnym środowisku. Trwa budowa kompleksu ekspozycji środowisk wodnych Afryki (Afrykarium).";
         public static String OGROD_BOTANICZNY_DESCRIPTION = "Ogród Botaniczny Uniwersytetu Wrocławskiego, nazywany oazą piękna i spokoju w sercu wielkiego miasta, to żywe muzeum, a zarazem ośrodek naukowy i dydaktyczny oraz ulubione miejsce wypoczynku wrocławian. Położony jest po północnej stronie katedry Św. Jana Chrzciciela i kościoła Św.Krzyża, częściowo w obrębie historycznego Ostrowa Tumskiego, w odległości ok. 2 km od Rynku. Jest drugim (po ogrodzie krakowskim ) najstarszym tego typu ogrodem w Polsce, wpisanym na listę zabytków woj. dolnośląskiego i mieszczącym się w granicach podlegającego szczególnej ochronie historycznego centrum Wrocławia.";
 
-        public static List<string> RYNEK_PHOTOS = new List<string> { "../Content/Attractions/Photos/rynek1.jpg", "../Content/Attractions/Photos/rynek2.jpg", "../Content/Attractions/Photos/rynek3.jpg" };
-        public static List<string> OSTROW_TUMSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/ostrowtumski1.jpg", "../Content/Attractions/Photos/ostrowtumski2.jpg", "../Content/Attractions/Photos/ostrowtumski3.jpg" };
-        public static List<string> HALA_STULECIA_PHOTOS = new List<string> { "../Content/Attractions/Photos/halastulecia1.jpg", "../Content/Attractions/Photos/halastulecia2.jpg", "../Content/Attractions/Photos/halastulecia3.jpg" };
-        public static List<string> PALAS_KROLEWSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/palackrolewski1.jpg", "../Content/Attractions/Photos/palackrolewski2.jpg", "../Content/Attractions/Photos/palackrolewski3.jpg" };
-        public static List<string> PANORAMA_RACLAWICKA_PHOTOS = new List<string> { "../Content/Attractions/Photos/panoramaraclawicka1.jpg", "../Content/Attractions/Photos/panoramaraclawicka2.jpg", "../Content/Attractions/Photos/panoramaraclawicka3.jpg" };
-        public static List<string> OGROD_JAPONSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/ogrodjaponski1.jpg", "../Content/Attractions/Photos/ogrodjaponski2.jpg", "../Content/Attractions/Photos/ogrodjaponski3.jpg" };
-        public static List<string> FONTANNA_PHOTOS = new List<string> { "../Content/Attractions/Photos/fontanna1.jpg", "../Content/Attractions/Photos/fontanna2.jpg", "../Content/Attractions/Photos/fontanna3.jpg" };
-        public static List<string> WYSPA_SLODOWA_PHOTOS = new List<string> { "../Content/Attractions/Photos/wyspaslodowa1.jpg", "../Content/Attractions/Photos/wyspaslodowa2.jpg", "../Content/Attractions/Photos/wyspaslodowa3.jpg" };
-        public static List<string> ZOO_PHOTOS = new List<string> { "../Content/Attractions/Photos/zoo1.jpg", "../Content/Attractions/Photos/zoo2.jpg", "../Content/Attractions/Photos/zoo3.jpg" };
-        public static List<string> OGROD_BOTANICZNY_PHOTOS = new List<string> { "../Content/Attractions/Photos/ogrodbotaniczny1.jpg", "../Content/Attractions/Photos/ogrodbotaniczny2.jpg", "../Content/Attractions/Photos/ogrodbotaniczny3.jpg" };
+        public static List<string> RYNEK_PHOTOS = new List<string> { "../Content/Attractions/Photos/rynek1.jpg", "../Content/Attractions/Photos/rynek2.jpg", "../Content/Attractions/Photos/rynek3.jpg", "../Content/Attractions/Photos/rynek1_hover.jpg" };
+        public static List<string> OSTROW_TUMSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/ostrowtumski1.jpg", "../Content/Attractions/Photos/ostrowtumski2.jpg", "../Content/Attractions/Photos/ostrowtumski3.jpg", "../Content/Attractions/Photos/ostrowtumski1_hover.jpg" };
+        public static List<string> HALA_STULECIA_PHOTOS = new List<string> { "../Content/Attractions/Photos/halastulecia1.jpg", "../Content/Attractions/Photos/halastulecia2.jpg", "../Content/Attractions/Photos/halastulecia3.jpg", "../Content/Attractions/Photos/halastulecia1_hover.jpg" };
+        public static List<string> PALAC_KROLEWSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/palackrolewski1.jpg", "../Content/Attractions/Photos/palackrolewski2.jpg", "../Content/Attractions/Photos/palackrolewski3.jpg", "../Content/Attractions/Photos/palackrolewski1_hover.jpg" };
+        public static List<string> PANORAMA_RACLAWICKA_PHOTOS = new List<string> { "../Content/Attractions/Photos/panoramaraclawicka1.jpg", "../Content/Attractions/Photos/panoramaraclawicka2.jpg", "../Content/Attractions/Photos/panoramaraclawicka3.jpg", "../Content/Attractions/Photos/panoramaraclawicka1_hover.jpg" };
+        public static List<string> OGROD_JAPONSKI_PHOTOS = new List<string> { "../Content/Attractions/Photos/ogrodjaponski1.jpg", "../Content/Attractions/Photos/ogrodjaponski2.jpg", "../Content/Attractions/Photos/ogrodjaponski3.jpg", "../Content/Attractions/Photos/ogrodjaponski1_hover.jpg" };
+        public static List<string> FONTANNA_PHOTOS = new List<string> { "../Content/Attractions/Photos/fontanna1.jpg", "../Content/Attractions/Photos/fontanna2.jpg", "../Content/Attractions/Photos/fontanna3.jpg", "../Content/Attractions/Photos/fontanna1_hover.jpg" };
+        public static List<string> WYSPA_SLODOWA_PHOTOS = new List<string> { "../Content/Attractions/Photos/wyspaslodowa1.jpg", "../Content/Attractions/Photos/wyspaslodowa2.jpg", "../Content/Attractions/Photos/wyspaslodowa3.jpg", "../Content/Attractions/Photos/wyspaslodowa1_hover.jpg" };
+        public static List<string> ZOO_PHOTOS = new List<string> { "../Content/Attractions/Photos/zoo1.jpg", "../Content/Attractions/Photos/zoo2.jpg", "../Content/Attractions/Photos/zoo3.jpg", "../Content/Attractions/Photos/zoo1_hover.jpg" };
+        public static List<string> OGROD_BOTANICZNY_PHOTOS = new List<string> { "../Content/Attractions/Photos/ogrodbotaniczny1.jpg", "../Content/Attractions/Photos/ogrodbotaniczny2.jpg", "../Content/Attractions/Photos/ogrodbotaniczny3.jpg", "../Content/Attractions/Photos/ogrodbotaniczny1_hover.jpg" };
+
+        public static String RYNEK_COLOR = "BlueColor";
+        public static String OSTROW_TUMSKI_COLOR = "GreenColor";
+        public static String HALA_STULECIA_COLOR = "PurpleColor";
+        public static String PALAC_KROLEWSKI_COLOR = "YellowColor";
+        public static String PANORAMA_RACLAWICKA_COLOR = "LimeColor";
+        public static String OGROD_JAPONSKI_COLOR = "OrangeColor";
+        public static String FONTANNA_COLOR = "RedColor";
+        public static String WYSPA_SLODOWA_COLOR = "BlueColor";
+        public static String ZOO_COLOR = "GreenColor";
+        public static String OGROD_BOTANICZNY_COLOR = "PurpleColor";
+
+        public static string RYNEK_ICON = "../Content/Attractions/Icons/rynek.png";
+        public static string OSTROW_TUMSKI_ICON = "../Content/Attractions/Icons/ostrowtumski.png";
+        public static string HALA_STULECIA_ICON = "../Content/Attractions/Icons/halastulecia.png";
+        public static string PALAC_KROLEWSKI_ICON = "../Content/Attractions/Icons/palackrolewski.png";
+        public static string PANORAMA_RACLAWICKA_ICON = "../Content/Attractions/Icons/panoramaraclawicka.png";
+        public static string OGROD_JAPONSKI_ICON = "../Content/Attractions/Icons/ogrodjaponski.png";
+        public static string FONTANNA_ICON = "../Content/Attractions/Icons/fontanna.png";
+        public static string WYSPA_SLODOWA_ICON = "../Content/Attractions/Icons/wyspaslodowa.png";
+        public static string ZOO_ICON = "../Content/Attractions/Icons/zoo.png";
+        public static string OGROD_BOTANICZNY_ICON = "../Content/Attractions/Icons/ogrodbotaniczny.png";
 
         public static String getTitleFor(String parameter)
         {
@@ -111,7 +133,7 @@ namespace Przewodnik.Content.Attractions
                 case "HalaStulecia":
                     return HALA_STULECIA_PHOTOS;
                 case "PałacKrólewski":
-                    return PALAS_KROLEWSKI_PHOTOS;
+                    return PALAC_KROLEWSKI_PHOTOS;
                 case "PanoramaRacławicka":
                     return PANORAMA_RACLAWICKA_PHOTOS;
                 case "OgródJapoński":
@@ -126,6 +148,64 @@ namespace Przewodnik.Content.Attractions
                     return OGROD_BOTANICZNY_PHOTOS;
                 default:
                     return new List<string> { "smuteczek :( " };
+            }
+        }
+
+        public static string getColorFor(String parameter)
+        {
+            switch (parameter)
+            {
+                case "Rynek":
+                    return RYNEK_COLOR;
+                case "OstrówTumski":
+                    return OSTROW_TUMSKI_COLOR;
+                case "HalaStulecia":
+                    return HALA_STULECIA_COLOR;
+                case "PałacKrólewski":
+                    return PALAC_KROLEWSKI_COLOR;
+                case "PanoramaRacławicka":
+                    return PANORAMA_RACLAWICKA_COLOR;
+                case "OgródJapoński":
+                    return OGROD_JAPONSKI_COLOR;
+                case "FontannaMultimedialna":
+                    return FONTANNA_COLOR;
+                case "WyspaSłodowa":
+                    return WYSPA_SLODOWA_COLOR;
+                case "ZOO":
+                    return ZOO_COLOR;
+                case "OgródBotaniczny":
+                    return OGROD_BOTANICZNY_COLOR;
+                default:
+                    return "";
+            }
+        }
+
+        public static string getIconFor(String parameter)
+        {
+            switch (parameter)
+            {
+                case "Rynek":
+                    return RYNEK_ICON;
+                case "OstrówTumski":
+                    return OSTROW_TUMSKI_ICON;
+                case "HalaStulecia":
+                    return HALA_STULECIA_ICON;
+                case "PałacKrólewski":
+                    return PALAC_KROLEWSKI_ICON;
+                case "PanoramaRacławicka":
+                    return PANORAMA_RACLAWICKA_ICON;
+                case "OgródJapoński":
+                    return OGROD_JAPONSKI_ICON;
+                case "FontannaMultimedialna":
+                    return FONTANNA_ICON;
+                case "WyspaSłodowa":
+                    return WYSPA_SLODOWA_ICON;
+                case "ZOO":
+                    return ZOO_ICON;
+                case "OgródBotaniczny":
+                    return OGROD_BOTANICZNY_ICON;
+                default:
+                    return "";
             }
         }
 

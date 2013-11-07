@@ -8,6 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("content/design/sounds/button-enter.wav")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("content/design/sounds/button-select.wav")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("content/attractions/cameras/rynek.htm")]
 
 

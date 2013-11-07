@@ -94,8 +94,9 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
         public String GetLastDate()
         {
             IValueConverter dateConverter = new DateTimeConverter();
-            return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
-            return tweets[0].Date.ToString();
+            return "dupa";
+            //return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
+            //return tweets[0].Date.ToString();
         }
     }
 }

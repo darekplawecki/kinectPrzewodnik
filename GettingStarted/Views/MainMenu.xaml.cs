@@ -27,8 +27,8 @@ namespace Przewodnik.Views
         {
             //KinectTileButton bb = new KinectTileButton();
             //bb.
-            TwitterPageButton.Content = "Twitter";// +  "\n"+TwitterManager.Instance.getLastDate();
-            TwitterLabel.Text = TwitterManager.Instance.GetLastDate();
+            //TwitterPageButton.Content = "Twitter";// +  "\n"+TwitterManager.Instance.getLastDate();
+            //TwitterLabel.Text = TwitterManager.Instance.GetLastDate();
             //TwitterPageButton.Label = TwitterManager.Instance.getLastDate();
             //TwitterPageButton.LabelTemplate.
         }
