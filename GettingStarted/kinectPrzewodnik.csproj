@@ -131,6 +131,7 @@
     <Compile Include="Models\CalendarModel.cs" />
     <Compile Include="Models\SleepScreenModel.cs" />
     <Compile Include="Models\TweetModel.cs" />
+    <Compile Include="Models\WeatherModel.cs" />
     <Compile Include="Utilities\CommandOnEventAssociation.cs" />
     <Compile Include="Utilities\CommandOnEventHelper.cs" />
     <Compile Include="Utilities\CookieAwareWebClient.cs">
@@ -163,6 +164,7 @@
     <Compile Include="ViewModels\SleepScreenViewModel.cs" />
     <Compile Include="ViewModels\TwitterViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="ViewModels\WeatherViewModel.cs" />
     <Compile Include="Views\AttractionArticle.xaml.cs">
       <DependentUpon>AttractionArticle.xaml</DependentUpon>
     </Compile>
@@ -303,6 +305,50 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Weather\ico1.png" />
+    <Resource Include="Content\Weather\ico10.png" />
+    <Resource Include="Content\Weather\ico11.png" />
+    <Resource Include="Content\Weather\ico12.png" />
+    <Resource Include="Content\Weather\ico13.png" />
+    <Resource Include="Content\Weather\ico14.png" />
+    <Resource Include="Content\Weather\ico15.png" />
+    <Resource Include="Content\Weather\ico16.png" />
+    <Resource Include="Content\Weather\ico17.png" />
+    <Resource Include="Content\Weather\ico18.png" />
+    <Resource Include="Content\Weather\ico19.png" />
+    <Resource Include="Content\Weather\ico2.png" />
+    <Resource Include="Content\Weather\ico20.png" />
+    <Resource Include="Content\Weather\ico21.png" />
+    <Resource Include="Content\Weather\ico22.png" />
+    <Resource Include="Content\Weather\ico23.png" />
+    <Resource Include="Content\Weather\ico24.png" />
+    <Resource Include="Content\Weather\ico25.png" />
+    <Resource Include="Content\Weather\ico26.png" />
+    <Resource Include="Content\Weather\ico27.png" />
+    <Resource Include="Content\Weather\ico28.png" />
+    <Resource Include="Content\Weather\ico29.png" />
+    <Resource Include="Content\Weather\ico3.png" />
+    <Resource Include="Content\Weather\ico30.png" />
+    <Resource Include="Content\Weather\ico31.png" />
+    <Resource Include="Content\Weather\ico32.png" />
+    <Resource Include="Content\Weather\ico33.png" />
+    <Resource Include="Content\Weather\ico34.png" />
+    <Resource Include="Content\Weather\ico35.png" />
+    <Resource Include="Content\Weather\ico36.png" />
+    <Resource Include="Content\Weather\ico37.png" />
+    <Resource Include="Content\Weather\ico38.png" />
+    <Resource Include="Content\Weather\ico39.png" />
+    <Resource Include="Content\Weather\ico4.png" />
+    <Resource Include="Content\Weather\ico40.png" />
+    <Resource Include="Content\Weather\ico41.png" />
+    <Resource Include="Content\Weather\ico42.png" />
+    <Resource Include="Content\Weather\ico43.png" />
+    <Resource Include="Content\Weather\ico44.png" />
+    <Resource Include="Content\Weather\ico5.png" />
+    <Resource Include="Content\Weather\ico6.png" />
+    <Resource Include="Content\Weather\ico7.png" />
+    <Resource Include="Content\Weather\ico8.png" />
+    <Resource Include="Content\Weather\ico9.png" />
     <Resource Include="Content\Twitter\AlertMPK.jpg" />
     <Resource Include="Content\Twitter\FaktyTVPWroclaw.jpg" />
     <Resource Include="Content\Twitter\gazeta_wroclaw.jpg" />
