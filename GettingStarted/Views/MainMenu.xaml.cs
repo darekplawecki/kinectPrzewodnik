@@ -3,6 +3,8 @@ using System.Windows.Controls;
 using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Utilities.Twitter;
 using System;
+using Przewodnik.ViewModels;
+using System.Windows.Media.Imaging;
 
 namespace Przewodnik.Views
 {
@@ -10,12 +12,18 @@ namespace Przewodnik.Views
     partial class MainMenu : IKinectPage
     {
         private KinectPageFactory pageFactory;
+        private WeatherViewModel wvm;
 
         public MainMenu(KinectPageFactory pageFactory)
         {
             InitializeComponent();
             this.pageFactory = pageFactory;
-            
+
+            wvm = new WeatherViewModel();
+            BitmapImage bmi = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
+            weatherImage.Source = bmi;
+            temperature.Text = wvm.wm.Temperature;
+            description.Text = wvm.wm.Description;
         }
 
         public Grid GetView()

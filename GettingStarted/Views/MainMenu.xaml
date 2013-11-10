@@ -118,11 +118,15 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Source="../Content/Design/Images/home_weather.jpg"></Image>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
-                    <Image Source="../Content/Design/Images/ico_weather.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="pogoda" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource BlockTitle}"></TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Name="weatherImage" HorizontalAlignment="Left"></Image>
+                        <TextBlock Name="temperature" FontSize="35" Foreground="White"></TextBlock>
+                    </StackPanel>
+                   <TextBlock Name="description" FontSize="20" Foreground="White" TextWrapping="Wrap"></TextBlock>
                 </StackPanel>
             </Grid>
-
+    
+            
         </k:KinectTileButton>
 
         <k:KinectTileButton x:Name="MapsButton"
