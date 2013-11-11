@@ -59,8 +59,8 @@ namespace Przewodnik
             kinectRegion.HandPointersUpdated += (sender, args) => _kinectController.OnHandPointersUpdated(this.kinectRegion.HandPointers);
             DataContext = _kinectController;
 
-
             _movementDetector = new MouseMovementDetector(this);
+            _movementDetector.IsMovingChanged += OnIsMouseMovingChangedNoWake;
             _movementDetector.Start();
         }
 
@@ -120,6 +120,11 @@ namespace Przewodnik
             base.OnKeyUp(e);
         }
 
+        private void OnIsMouseMovingChangedNoWake(object sender, EventArgs e)
+        {
+            WindowBezelHelper.UpdateBezel(this, _movementDetector.IsMoving);
+        }
+
         private void OnIsMouseMovingChanged(object sender, EventArgs e)
         {
             WindowBezelHelper.UpdateBezel(this, _movementDetector.IsMoving);
@@ -144,8 +149,10 @@ namespace Przewodnik
             }
             else
             {
-                _navigator.GoSleep();
+                _movementDetector.IsMovingChanged -= OnIsMouseMovingChangedNoWake;
                 _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
+                _movementDetector.Start();
+                _navigator.GoSleep();
             }
         }
 
