@@ -137,6 +137,7 @@
     <Compile Include="Utilities\CookieAwareWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\DataLoader.cs" />
     <Compile Include="Utilities\EngagementStateManager.cs" />
     <Compile Include="Utilities\EventQueueSection.cs" />
     <Compile Include="Utilities\InstagramAPIManager.cs" />
@@ -179,6 +180,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\LoadingScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\MapPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -193,6 +198,9 @@
     </Page>
     <Compile Include="Views\CalendarPage.xaml.cs">
       <DependentUpon>CalendarPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoadingScreen.xaml.cs">
+      <DependentUpon>LoadingScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MapPage.xaml.cs">
       <DependentUpon>MapPage.xaml</DependentUpon>

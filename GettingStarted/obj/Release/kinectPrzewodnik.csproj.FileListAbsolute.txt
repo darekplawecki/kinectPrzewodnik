@@ -312,3 +312,11 @@ C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Pr
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\kinectPrzewodnik.csproj.GenerateResource.Cache
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.exe
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.pdb
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Release\Microsoft.Maps.MapControl.WPF.dll
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Controls\KinectButtonStyles.baml
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\CalendarPage.baml
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\CalendarPage.g.cs
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\LoadingScreen.g.cs
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\MapPage.g.cs
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\LoadingScreen.baml
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\MapPage.baml

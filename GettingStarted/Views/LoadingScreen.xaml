@@ -1,0 +1,18 @@
+﻿<Grid x:Class="Przewodnik.Views.LoadingScreen"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:k="http://schemas.microsoft.com/kinect/2013"
+    xmlns:converters="clr-namespace:Przewodnik.Converters"
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
+    Background="SeaGreen"
+    Name="TwitterGrid">
+    <StackPanel VerticalAlignment="Center">
+        <Image HorizontalAlignment="center" Source="/Content/Design/Images/logo.png" Height="187" Width="725"/>
+        <TextBlock x:Name="firstTextBlock" FontSize="50"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"><Run Text="Witamy"/></TextBlock>
+    </StackPanel>
+</Grid>
+
+
+

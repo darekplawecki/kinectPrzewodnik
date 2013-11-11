@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -35,21 +36,12 @@ namespace Przewodnik
 
         private MouseMovementDetector _movementDetector;
 
-        private InstagramAPIManager _instagramAPI;
-        private TwitterManager _twitterAPI;
-
 
         public MainWindow(KinectController controller)
         {
             AdjustResolution();
             InitializeComponent();
             Loaded += OnLoaded;
-
-            //_instagramAPI = new InstagramAPIManager();
-            //_instagramAPI.saveRecentImages();
-
-            _twitterAPI = TwitterManager.Instance;
-            //_twitterAPI.GetHomeTimeline(); // this to be moved to loading screen
 
             _navigator = new Navigator(this);
             _pageFactory = new KinectPageFactory(_navigator);
@@ -75,8 +67,6 @@ namespace Przewodnik
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            
-            // check resolution
             double height = SystemParameters.PrimaryScreenHeight;
             double width = SystemParameters.PrimaryScreenWidth;
             if (width < MinimumScreenWidth || height < MinimumScreenHeight)
@@ -90,10 +80,9 @@ namespace Przewodnik
                 {
                     MinHeight = height;
                     MinWidth = width;
+                    EarlyLoad();
                 }
             }
-
-            _navigator.GoSleep();
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -138,26 +127,47 @@ namespace Przewodnik
             _kinectController.IsInEngagementOverrideMode = _movementDetector.IsMoving;
         }
 
+        public void EarlyLoad()
+        {
+            LoadingScreen loadingScreen = new LoadingScreen(_pageFactory);
+            _movementDetector.Stop();
+            _navigator.NavigateTo(loadingScreen);
+            TopRow.Height = new GridLength(0);
+            loadingScreen.LoadEnded += LoadEnded;
+            Thread t = new Thread(loadingScreen.OnNavigateTo2);
+            t.Start();
+        }
+
+        private void LoadEnded(object sender, EventArgs e)
+        {
+            _navigator.GoSleep();
+            _movementDetector.Start();
+        }
+
         public void Wake()
         {
             TopRow.Height = new GridLength(150);
         }
         public void Sleep()
         {
-            TopRow.Height = new GridLength(0);
+            TopRow.Dispatcher.Invoke(new Action(() => TopRow.Height = new GridLength(0)));
             SetView(_pageFactory.GetSleepScreen().GetView());
         }
 
         public void ShowBackButton(bool enable)
         {
             if (enable) BackButton.Visibility = System.Windows.Visibility.Visible;
-            else BackButton.Visibility = System.Windows.Visibility.Hidden;
+            else BackButton.Dispatcher.Invoke(new Action(() => BackButton.Visibility = System.Windows.Visibility.Hidden));
         }
 
         public void SetView(Grid grid)
         {
-            PageContentGrid.Children.Clear();
-            PageContentGrid.Children.Add(grid);
+            Action action = delegate()
+            {
+                PageContentGrid.Children.Clear();
+                PageContentGrid.Children.Add(grid);
+            };
+            PageContentGrid.Dispatcher.Invoke(action);
         }
 
         private void BackAction(object sender, RoutedEventArgs e)
