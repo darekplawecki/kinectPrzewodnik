@@ -61,7 +61,6 @@ namespace Przewodnik
 
 
             _movementDetector = new MouseMovementDetector(this);
-            _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
             _movementDetector.Start();
         }
 
@@ -130,18 +129,24 @@ namespace Przewodnik
         public void EarlyLoad()
         {
             LoadingScreen loadingScreen = new LoadingScreen(_pageFactory);
-            _movementDetector.Stop();
             _navigator.NavigateTo(loadingScreen);
             TopRow.Height = new GridLength(0);
             loadingScreen.LoadEnded += LoadEnded;
-            Thread t = new Thread(loadingScreen.OnNavigateTo2);
-            t.Start();
+            new Thread(loadingScreen.StartLoading).Start();
         }
 
         private void LoadEnded(object sender, EventArgs e)
         {
-            _navigator.GoSleep();
-            _movementDetector.Start();
+            if (e == null)
+            {
+                MessageBox.Show("Brak połączenia z Internetem. Sprawdź swoje łącze i spróbuj ponownie");
+                this.Close();
+            }
+            else
+            {
+                _navigator.GoSleep();
+                _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
+            }
         }
 
         public void Wake()

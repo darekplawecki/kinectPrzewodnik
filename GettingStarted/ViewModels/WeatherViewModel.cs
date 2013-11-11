@@ -13,7 +13,7 @@ namespace Przewodnik.ViewModels
         
         public WeatherViewModel()
         {
-           
+
             CookieAwareWebClient client = new CookieAwareWebClient();
             string link = "http://tvnmeteo.tvn24.pl/pogoda/wroclaw,49413/na-dzis-na-jutro,1.html";
             var result = client.DownloadData(link);

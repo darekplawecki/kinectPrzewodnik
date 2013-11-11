@@ -137,7 +137,10 @@
     <Compile Include="Utilities\CookieAwareWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Utilities\DataLoader.cs" />
+    <Compile Include="Utilities\DataLoader\DataLoader.cs" />
+    <Compile Include="Utilities\DataLoader\DataLoaderEventArgs.cs" />
+    <Compile Include="Utilities\DataLoader\InstagramLoader.cs" />
+    <Compile Include="Utilities\DataLoader\TwitterLoader.cs" />
     <Compile Include="Utilities\EngagementStateManager.cs" />
     <Compile Include="Utilities\EventQueueSection.cs" />
     <Compile Include="Utilities\InstagramAPIManager.cs" />

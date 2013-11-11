@@ -4,6 +4,7 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using Przewodnik.Utilities;
+using Przewodnik.Utilities.DataLoader;
 using Przewodnik.Utilities.Twitter;
 
 namespace Przewodnik.Views
@@ -28,19 +29,32 @@ namespace Przewodnik.Views
             return TwitterGrid;
         }
 
-
-        public void OnNavigateTo2()
+        public void StartLoading()
         {
-            if (!CheckForInternetConnection()) TextWritter("You don't have die internet");
+            if (!CheckForInternetConnection())
+            {
+                LoadEnded(this, null);
+            }
             else if (LoadEnded != null)
             {
+                dataLoader.loaderEvents += LoaderEvents;
                 if (dataLoader.Load()) LoadEnded(this, new EventArgs());
+            }
+        }
+
+        private void LoaderEvents(object sender, EventArgs eventArgs)
+        {
+            if (eventArgs != null)
+            {
+                DataLoaderEventArgs args = eventArgs as DataLoaderEventArgs;
+                int percent = args.Many*100/args.Of;
+                TextWritter(percent.ToString()+"%");
             }
         }
 
         public void TextWritter(String text)
         {
-            firstTextBlock.Dispatcher.Invoke(new Action(() => firstTextBlock.Text += "\r\n" + text));
+            firstTextBlock.Dispatcher.Invoke(new Action(() => firstTextBlock.Text = text));
         }
 
         public static bool CheckForInternetConnection()
