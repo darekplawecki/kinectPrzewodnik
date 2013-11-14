@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Przewodnik.Models;
 using Przewodnik.Utilities;
 using System.Text.RegularExpressions;
+using Przewodnik.Utilities.DataLoader;
 
 namespace Przewodnik.ViewModels
 {
@@ -17,6 +18,7 @@ namespace Przewodnik.ViewModels
         public List<string> typesList;
         public List<string> namesList;
         public List<string> placesList;
+        CalendarLoader cl;
 
         public CalendarViewModel()
         {
@@ -25,12 +27,9 @@ namespace Przewodnik.ViewModels
 
         public CalendarViewModel(string parameter)
         {
-            CookieAwareWebClient client = new CookieAwareWebClient();
-            string link = "http://pik.wroclaw.pl/d" + parameter;
-            var result = client.DownloadData(link);
-            var html = System.Text.Encoding.Default.GetString(result);
-
             modelList = new List<CalendarModel>();
+            cl = CalendarLoader.Instance;
+            string html = cl.WWWSourcesHashtable[parameter].ToString();
 
             hoursList = GetHours(html);
             typesList = GetTypes(html);

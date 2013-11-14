@@ -172,5 +172,21 @@
         </k:KinectTileButton>
     </c:PromptControl>
 
+    <Grid Background="#CC4b0082" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,50,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Name="Time" FontSize="90" Foreground="White" FontWeight="Light" Margin="20,0,20,0"></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="0" Name="WeekDay" FontSize="35" Foreground="White" FontWeight="Light" VerticalAlignment="Bottom"  Margin="0,0,20,-5" ></TextBlock>
+        <TextBlock Grid.Column="1" Grid.Row="1" Name="DayAndMonth" FontSize="35" Foreground="White" FontWeight="Light" VerticalAlignment="Top" Margin="0,-5,20,0" ></TextBlock>
+
+    </Grid>
+      
 
 </Grid>

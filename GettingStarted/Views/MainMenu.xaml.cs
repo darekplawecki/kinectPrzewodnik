@@ -5,6 +5,7 @@ using Przewodnik.Utilities.Twitter;
 using System;
 using Przewodnik.ViewModels;
 using System.Windows.Media.Imaging;
+using Przewodnik.Utilities.DataLoader;
 
 namespace Przewodnik.Views
 {
@@ -33,12 +34,6 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-            //KinectTileButton bb = new KinectTileButton();
-            //bb.
-            //TwitterPageButton.Content = "Twitter";// +  "\n"+TwitterManager.Instance.getLastDate();
-            //TwitterLabel.Text = TwitterManager.Instance.GetLastDate();
-            //TwitterPageButton.Label = TwitterManager.Instance.getLastDate();
-            //TwitterPageButton.LabelTemplate.
         }
 
         private void touristAttractions_Click(object sender, RoutedEventArgs e)

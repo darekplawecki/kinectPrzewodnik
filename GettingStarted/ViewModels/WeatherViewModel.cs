@@ -1,5 +1,6 @@
 ﻿using Przewodnik.Models;
 using Przewodnik.Utilities;
+using Przewodnik.Utilities.DataLoader;
 using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -10,17 +11,14 @@ namespace Przewodnik.ViewModels
     public class WeatherViewModel
     {
         public WeatherModel wm;
-        
+
         public WeatherViewModel()
         {
-
-            CookieAwareWebClient client = new CookieAwareWebClient();
-            string link = "http://tvnmeteo.tvn24.pl/pogoda/wroclaw,49413/na-dzis-na-jutro,1.html";
-            var result = client.DownloadData(link);
-            var html = System.Text.Encoding.Default.GetString(result);
-
-            wm = new WeatherModel(GetWheatherImage(html), GetTemperature(html), GetDescription(html));
-        
+            WeatherLoader wl = WeatherLoader.Instance;
+            wm = new WeatherModel();
+            wm.WeatherImage = GetWheatherImage(wl.html);
+            wm.Temperature = GetTemperature(wl.html);
+            wm.Description = GetDescription(wl.html);
         }
 
         public static string GetWheatherImage(string file)
@@ -33,7 +31,7 @@ namespace Przewodnik.ViewModels
             {
                 weatherImage = m.Groups[1].ToString();
             }
-            return "../Content/Weather/"+ weatherImage + ".png";
+            return "../Content/Weather/" + weatherImage + ".png";
         }
 
         public static string GetTemperature(string file)

@@ -36,6 +36,7 @@ namespace Przewodnik.Utilities.DataLoader
         //  w własnym loaderze, a nie tej (dataLoader) klasie.
         //- DataLoader przed wywolaniem jakiegokolwiek ladowania ponizej juz sprawdzil, czy uzytkownik
         //  jest podlaczony do internetu. Jezeli nie jest, aplikacja w ogole sie nie uruchamia.
+        // W tej chwili wysypuje się błąd, ponieważ mój DataLoader jest taki głupi, albo ja, że nie potrafi wczytać pogody.
         //  W tej chwili wysypuje sie blad, bo Jadzia wczytuje pogode, zanim wlaczy sie DataLoader.
         //  Po przezuceniu pogody w odpowiednie miejsce bedzie dzialac.
 
@@ -59,13 +60,13 @@ namespace Przewodnik.Utilities.DataLoader
 
         private void LoadCalendar()
         {
-            Thread.Sleep(1000);
+            CalendarLoader cl = CalendarLoader.Instance;
             loaderEvents(this, new DataLoaderEventArgs(4, 5));
         }
 
         private void LoadWeather()
         {
-            Thread.Sleep(1000);
+            WeatherLoader wl =  WeatherLoader.Instance;
             loaderEvents(this, new DataLoaderEventArgs(5, 5));
         }
     }

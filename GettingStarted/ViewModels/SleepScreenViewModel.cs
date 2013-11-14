@@ -25,7 +25,7 @@ namespace Przewodnik.ViewModels
 
         private Random random;
         private int currentIndex = 0;
-
+        
         public SleepScreenViewModel()
         {
             CurrentImages = new ObservableCollection<SleepScreenModel>();
@@ -37,9 +37,10 @@ namespace Przewodnik.ViewModels
             this.tickTimer = new DispatcherTimer();
             this.tickTimer.Interval = TimeSpan.FromMilliseconds(TimerIntervalMilliseconds);
             this.tickTimer.Tick += ChangeImage;
+        
         }
 
-        protected void LoadModels(string modelContentPath)
+              protected void LoadModels(string modelContentPath)
         {
             this.images = new ObservableCollection<Image>();
 

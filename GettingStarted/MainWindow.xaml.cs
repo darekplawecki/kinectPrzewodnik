@@ -79,9 +79,9 @@ namespace Przewodnik
                 {
                     MinHeight = height;
                     MinWidth = width;
-                    EarlyLoad();
                 }
             }
+            EarlyLoad();
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
