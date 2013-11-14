@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Przewodnik.Models;
-using Przewodnik.Utilities;
 using System.Text.RegularExpressions;
 using Przewodnik.Utilities.DataLoader;
+using System.Web;
 
 namespace Przewodnik.ViewModels
 {
-
     public class CalendarViewModel
     {
         public List<CalendarModel> modelList;
@@ -97,12 +94,7 @@ namespace Przewodnik.ViewModels
             {
                 byte[] bytes = Encoding.Default.GetBytes(names[i]);
                 names[i] = Encoding.UTF8.GetString(bytes);
-
-                if (names[i].Contains("&quot;"))
-                {
-                    string quote = "\"";
-                    names[i] = names[i].Replace("&quot;", quote);
-                }
+                names[i] = HttpUtility.HtmlDecode(names[i]);
             }
 
             return names;
@@ -124,13 +116,9 @@ namespace Przewodnik.ViewModels
             {
                 byte[] bytes = Encoding.Default.GetBytes(places[i]);
                 places[i] = Encoding.UTF8.GetString(bytes);
-
-                if (places[i].Contains("&quot;"))
-                {
-                    string quote = "\"";
-                    places[i] = places[i].Replace("&quot;", quote);
-                }
+                places[i] = HttpUtility.HtmlDecode(places[i]);
             }
+            
             return places;
         }
     }
