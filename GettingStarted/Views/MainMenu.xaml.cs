@@ -1,11 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
-using Microsoft.Kinect.Toolkit.Controls;
-using Przewodnik.Utilities.Twitter;
 using System;
 using Przewodnik.ViewModels;
-using System.Windows.Media.Imaging;
-using Przewodnik.Utilities.DataLoader;
 
 namespace Przewodnik.Views
 {
@@ -20,11 +16,11 @@ namespace Przewodnik.Views
             InitializeComponent();
             this.pageFactory = pageFactory;
 
-            wvm = new WeatherViewModel();
-            BitmapImage bmi = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
-            weatherImage.Source = bmi;
-            temperature.Text = wvm.wm.NameDay;
-            description.Text = wvm.wm.Description;
+            //wvm = new WeatherViewModel();
+            //BitmapImage bmi = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
+            //weatherImage.Source = bmi;
+            //temperature.Text = wvm.wm.Temperature;
+            //description.Text = wvm.wm.Description;
         }
 
         public Grid GetView()

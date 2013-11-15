@@ -8,13 +8,13 @@
         <Style.Triggers>
             <EventTrigger>
                 <EventTrigger.RoutedEvent>k:KinectRegion.HandPointerEnter</EventTrigger.RoutedEvent>
-                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav"/>
+                <SoundPlayerAction Source="../Content/Design/Sounds/button-enter.wav"/>
             </EventTrigger>
             <EventTrigger RoutedEvent="Button.MouseEnter">
-                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav" />
+                <SoundPlayerAction Source="../Content/Design/Sounds/button-enter.wav" />
             </EventTrigger>
             <EventTrigger RoutedEvent="Button.Click">
-                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-select.wav" />
+                <SoundPlayerAction Source="../Content/Design/Sounds/button-select.wav" />
             </EventTrigger>
         </Style.Triggers>
         <Setter Property="BorderThickness" Value="0"/>
@@ -25,13 +25,13 @@
         <Style.Triggers>
             <EventTrigger>
                 <EventTrigger.RoutedEvent>k:KinectRegion.HandPointerEnter</EventTrigger.RoutedEvent>
-                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav" />
+                <SoundPlayerAction Source="../Content/Design/Sounds/button-enter.wav" />
             </EventTrigger>
             <EventTrigger RoutedEvent="Button.MouseEnter">
-                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-enter.wav" />
+                <SoundPlayerAction Source="../Content/Design/Sounds/button-enter.wav" />
             </EventTrigger>
             <EventTrigger RoutedEvent="Button.Click">
-                <SoundPlayerAction Source="C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\Content/Design/Sounds/button-select.wav" />
+                <SoundPlayerAction Source="../Content/Design/Sounds/button-select.wav" />
             </EventTrigger>
         </Style.Triggers>
     </Style>

@@ -68,13 +68,27 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
                 u = new TokenUser(token);
                 IList<ITweet> homeTimeline = u.GetHomeTimeline(20, true, true);
                 tweets = new List<TweetModel>();
+                int direction = 1;
+                long author_id = 0;
                 foreach (ITweet tweet in homeTimeline)
                 {
+                    if (direction == 1)
+                    {
+                        direction = tweet.Creator.Id.Value != author_id ? 0 : 1;
+                    }
+                    else
+                    {
+                        direction = tweet.Creator.Id.Value != author_id ? 1 : 0;
+                    }
+                    author_id = tweet.Creator.Id.Value;
                     tweets.Add(new TweetModel
                     {
                         Author = TwitterFollowers.GetFollowerName(tweet.Creator.Id.Value),
                         Date = tweet.CreatedAt,
-                        Content = tweet.Text
+                        Content = tweet.Text,
+                        Image = TwitterFollowers.GetFollowerImage(tweet.Creator.Id.Value),
+                        Colors = TwitterFollowers.GetFollowerColors(tweet.Creator.Id.Value),
+                        Direction = direction
                     });
                 }
                 IsError = false;

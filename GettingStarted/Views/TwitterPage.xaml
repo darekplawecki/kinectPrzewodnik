@@ -6,36 +6,104 @@
     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
     Name="TwitterGrid">
 
-    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50">Twitter feed</TextBlock>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="0.22*"></RowDefinition>
+        <RowDefinition Height="0.68*"></RowDefinition>
+        <RowDefinition Height="0.1*"></RowDefinition>
+    </Grid.RowDefinitions>
 
-    <k:KinectScrollViewer Margin="50 150 50 50" Name="ScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" ContentMargin="0" MinWidth="220" MinHeight="300" Background="Transparent" HoverBackground="Transparent">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+        <ColumnDefinition Width="0.8*"></ColumnDefinition>
+        <ColumnDefinition Width="0.1*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
 
-        <StackPanel Orientation="Vertical">
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="firstTextBlock" Style="{DynamicResource PageTitle}" FontSize="{DynamicResource Size72}">z ostatniej chwili...</TextBlock>
+
+    <k:KinectScrollViewer Grid.Row="1" Grid.Column="1" Name="ScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" ContentMargin="0" Background="Transparent" HoverBackground="Transparent">
+
+        <StackPanel Margin="0,-40,0,0" Orientation="Vertical" Width="Auto">
             <!--<k:KinectCircleButton Height="30" Click="RefreshIt_Action"></k:KinectCircleButton>-->
             <TextBlock Name="ErrorContent" Text="" FontSize="20"></TextBlock>
             <TextBlock Name="TwitterContent" Text=""></TextBlock>
-            <ListBox x:Name="MainList" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <ListBox x:Name="MainList" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Transparent" HorizontalContentAlignment="Stretch" BorderThickness="0">
                 <ListBox.Resources>
                     <converters:DateTimeConverter x:Key="dateConverter" />
                 </ListBox.Resources>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <StackPanel Orientation="Horizontal">
-                            <ed:Callout AnchorPoint="-0.103,1.02" CalloutStyle="RoundedRectangle" 
-                                        Fill="#FF52318F" FontSize="14.667" HorizontalAlignment="Left" Height="70" 
-                                        Margin="30, 30 , 5, 30" Stroke="White" VerticalAlignment="Top" Width="550" 
-                                        RenderTransformOrigin="0.488,-0.019">
-                                <ed:Callout.Content>
-                                    <StackPanel Margin="20, 5, 20, 5" Width="550">
-                                        <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Author}" FontWeight="Black"></TextBlock>
-                                            <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"></TextBlock>
-                                        </StackPanel>
-                                        <TextBlock Text="{Binding Content}" TextWrapping="Wrap"></TextBlock>
+                        <StackPanel>
+                            <!-- LEFT TWEET -->
+                            <Grid Margin="{DynamicResource TextBottomMargin}">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Direction}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Direction}" Value="1">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="15"></ColumnDefinition>
+                                    <ColumnDefinition Width="{DynamicResource TweetWidth}"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="{DynamicResource TweetHeight}"></RowDefinition>
+                                </Grid.RowDefinitions>
 
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding Image}"></Image>
+                                <Polygon Grid.Row="0" Grid.Column="2" Points="15,0 0,18, 15,36" Margin="0,20,0,0" Stroke="{Binding Colors[0]}" Fill="{Binding Colors[0]}" />
+
+                                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical" Margin="14,0,0,0" Background="{Binding Colors[0]}">
+                                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockTwitterMargin}">
+                                        <TextBlock Text="{Binding Author, StringFormat='@\{0\}', FallbackValue='@WrocławPrzewodnik', TargetNullValue='@WrocławPrzewodnik'}" Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextBottomMargin}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}" FontWeight="Bold"></TextBlock>
+                                        <Line X1="0" Y1="0" X2="1" Y2="0" Stretch="Fill" Stroke="{Binding Colors[1]}" StrokeThickness="1" />
+                                        <TextBlock Text="{Binding Content}" MinHeight="{DynamicResource Size60}" Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextTopMargin}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}"></TextBlock>
+                                        <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"  Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}" HorizontalAlignment="Right" Foreground="{Binding Colors[1]}"></TextBlock>
                                     </StackPanel>
-                                </ed:Callout.Content>
-                            </ed:Callout>
+                                </StackPanel>
+                            </Grid>
+
+                            <!-- RIGHT TWEET -->
+                            <Grid Margin="{DynamicResource TextBottomMargin}" HorizontalAlignment="Right">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Direction}" Value="1">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding Direction}" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="{DynamicResource TweetWidth}"></ColumnDefinition>
+                                    <ColumnDefinition Width="15"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="{DynamicResource TweetHeight}"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical" Margin="0,0,15,0" Background="{Binding Colors[0]}">
+                                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockTwitterMargin}">
+                                        <TextBlock Text="{Binding Author, StringFormat='@\{0\}', FallbackValue='@unknown', TargetNullValue='@uknown'}" Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextBottomMargin}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}" FontWeight="Bold"></TextBlock>
+                                        <Line X1="0" Y1="0" X2="1" Y2="0" Stretch="Fill" Stroke="{Binding Colors[1]}" StrokeThickness="1" />
+                                        <TextBlock Text="{Binding Content}" MinHeight="{DynamicResource Size60}" Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextTopMargin}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}"></TextBlock>
+                                        <TextBlock Text="{Binding Date, Converter={StaticResource dateConverter}}"  Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}" HorizontalAlignment="Right" Foreground="{Binding Colors[1]}"></TextBlock>
+                                    </StackPanel>
+                                </StackPanel>
+                                <Polygon Grid.Row="0" Grid.Column="0" Points="0,0 15,18, 0,36" Margin="0,20,0,0" Stroke="{Binding Colors[0]}" Fill="{Binding Colors[0]}" HorizontalAlignment="Right"/>
+
+                                <Image Grid.Row="0" Grid.Column="2" Source="{Binding Image}"></Image>
+                            </Grid>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>

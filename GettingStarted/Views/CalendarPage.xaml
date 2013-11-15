@@ -7,76 +7,224 @@
       mc:Ignorable="d" 
       x:Name="CalendarGrid">
 
-    <Grid ClipToBounds="True" Margin="50 0 50 50">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="1*" />
-            <RowDefinition Height="4*" />
-        </Grid.RowDefinitions>
+    <Grid.RowDefinitions>
+        <RowDefinition Height="0.20*"></RowDefinition>
+        <RowDefinition Height="0.73*"></RowDefinition>
+        <RowDefinition Height="0.07*"></RowDefinition>
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.06*"></ColumnDefinition>
+        <ColumnDefinition Width="0.88*"></ColumnDefinition>
+        <ColumnDefinition Width="0.06*"></ColumnDefinition>
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="titleTextBlock" Style="{DynamicResource PageTitle}" FontSize="{DynamicResource Size72}"></TextBlock>
+
+    <Grid Grid.Row="1" Grid.Column="1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="3*" />
-            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="0.14*"></ColumnDefinition>
+            <ColumnDefinition Width="0.72*"></ColumnDefinition>
+            <ColumnDefinition Width="0.14*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <TextBlock x:Name="titleTextBlock" FontSize="50" Grid.Column="0" Grid.Row="0"></TextBlock>
-
-        <StackPanel Orientation="Horizontal" Margin="0,-50,0,0" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Wszystkie" Content="Wszystkie" Width="100" Height="50" FontSize="20" Click="FilterAll_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Muzyka" Content="Muzyka" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Kino" Content="Kino" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Teatr" Content="Teatr" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Art" Content="Art" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Off" Content="Off" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="DJ" Content="DJ" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Sport" Content="Sport" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Dzieci" Content="Dzieci" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Nauka" Content="Nauka" Width="100" Height="50" FontSize="20"  Click="Filter_Click"/>
-            <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="Inne" Content="Inne" Width="100" Height="50" FontSize="20" Click="Filter_Click"/>
-        </StackPanel>
+        <k:KinectScrollViewer x:Name="CategoryScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                              Background="Transparent" HoverBackground="Transparent"
+                              Grid.Column="0" Grid.Row="0">
+            <StackPanel Orientation="Vertical" Margin="0,-100,0,-100" Grid.Column="0">
+                <k:KinectTileButton x:Name="Wszystkie" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="FilterAll_Click" Background="{StaticResource RedColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_wszystkie.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="wszystkie" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Muzyka" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource BlueColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_muzyka.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="muzyka" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Kino" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource GreenColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_kino.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="kino" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Teatr" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource PurpleColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_teatr.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="teatr" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Art" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource PinkColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_art.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="art" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Off" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource YellowColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_off.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="off" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Dj" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource LimeColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_dj.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="dj" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Sport" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource OrangeColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_sport.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="sport" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Dzieci" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource VioletColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_dzieci.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="dzieci" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Nauka" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource AzureColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_nauka.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="nauka" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+                <k:KinectTileButton x:Name="Inne" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource DarkGrayColor}">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Text="inne" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+            </StackPanel>
+        </k:KinectScrollViewer>
 
         <TextBlock x:Name="emptyBlock" Width="Auto" Text="Brak wydarzeń dla wybranej kategorii" 
-                   FontSize="20" FontWeight="Black" Visibility="Hidden" Grid.Column="0" Grid.Row="2" />
+                   FontSize="{DynamicResource Size50}" FontWeight="Light" Visibility="Hidden" Grid.Column="1" Grid.Row="0" />
 
         <k:KinectScrollViewer x:Name="ScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
                               Background="Transparent" HoverBackground="Transparent"
-                              Grid.Column="0" Grid.Row="2">
+                              Grid.Column="1" Grid.Row="0">
             <StackPanel Orientation="Vertical" Margin="0, -100, 0, -100">
                 <ListBox x:Name="EventList" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0">
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <ContentPresenter/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
                     <ListBox.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Vertical">
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="0,0,10,0" Width="Auto" Text="{Binding Hour}" FontWeight="Black" Foreground="Orange"></TextBlock>
-                                    <TextBlock Margin="0,0,10,0" Width="Auto" Text="{Binding Type}" FontWeight="Black" Foreground="Tomato" ></TextBlock>
-                                    <TextBlock Margin="0,0,10,0" Width="Auto" Text="{Binding Place}" FontWeight="Black" Foreground="Brown"></TextBlock>
+                            <Grid Width="{DynamicResource EventBlockSize}" Margin="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.155*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.12*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.015*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.67*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.04*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Grid.Column="0" Text="{Binding Hour}" Foreground="{Binding Color}" FontSize="{DynamicResource Size60}" LineHeight="{DynamicResource Size60}" LineStackingStrategy="BlockLineHeight" Margin="{DynamicResource EventIconTopMargin}" FontWeight="Light" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                                <Grid Grid.Column="1">
+                                    <Rectangle Height="Auto" Fill="#cacaca" Width="15" HorizontalAlignment="Center"/>
+                                    <!--<Line X1="0" Y1="0" X2="0" Y2="1" Stretch="Fill" Stroke="#cacaca" StrokeThickness="15" HorizontalAlignment="Left"/>-->
+                                    <Grid Width="{DynamicResource EventIconSize}" Height="{DynamicResource EventIconSize}" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                        <Image Source="../Content/Events/timeline-circle.png" />
+                                        <Image Source="{Binding Icon}" Style="{DynamicResource Icon}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Grid>
+
+                                <Polygon Grid.Row="0" Grid.Column="3" Points="15,0 0,18, 15,36" Margin="{DynamicResource EventIconTopMargin}" Stroke="{Binding Color}" Fill="{Binding Color}" />
+                                <StackPanel Grid.Row="0" Grid.Column="3" Orientation="Vertical" Margin="14,0,0,20" Background="{Binding Color}">
+                                    <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockTwitterMargin}">
+                                        <TextBlock Text="{Binding Place}" Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextBottomMargin}" FontSize="{DynamicResource Size28}" LineHeight="{DynamicResource Size28}" ></TextBlock>
+                                        <Line X1="0" Y1="0" X2="1" Y2="0" Stretch="Fill" Stroke="White" StrokeThickness="1" />
+                                        <TextBlock Text="{Binding Name}" Style="{DynamicResource TextBlockStyle}" FontWeight="Black" Margin="{DynamicResource TextTopMargin}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size45}"></TextBlock>
+                                    </StackPanel>
                                 </StackPanel>
-                                <TextBlock Margin="0,0,0,20" Width="Auto" Text="{Binding Name}" FontWeight="Black" FontSize="16"></TextBlock>
-                            </StackPanel>
+                            </Grid>
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
             </StackPanel>
         </k:KinectScrollViewer>
 
-        <k:KinectScrollViewer Width="200" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="2" Grid.RowSpan="2" HoverBackground="Transparent">
+        <k:KinectScrollViewer x:Name="CalendarScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" 
+                              Background="Transparent" HoverBackground="Transparent"
+                              Grid.Column="2" Grid.Row="0">
             <StackPanel Orientation="Vertical" Margin="0,-100,0,-100">
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day1" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"  />
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day2" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day3" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}"  x:Name="day4" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day5" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day6" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day7" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day8" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day9" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day10" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day11" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day12" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day13" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
-                <k:KinectTileButton Style="{StaticResource OldButton}" x:Name="day14" Width="150" Height="50" FontSize="20" Click="changeDayButton_Click"/>
+
+                <ListBox x:Name="CalendarList" HorizontalContentAlignment="Right">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <k:KinectTileButton Style="{StaticResource CalendarButton}" Tag="{Binding Date}" Click="changeDayButton_Click">
+                                <Grid>
+                                    <Image Source="../Content/Events/calendar.png"></Image>
+                                    <Grid Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCalendarBlockSize}">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="0.23*"></RowDefinition>
+                                            <RowDefinition Height="0.2*"></RowDefinition>
+                                            <RowDefinition Height="0.5*"></RowDefinition>
+                                            <RowDefinition Height="0.07*"></RowDefinition>
+                                        </Grid.RowDefinitions>
+                                        <TextBlock Grid.Row="1" Foreground="White" HorizontalAlignment="Center" FontSize="{DynamicResource Size28}" FontWeight="Bold">
+                                            <TextBlock.Text>
+                                                <MultiBinding StringFormat="{}{0}.{1}">
+                                                    <Binding Path="Month"/>
+                                                    <Binding Path="Year"/>
+                                                </MultiBinding>
+                                            </TextBlock.Text>
+                                        </TextBlock>
+                                        <TextBlock Grid.Row="2" Text="{Binding Day}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="{DynamicResource Size90}" FontWeight="Black"></TextBlock>
+                                    </Grid>
+                                </Grid>
+                            </k:KinectTileButton>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
             </StackPanel>
         </k:KinectScrollViewer>
-
     </Grid>
 </Grid>
 

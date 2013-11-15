@@ -31,36 +31,31 @@ namespace Przewodnik.Views
             viewModel = new CalendarViewModel(parameter);
             EventList.ItemsSource = null;
             EventList.ItemsSource = viewModel.modelList;
+            CalendarList.ItemsSource = GetTwoWeeksButtons();
             titleTextBlock.Text = GetDayWithPointAndDayOfWeek(parameter);
-            SetTwoWeeksButtons();
         }
 
-        public void SetTwoWeeksButtons()
+        public List<DateTime> GetTwoWeeksButtons()
         {
+            List<DateTime> TwoWeeks = new List<DateTime>();
+
             DateTime dt = new DateTime();
             dt = DateTime.Today;
 
-            day1.Content = dt.ToString("dd.MM.yyyy");
-            day2.Content = dt.AddDays(1).ToString("dd.MM.yyyy");
-            day3.Content = dt.AddDays(2).ToString("dd.MM.yyyy");
-            day4.Content = dt.AddDays(3).ToString("dd.MM.yyyy");
-            day5.Content = dt.AddDays(4).ToString("dd.MM.yyyy");
-            day6.Content = dt.AddDays(5).ToString("dd.MM.yyyy");
-            day7.Content = dt.AddDays(6).ToString("dd.MM.yyyy");
-            day8.Content = dt.AddDays(7).ToString("dd.MM.yyyy");
-            day9.Content = dt.AddDays(8).ToString("dd.MM.yyyy");
-            day10.Content = dt.AddDays(9).ToString("dd.MM.yyyy");
-            day11.Content = dt.AddDays(10).ToString("dd.MM.yyyy");
-            day12.Content = dt.AddDays(11).ToString("dd.MM.yyyy");
-            day13.Content = dt.AddDays(12).ToString("dd.MM.yyyy");
-            day14.Content = dt.AddDays(13).ToString("dd.MM.yyyy");
+            TwoWeeks.Add(dt);
+            for (int i = 1; i < 14; i++)
+            {
+                TwoWeeks.Add(dt.AddDays(i));
+            }
+
+            return TwoWeeks;
         }
 
         public string DateTimeFormat(string parameter)
         {
-            string day = parameter.Substring(0, 2);
-            string month = parameter.Substring(3, 2);
-            string year = parameter.Substring(6, 4);
+            string day = parameter.Substring(8, 2);
+            string month = parameter.Substring(5, 2);
+            string year = parameter.Substring(0, 4);
 
             DateTime dt = new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day));
 
@@ -104,7 +99,7 @@ namespace Przewodnik.Views
 
         private void changeDayButton_Click(object sender, RoutedEventArgs e)
         {
-            string selectedDate = ((KinectTileButton)sender).Content.ToString();
+            string selectedDate = ((KinectTileButton)sender).Tag.ToString();
             titleTextBlock.Text = GetDayWithPointAndDayOfWeek(DateTimeFormat(selectedDate));
 
             viewModel = new CalendarViewModel(DateTimeFormat(selectedDate));

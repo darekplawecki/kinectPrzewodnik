@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Przewodnik.Models
 {
@@ -37,12 +38,19 @@ namespace Przewodnik.Models
             }
         }
 
+        public String Image { get; set; }
+        public List<SolidColorBrush> Colors { get; set; }
+        public int Direction { get; set; }
+
         public object Clone()
         {
             TweetModel cloneTweetModel = new TweetModel();
             cloneTweetModel.Author = this.Author;
             cloneTweetModel.Content = this.Content;
             cloneTweetModel.Date = this.Date;
+            cloneTweetModel.Colors = this.Colors;
+            cloneTweetModel.Image = this.Image;
+            cloneTweetModel.Direction = this.Direction;
             return cloneTweetModel;
         }
     }

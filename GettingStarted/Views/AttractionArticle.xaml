@@ -17,7 +17,7 @@
         <ColumnDefinition Width="0.07*"></ColumnDefinition>
     </Grid.ColumnDefinitions>
 
-    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Style="{DynamicResource PageTitle}" Text="{Binding Title, Mode=OneWay}"/>
+    <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Style="{DynamicResource PageTitle}" FontSize="{DynamicResource Size72}" Text="{Binding Title, Mode=OneWay}"/>
 
     <Grid Grid.Row="1" Grid.Column="1" ClipToBounds="True">
         <Grid.RowDefinitions>
@@ -66,7 +66,7 @@
         </k:KinectTileButton>
 
         <k:KinectScrollViewer Grid.Column="3" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto" VerticalAlignment="Top"  HoverBackground="Transparent" >
-            <TextBlock Margin="30,-100,10,-100" Name="descriptionTextBlock" Style="{DynamicResource BlockTitle}" Foreground="{StaticResource GrayColor}" Text="{Binding Description, Mode=OneWay}" TextAlignment="Justify" VerticalAlignment="Top" ></TextBlock>
+            <TextBlock Margin="30,-100,10,-100" Name="descriptionTextBlock" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size50}" LineHeight="{DynamicResource Size60}" Foreground="{StaticResource GrayColor}" Text="{Binding Description, Mode=OneWay}" VerticalAlignment="Top" ></TextBlock>
         </k:KinectScrollViewer>
 
     </Grid>

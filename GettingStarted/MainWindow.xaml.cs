@@ -3,14 +3,10 @@ using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Threading;
-using Microsoft.Kinect.Toolkit;
-using Microsoft.Kinect;
-using Microsoft.Kinect.Toolkit.Controls;
-using Przewodnik.Utilities.Twitter;
 using Przewodnik.Views;
 using Przewodnik.Utilities;
 using System.Windows.Media;
+using Przewodnik.Controls;
 
 namespace Przewodnik
 {
@@ -35,11 +31,12 @@ namespace Przewodnik
         }
 
         private MouseMovementDetector _movementDetector;
-
+        private DesignResources _designResources;
 
         public MainWindow(KinectController controller)
         {
-            AdjustResolution();
+            _designResources = new DesignResources();
+            _designResources.AdjustResolution();
             InitializeComponent();
             Loaded += OnLoaded;
 
@@ -185,51 +182,6 @@ namespace Przewodnik
         private void BackAction(object sender, RoutedEventArgs e)
         {
             _navigator.GoBack();
-        }
-
-        public void AdjustResolution()
-        {
-            double width = SystemParameters.PrimaryScreenWidth;
-            double height = SystemParameters.PrimaryScreenHeight;
-            double ico_size = 0.07963 * height;
-
-            Style style = new Style { TargetType = typeof(TextBlock) };
-            style.BasedOn = (Style)Application.Current.FindResource("TextBlockStyle");
-            style.Setters.Add(new Setter(TextBlock.FontSizeProperty, 0.05093 * height));
-            style.Setters.Add(new Setter(TextBlock.LineHeightProperty, 0.0463 * height));
-
-            Application.Current.Resources["BlockTitle"] = style;
-            Application.Current.Resources["BlockTitleSmaller"] = 0.0463 * height;
-
-            style = new Style { TargetType = typeof(TextBlock) };
-            style.BasedOn = (Style)Application.Current.FindResource("TextBlockStyle");
-            style.Setters.Add(new Setter(TextBlock.FontSizeProperty, 0.02222 * height));
-            style.Setters.Add(new Setter(TextBlock.LineHeightProperty, 0.02222 * height));
-
-            Application.Current.Resources["BlockDescription"] = style;
-
-            style = new Style { TargetType = typeof(Image) };
-            style.Setters.Add(new Setter(Image.WidthProperty, ico_size));
-            style.Setters.Add(new Setter(Image.HeightProperty, ico_size));
-
-            Application.Current.Resources["Icon"] = style;
-
-            Application.Current.Resources["BlockMargin"] = new Thickness(0.02315 * height);
-            Application.Current.Resources["TextTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = 0.01150 * height };
-            Application.Current.Resources["TextTopBottomMargin"] = new Thickness { Left = 0, Bottom = 0.02 * height, Right = 0, Top = 0.02 * height };
-            Application.Current.Resources["FontSize18"] = 0.01667 * height;
-
-            style = new Style { TargetType = typeof(TextBlock) };
-            style.Setters.Add(new Setter(TextBlock.FontSizeProperty, 0.06667 * height));
-            style.Setters.Add(new Setter(TextBlock.FontWeightProperty, FontWeights.Light));
-            style.Setters.Add(new Setter(TextBlock.ForegroundProperty, Application.Current.Resources["GrayColor"]));
-            style.Setters.Add(new Setter(TextBlock.MarginProperty, new Thickness { Left = 0.11574 * height, Top = 0.04167 * height, Bottom = 0, Right = 0 }));
-
-            Application.Current.Resources["PageTitle"] = style;
-            Application.Current.Resources["AttractionBlockSize"] = 0.31907 * height;
-            Application.Current.Resources["TweetHeight"] = new GridLength(0.15741 * height);
-            Application.Current.Resources["TweetWidth"] = new GridLength(0.52083 * width);
-
         }
 
     }

@@ -108,7 +108,7 @@ namespace Przewodnik.Content.Attractions
                 case "PanoramaRacławicka":
                     return PANORAMA_RACLAWICKA_DESCRIPTION;
                 case "OgródJapoński":
-                    return "Największy i najstarszy w mieście, został założony w 1785 r. jako prywatny ogród w majątku Stare Szczytniki.\nGłówną atrakcją parku jest powstały w 1913 r., a później wielokrotnie odbudowywany Ogród Japoński. Przygotowany i urządzony przez największego wówczas japonistę - entuzjastę, hrabiego Fritza von Hochberga, przy udziale japońskiego ogrodnika Mankichi Arai - był perłą wystawy. Po ekspozycji zabrano jednak liczne, wypożyczone na czas wystawy, detale (decydujące o japońskości założenia ogrodu). Od 1996 r. rozpoczęto prace rewaloryzacyjne przy udziale specjalistów japońskich z miasta Nagoya (ogrodników, architektów aranżacji kamiennych, architektów ogrodów itd.). Dzięki obecności japońskich specjalistów wszystkie projekty i prace, do najdrobniejszych szczegółów, odpowiadają oryginalnej japońskiej sztuce ogrodowej. Ogród, nawiązując do założeń historycznych z roku 1913, uzyskał jednocześnie wiele zupełnie nowych elementów nadających mu charakter rzeczywiście zgodny z zasadami japońskiej sztuki ogrodowej. Dawną kaskadę przebudowano na kaskadę „męską”, o szybko spadającej kurtynie wody. Wybudowano też drugą kaskadę „żeńską” wolno płynącą, o dwóch stopniach pośrednich. Woda z obu kaskad płynie do stawu o bardzo urozmaiconej linii brzegowej.";
+                    return OGROD_JAPONSKI_DESCRIPTION;
                 case "FontannaMultimedialna":
                     return FONTANNA_DESCRIPTION;
                 case "WyspaSłodowa":

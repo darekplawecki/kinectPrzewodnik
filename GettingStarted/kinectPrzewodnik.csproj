@@ -122,6 +122,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Content\Attractions\AttractionContent.cs" />
+    <Compile Include="Controls\DesignResources.cs" />
     <Compile Include="Controls\Transition.cs" />
     <Compile Include="Converters\DateTimeConverter.cs" />
     <Compile Include="Converters\InvertibleBooleanToPromptStateConverter.cs" />
@@ -156,6 +157,10 @@
     <Compile Include="Utilities\Twitter\TwitterManager.cs" />
     <Compile Include="Utilities\UserActivityMeter.cs" />
     <Compile Include="Utilities\UserActivityRecord.cs" />
+    <Page Include="Controls\ControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Controls\KinectButtonStyles.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -319,6 +324,21 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Twitter\WrocławPrzewodnik.jpg" />
+    <Resource Include="Content\Events\calendar.png" />
+    <Resource Include="Content\Events\Icons\ico_art.png" />
+    <Resource Include="Content\Events\Icons\ico_dj.png" />
+    <Resource Include="Content\Events\Icons\ico_dzieci.png" />
+    <Resource Include="Content\Events\Icons\ico_inne.png" />
+    <Resource Include="Content\Events\Icons\ico_kino.png" />
+    <Resource Include="Content\Events\Icons\ico_muzyka.png" />
+    <Resource Include="Content\Events\Icons\ico_nauka.png" />
+    <Resource Include="Content\Events\Icons\ico_off.png" />
+    <Resource Include="Content\Events\Icons\ico_sport.png" />
+    <Resource Include="Content\Events\Icons\ico_teatr.png" />
+    <Resource Include="Content\Events\Icons\ico_wszystkie.png" />
+    <Resource Include="Content\Events\timeline-circle.png" />
+    <Resource Include="Content\Events\white-circle.png" />
     <Resource Include="Content\Wydarzenie.txt" />
     <Resource Include="Content\PhotoBackground\photo_1.jpg" />
     <Resource Include="Content\PhotoBackground\photo_2.jpg" />
@@ -379,7 +399,6 @@
     <Resource Include="Content\Twitter\StadionWroclaw.jpg" />
     <Resource Include="Content\Twitter\TheWroclawInter.jpg" />
     <Resource Include="Content\Twitter\wroclaw_info.jpg" />
-    <Resource Include="Content\Design\Images\back-button.png" />
     <Resource Include="Content\Design\Images\home_attractions.jpg" />
     <Resource Include="Content\Design\Images\home_events.jpg" />
     <Resource Include="Content\Design\Images\home_maps.jpg" />
@@ -389,7 +408,6 @@
     <Resource Include="Content\Design\Images\ico_attractions.png" />
     <Resource Include="Content\Design\Images\ico_events.png" />
     <Resource Include="Content\Design\Images\ico_maps.png" />
-    <Resource Include="Content\Design\Images\ico_objects.png" />
     <Resource Include="Content\Design\Images\ico_twitter.png" />
     <Resource Include="Content\Design\Images\ico_weather.png" />
     <Resource Include="Content\Design\Images\logo.png" />
@@ -413,6 +431,8 @@
     <Resource Include="Content\Attractions\Photos\rynek1_hover.jpg" />
     <Resource Include="Content\Attractions\Photos\wyspaslodowa1_hover.jpg" />
     <Resource Include="Content\Attractions\Photos\zoo1_hover.jpg" />
+    <Resource Include="Content\Design\Images\ico_postcard.png" />
+    <Resource Include="Content\Design\Images\back-button.png" />
     <Content Include="Content\Design\Sounds\button-enter.wav" />
     <Content Include="Content\Design\Sounds\button-select.wav" />
     <Resource Include="Content\Attractions\Photos\fontanna1.jpg" />
@@ -447,9 +467,7 @@
     <Resource Include="Content\Attractions\Photos\zoo3.jpg" />
     <Content Include="Content\Attractions\Cameras\Rynek.htm" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Content\Attractions\Panoramas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

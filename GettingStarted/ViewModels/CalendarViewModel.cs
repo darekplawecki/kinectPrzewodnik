@@ -5,6 +5,9 @@ using Przewodnik.Models;
 using System.Text.RegularExpressions;
 using Przewodnik.Utilities.DataLoader;
 using System.Web;
+using System;
+using System.Windows.Media;
+using System.Windows;
 
 namespace Przewodnik.ViewModels
 {
@@ -37,10 +40,36 @@ namespace Przewodnik.ViewModels
 
         public void AddEvent(string parameter)
         {
-            for (int i = 0; i < hoursList.Count(); i++)
+            Dictionary<String, SolidColorBrush> colors = GetColors();
+            for (int i = 0; i < hoursList.Count; i++)
             {
-                modelList.Add(new CalendarModel(parameter, hoursList[i], typesList[i], namesList[i], placesList[i]));
+                modelList.Add(new CalendarModel(parameter, hoursList[i], typesList[i], namesList[i], placesList[i],
+                    colors[typesList[i]], GetIcon(typesList[i])));
             }
+        }
+
+        public Dictionary<String, SolidColorBrush> GetColors()
+        {
+            Dictionary<String, SolidColorBrush> colors = new Dictionary<String, SolidColorBrush>();
+
+            colors.Add("Wszystkie", Application.Current.Resources["RedColor"] as SolidColorBrush);
+            colors.Add("Muzyka", Application.Current.Resources["BlueColor"] as SolidColorBrush);
+            colors.Add("Kino", Application.Current.Resources["GreenColor"] as SolidColorBrush);
+            colors.Add("Teatr", Application.Current.Resources["PurpleColor"] as SolidColorBrush);
+            colors.Add("Art", Application.Current.Resources["PinkColor"] as SolidColorBrush);
+            colors.Add("Off", Application.Current.Resources["YellowColor"] as SolidColorBrush);
+            colors.Add("DJ", Application.Current.Resources["LimeColor"] as SolidColorBrush);
+            colors.Add("Sport", Application.Current.Resources["OrangeColor"] as SolidColorBrush);
+            colors.Add("Dzieci", Application.Current.Resources["VioletColor"] as SolidColorBrush);
+            colors.Add("Nauka", Application.Current.Resources["AzureColor"] as SolidColorBrush);
+            colors.Add("Inne", Application.Current.Resources["DarkGrayColor"] as SolidColorBrush);
+
+            return colors;
+        }
+
+        public String GetIcon(string type)
+        {
+            return "../Content/Events/Icons/ico_" + type.ToLower() + ".png";
         }
 
         public static List<string> GetHours(string file)
