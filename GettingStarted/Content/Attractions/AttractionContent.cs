@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Przewodnik.Content.Traslations;
 
 namespace Przewodnik.Content.Attractions
 {
@@ -69,25 +70,25 @@ namespace Przewodnik.Content.Attractions
             switch (parameter)
             {
                 case "Rynek":
-                    return RYNEK_TITLE;
+                    return AppResources.GetText("RYNEK_TITLE");
                 case "OstrówTumski":
-                    return OSTROW_TUMSKI_TITLE;
+                    return AppResources.GetText("OSTROW_TUMSKI_TITLE");
                 case "HalaStulecia":
-                    return HALA_STULECIA_TITLE;
+                    return AppResources.GetText("HALA_STULECIA_TITLE");
                 case "PałacKrólewski":
-                    return PALAC_KROLEWSKI_TITLE;
+                    return AppResources.GetText("PALAC_KROLEWSKI_TITLE");
                 case "PanoramaRacławicka":
-                    return PANORAMA_RACLAWICKA_TITLE;
+                    return AppResources.GetText("PANORAMA_RACLAWICKA_TITLE");
                 case "OgródJapoński":
-                    return OGROD_JAPONSKI_TITLE;
+                    return AppResources.GetText("OGROD_JAPONSKI_TITLE");
                 case "FontannaMultimedialna":
-                    return FONTANNA_TITLE;
+                    return AppResources.GetText("FONTANNA_TITLE");
                 case "WyspaSłodowa":
-                    return WYSPA_SLODOWA_TITLE;
+                    return AppResources.GetText("WYSPA_SLODOWA_TITLE");
                 case "ZOO":
-                    return ZOO_TITLE;
+                    return AppResources.GetText("ZOO_TITLE");
                 case "OgródBotaniczny":
-                    return OGROD_BOTANICZNY_TITLE;
+                    return AppResources.GetText("OGROD_BOTANICZNY_TITLE");
                 default:
                     return "smuteczek :( ";
             }
@@ -98,25 +99,25 @@ namespace Przewodnik.Content.Attractions
             switch (parameter)
             {
                 case "Rynek":
-                    return RYNEK_DESCRIPTION;
+                    return AppResources.GetText("RYNEK_DESCRIPTION");
                 case "OstrówTumski":
-                    return OSTROW_TUMSKI_DESCRIPTION;
+                    return AppResources.GetText("OSTROW_TUMSKI_DESCRIPTION");
                 case "HalaStulecia":
-                    return HALA_STULECIA_DESCRIPTION;
+                    return AppResources.GetText("HALA_STULECIA_DESCRIPTION");
                 case "PałacKrólewski":
-                    return PALAC_KROLEWSKI_DESCRIPTION;
+                    return AppResources.GetText("PALAC_KROLEWSKI_DESCRIPTION");
                 case "PanoramaRacławicka":
-                    return PANORAMA_RACLAWICKA_DESCRIPTION;
+                    return AppResources.GetText("PANORAMA_RACLAWICKA_DESCRIPTION");
                 case "OgródJapoński":
-                    return OGROD_JAPONSKI_DESCRIPTION;
+                    return AppResources.GetText("OGROD_JAPONSKI_DESCRIPTION");
                 case "FontannaMultimedialna":
-                    return FONTANNA_DESCRIPTION;
+                    return AppResources.GetText("FONTANNA_DESCRIPTION");
                 case "WyspaSłodowa":
-                    return WYSPA_SLODOWA_DESCRIPTION;
+                    return AppResources.GetText("WYSPA_SLODOWA_DESCRIPTION");
                 case "ZOO":
-                    return ZOO_DESCRIPTION;
+                    return AppResources.GetText("ZOO_DESCRIPTION");
                 case "OgródBotaniczny":
-                    return OGROD_BOTANICZNY_DESCRIPTION;
+                    return AppResources.GetText("OGROD_BOTANICZNY_DESCRIPTION");
                 default:
                     return "smuteczek :( ";
             }

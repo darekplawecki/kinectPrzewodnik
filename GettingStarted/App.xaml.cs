@@ -1,5 +1,8 @@
 ﻿using System;
 using System.ComponentModel.Composition.Hosting;
+using System.Globalization;
+using System.Reflection;
+using System.Resources;
 using System.Windows;
 using Przewodnik.Utilities;
 
@@ -10,6 +13,9 @@ namespace Przewodnik
     /// </summary>
     public partial class App : Application, IDisposable
     {
+        public CultureInfo culture = new CultureInfo("pl-PL");
+        public ResourceManager Rm = new ResourceManager("Przewodnik.Content.Translations.Translation", Assembly.GetExecutingAssembly());
+
         private bool disposed = false;
 
         /// <summary>
