@@ -1,21 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Przewodnik.ViewModels;
-
-namespace Przewodnik.Utilities.DataLoader
+﻿namespace Przewodnik.Utilities.DataLoader
 {
-
     class WeatherLoader
     {
         private static WeatherLoader instance;
         public string html;
+        public string htmlNameDay;
 
-        private WeatherLoader() 
+        private WeatherLoader()
         {
-            Refresh();           
+            Refresh();
         }
 
         public static WeatherLoader Instance
@@ -36,8 +29,11 @@ namespace Przewodnik.Utilities.DataLoader
             string link = "http://tvnmeteo.tvn24.pl/pogoda/wroclaw,49413/na-dzis-na-jutro,1.html";
             var result = client.DownloadData(link);
             html = System.Text.Encoding.Default.GetString(result);
+
+            link = "http://www.wroclaw.pl/";
+            result = client.DownloadData(link);
+            htmlNameDay = System.Text.Encoding.Default.GetString(result);
         }
-               
     }
 }
 

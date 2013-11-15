@@ -1,10 +1,7 @@
 ﻿using Przewodnik.Models;
-using Przewodnik.Utilities;
 using Przewodnik.Utilities.DataLoader;
-using System.Diagnostics;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Przewodnik.ViewModels
 {
@@ -19,6 +16,7 @@ namespace Przewodnik.ViewModels
             wm.WeatherImage = GetWheatherImage(wl.html);
             wm.Temperature = GetTemperature(wl.html);
             wm.Description = GetDescription(wl.html);
+            wm.NameDay = GetNameDayNames(wl.htmlNameDay);
         }
 
         public static string GetWheatherImage(string file)
@@ -62,6 +60,23 @@ namespace Przewodnik.ViewModels
             description = Encoding.UTF8.GetString(bytes);
 
             return description;
+        }
+
+        public static string GetNameDayNames(string file)
+        {
+            string pattern = "<div id=\"nameDay\" class=\"small\">(.*?)</div>";
+            Match m = Regex.Match(file, @pattern);
+            string nameDayNames = "";
+
+            if (m.Success)
+            {
+                nameDayNames = m.Groups[1].ToString();
+            }
+
+            byte[] bytes = Encoding.Default.GetBytes(nameDayNames);
+            nameDayNames = Encoding.UTF8.GetString(bytes);
+
+            return nameDayNames;
         }
 
     }

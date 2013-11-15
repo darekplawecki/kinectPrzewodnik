@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +23,15 @@ namespace Przewodnik.Utilities.DataLoader
 
             for (int i = 0; i < 14; i++)
             {
+                //string parameter = dt.AddDays(i).ToString("yyyy-MM-dd");
+                //string link = "http://pik.wroclaw.pl/d" + parameter;
+                //var result = client.DownloadData(link);
+                //var html = System.Text.Encoding.Default.GetString(result); 
+                
                 string parameter = dt.AddDays(i).ToString("yyyy-MM-dd");
-                string link = "http://pik.wroclaw.pl/d" + parameter;
-                var result = client.DownloadData(link);
-                var html = System.Text.Encoding.Default.GetString(result);
+                StreamReader sr = new StreamReader("C:/Users/Jadwiga/Documents/GitHub/kinectPrzewodnik/GettingStarted/Content/Wydarzenie.txt");
+                var html = sr.ReadToEnd();
+                sr.Close();
                                
                 WWWSourcesHashtable[parameter] = html;
             }

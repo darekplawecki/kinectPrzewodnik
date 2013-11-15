@@ -23,7 +23,7 @@ namespace Przewodnik.Views
             wvm = new WeatherViewModel();
             BitmapImage bmi = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
             weatherImage.Source = bmi;
-            temperature.Text = wvm.wm.Temperature;
+            temperature.Text = wvm.wm.NameDay;
             description.Text = wvm.wm.Description;
         }
 

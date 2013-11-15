@@ -1,0 +1,1473 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="picon.gif" type="image/gif" />
+<base href="http://pik.wroclaw.pl/index.php"></base>
+<meta name="verify-v1" content="nxIuxbFkEXt38bXmgfbvoQ7r9wAtet3qLOaVjroYyVc=" />
+<meta name="google-site-verification" content="lWrhXAzHcgchaNZ_6TBQe9BWz6UXe-23ypURJhb2lYA" />
+
+
+<script type="text/javascript" src="/js/karuzela/lib/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/js/karuzela/lib/jquery.jcarousel.min.js"></script>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        size: 10,
+        visible: 4,
+        auto: 10,
+        animation: 'slow',
+        wrap: 'both'
+    });
+});
+</script>
+
+
+<link href="/www/pl2_templates/styl2.css" rel="stylesheet" type="text/css" />
+<link href="/js/jsc/calendar-brown2.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/swfobject.js"></script>
+<script type="text/javascript" src="/js/jsc/calendar.js"></script>
+<script type="text/javascript" src="/js/jsc/lang/calendar-pl-utf8.js"></script><script type="text/javascript" src="/js/jsc/calendar-setup.js"></script>
+<script src="/js/clearbox.js" type="text/javascript"></script><link rel="stylesheet" href="/css/lightbox.css" type="text/css" media="screen" />
+<link rel="alternate" type="application/rss+xml" href="rssn.php?jezyk=pl" title="Niusy i Publicystyka" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=0&amp;jezyk=pl" title="PIK - Wszystkie" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=1&amp;jezyk=pl" title="PIK - Muzyka" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=2&amp;jezyk=pl" title="PIK - Kino" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=3&amp;jezyk=pl" title="PIK - Teatr" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=4&amp;jezyk=pl" title="PIK - Art" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=5&amp;jezyk=pl" title="PIK - Off" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=6&amp;jezyk=pl" title="PIK - DJ" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=7&amp;jezyk=pl" title="PIK - Sport" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=13&amp;jezyk=pl" title="PIK - Dzieci" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=14&amp;jezyk=pl" title="PIK - Nauka" />
+<link rel="alternate" type="application/rss+xml" href="rss.php?typ=15&amp;jezyk=pl" title="PIK - Inne" />
+<link rel="stylesheet" type="text/css" href="http://pik.wroclaw.pl/js/karuzela/skins/tango/skin.css" />
+
+
+<title>PIK - Punkt Informacji Kulturalnej - Wroc³aw</title>
+
+<meta http-equiv="description" content="PIK - Punkt Informacji Kulturalnej we Wroc³awiu. Aktualne i dok³adne kalendarium imprez kulturalnych, rozrywkowych i masowych. Teatr, muzyka, kino, off, wystawy." />
+
+
+<!-- nic -->
+
+
+
+
+<script type="text/javascript">
+<!--
+var RecaptchaOptions = {
+   theme : 'clean'
+};
+-->
+</script>
+
+</head>
+
+<body>
+<img style="display: none;" src="http://pik.wroclaw.pl/fb_min.png" />
+<div id="strona">
+	<div id="belka_gora"></div>
+  	<div id="naglowek"><div id="naglowek_lewa">
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=10");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+
+</div>
+<div id="naglowek_prawa2">
+
+<form action="http://www.google.com/cse" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="010866889516569049552:knvbpwpivjq" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="7" class="input" />
+    <input type="hidden" name="sa" value="Szukaj" />
+    <input type="image" src="/www/pl2_templates/img/dalej.png" class="input_obrazek" />
+  </div>
+</form>
+<script type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&lang=pl"></script>
+ 
+
+
+
+<br />
+<form action="http://app.ninjamail.pl/subscribe/495c9a1b8adf40728e34bd36e8cec042">
+    <div>
+    newsletter:<br />
+    <input type="text" class="input" name="ninjamail-email" onfocus="this.value = '';" value="email" /> <input type="image" src="/www/pl2_templates/img/dalej.png" class="input_obrazek" /><br />
+    <a href="http://www.ninjamail.pl/" style="font-size:9px; color: #999; text-decoration: none;">Newsletter obs³ugiwany przez NinjaMail</a>
+
+    </div>
+</form>
+
+</div>
+<div id="naglowek_prawa">
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=12");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+
+</div>
+<div style="clear:both"></div></div>
+    <div style="margin:auto; width:auto;text-align:center">
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=26");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script><noscript><a href='http://pik.wroclaw.pl/projekt/_add/www/delivery/ck.php?n=a2e13b04&amp;cb=INSERT_RANDOM_NUMBER_HERE' target='_blank'><img src='http://pik.wroclaw.pl/projekt/_add/www/delivery/avw.php?zoneid=14&amp;cb=INSERT_RANDOM_NUMBER_HERE&amp;n=a2e13b04' border='0' alt='' /></a></noscript>
+</div>
+    <div id="press_gora">
+
+  <div>
+    <ul id="mycarousel" class="jcarousel-skin-tango">     
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Agresywne-wulgarne-kontrowersyjne-czy-ob-n3994.html"><img src="http://pik.wroclaw.pl/obr.php?n=15847.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Agresywne-wulgarne-kontrowersyjne-czy-ob-n3994.html">Agresywne, wulgarne, kontrowersyjne czy obra¿aj¹ce uczucia religijne ...</a></div>
+       <div class="skrot_press"><p>- kontrowersyjne i oryginalne teledyski</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Spacer-po-Afrykarium-n3993.html"><img src="http://pik.wroclaw.pl/obr.php?n=15846.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Spacer-po-Afrykarium-n3993.html">Spacer po Afrykarium </a></div>
+       <div class="skrot_press"><p>- prace na p&oacute;³metku</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Zagraj-literatur-n3992.html"><img src="http://pik.wroclaw.pl/obr.php?n=15844.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Zagraj-literatur-n3992.html">Zagraj literatur¹ </a></div>
+       <div class="skrot_press"><p>- konkurs Biura Literackiego</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Pop-up-Gallery-Inauguracja-Neon-Side-Wro-n3991.html"><img src="http://pik.wroclaw.pl/obr.php?n=15843.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Pop-up-Gallery-Inauguracja-Neon-Side-Wro-n3991.html">Pop-up Gallery. Inauguracja! Neon Side Wroc³aw</a></div>
+       <div class="skrot_press"><p>-&nbsp; Przystanek Pop-up Gallery w Galerii Wnêtrz Domar.</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/XI-WFFM-n3990.html"><img src="http://pik.wroclaw.pl/obr.php?n=15841.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/XI-WFFM-n3990.html">XI WFFM </a></div>
+       <div class="skrot_press"><p>- wybrano finalist&oacute;w do prezentacji na ¿ywo</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Chor-Aleksandrowa-koncert-w-Orbicie-n3989.html"><img src="http://pik.wroclaw.pl/obr.php?n=15840.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Chor-Aleksandrowa-koncert-w-Orbicie-n3989.html">Chór Aleksandrowa | koncert w Orbicie</a></div>
+       <div class="skrot_press"><p>- fotorelacja</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Konfrontacje-Rockowe-wROCK-2013-n3988.html"><img src="http://pik.wroclaw.pl/obr.php?n=15824.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Konfrontacje-Rockowe-wROCK-2013-n3988.html">Konfrontacje Rockowe |  wROCK 2013</a></div>
+       <div class="skrot_press"><p>- fotorelacja</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Moje-podroe-Michaa-Bajora-n3987.html"><img src="http://pik.wroclaw.pl/obr.php?n=15797.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Moje-podroe-Michaa-Bajora-n3987.html">„Moje podró¿e” Micha³a Bajora</a></div>
+       <div class="skrot_press"><p>- nowa p³yta</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Konfrontacje-Rockowe-wROCK-2013-n3986.html"><img src="http://pik.wroclaw.pl/obr.php?n=15793.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Konfrontacje-Rockowe-wROCK-2013-n3986.html">Konfrontacje Rockowe |  wROCK 2013</a></div>
+       <div class="skrot_press"><p>- fotorelacja</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Poawiacze-pere-Bizeta-superwidowisko-w-H-n3985.html"><img src="http://pik.wroclaw.pl/obr.php?n=15769.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Poawiacze-pere-Bizeta-superwidowisko-w-H-n3985.html">„Po³awiacze pere³” Bizeta-  superwidowisko w Hali Stulecia</a></div>
+       <div class="skrot_press"><p>- kilka s³&oacute;w po premierze</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Mikromusic-Pikny-koniec-Premiera-pyty-n3984.html"><img src="http://pik.wroclaw.pl/obr.php?n=15758.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Mikromusic-Pikny-koniec-Premiera-pyty-n3984.html">Mikromusic: Piêkny koniec. Premiera p³yty </a></div>
+       <div class="skrot_press"><p>- fotorelacja z koncertu</p></div>
+       </div>
+     </div>
+    </li>
+        <li>
+     <div class="pressl">
+       <div class="skrot">
+       <div class="obr_press"><a href="http://pik.wroclaw.pl/pressroom/Przysza-do-mnie-taka-propozycja-n3983.html"><img src="http://pik.wroclaw.pl/obr.php?n=15752.jpg&amp;r=crop5" style="" alt="Zdjêcie" /></a></div>
+       <div class="tytul"><a href="http://pik.wroclaw.pl/pressroom/Przysza-do-mnie-taka-propozycja-n3983.html">Przysz³a do mnie taka propozycja ...</a></div>
+       <div class="skrot_press"><p>czyli wywiad z Piotrem Turkiewiczem</p></div>
+       </div>
+     </div>
+    </li>
+        </ul>
+  </div>
+  <div style="clear:both"></div> 
+
+  </div>    <div style="clear:both" ></div>
+    <div id="menu_poziom"><div style="float:right">
+<!-- a href="http://facebook.com/pik.wroclaw" class="menu_t" style="margin-right:-15px;"><img src="http://jarrt.pl/fb.png" alt="PIK na facebooku" /></a -->
+	<a href="#" class="menu_t" onmouseover="pokaz('menu_8')" style="margin-right:-15px;"><img src="/images/rss_ico.png" alt="RSS" /></a>
+<!-- a href="http://twitter.com/pik_wroclaw" class="menu_t"><img src="http://jarrt.pl/twitter.png" alt="PIK na Twitter" /></a -->
+</div>
+
+<div id="menu_T1">
+<a href="http://pik.wroclaw.pl/poleca" class="menu_t " onmouseover="pokaz('menu_1')">Polecamy</a>
+<a href="http://pik.wroclaw.pl/" class="menu_t menuz"  onmouseover="pokaz('menu_7')">Wydarzenia</a> 
+<a href="http://pik.wroclaw.pl/miejsca" class="menu_t "  onmouseover="pokaz('menu_3')">Miejsca</a> 
+<a href="http://pik.wroclaw.pl/pressroom" class="menu_t "  onmouseover="pokaz('menu_2')">Publicystyka</a>
+<a href="http://pik.wroclaw.pl/hotele" class="menu_t " onmouseover="pokaz('menu_4')">Hotele</a> 
+<a href="http://pik.wroclaw.pl/food-drink" class="menu_t " onmouseover="pokaz('menu_6')">Food &amp; Drink</a> 
+<a href="http://pik.wroclaw.pl/O-nas-s2.html" class="menu_t "  onmouseover="pokaz('menu_5')">O nas</a>
+<a href="http://pik.wroclaw.pl/konkursy" class="menu_t " onmouseover="pokaz('menu_0')">Konkursy</a>
+<a href="http://pik.wroclaw.pl/bilety" class="menu_t "  onmouseover="pokaz('menu_0')">Bilety</a>
+<!-- a href="http://pik.wroclaw.pl/Bilety-s14.html" class="menu_t ">Bilety</a-->
+</div>
+<script type="text/javascript">
+<!--
+
+ function pokaz (x) 
+ {
+	document.getElementById('menu_1').style.display='none';
+	document.getElementById('menu_2').style.display='none';
+	document.getElementById('menu_3').style.display='none';
+	document.getElementById('menu_4').style.display='none';
+	document.getElementById('menu_5').style.display='none';
+	document.getElementById('menu_6').style.display='none';
+	document.getElementById('menu_7').style.display='none';
+	document.getElementById('menu_8').style.display='none';
+	
+	document.getElementById(x).style.display='block';
+	
+ }
+
+-->
+</script>
+<div id="menu_T2">
+	<div id="menu_1" class="nic">
+         <a href="http://pik.wroclaw.pl/miejsca">Miejsca</a> | 
+         <a href="http://pik.wroclaw.pl/patronuje">Patronujemy</a> | 
+         <a href="http://pik.wroclaw.pl/cykle">Festiwale</a> | 
+         <a href="http://pik.wroclaw.pl/poleca">Wydarzenia</a> |
+         <a href="http://pik.wroclaw.pl/hotele">Hotele</a> | 
+         <a href="http://pik.wroclaw.pl/food-drink">Food &amp; Drink</a>
+    </div>
+    <div id="menu_3" class="nic">
+    	  <a href="http://pik.wroclaw.pl/miejsca">Miejsca Kultury</a> |
+          <a href="http://pik.wroclaw.pl/hotele">Hotele</a> | 
+          <a href="http://pik.wroclaw.pl/food-drink">Food &amp; Drink</a> 
+    </div>
+    <div id="menu_2" class="nic">
+         	  <a href="http://pik.wroclaw.pl/nowosci">Newsy</a> 
+              | <a href="http://pik.wroclaw.pl/pressroom?kat=relacja">Relacje</a>
+              | <a href="http://pik.wroclaw.pl/pressroom?kat=fotorelacja">Fotorelacje</a>
+              | <a href="http://pik.wroclaw.pl/pressroom?kat=recenzja">Recenzje</a>
+              | <a href="http://pik.wroclaw.pl/pressroom?kat=wywiad">Wywiady</a>
+              | <a href="http://pik.wroclaw.pl/pressroom?kat=inne">Inne</a>
+	      
+    </div>
+    <div id="menu_7" class="nic">
+        <a href="http://pik.wroclaw.pl/Wszystkie-t0" >Wszystkie</a>
+                    | <a href="http://pik.wroclaw.pl/Muzyka-t1" >Muzyka</a>
+                    | <a href="http://pik.wroclaw.pl/Kino-t2" >Kino</a>
+                    | <a href="http://pik.wroclaw.pl/Teatr-t3" >Teatr</a>
+                    | <a href="http://pik.wroclaw.pl/Art-t4" >Art</a>
+                    | <a href="http://pik.wroclaw.pl/Off-t5" >Off</a>
+                    | <a href="http://pik.wroclaw.pl/DJ-t6" >DJ</a>
+                    | <a href="http://pik.wroclaw.pl/Sport-t7" >Sport</a>
+                    | <a href="http://pik.wroclaw.pl/Dzieci-t13" >Dzieci</a>
+                    | <a href="http://pik.wroclaw.pl/Nauka-t14" >Nauka</a>
+                    | <a href="http://pik.wroclaw.pl/Inne-t15" >Inne</a>
+          
+    </div>
+    <div id="menu_4" class="nic">
+        <a href="http://pik.wroclaw.pl/hotele/Wszystkie-t0" >Wszystkie</a>
+                    | <a href="http://pik.wroclaw.pl/hotele/Apartament-t8" >Apartament</a>
+                    | <a href="http://pik.wroclaw.pl/hotele/Hostel-t6" >Hostel</a>
+                    | <a href="http://pik.wroclaw.pl/hotele/Hotel-t1" >Hotel</a>
+                    | <a href="http://pik.wroclaw.pl/hotele/Pensjonat-t7" >Pensjonat</a>
+          
+    </div>
+    <div id="menu_6" class="nic">
+        <a href="http://pik.wroclaw.pl/food-drink/Wszystkie-t0" >Wszystkie</a>
+                    | <a href="http://pik.wroclaw.pl/food-drink/BarSnack-t3" >Bar&amp;Snack</a>
+                    | <a href="http://pik.wroclaw.pl/food-drink/Kawiarnie-t2" >Kawiarnie</a>
+                    | <a href="http://pik.wroclaw.pl/food-drink/Restauracje-t1" >Restauracje</a>
+          
+    </div>
+   	<div id="menu_5" class="nic">
+         <a href="http://pik.wroclaw.pl/o-nas-s2.html">O PIK</a> |
+         <a href="http://pik.wroclaw.pl/dzialaj-s10.html">Dzia³aj w PIK-u!</a> |
+         <a href="http://pik.wroclaw.pl/nawigacja-s12.html">Nawigacja</a> |
+         <a href="http://pik.wroclaw.pl/Reklama-s13.html">Reklama</a> |
+         <a href="http://pik.wroclaw.pl/linki-s1.html">Linki</a> |
+         <a href="http://pik.wroclaw.pl/Kontakt-s3.html">Kontakt</a>
+    </div>
+   	<div id="menu_8" class="nic">
+<a href="rssn.php?jezyk=pl" title="Newsy i Publicystyka" >Newsy i Publicystyka</a> |
+<a href="rss.php?typ=0&amp;jezyk=pl" title="PIK - Wszystkie" >Wszystkie</a> |
+<a href="rss.php?typ=1&amp;jezyk=pl" title="PIK - Muzyka" >Muzyka</a> |
+<a href="rss.php?typ=2&amp;jezyk=pl" title="PIK - Kino" >Kino</a> |
+<a href="rss.php?typ=3&amp;jezyk=pl" title="PIK - Teatr" >Teatr</a> |
+<a href="rss.php?typ=4&amp;jezyk=pl" title="PIK - Art" >Art</a> |
+<a href="rss.php?typ=5&amp;jezyk=pl" title="PIK - Off" >Off</a> |
+<a href="rss.php?typ=6&amp;jezyk=pl" title="PIK - DJ" >DJ</a> |
+<a href="rss.php?typ=7&amp;jezyk=pl" title="PIK - Sport" >Sport</a> |
+<a href="rss.php?typ=13&amp;jezyk=pl" title="PIK - Dzieci" >Dzieci</a> |
+<a href="rss.php?typ=14&amp;jezyk=pl" title="PIK - Nauka" >Nauka</a> |
+<a href="rss.php?typ=15&amp;jezyk=pl" title="PIK - Inne" >Inne</a>
+    </div>    
+    <div id="menu_0" class="nic"></div>
+    
+</div>
+	</div>
+    <div id="zawartosc">
+	    <div id="lewa">
+        	<div id="menu"><div class="menuLN">Meteo</div>
+<div class="menuL" style="margin-top:-5px; padding-bottom:5px; height:110px">
+<div style="font-weight:normal;font-size:10px;;width:120px;text-align:center"><a href="http://www.meteogroup.pl/pl/home/pogoda/pogoda_na_swiecie/pogoda_lokalna/miasto/48X18/wroclaw.html?cityID=48X18" target="_blank" style="color:#000000;font-family:Verdana,Arial,Tahoma,Times New Roman;font-weight:normal;font-size:10px;" title="Szczegó³owa prognoza pogody dla: Wroc³aw">Pogoda Wroc³aw</a></div><iframe  width="120" height="97" scrolling="no" frameborder="0" src="http://www.meteogroup.pl/meteo/hptool/index.php?cid=48X18&amp;cityName=Wroc%C5%82aw&amp;l=pl&amp;style=14&amp;v=pl&amp;ver=2&amp;c1=000000&amp;c2=ffffff&amp;c3=000000&amp;c4=ffffff&amp;c5=000000&amp;c6=ffffff&amp;c7=ffffff&amp;f1a=1&amp;f1b=1&amp;f2a=1&amp;f2b=1&amp;f3a=1&amp;f3b=1&amp;ct1=1&amp;ct2=2&amp;ct3=6&amp;ct4=0&amp;ct5=0&amp;fcd=0"></iframe>
+
+</div>
+ 
+ <!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=13");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+  
+    
+<div class="menuLN" >Reklamy</div>
+    <div class="menuL">
+	<a href="http://radioluz.pwr.wroc.pl/listen.pls" target="_blank"><img src="/images/luz.jpg" alt="Radio LUZ" /></a>
+
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-3453063773202419";
+/* pik.lewy sidebar */
+google_ad_slot = "4762560540";
+google_ad_width = 120;
+google_ad_height = 240;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+
+
+ <script type="text/javascript">    
+ 
+ <!--
+    function popup(url)
+       {
+       window.open(url,'','width=300,height=380');
+
+ }
+    //-->
+ 
+
+ 
+
+		 </script>				 
+		<!--  <a href="javascript:popup('http://radio.nadaje.com/play.php?id_k=2')">
+		 <img src="http://img.nadaje.com/banery/button_120x60.gif" border="0" height="60" width="120" alt="Radio" /></a>	-->
+    </div>
+<div class="menuLN">Komunikacja</div>
+<div class="menuL">
+	<div style="text-align:center">
+    	<a href="http://pik.wroclaw.pl/Wroclaw-Samochodem-s18.html"><img src="/images/pik_auto.png" alt="Samochodem" /></a>
+        <a href="http://pik.wroclaw.pl/Wroclaw-Samolotem-s22.html"><img src="/images/pik_samolot.png" alt="Samolotem" /></a>
+        <a href="http://pik.wroclaw.pl/Wroclaw-Pociagien-s19.html"><img src="/images/pik_pociag.png" alt="Poci¹giem" /></a>
+        <a href="http://pik.wroclaw.pl/Wroclaw-Rowerem-s20.html"><img src="/images/pik_rower.png" alt="Rowerem" /></a>
+
+        
+    </div>
+</div>    
+
+<div style="text-align:center;  margin-left:0px; overflow:hidden">
+
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=2");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=3");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=4");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+
+
+</div></div>
+            <div id="glowna"><a name="tops"></a>	    
+    <div class="zawartosc_guziki">
+<a href="http://pik.wroclaw.pl/Wszystkie-t0" class="braz">Wszystkie</a>
+|<a href="http://pik.wroclaw.pl/Muzyka-t1" >Muzyka</a>
+|<a href="http://pik.wroclaw.pl/Kino-t2" >Kino</a>
+|<a href="http://pik.wroclaw.pl/Teatr-t3" >Teatr</a>
+|<a href="http://pik.wroclaw.pl/Art-t4" >Art</a>
+|<a href="http://pik.wroclaw.pl/Off-t5" >Off</a>
+|<a href="http://pik.wroclaw.pl/DJ-t6" >DJ</a>
+|<a href="http://pik.wroclaw.pl/Sport-t7" >Sport</a>
+|<a href="http://pik.wroclaw.pl/Dzieci-t13" >Dzieci</a>
+|<a href="http://pik.wroclaw.pl/Nauka-t14" >Nauka</a>
+|<a href="http://pik.wroclaw.pl/Inne-t15" >Inne</a>
+    
+</div>    <div class="zawartosc_srodek">
+        <br />
+        <hr />
+        <div class="data" style="text-align:center;">
+            <div class="szary" style="float:left;width:120px; text-align:left"><div class="guzik">&laquo;</div> <a href="http://pik.wroclaw.pl/Wszystkie-t0-d2013-11-13">poprzedni dzieñ</a></div>
+            <div class="szary" style="float:right;width:120px; text-align:right"><a href="http://pik.wroclaw.pl/Wszystkie-t0-d2013-11-15">nastêpny dzieñ</a> <div class="guzik">&raquo;</div></div>
+            <a href="http://pik.wroclaw.pl/Wszystkie-t0-d2013-11-14">czwartek 14 listopada 2013</a>
+        </div>
+        <hr />
+        <table style="width:100%; text-align: left" class="t">
+    	         <tr class="np " onmouseout="return false; centruj_nie('367')" onmouseover="centruj('51.09068655794343','17.033100128173828','16','367')">
+            <td class="t_godzina" style="padding-left: 7px">05:40</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Basen-Sportowy-w28616.html" title="Basen Sportowy">Basen Sportowy</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Wrocawski-Park-Wodny-Aquapark-m367.html" title="Wroc³awski Park Wodny | Aquapark">Wroc³awski Park W...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('206')" onmouseover="centruj('51.085355962917696','17.030696868896484','16','206')">
+            <td class="t_godzina" style="padding-left: 7px">08:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Lodowisko-Spiska-w20150.html" title="Lodowisko Spiska">Lodowisko Spiska</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Centrum-Rekreacji-i-Lodowisko-Spiska-m206.html" title="Centrum Rekreacji i Lodowisko &quot;Spiska&quot;">Centrum Rekreacji...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('198')" onmouseover="centruj('51.132508034259224','16.987266540527344','16','198')">
+            <td class="t_godzina" style="padding-left: 7px">08:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Lodowisko-Hala-Orbita-w20156.html" title="Lodowisko Hala Orbita">Lodowisko Hala Orbita</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Hala-Orbita-m198.html" title="Hala Orbita">Hala Orbita</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('615')" onmouseover="centruj('51.11627967962878','17.03052520751953','16','615')">
+            <td class="t_godzina" style="padding-left: 7px">09:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Muzeum-Geologiczne-wystawa-staa-w30027.html" title="Muzeum Geologiczne | wystawa sta³a">Muzeum Geologiczne | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Geologiczne-im-Henryka-Teisseyre-m615.html" title="Muzeum Geologiczne im. Henryka Teisseyre">Muzeum Geologiczn...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('367')" onmouseover="centruj('51.09068655794343','17.033100128173828','16','367')">
+            <td class="t_godzina" style="padding-left: 7px">09:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Basen-Rekreacyjny-w28724.html" title="Basen Rekreacyjny">Basen Rekreacyjny</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Wrocawski-Park-Wodny-Aquapark-m367.html" title="Wroc³awski Park Wodny | Aquapark">Wroc³awski Park W...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('317')" onmouseover="centruj('51.114582443575834','17.047348022460938','16','317')">
+            <td class="t_godzina" style="padding-left: 7px">09:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sztuka-redniowieczna-wystawa-staa-w28565.html" title="Sztuka œredniowieczna | wystawa sta³a">Sztuka œredniowieczna | wystawa ...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Archidiecezjalne-m317.html" title="Muzeum Archidiecezjalne">Muzeum Archidiece...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('317')" onmouseover="centruj('51.114582443575834','17.047348022460938','16','317')">
+            <td class="t_godzina" style="padding-left: 7px">09:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sztuka-staroytna-wystawa-staa-w28564.html" title="Sztuka staro¿ytna | wystawa sta³a">Sztuka staro¿ytna | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Archidiecezjalne-m317.html" title="Muzeum Archidiecezjalne">Muzeum Archidiece...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('317')" onmouseover="centruj('51.114582443575834','17.047348022460938','16','317')">
+            <td class="t_godzina" style="padding-left: 7px">09:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Madonna-pod-jodami-i-Sztuka-nowoytna-wys-w28563.html" title="Madonna pod jod³ami i Sztuka nowo¿ytna | wystawa sta³a">Madonna pod jod³ami i Sztuka now...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Archidiecezjalne-m317.html" title="Muzeum Archidiecezjalne">Muzeum Archidiece...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('76')" onmouseover="centruj('51.104936648637235','17.033207416534424','16','76')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Teatr</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Co-w-trawie-piszczy-Lidia-Amejko-Marcin--w31001.html" title="Co w trawie piszczy?- Lidia Amejko, Marcin Czub | spektakl">Co w trawie piszczy?- Lidia Amej...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Teatr-Lalek-m76.html" title="Teatr Lalek">Teatr Lalek</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('30')" onmouseover="centruj('51.10771204173513','17.050899267196655','16','30')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Pejza-Bogusaw-Rawiski-wystawa-fotografii-w31099.html" title="Pejza¿ - Bogus³aw Rawiñski | wystawa fotografii">Pejza¿ - Bogus³aw Rawiñski | wys...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Impart-Teatr-Piosenki-Biuro-Festiwalowe--m30.html" title="Impart | Teatr Piosenki | Biuro Festiwalowe Impart 2016">Impart | Teatr Pi...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('96')" onmouseover="centruj('51.11256184317937','17.038164138793945','16','96')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Made-in-photo-wystawa-fotografii-Macieja-w30991.html" title="&quot;Made in photo&quot; | wystawa fotografii Macieja Mañkowskiego">"Made in photo" | wystawa fotogr...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Dolnolskie-Centrum-Fotografii-Domek-Roma-m96.html" title="Dolnoœl¹skie Centrum Fotografii - &quot;Domek Romañski&quot;">Dolnoœl¹skie Cent...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('68')" onmouseover="centruj('51.11059504060753','17.04732656478882','16','68')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Jan-Lebenstein-wystawa-w28872.html" title="Jan Lebenstein | wystawa">Jan Lebenstein | wystawa</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Narodowe-m68.html" title="Muzeum Narodowe ">Muzeum Narodowe </a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('367')" onmouseover="centruj('51.09068655794343','17.033100128173828','16','367')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Saunarium-Wellness-and-SPA-w28726.html" title="Saunarium | Wellness and SPA ">Saunarium | Wellness and SPA </a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Wrocawski-Park-Wodny-Aquapark-m367.html" title="Wroc³awski Park Wodny | Aquapark">Wroc³awski Park W...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('187')" onmouseover="centruj('51.11642784807136','17.03058958053589','16','187')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Mineray-wiata-wg-klasyfikacji-chemiczno--w12975.html" title="Minera³y Œwiata wg klasyfikacji chemiczno-strukturalnej | Minera³y Polski | wystawa sta³a">Minera³y Œwiata wg klasyfikacji ...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Mineralogiczne-m187.html" title="Muzeum Mineralogiczne">Muzeum Mineralogi...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('68')" onmouseover="centruj('51.11059504060753','17.04732656478882','16','68')">
+            <td class="t_godzina" style="padding-left: 7px">10:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sztuka-Europejska-od-XV-do-pocztku-XX-w--w28513.html" title="Sztuka Europejska od XV do pocz¹tku XX w. | wystawa sta³a">Sztuka Europejska od XV do pocz¹...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Narodowe-m68.html" title="Muzeum Narodowe ">Muzeum Narodowe </a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('268')" onmouseover="centruj('51.116899289954915','17.04651117324829','16','268')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Ukad-kostny-krgowcow-wystawa-staa-w12979.html" title="Uk³ad kostny krêgowców | wystawa sta³a">Uk³ad kostny krêgowców | wystawa...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Przyrodnicze-Uniwersytetu-Wrocaws-m268.html" title="Muzeum Przyrodnicze Uniwersytetu Wroc³awskiego">Muzeum Przyrodnic...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('268')" onmouseover="centruj('51.116899289954915','17.04651117324829','16','268')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/wiat-zwierzt-wystawa-staa-w12978.html" title="Œwiat zwierz¹t | wystawa sta³a">Œwiat zwierz¹t | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Przyrodnicze-Uniwersytetu-Wrocaws-m268.html" title="Muzeum Przyrodnicze Uniwersytetu Wroc³awskiego">Muzeum Przyrodnic...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('268')" onmouseover="centruj('51.116899289954915','17.04651117324829','16','268')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/wiat-rolin-wystawa-staa-w20461.html" title="Œwiat roœlin | wystawa sta³a">Œwiat roœlin | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Przyrodnicze-Uniwersytetu-Wrocaws-m268.html" title="Muzeum Przyrodnicze Uniwersytetu Wroc³awskiego">Muzeum Przyrodnic...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('68')" onmouseover="centruj('51.11059504060753','17.04732656478882','16','68')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sztuka-lska-XII-XIX-w-Sztuka-polska-XVII-w12962.html" title="Sztuka œl¹ska XII – XIX w. Sztuka polska XVII-XIX w. | wystawa sta³a">Sztuka œl¹ska XII – XIX w. Sztuk...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Narodowe-m68.html" title="Muzeum Narodowe ">Muzeum Narodowe </a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('469')" onmouseover="centruj('51.11071628428292','17.047863006591797','16','469')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Polska-sztuka-wspoczesna-wystawa-staa-w20462.html" title="Polska sztuka wspó³czesna | wystawa sta³a">Polska sztuka wspó³czesna | wyst...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Galeria-sztuki-wspoczesnej-Na-Strychu-Mu-m469.html" title="Galeria sztuki wspó³czesnej Na Strychu | Muzeum Narodowe">Galeria sztuki ws...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('268')" onmouseover="centruj('51.116899289954915','17.04651117324829','16','268')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Owady-i-czowiek-wystawa-staa-w20460.html" title="Owady i cz³owiek | wystawa sta³a">Owady i cz³owiek | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Przyrodnicze-Uniwersytetu-Wrocaws-m268.html" title="Muzeum Przyrodnicze Uniwersytetu Wroc³awskiego">Muzeum Przyrodnic...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('18')" onmouseover="centruj('51.10967896700152','17.031683921813965','16','18')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Galeria-Sawnych-Wrocawian-wystawa-staa-w20457.html" title="Galeria S³awnych Wroc³awian | wystawa sta³a">Galeria S³awnych Wroc³awian | wy...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Sztuki-Mieszczaskiej-w-Starym-Rat-m18.html" title="Muzeum Sztuki Mieszczañskiej w Starym Ratuszu | Galeria Patio">Muzeum Sztuki Mie...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('65')" onmouseover="centruj('51.09981655421665','17.05299139022827','16','65')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Dolnolzacy-Pami-kultura-tosamo-wystawa-s-w20436.html" title="Dolnoœl¹zacy. Pamiêæ, kultura, to¿samoœæ | wystawa sta³a">Dolnoœl¹zacy. Pamiêæ, kultura, t...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Etnograficzne-m65.html" title="Muzeum Etnograficzne">Muzeum Etnograficzne</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('24')" onmouseover="centruj('51.08652861175027','17.02580451965332','16','24')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Muzeum-Sztuki-Cmentarnej-wystawa-staa-w20458.html" title="Muzeum Sztuki Cmentarnej | wystawa sta³a">Muzeum Sztuki Cmentarnej | wysta...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Sztuki-Cmentarnej-Cmentarz-ydowsk-m24.html" title="Muzeum Sztuki Cmentarnej | Cmentarz ¿ydowski">Muzeum Sztuki Cme...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('240')" onmouseover="centruj('51.107597526384154','17.029151916503906','16','240')">
+            <td class="t_godzina" style="padding-left: 7px">10:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/1000-lat-Wrocawia-wystawa-staa-w20459.html" title="1000 lat Wroc³awia | wystawa sta³a">1000 lat Wroc³awia | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Paac-Krolewski-Muzeum-Miejskie-m240.html" title="Pa³ac Królewski | Muzeum Miejskie ">Pa³ac Królewski |...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('54')" onmouseover="centruj('51.1088167634906','17.032982110977173','16','54')">
+            <td class="t_godzina" style="padding-left: 7px">11:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Przepis-na-may-Dizajn-wystawa-w31098.html" title="Przepis na ma³y Dizajn | wystawa">Przepis na ma³y Dizajn | wystawa</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/BWA-Galeria-Design-m54.html" title="BWA | Galeria Design ">BWA | Galeria Des...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('55')" onmouseover="centruj('51.10268657172606','17.028937339782715','16','55')">
+            <td class="t_godzina" style="padding-left: 7px">11:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Nazywam-si-Tomasz-Kulka-mam-34-lata-wyst-w31097.html" title="Nazywam siê Tomasz Kulka, mam 34 lata | wystawa">Nazywam siê Tomasz Kulka, mam 34...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/BWA-Galeria-Szka-i-Ceramiki-m55.html" title="BWA | Galeria Szk³a i Ceramiki">BWA | Galeria Szk...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('71')" onmouseover="centruj('51.10818357254365','17.04455852508545','16','71')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Telegraf-i-telefon-Radio-i-telewizja-wys-w20438.html" title="Telegraf i telefon Radio i telewizja | wystawa sta³a">Telegraf i telefon Radio i telew...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Poczty-i-Telekomunikacji-m71.html" title="Muzeum Poczty i Telekomunikacji">Muzeum Poczty i T...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('23')" onmouseover="centruj('51.11306026615298','17.026512622833252','16','23')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/lsk-redniowieczny-Pena-chata-ze-wczesneg-w20452.html" title="Œl¹sk œredniowieczny. Pe³na chata (ze wczesnego œredniowiecza) | wystawa sta³a">Œl¹sk œredniowieczny. Pe³na chat...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Archeologiczne-m23.html" title="Arsena³ | Muzeum Archeologiczne">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('23')" onmouseover="centruj('51.11306026615298','17.026512622833252','16','23')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/lsk-staroytny-epoka-kamienia-i-pocztek-e-w20451.html" title="Œl¹sk staro¿ytny - epoka kamienia i pocz¹tek epoki br¹zu | wystawa sta³a">Œl¹sk staro¿ytny - epoka kamieni...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Archeologiczne-m23.html" title="Arsena³ | Muzeum Archeologiczne">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('23')" onmouseover="centruj('51.11306026615298','17.026512622833252','16','23')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/lsk-staroytny-epoka-brzu-i-epoka-elaza-w-w20450.html" title="Œl¹sk staro¿ytny - epoka br¹zu i epoka ¿elaza | wystawa sta³a">Œl¹sk staro¿ytny - epoka br¹zu i...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Archeologiczne-m23.html" title="Arsena³ | Muzeum Archeologiczne">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('71')" onmouseover="centruj('51.10818357254365','17.04455852508545','16','71')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Szyldy-i-skrzynki-pocztowe-wystawa-staa-w20440.html" title="Szyldy i skrzynki pocztowe | wystawa sta³a">Szyldy i skrzynki pocztowe | wys...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Poczty-i-Telekomunikacji-m71.html" title="Muzeum Poczty i Telekomunikacji">Muzeum Poczty i T...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('22')" onmouseover="centruj('51.11306026615298','17.02657699584961','16','22')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sala-broni-palnej-wystawa-staa-w20454.html" title="Sala broni palnej | wystawa sta³a">Sala broni palnej | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Militariow-m22.html" title="Arsena³ | Muzeum Militariów">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('22')" onmouseover="centruj('51.11306026615298','17.02657699584961','16','22')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sala-broni-dawnej-wystawa-staa-w20456.html" title="Sala broni dawnej | wystawa sta³a">Sala broni dawnej | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Militariow-m22.html" title="Arsena³ | Muzeum Militariów">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('71')" onmouseover="centruj('51.10818357254365','17.04455852508545','16','71')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Polskie-znaczki-pocztowe-wystawa-staa-w20442.html" title="Polskie znaczki pocztowe | wystawa sta³a">Polskie znaczki pocztowe | wysta...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Poczty-i-Telekomunikacji-m71.html" title="Muzeum Poczty i Telekomunikacji">Muzeum Poczty i T...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('71')" onmouseover="centruj('51.10818357254365','17.04455852508545','16','71')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Konne-pojazdy-pocztowe-wystawa-staa-w20444.html" title="Konne pojazdy pocztowe | wystawa sta³a">Konne pojazdy pocztowe | wystawa...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Poczty-i-Telekomunikacji-m71.html" title="Muzeum Poczty i Telekomunikacji">Muzeum Poczty i T...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('71')" onmouseover="centruj('51.10818357254365','17.04455852508545','16','71')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Historia-Poczty-Polskiej-wystawa-staa-w20446.html" title="Historia Poczty Polskiej | wystawa sta³a">Historia Poczty Polskiej | wysta...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Poczty-i-Telekomunikacji-m71.html" title="Muzeum Poczty i Telekomunikacji">Muzeum Poczty i T...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('22')" onmouseover="centruj('51.11306026615298','17.02657699584961','16','22')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Hemy-wojskowe-wystawa-staa-w20453.html" title="He³my wojskowe | wystawa sta³a">He³my wojskowe | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Militariow-m22.html" title="Arsena³ | Muzeum Militariów">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('22')" onmouseover="centruj('51.11306026615298','17.02657699584961','16','22')">
+            <td class="t_godzina" style="padding-left: 7px">11:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Bro-biaa-onierza-polskiego-XVIII-XX-w-wy-w20455.html" title="Broñ bia³a ¿o³nierza polskiego XVIII-XX w. | wystawa sta³a">Broñ bia³a ¿o³nierza polskiego X...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Arsena-Muzeum-Militariow-m22.html" title="Arsena³ | Muzeum Militariów">Arsena³ | Muzeum ...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('496')" onmouseover="centruj('51.112871674308714','17.005033493041992','16','496')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Jeszcze-tu-nie-byem-wystawa-Jiego-Kovand-w30848.html" title="Jeszcze tu nie by³em | wystawa Jiøíego Kovandy">Jeszcze tu nie by³em | wystawa J...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Wspoczesne-Wrocaw-m496.html" title="Muzeum Wspó³czesne Wroc³aw ">Muzeum Wspó³czesn...</a></td>
+         </tr>
+                 <tr class="np gr" onmouseout="return false; centruj_nie('113')" onmouseover="centruj('51.10971938239644','17.041983604431152','16','113')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Dom-tip-top-48-Grupa-Projektowa-wystawa-w30965.html" title="Dom tip top +48 Grupa Projektowa | wystawa">Dom tip top +48 Grupa Projektowa...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Architektury-m113.html" title="Muzeum Architektury">Muzeum Architektury</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('113')" onmouseover="centruj('51.10971938239644','17.041983604431152','16','113')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sto-lat-Hali-Stulecia-wystawa-w30743.html" title="Sto lat Hali Stulecia | wystawa">Sto lat Hali Stulecia | wystawa</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Architektury-m113.html" title="Muzeum Architektury">Muzeum Architektury</a></td>
+         </tr>
+                 <tr class="np gr" onmouseout="return false; centruj_nie('113')" onmouseover="centruj('51.10971938239644','17.041983604431152','16','113')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Pier-Luigi-Nervi-Sztuka-i-nauka-budowani-w30744.html" title="Pier Luigi Nervi. Sztuka i nauka budowania | wystawa">Pier Luigi Nervi. Sztuka i nauka...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Architektury-m113.html" title="Muzeum Architektury">Muzeum Architektury</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('622')" onmouseover="centruj('51.10305710090595','17.116860151290894','16','622')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Crossfit-WOD-w30313.html" title="Crossfit WOD">Crossfit WOD</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/HESTreZ-m622.html" title="HESTreZ">HESTreZ</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('496')" onmouseover="centruj('51.112871674308714','17.005033493041992','16','496')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Archiwum-Jerzego-Ludwiskiego-wystawa-sta-w30484.html" title="Archiwum Jerzego Ludwiñskiego | wystawa sta³a">Archiwum Jerzego Ludwiñskiego | ...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Wspoczesne-Wrocaw-m496.html" title="Muzeum Wspó³czesne Wroc³aw ">Muzeum Wspó³czesn...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('68')" onmouseover="centruj('51.11059504060753','17.04732656478882','16','68')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sztuka-w-subie-samurajow-wystawa-w28869.html" title="Sztuka w s³u¿bie samurajów | wystawa">Sztuka w s³u¿bie samurajów | wys...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Narodowe-m68.html" title="Muzeum Narodowe ">Muzeum Narodowe </a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('515')" onmouseover="centruj('51.10958382228649','17.033930271863937','16','515')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sprzet-do-przerobki-Surowcow-wystawa-sta-w29590.html" title="Sprzet do przeróbki Surowców | wystawa sta³a">Sprzet do przeróbki Surowców | w...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Farmacji-m515.html" title="Muzeum Farmacji">Muzeum Farmacji</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('515')" onmouseover="centruj('51.10958382228649','17.033930271863937','16','515')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sala-Ekspedycyjna-Zabytowej-Apteki-wysta-w29589.html" title="Sala Ekspedycyjna Zabytowej Apteki | wystawa sta³a">Sala Ekspedycyjna Zabytowej Apte...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Farmacji-m515.html" title="Muzeum Farmacji">Muzeum Farmacji</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('515')" onmouseover="centruj('51.10958382228649','17.033930271863937','16','515')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Pracownia-Alchemika-wystawa-staa-w29588.html" title="Pracownia Alchemika | wystawa sta³a">Pracownia Alchemika | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Farmacji-m515.html" title="Muzeum Farmacji">Muzeum Farmacji</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('515')" onmouseover="centruj('51.10958382228649','17.033930271863937','16','515')">
+            <td class="t_godzina" style="padding-left: 7px">12:00</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Lek-naturalny-i-sytetyczny-wystawa-staa-w29592.html" title="Lek naturalny i sytetyczny | wystawa sta³a">Lek naturalny i sytetyczny | wys...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Farmacji-m515.html" title="Muzeum Farmacji">Muzeum Farmacji</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('113')" onmouseover="centruj('51.10971938239644','17.041983604431152','16','113')">
+            <td class="t_godzina" style="padding-left: 7px">12:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Sala-Romaska-wystawa-staa-w20448.html" title="Sala Romañska | wystawa sta³a">Sala Romañska | wystawa sta³a</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Architektury-m113.html" title="Muzeum Architektury">Muzeum Architektury</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('113')" onmouseover="centruj('51.10971938239644','17.041983604431152','16','113')">
+            <td class="t_godzina" style="padding-left: 7px">12:05</td>
+            <td class="t_typ">Art</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Architektoniczne-rzemioso-artystyczne-od-w20447.html" title="Architektoniczne rzemios³o artystyczne od XII do XX wieku | wystawa sta³a">Architektoniczne rzemios³o artys...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Muzeum-Architektury-m113.html" title="Muzeum Architektury">Muzeum Architektury</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('622')" onmouseover="centruj('51.10305710090595','17.116860151290894','16','622')">
+            <td class="t_godzina" style="padding-left: 7px">16:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/STreZ-w30320.html" title="STreZ">STreZ</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/HESTreZ-m622.html" title="HESTreZ">HESTreZ</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('76')" onmouseover="centruj('51.104936648637235','17.033207416534424','16','76')">
+            <td class="t_godzina" style="padding-left: 7px">17:30</td>
+            <td class="t_typ">Dzieci</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/brzUCHO-spektakl-dla-najnajmodszych-od-0-w31003.html" title="brzUCHO | spektakl dla najnajm³odszych od 0,5 do 3 lat ">brzUCHO | spektakl dla najnajm³o...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Teatr-Lalek-m76.html" title="Teatr Lalek">Teatr Lalek</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('622')" onmouseover="centruj('51.10305710090595','17.116860151290894','16','622')">
+            <td class="t_godzina" style="padding-left: 7px">18:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Crossfit-WOD-w30314.html" title="Crossfit WOD">Crossfit WOD</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/HESTreZ-m622.html" title="HESTreZ">HESTreZ</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('77')" onmouseover="centruj('51.10495012182179','17.033143043518066','16','77')">
+            <td class="t_godzina" style="padding-left: 7px">18:00</td>
+            <td class="t_typ">Teatr</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Trzy-x-oko-spektakl-w31036.html" title="Trzy x ³ó¿ko | spektakl">Trzy x ³ó¿ko | spektakl</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Wrocawski-Teatr-Komedia-m77.html" title="Wroc³awski Teatr Komedia">Wroc³awski Teatr ...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('613')" onmouseover="centruj('51.10970254265285','16.988489627838135','16','613')">
+            <td class="t_godzina" style="padding-left: 7px">18:30</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Intro-w30864.html" title="Intro">Intro</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Gate-4-Centrum-Kettlebel-Wrocaw-StrongFi-m613.html" title="Gate 4 | Centrum Kettlebel Wroc³aw | StrongFirst Wroc³aw">Gate 4 | Centrum ...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('622')" onmouseover="centruj('51.10305710090595','17.116860151290894','16','622')">
+            <td class="t_godzina" style="padding-left: 7px">19:00</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Crossfit-WOD-w30315.html" title="Crossfit WOD">Crossfit WOD</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/HESTreZ-m622.html" title="HESTreZ">HESTreZ</a></td>
+         </tr>
+                 <tr class="np gr" onmouseout="return false; centruj_nie('118')" onmouseover="centruj('51.105697877407465','17.032960653305054','16','118')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>19:00</td>
+            <td class="t_typ">Inne</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Listopadowe-zawiaty-spotkanie-autorskie--w31141.html" title="Listopadowe zaœwiaty | spotkanie autorskie z Dari¹ Galant ">Listopadowe zaœwiaty | spotkanie...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Mediateka-m118.html" title="Mediateka ">Mediateka </a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('4')" onmouseover="centruj('51.100813669699434','17.03005313873291','16','4')">
+            <td class="t_godzina" style="padding-left: 7px">19:00</td>
+            <td class="t_typ">Teatr</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Mistrz-i-Magorzata-spektakl-w31082.html" title="Mistrz i Ma³gorzata | spektakl">Mistrz i Ma³gorzata | spektakl</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Teatr-Muzyczny-Capitol-m4.html" title="Teatr Muzyczny Capitol">Teatr Muzyczny Ca...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('86')" onmouseover="centruj('51.112171183577146','17.029109001159668','16','86')">
+            <td class="t_godzina" style="padding-left: 7px">19:00</td>
+            <td class="t_typ">Teatr</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Poegnanie-jesieni-wg-Witkacego-spektakl-w31070.html" title="Po¿egnanie jesieni wg Witkacego | spektakl">Po¿egnanie jesieni wg Witkacego ...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Wrocawski-Teatr-Wspoczesny-im-Edmunda-Wi-m86.html" title="Wroc³awski Teatr Wspó³czesny im. Edmunda Wierciñskiego">Wroc³awski Teatr ...</a></td>
+         </tr>
+                 <tr class=" gr" onmouseout="return false; centruj_nie('30')" onmouseover="centruj('51.10771204173513','17.050899267196655','16','30')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>19:00</td>
+            <td class="t_typ">Teatr</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Prometeusz-spektakl-akrobatyczno-taneczn-w28885.html" title="Prometeusz | spektakl akrobatyczno-taneczny">Prometeusz | spektakl akrobatycz...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Impart-Teatr-Piosenki-Biuro-Festiwalowe--m30.html" title="Impart | Teatr Piosenki | Biuro Festiwalowe Impart 2016">Impart | Teatr Pi...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('57')" onmouseover="centruj('51.1084530165601','17.02557921409607','16','57')">
+            <td class="t_godzina" style="padding-left: 7px">19:00</td>
+            <td class="t_typ">Kino</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Touch-of-Ireland-widowisko-muzyczno-tane-w30580.html" title="Touch of Ireland | widowisko muzyczno-taneczne">Touch of Ireland | widowisko muz...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Synagoga-pod-Biaym-Bocianem-m57.html" title="Synagoga pod Bia³ym Bocianem">Synagoga pod Bia³...</a></td>
+         </tr>
+                 <tr class=" gr" onmouseout="return false; centruj_nie('7')" onmouseover="centruj('51.10309752209134','17.02354073524475','16','7')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>19:00</td>
+            <td class="t_typ">Muzyka</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Wayne-Shorter-Quartet-Jazztopad-2013-w30397.html" title="Wayne Shorter Quartet | Jazztopad 2013">Wayne Shorter Quartet | Jazztopa...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Filharmonia-Wrocawska-m7.html" title="Filharmonia Wroc³awska">Filharmonia Wroc³...</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('613')" onmouseover="centruj('51.10970254265285','16.988489627838135','16','613')">
+            <td class="t_godzina" style="padding-left: 7px">19:30</td>
+            <td class="t_typ">Sport</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Strong-First-Kettlebell-w30863.html" title="Strong First | Kettlebell">Strong First | Kettlebell</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Gate-4-Centrum-Kettlebel-Wrocaw-StrongFi-m613.html" title="Gate 4 | Centrum Kettlebel Wroc³aw | StrongFirst Wroc³aw">Gate 4 | Centrum ...</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('13')" onmouseover="centruj('51.104168670625924','17.029666900634766','16','13')">
+            <td class="t_godzina" style="padding-left: 7px">20:00</td>
+            <td class="t_typ">Muzyka</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Odwoano-Pustki-koncert-w19371.html" title="(Odwo³ano) Pustki | koncert">(Odwo³ano) Pustki | koncert</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/ykend-Klub-Muzyczny-m13.html" title="£ykend Klub Muzyczny">£ykend Klub Muzyczny</a></td>
+         </tr>
+                 <tr class="np " onmouseout="return false; centruj_nie('442')" onmouseover="centruj('51.11008311936021','17.032606601715088','16','442')">
+            <td class="t_godzina" style="padding-left: 7px">20:00</td>
+            <td class="t_typ">Kino</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Foliba-i-Andy-Camara-Gwinea-Buba-Kuyateh-w31119.html" title="Foliba i Andy Camara (Gwinea), Buba Kuyateh (Gambia) Chilli Crew | koncert">Foliba i Andy Camara (Gwinea), B...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Puzzle-Przestrze-Muzyczna-Klub-Puzzle-m442.html" title="Puzzle Przestrzeñ Muzyczna | Klub Puzzle">Puzzle Przestrzeñ...</a></td>
+         </tr>
+                 <tr class=" gr" onmouseout="return false; centruj_nie('254')" onmouseover="centruj('51.10954424876325','17.026512622833252','16','254')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>20:00</td>
+            <td class="t_typ">Muzyka</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Kamp-i-Rebeka-koncert-w27127.html" title="Kamp! i Rebeka | koncert">Kamp! i Rebeka | koncert</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Eter-klub-m254.html" title="Eter | klub">Eter | klub</a></td>
+         </tr>
+                 <tr class="np gr" onmouseout="return false; centruj_nie('443')" onmouseover="centruj('51.14120570096049','16.943750381469727','16','443')">
+            <td class="t_godzina" style="padding-left: 7px"><div style="position:absolute; margin-left: -18px; margin-top:-1px"><img src="/www/pl2_templates/img/pik.png" alt="PIK Poleca" title="PIK Poleca" style="vertical-align:middle;" /></div>20:00</td>
+            <td class="t_typ">Inne</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Stadion-Wrocaw-wiatowy-Dzie-Walki-z-Cukr-w31150.html" title="Stadion Wroc³aw - Œwiatowy Dzieñ Walki z Cukrzyc¹">Stadion Wroc³aw - Œwiatowy Dzieñ...</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Stadion-Wrocaw-m443.html" title="Stadion Wroc³aw">Stadion Wroc³aw</a></td>
+         </tr>
+                 <tr class=" " onmouseout="return false; centruj_nie('579')" onmouseover="centruj('51.11012353440169','17.03126549720764','16','579')">
+            <td class="t_godzina" style="padding-left: 7px">20:15</td>
+            <td class="t_typ">Muzyka</td>
+            <td class="t_nazwa"><a href="http://pik.wroclaw.pl/Outsider-Blues-w28218.html" title="Outsider Blues">Outsider Blues</a></td>
+            <td class="t_miejsce"><a href="http://pik.wroclaw.pl/Pod-Papugami-Restaurant-and-Cocktail-Bar-m579.html" title="Pod Papugami | Restaurant and Cocktail Bar">Pod Papugami | Re...</a></td>
+         </tr>
+            	</table>
+        <hr />
+        <div class="data" style="text-align:center;">
+            <div class="szary" style="float:left;width:120px; text-align:left"><div class="guzik">&laquo;</div> <a href="http://pik.wroclaw.pl/Wszystkie-t0-d2013-11-13">poprzedni dzieñ</a></div>
+            <div class="szary" style="float:right;width:120px; text-align:right"><a href="http://pik.wroclaw.pl/Wszystkie-t0-d2013-11-15">nastêpny dzieñ</a> <div class="guzik">&raquo;</div></div>
+            <a href="http://pik.wroclaw.pl/Wszystkie-t0-d2013-11-14">czwartek 14 listopada 2013</a>
+        </div>
+        <hr />
+    </div>
+    <div class="zawartosc_bottom"></div>
+</div>
+            <div style="clear:both"></div>
+        </div>
+        <div id="prawa"><div class="menuPN">Kalendarz</div>
+<div id="menu_kalendarz_srodek"></div>
+
+<script type="text/javascript">
+<!--
+  function dateChanged(calendar) {
+    // Beware that this function is called even if the end-user only
+    // changed the month/year.  In order to determine if a date was
+    // clicked you can use the dateClicked property of the calendar:
+    if (calendar.dateClicked) {
+      // OK, a date was clicked, redirect to /yyyy/mm/dd/index.php
+      var y = calendar.date.getFullYear();
+      var m = calendar.date.getMonth()+1;     // integer, 0..11
+      var d = calendar.date.getDate();      // integer, 1..31
+	  if (d<10) d='0'+d;
+	  if (m<10) m='0'+m;	
+      // redirect...
+      window.location = "d"+ y + "-" + m + "-" + d;
+    }
+  };
+  Calendar.setup(
+    {
+      flat         : "menu_kalendarz_srodek", // ID of the parent element
+      flatCallback : dateChanged,           // our callback function
+	  weekNumbers : false,
+	  range : new Array(2012,2014),
+	  date : (new Date()).setTime(1384383600000)
+    }
+  );
+ -->
+</script>
+
+<br />
+
+<div class="menuPN"><a href="http://pik.wroclaw.pl//poleca">PIK Poleca</a></div>
+<div class="menuP">
+<table>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  20.09.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Magia-barw-wernisa-wystawy-w30710.html"  style="font-weight:bold">Magia barw | wernisa¿ wystawy</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  25.09-08.12   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Pier-Luigi-Nervi-Sztuka-i-nauka-budowani-w30744.html"  style="font-weight:bold">Pier Luigi Nervi. Sztuka i nauka budo...</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  24.10-17.11   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Dom-tip-top-48-Grupa-Projektowa-wystawa-w30965.html"  style="font-weight:bold">Dom tip top +48 Grupa Projektowa | wy...</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  14.11.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Listopadowe-zawiaty-spotkanie-autorskie--w31141.html"  style="font-weight:bold">Listopadowe zaœwiaty | spotkanie auto...</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  14.11-15.11   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Prometeusz-spektakl-akrobatyczno-taneczn-w28885.html"  style="font-weight:bold">Prometeusz | spektakl akrobatyczno-ta...</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  14.11.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Wayne-Shorter-Quartet-Jazztopad-2013-w30397.html"  style="font-weight:bold">Wayne Shorter Quartet | Jazztopad 2013</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  14.11.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Kamp-i-Rebeka-koncert-w27127.html"  style="font-weight:bold">Kamp! i Rebeka | koncert</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  14.11.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/Stadion-Wrocaw-wiatowy-Dzie-Walki-z-Cukr-w31150.html"  style="font-weight:bold">Stadion Wroc³aw - Œwiatowy Dzieñ Walk...</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  15.11.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/POP-Najbrzydszy-kraj-wiata-Polska-Filip--w31124.html"  style="font-weight:bold">POP - Najbrzydszy kraj œwiata. Polska...</a></td>
+ </tr>
+  <tr>
+  <td class="t_data3" style="font-weight:bold">
+  15.11.2013   | </td><td class="t_nazwa2" style="font-weight:bold"><a href="http://pik.wroclaw.pl/DKF-Pogorzelisko-Dramat-w21181.html"  style="font-weight:bold">DKF | Pogorzelisko | Dramat</a></td>
+ </tr>
+ </table>
+    <div class="menuHR"></div>
+    <table>
+          <tr>
+      <td class="t_data3" style="font-weight:bold">14.11 - 30.11 | </td><td class="t_nazwa2" ><a href="http://pik.wroclaw.pl/Jazztopad-2013-c768.html" style="font-weight:bold">Jazztopad 2013</a></td>
+     </tr>
+          <tr>
+      <td class="t_data3" style="font-weight:bold">20.11 - 24.11 | </td><td class="t_nazwa2" ><a href="http://pik.wroclaw.pl/Bruno-Schulz-Festiwal-c861.html" style="font-weight:bold">Bruno Schulz Festiwal</a></td>
+     </tr>
+          <tr>
+      <td class="t_data3" style="font-weight:bold">21.11 - 21.11 | </td><td class="t_nazwa2" ><a href="http://pik.wroclaw.pl/Dzie-yczliwoci-21112013-c746.html" style="font-weight:bold">Dzieñ ¯yczliwoœci 21.11.2013</a></td>
+     </tr>
+          <tr>
+      <td class="t_data3" style="font-weight:bold">01.12 - 01.12 | </td><td class="t_nazwa2" ><a href="http://pik.wroclaw.pl/XI-Wrocawski-Festiwal-Form-Muzycznych-20-c857.html" style="font-weight:bold">XI Wroc³awski Festiwal Form Muzycz...</a></td>
+     </tr>
+          <tr>
+      <td class="t_data3" style="font-weight:bold">04.12 - 08.12 | </td><td class="t_nazwa2" ><a href="http://pik.wroclaw.pl/40-Festiwal-Barborkowy-Chorow-Akademicki-c862.html" style="font-weight:bold">40 Festiwal Barbórkowy Chórów Akad...</a></td>
+     </tr>
+         </table>
+</div>
+
+
+<div class="menuPN"><a href="http://pik.wroclaw.pl//cykle">Aktualne festiwale i cykle</a></div>
+<div class="menuP">
+<table>
+  <tr> <td class="t_data3">05.10 - 10.05 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Opery-z-nowojorskiej-Metropolitan-Opera--c837.html">Opery z nowojorskiej Metropolitan Ope...</a></td></tr>
+ <tr> <td class="t_data3">14.11 - 30.11 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Jazztopad-2013-c768.html">Jazztopad 2013</a></td></tr>
+ <tr> <td class="t_data3">18.11 - 22.11 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Festiwal-Kreatywnoci-Studenckiej-c863.html">Festiwal Kreatywnoœci Studenckiej</a></td></tr>
+ <tr> <td class="t_data3">20.11 - 24.11 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Bruno-Schulz-Festiwal-c861.html">Bruno Schulz Festiwal</a></td></tr>
+ <tr> <td class="t_data3">21.11 - 21.11 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Dzie-yczliwoci-21112013-c746.html">Dzieñ ¯yczliwoœci 21.11.2013</a></td></tr>
+ <tr> <td class="t_data3">01.12 - 01.12 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/XI-Wrocawski-Festiwal-Form-Muzycznych-20-c857.html">XI Wroc³awski Festiwal Form Muzycznyc...</a></td></tr>
+ <tr> <td class="t_data3">04.12 - 08.12 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/40-Festiwal-Barborkowy-Chorow-Akademicki-c862.html">40 Festiwal Barbórkowy Chórów Akademi...</a></td></tr>
+ <tr> <td class="t_data3">05.12 - 08.12 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/22-Wrocawskie-Promocje-Dobrych-Ksiek-c859.html">22. Wroc³awskie Promocje Dobrych Ksi¹¿ek</a></td></tr>
+ <tr> <td class="t_data3">06.12 - 07.12 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Wrocawski-Sound-2013-c851.html">Wroc³awski Sound 2013</a></td></tr>
+ <tr> <td class="t_data3">14.12 - 14.12 | </td><td class="t_nazwa2"><a href="http://pik.wroclaw.pl/Energia-Dwiku-7-c854.html">Energia DŸwiêku #7</a></td></tr>
+</table>
+</div>
+
+
+
+<div class="menuPN">Tagi</div>
+<div class="menuP">
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Muzyka" style="font-size:2em">Muzyka</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Teatr" style="font-size:1.3364361702128em">Teatr</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Film" style="font-size:1.2566489361702em">Film</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Impart" style="font-size:1.248670212766em">Impart</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Art" style="font-size:1.2101063829787em">Art</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Synagoga%20pod%20Bialym%20Bocianem" style="font-size:1.1476063829787em">Synagoga pod Bialym Bocianem</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Konkurs" style="font-size:1.1382978723404em">Konkurs</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Jazz" style="font-size:1.1343085106383em">Jazz</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Kino" style="font-size:1.1316489361702em">Kino</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Firlej" style="font-size:1.1103723404255em">Firlej</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Hala%20Stulecia" style="font-size:1.1103723404255em">Hala Stulecia</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Eter" style="font-size:1.1037234042553em">Eter</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=ENH" style="font-size:1.0984042553191em">ENH</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Filharmonia%20Wroclawska" style="font-size:1.0851063829787em">Filharmonia Wroclawska</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=PPA" style="font-size:1.0718085106383em">PPA</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Capitol" style="font-size:1.0704787234043em">Capitol</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Teatr%20Polski" style="font-size:1.0691489361702em">Teatr Polski</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Avant%20Art%20Festival" style="font-size:1.0678191489362em">Avant Art Festival</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Sport" style="font-size:1.0678191489362em">Sport</a>
+	    <a href="http://pik.wroclaw.pl/pressroom?tag=Opera%20Wroclawska" style="font-size:1.063829787234em">Opera Wroclawska</a>
+</div>
+
+
+
+<div style="text-align:center;">
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=5");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=6");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=7");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+<!--/* OpenX Javascript Tag v2.8.4 */-->
+
+<!--/*
+  * The backup image section of this tag has been generated for use on a
+  * non-SSL page. If this tag is to be placed on an SSL page, change the
+  *   'http://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  * to
+
+  *   'https://pik.wroclaw.pl/projekt/_add/www/delivery/...'
+  *
+  * This noscript section of this tag only shows image banners. There
+  * is no width or height in these banners, so if you want these tags to
+  * allocate space for the ad before it shows, you will need to add this
+  * information to the <img> tag.
+  *
+  * If you do not want to deal with the intricities of the noscript
+  * section, delete the tag (from <noscript>... to </noscript>). On
+  * average, the noscript tag is called from less than 1% of internet
+  * users.
+  */-->
+
+<script type='text/javascript'><!--//<![CDATA[
+   var m3_u = (location.protocol=='https:'?'https://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php':'http://pik.wroclaw.pl/projekt/_add/www/delivery/ajs.php');
+   var m3_r = Math.floor(Math.random()*99999999999);
+   if (!document.MAX_used) document.MAX_used = ',';
+   document.write ("<scr"+"ipt type='text/javascript' src='"+m3_u);
+   document.write ("?zoneid=8");
+   document.write ('&amp;cb=' + m3_r);
+   if (document.MAX_used != ',') document.write ("&amp;exclude=" + document.MAX_used);
+   document.write (document.charset ? '&amp;charset='+document.charset : (document.characterSet ? '&amp;charset='+document.characterSet : ''));
+   document.write ("&amp;loc=" + escape(window.location));
+   if (document.referrer) document.write ("&amp;referer=" + escape(document.referrer));
+   if (document.context) document.write ("&context=" + escape(document.context));
+   if (document.mmm_fo) document.write ("&amp;mmm_fo=1");
+   document.write ("'><\/scr"+"ipt>");
+//]]>--></script>
+
+
+
+
+</div>
+
+
+
+
+</div>
+        <div style="clear:both"></div>
+        <div id="tagi"><div style="text-align:center">
+<a href="http://pik.wroclaw.pl/Asymmetry-Festival-60-2014-c833.html">Asymmetry Festival 6.0 | 2014</a> |
+<a href="http://pik.wroclaw.pl/Bruno-Schulz-Festiwal-c861.html">Bruno Schulz Festiwal</a> |
+<a href="http://pik.wroclaw.pl/35-Przegld-Piosenki-Aktorskiej-c852.html">35. Przegl¹d Piosenki Aktorskiej</a> |
+<a href="http://pik.wroclaw.pl/50-Jazz-nad-Odr-Wrocawski-Festiwal-Jazzo-c832.html">50. Jazz nad Odr¹ | Wroc³awski Festiwal Jazzowy</a> |
+<a href="http://pik.wroclaw.pl/Wrocawski-Sound-2013-c851.html">Wroc³awski Sound 2013</a> |
+<a href="http://pik.wroclaw.pl/Opery-z-nowojorskiej-Metropolitan-Opera--c837.html">Opery z nowojorskiej Metropolitan Opera | The Met: Live in HD</a> |
+<a href="http://pik.wroclaw.pl/Wielka-Orkiestra-witecznej-Pomocy-WOP-22-c831.html">Wielka Orkiestra Œwi¹tecznej Pomocy | WOŒP - 22 Fina³ | Wroc³aw 2014</a> |
+<a href="http://pik.wroclaw.pl/22-Wrocawskie-Promocje-Dobrych-Ksiek-c859.html">22. Wroc³awskie Promocje Dobrych Ksi¹¿ek</a> |
+<a href="http://pik.wroclaw.pl/40-Festiwal-Barborkowy-Chorow-Akademicki-c862.html">40 Festiwal Barbórkowy Chórów Akademickich. </a> |
+<a href="http://pik.wroclaw.pl/Jazztopad-2013-c768.html">Jazztopad 2013</a> |
+<a href="http://pik.wroclaw.pl/Poawiacze-pere-Georges-Bizet-Superwidowi-w30576.html">Po³awiacze pere³ - Georges Bizet | Superwidowisko</a> |
+<a href="http://pik.wroclaw.pl/Shakin-Stevens-koncert-w28910.html">Shakin' Stevens | koncert</a> |
+<a href="http://pik.wroclaw.pl/Tricky-koncert-Citysounds-w18374.html">Tricky | koncert Citysounds</a> |
+<a href="http://pik.wroclaw.pl/Doda-koncert-w31105.html">Doda | koncert</a> |
+<a href="http://pik.wroclaw.pl/Skarpety-i-papiloty-w-cyklu-Suchaj-premi-w31014.html">Skarpety i papiloty - w cyklu S³uchaj! | premiera</a> |
+<a href="http://pik.wroclaw.pl/AFD-MovieWro-Koniec-lata-i-Dziennik-z-po-w31144.html">AFD MovieWro | "Koniec lata" i "Dziennik z podró¿y" re¿. Piotr Stasik + spotkanie z re¿yserem</a> |
+<a href="http://pik.wroclaw.pl/Kaliber44-gocie-koncert-w30925.html">Kaliber44 + goœcie | koncert </a> |
+<a href="http://pik.wroclaw.pl/Maska-Faraonow-spektakl-w30936.html">Maska Faraonów | spektakl</a> |
+<a href="http://pik.wroclaw.pl/Ayo-koncert-w20963.html">Ayo | koncert </a> |
+<a href="http://pik.wroclaw.pl/Zimowe-piosenki-Andrzej-Piaseczny-w13898.html">Zimowe piosenki | Andrzej Piaseczny</a> |
+<a href="http://pik.wroclaw.pl/Puzzle-Przestrze-Muzyczna-Klub-Puzzle-m442.html">Puzzle Przestrzeñ Muzyczna | Klub Puzzle</a> |
+<a href="http://pik.wroclaw.pl/Bulwar-Xawerego-Dunikowskiego-m396.html">Bulwar Xawerego  Dunikowskiego</a> |
+<a href="http://pik.wroclaw.pl/Melin-Cafe-lokal-zamknity-m412.html">Melin Cafe | lokal zamkniêty</a> |
+<a href="http://pik.wroclaw.pl/Muzeum-Radia-Wrocaw-m547.html">Muzeum Radia Wroc³aw</a> |
+<a href="http://pik.wroclaw.pl/CrossFit-Mjollnir-7kontynent-Gym-m599.html">CrossFit Mjollnir | 7kontynent Gym</a> |
+<a href="http://pik.wroclaw.pl/Kino-5D-Extreme-m438.html">Kino 5D Extreme </a> |
+<a href="http://pik.wroclaw.pl/Chill-Out-Club-m294.html">Chill Out Club</a> |
+<a href="http://pik.wroclaw.pl/Tabu-klub-m516.html">Tabu klub</a> |
+<a href="http://pik.wroclaw.pl/Teatr-Club-wczeniej-Oawska9-Music-Club-m301.html">Teatr Club | (wczeœniej O³awska9 Music Club)</a> |
+<a href="http://pik.wroclaw.pl/Teatr-Muzyczny-Capitol-m4.html">Teatr Muzyczny Capitol</a> |
+
+</div></div>
+    </div>
+    <div id="stopka"><div style="float: left; padding: 2px; width:auto">
+&copy; 2008 - 2013 - Punkt Informacji Kulturalnej - Wszelkie Prawa Zastrze¿one
+</div>
+<div style="float: right; padding: 2px; width:auto">
+Projekt i Wykonanie: BetterSite.pl, 
+Utrzymanie i Rozwój: <a href="http://www.stermedia.pl" title="aplikacje mobilne, aplikacje dedykowane">Stermedia</a>
+</div>
+<div style="float: left; padding: 2px; width:auto;margin-left:50px">
+<a href="http://www.NinjaMail.pl">email marketing</a></div>
+</div>
+
+<!-- script src='http://cdn.wibiya.com/Toolbars/dir_0234/Toolbar_234142/Loader_234142.js' type='text/javascript'></script -->
+
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-4276664-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+</body>
+</html>

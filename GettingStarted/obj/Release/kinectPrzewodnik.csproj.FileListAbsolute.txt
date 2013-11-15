@@ -256,6 +256,7 @@ C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Vie
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\MapPage.g.cs
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\LoadingScreen.baml
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\MapPage.baml
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.g.resources
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Release\Przewodnik.exe.config
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Release\Przewodnik.exe
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Release\Przewodnik.pdb
@@ -316,8 +317,8 @@ C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Vi
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Views\SleepScreen.baml
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Controls\PromptControlStyles.baml
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\MainWindow.baml
-C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.g.resources
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.Properties.Resources.resources
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\kinectPrzewodnik.csproj.GenerateResource.Cache
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.exe
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\Przewodnik.pdb
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Release\kinectPrzewodnik.csprojResolveAssemblyReference.cache

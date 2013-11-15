@@ -319,6 +319,15 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Wydarzenie.txt" />
+    <Resource Include="Content\PhotoBackground\photo_1.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_2.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_3.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_4.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_5.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_6.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_7.jpg" />
+    <Resource Include="Content\PhotoBackground\photo_8.jpg" />
     <Resource Include="Content\Weather\ico1.png" />
     <Resource Include="Content\Weather\ico10.png" />
     <Resource Include="Content\Weather\ico11.png" />
