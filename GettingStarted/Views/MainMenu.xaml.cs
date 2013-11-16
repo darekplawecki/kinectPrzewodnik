@@ -16,7 +16,7 @@ namespace Przewodnik.Views
         {
             InitializeComponent();
             this.pageFactory = pageFactory;
-            prepareTranslation();
+            
             //wvm = new WeatherViewModel();
             //BitmapImage bmi = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
             //weatherImage.Source = bmi;
@@ -31,6 +31,7 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+            prepareTranslation();
         }
 
         private void touristAttractions_Click(object sender, RoutedEventArgs e)
@@ -66,13 +67,13 @@ namespace Przewodnik.Views
 
         private void prepareTranslation()
         {
-            Atrakcje.Text = AppResources.GetText("atrakcje_turystyczne");
-            Atrakcje_opis.Text = AppResources.GetText("atrakcje_turystyczne_description");
-            Wydarzenia.Text = AppResources.GetText("wydarzenia");
-            Twitter.Text = AppResources.GetText("twitter");
-            Pogoda.Text = AppResources.GetText("pogoda");
-            Mapy.Text = AppResources.GetText("plan_miasta");
-            Widokowka.Text = AppResources.GetText("widokowka");
+            Atrakcje.Text = AppResources.GetText("M_atrakcje_turystyczne");
+            Atrakcje_opis.Text = AppResources.GetText("M_atrakcje_turystyczne_description");
+            Wydarzenia.Text = AppResources.GetText("M_wydarzenia");
+            Twitter.Text = AppResources.GetText("M_twitter");
+            Pogoda.Text = AppResources.GetText("M_pogoda");
+            Mapy.Text = AppResources.GetText("M_plan_miasta");
+            Widokowka.Text = AppResources.GetText("M_widokowka");
             
         }
 

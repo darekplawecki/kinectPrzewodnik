@@ -1,4 +1,5 @@
 ﻿using Microsoft.Kinect.Toolkit.Controls;
+using Przewodnik.Content.Traslations;
 using Przewodnik.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -178,7 +179,20 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-            
+            prepareTranslation();
+        }
+
+        private void prepareTranslation()
+        {
+            DzieciBlock.Text = AppResources.GetText("W_dzieci");
+            InneBlock.Text = AppResources.GetText("W_inne");
+            KinoBlock.Text = AppResources.GetText("W_kino");
+            MuzykaBlock.Text = AppResources.GetText("W_muzyka");
+            NaukaBlock.Text = AppResources.GetText("W_nauka");
+            TeatrBlock.Text = AppResources.GetText("W_sport");
+            emptyBlock.Text = AppResources.GetText("W_brak_wydarzen");
+            WszystkieBlock.Text = AppResources.GetText("W_wszystkie");
+
         }
     }
 }

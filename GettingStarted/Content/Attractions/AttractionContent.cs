@@ -70,25 +70,25 @@ namespace Przewodnik.Content.Attractions
             switch (parameter)
             {
                 case "Rynek":
-                    return AppResources.GetText("RYNEK_TITLE");
+                    return AppResources.GetText("A_RYNEK_TITLE");
                 case "OstrówTumski":
-                    return AppResources.GetText("OSTROW_TUMSKI_TITLE");
+                    return AppResources.GetText("A_OSTROW_TUMSKI_TITLE");
                 case "HalaStulecia":
-                    return AppResources.GetText("HALA_STULECIA_TITLE");
+                    return AppResources.GetText("A_HALA_STULECIA_TITLE");
                 case "PałacKrólewski":
-                    return AppResources.GetText("PALAC_KROLEWSKI_TITLE");
+                    return AppResources.GetText("A_PALAC_KROLEWSKI_TITLE");
                 case "PanoramaRacławicka":
-                    return AppResources.GetText("PANORAMA_RACLAWICKA_TITLE");
+                    return AppResources.GetText("A_PANORAMA_RACLAWICKA_TITLE");
                 case "OgródJapoński":
-                    return AppResources.GetText("OGROD_JAPONSKI_TITLE");
+                    return AppResources.GetText("A_OGROD_JAPONSKI_TITLE");
                 case "FontannaMultimedialna":
-                    return AppResources.GetText("FONTANNA_TITLE");
+                    return AppResources.GetText("A_FONTANNA_TITLE");
                 case "WyspaSłodowa":
-                    return AppResources.GetText("WYSPA_SLODOWA_TITLE");
+                    return AppResources.GetText("A_WYSPA_SLODOWA_TITLE");
                 case "ZOO":
-                    return AppResources.GetText("ZOO_TITLE");
+                    return AppResources.GetText("A_ZOO_TITLE");
                 case "OgródBotaniczny":
-                    return AppResources.GetText("OGROD_BOTANICZNY_TITLE");
+                    return AppResources.GetText("A_OGROD_BOTANICZNY_TITLE");
                 default:
                     return "smuteczek :( ";
             }
@@ -99,25 +99,25 @@ namespace Przewodnik.Content.Attractions
             switch (parameter)
             {
                 case "Rynek":
-                    return AppResources.GetText("RYNEK_DESCRIPTION");
+                    return AppResources.GetText("A_RYNEK_DESCRIPTION");
                 case "OstrówTumski":
-                    return AppResources.GetText("OSTROW_TUMSKI_DESCRIPTION");
+                    return AppResources.GetText("A_OSTROW_TUMSKI_DESCRIPTION");
                 case "HalaStulecia":
-                    return AppResources.GetText("HALA_STULECIA_DESCRIPTION");
+                    return AppResources.GetText("A_HALA_STULECIA_DESCRIPTION");
                 case "PałacKrólewski":
-                    return AppResources.GetText("PALAC_KROLEWSKI_DESCRIPTION");
+                    return AppResources.GetText("A_PALAC_KROLEWSKI_DESCRIPTION");
                 case "PanoramaRacławicka":
-                    return AppResources.GetText("PANORAMA_RACLAWICKA_DESCRIPTION");
+                    return AppResources.GetText("A_PANORAMA_RACLAWICKA_DESCRIPTION");
                 case "OgródJapoński":
-                    return AppResources.GetText("OGROD_JAPONSKI_DESCRIPTION");
+                    return AppResources.GetText("A_OGROD_JAPONSKI_DESCRIPTION");
                 case "FontannaMultimedialna":
-                    return AppResources.GetText("FONTANNA_DESCRIPTION");
+                    return AppResources.GetText("A_FONTANNA_DESCRIPTION");
                 case "WyspaSłodowa":
-                    return AppResources.GetText("WYSPA_SLODOWA_DESCRIPTION");
+                    return AppResources.GetText("A_WYSPA_SLODOWA_DESCRIPTION");
                 case "ZOO":
-                    return AppResources.GetText("ZOO_DESCRIPTION");
+                    return AppResources.GetText("A_ZOO_DESCRIPTION");
                 case "OgródBotaniczny":
-                    return AppResources.GetText("OGROD_BOTANICZNY_DESCRIPTION");
+                    return AppResources.GetText("A_OGROD_BOTANICZNY_DESCRIPTION");
                 default:
                     return "smuteczek :( ";
             }

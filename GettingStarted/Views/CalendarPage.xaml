@@ -38,7 +38,7 @@
                             <Image Source="../Content/Events/Icons/ico_wszystkie.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="wszystkie" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="WszystkieBlock" Text="wszystkie" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
                 <k:KinectTileButton x:Name="Muzyka" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource BlueColor}">
@@ -47,7 +47,7 @@
                             <Image Source="../Content/Events/Icons/ico_muzyka.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="muzyka" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="MuzykaBlock" Text="muzyka" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
                 <k:KinectTileButton x:Name="Kino" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource GreenColor}">
@@ -56,7 +56,7 @@
                             <Image Source="../Content/Events/Icons/ico_kino.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="kino" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="KinoBlock" Text="kino" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
                 <k:KinectTileButton x:Name="Teatr" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource PurpleColor}">
@@ -65,7 +65,7 @@
                             <Image Source="../Content/Events/Icons/ico_teatr.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="teatr" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="TeatrBlock" Text="teatr" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
                 <k:KinectTileButton x:Name="Art" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource PinkColor}">
@@ -110,7 +110,7 @@
                             <Image Source="../Content/Events/Icons/ico_dzieci.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="dzieci" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="DzieciBlock" Text="dzieci" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
                 <k:KinectTileButton x:Name="Nauka" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource AzureColor}">
@@ -119,7 +119,7 @@
                             <Image Source="../Content/Events/Icons/ico_nauka.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="nauka" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="NaukaBlock" Text="nauka" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
                 <k:KinectTileButton x:Name="Inne" Padding="{DynamicResource TextTopBottomMargin}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}" Click="Filter_Click" Background="{StaticResource DarkGrayColor}">
@@ -128,7 +128,7 @@
                             <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
-                        <TextBlock Text="inne" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        <TextBlock Name="InneBlock" Text="inne" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
                 </k:KinectTileButton>
             </StackPanel>

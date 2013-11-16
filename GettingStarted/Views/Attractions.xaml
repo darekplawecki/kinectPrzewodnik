@@ -32,7 +32,7 @@
                     <Image Name="RynekImage" Grid.Row="0" Source="../Content/Attractions/Photos/rynek1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/rynek.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="rynek" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="RynekBlock" Text="rynek" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
@@ -60,7 +60,7 @@
                     <Image Grid.Row="0" Source="../Content/Attractions/Photos/halastulecia1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/halastulecia.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="hala stulecia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="HalaBlock" Text="hala stulecia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
@@ -74,7 +74,7 @@
                     <Image Grid.Row="0" Source="../Content/Attractions/Photos/palackrolewski1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/palackrolewski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="pałac królewski" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="PalacBlock" Text="pałac królewski" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
@@ -102,7 +102,7 @@
                     <Image Grid.Row="0" Source="../Content/Attractions/Photos/ogrodjaponski1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/ogrodjaponski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="ogród japoński" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="OgrodJBlock" Text="ogród japoński" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
@@ -116,7 +116,7 @@
                     <Image Grid.Row="0" Source="../Content/Attractions/Photos/fontanna1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/fontanna.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="fontanna multimedialna" Margin="{DynamicResource TextTopMargin}"  Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size50}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="FontannaBlock" Text="fontanna multimedialna" Margin="{DynamicResource TextTopMargin}"  Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size50}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
@@ -130,7 +130,7 @@
                     <Image Grid.Row="0" Source="../Content/Attractions/Photos/wyspaslodowa1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/wyspaslodowa.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="wyspa słodowa" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="WyspaBlock" Text="wyspa słodowa" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
@@ -158,7 +158,7 @@
                     <Image Grid.Row="0" Source="../Content/Attractions/Photos/ogrodbotaniczny1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/ogrodbotaniczny.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                        <TextBlock Text="ogród botaniczny" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                        <TextBlock Name="OgrodBBlock" Text="ogród botaniczny" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     </StackPanel>
                 </Grid>
             </k:KinectTileButton>
