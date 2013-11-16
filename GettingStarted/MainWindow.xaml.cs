@@ -109,9 +109,7 @@ namespace Przewodnik
 
                 }
             }
-            catch (Exception exception)
-            {
-            }
+            catch (Exception){ }
 
 
             base.OnKeyUp(e);

@@ -20,6 +20,7 @@ namespace Przewodnik
         private IKinectPage _twitterPage;
         private IKinectPage _calendarPage;
         private IKinectPage _mapPage;
+        private IKinectPage _postcardPage;
 
 
         public KinectPageFactory(Navigator navigator)
@@ -73,6 +74,12 @@ namespace Przewodnik
         {
             _mapPage = new MapPage(this);
             return _mapPage;
+        }
+
+        public IKinectPage GetPostcardPageGrid()
+        {
+            _postcardPage = new PostcardPage(this);
+            return _postcardPage;
         }
 
         public void NavigateTo(IKinectPage page)

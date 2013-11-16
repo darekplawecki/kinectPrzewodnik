@@ -13,20 +13,73 @@ using Microsoft.Kinect;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect.Toolkit.Controls;
 using Microsoft.Kinect.Toolkit.Interaction;
+using Microsoft.Kinect.Toolkit.BackgroundRemoval;
 using Przewodnik.ViewModels;
+using System.Windows.Media.Imaging;
+using System.Diagnostics;
 
 namespace Przewodnik.Utilities
 {
     [Export(typeof(KinectController))]
     public class KinectController : ViewModelBase
     {
-        private const double HandoffConfirmationStasisSeconds = 0.5;
 
-        private readonly KinectSensorChooser sensorChooser;
+        private readonly KinectSensorChooser _sensorChooser;
+        public KinectSensorChooser KinectSensorChooser
+        {
+            get { return _sensorChooser; }
+        }
+
+        private Skeleton[] skeletons;
+
+        private BackgroundRemovedColorStream _backgroundRemovedColorStream;
+        private WriteableBitmap _foregroundBitmap;
+        public WriteableBitmap ForegroundBitmap
+        {
+            get { return _foregroundBitmap; }
+            set
+            {
+                _foregroundBitmap = value;
+                OnPropertyChanged("ForegroundBitmap");
+            }
+        }
+
+        private InteractionStream interactionStream;
+        class InteractionAdapter : IInteractionClient
+        {
+            public InteractionInfo GetInteractionInfoAtLocation(int skeletonTrackingId, InteractionHandType handType, double x, double y)
+            {
+                var interactionInfo = new InteractionInfo
+                {
+                    IsPressTarget = false,
+                    IsGripTarget = false,
+                };
+
+                return interactionInfo;
+            }
+        }
+
+        private UserInfo[] userInfos;
 
         private Navigator _navigator;
+        public Navigator Navigator
+        {
+            get
+            {
+                return _navigator;
+            }
+
+            set
+            {
+                _navigator = value;
+            }
+        }
+
+
 
         private readonly EngagementStateManager engagementStateManager = new EngagementStateManager();
+
+        private const double HandoffConfirmationStasisSeconds = 0.5;
 
         private readonly TimeSpan disengagementHandoffNavigationTimeout = TimeSpan.FromSeconds(10.0);
 
@@ -44,8 +97,6 @@ namespace Przewodnik.Utilities
 
         private readonly DispatcherTimer disengagementNavigationTimer = new DispatcherTimer();
 
-        private Skeleton[] skeletons;
-
         private bool isInEngagementOverrideMode;
 
         private bool isUserEngaged;
@@ -62,44 +113,229 @@ namespace Przewodnik.Utilities
 
         private bool isEngagementHandoffBarrierEnabled;
 
-        private PromptState leftHandoffMessageState = PromptState.Hidden;
 
-        private string leftHandoffMessageText;
+        #region "Left & Right Handoff Message State, Text, Brush, Confirmation State"
 
-        private Brush leftHandoffMessageBrush;
+        private PromptState _leftHandoffMessageState = PromptState.Hidden;
+        public PromptState LeftHandoffMessageState
+        {
+            get
+            {
+                return _leftHandoffMessageState;
+            }
 
-        private PromptState leftHandoffConfirmationState = PromptState.Hidden;
+            protected set
+            {
+                _leftHandoffMessageState = value;
+                OnPropertyChanged("LeftHandoffMessageState");
+            }
+        }
 
-        private PromptState rightHandoffMessageState = PromptState.Hidden;
+        private PromptState _rightHandoffMessageState = PromptState.Hidden;
+        public PromptState RightHandoffMessageState
+        {
+            get
+            {
+                return _rightHandoffMessageState;
+            }
 
-        private string rightHandoffMessageText;
+            protected set
+            {
+                _rightHandoffMessageState = value;
+                OnPropertyChanged("RightHandoffMessageState");
+            }
+        }
 
-        private Brush rightHandoffMessageBrush;
+        private string _leftHandoffMessageText;
+        public string LeftHandoffMessageText
+        {
+            get
+            {
+                return _leftHandoffMessageText;
+            }
 
-        private PromptState rightHandoffConfirmationState = PromptState.Hidden;
+            protected set
+            {
+                _leftHandoffMessageText = value;
+                OnPropertyChanged("LeftHandoffMessageText");
+            }
+        }
+
+        private string _rightHandoffMessageText;
+        public string RightHandoffMessageText
+        {
+            get
+            {
+                return _rightHandoffMessageText;
+            }
+
+            protected set
+            {
+                _rightHandoffMessageText = value;
+                OnPropertyChanged("RightHandoffMessageText");
+            }
+        }
+
+        private Brush _leftHandoffMessageBrush;
+        public Brush LeftHandoffMessageBrush
+        {
+            get
+            {
+                return _leftHandoffMessageBrush;
+            }
+
+            protected set
+            {
+                _leftHandoffMessageBrush = value;
+                OnPropertyChanged("LeftHandoffMessageBrush");
+            }
+        }
+
+        private Brush _rightHandoffMessageBrush;
+        public Brush RightHandoffMessageBrush
+        {
+            get
+            {
+                return _rightHandoffMessageBrush;
+            }
+
+            protected set
+            {
+                _rightHandoffMessageBrush = value;
+                OnPropertyChanged("RightHandoffMessageBrush");
+            }
+        }
+
+        private PromptState _leftHandoffConfirmationState = PromptState.Hidden;
+        public PromptState LeftHandoffConfirmationState
+        {
+            get
+            {
+                return _leftHandoffConfirmationState;
+            }
+
+            protected set
+            {
+                _leftHandoffConfirmationState = value;
+                OnPropertyChanged("LeftHandoffConfirmationState");
+            }
+        }
+
+        private PromptState _rightHandoffConfirmationState = PromptState.Hidden;
+        public PromptState RightHandoffConfirmationState
+        {
+            get
+            {
+                return _rightHandoffConfirmationState;
+            }
+
+            protected set
+            {
+                _rightHandoffConfirmationState = value;
+                OnPropertyChanged("RightHandoffConfirmationState");
+            }
+        }
+
+        #endregion
 
 
-
-        private InteractionStream interactionStream;
-
-        private Joint leftHandJoint;
-
-        private Joint rightHandJoint;
-
-        private bool isLeftHandGrip;
-
-        private bool isRightHandGrip;
+        #region "InteractionHand Type, Joint, Grip, Primary"
 
         private InteractionHandEventType _leftHandInteractionType;
+        public InteractionHandEventType LeftHandInteractionType
+        {
+            get { return this._leftHandInteractionType; }
+            set
+            {
+                this._leftHandInteractionType = value;
+                OnPropertyChanged("LeftHandInteractionType");
+            }
+        }
 
         private InteractionHandEventType _rightHandInteractionType;
+        public InteractionHandEventType RightHandInteractionType
+        {
+            get { return this._rightHandInteractionType; }
+            set
+            {
+                this._rightHandInteractionType = value;
+                OnPropertyChanged("RightHandInteractionType");
+            }
+        }
 
-        private UserInfo[] userInfos;
+        private Joint _leftHandJoint;
+        public Joint LeftHandJoint
+        {
+            get { return this._leftHandJoint; }
+            set
+            {
+                _leftHandJoint = value;
+                OnPropertyChanged("LeftHandJoint");
+            }
+        }
+
+        private Joint _rightHandJoint;
+        public Joint RightHandJoint
+        {
+            get { return this._rightHandJoint; }
+            set
+            {
+                this._rightHandJoint = value;
+                OnPropertyChanged("RightHandJoint");
+            }
+        }
+
+        private bool _isLeftHandGrip;
+        public bool IsLeftHandGrip
+        {
+            get { return this._isLeftHandGrip; }
+            set
+            {
+                this._isLeftHandGrip = value;
+                OnPropertyChanged("IsLeftHandGrip");
+            }
+        }
+
+        private bool _isRightHandGrip;
+        public bool IsRightHandGrip
+        {
+            get { return this._isRightHandGrip; }
+            set
+            {
+                this._isRightHandGrip = value;
+                OnPropertyChanged("IsRightHandGrip");
+            }
+        }
+
+        private bool _isPrimaryLeftHand;
+        public bool IsPrimaryLeftHand
+        {
+            get { return _isPrimaryLeftHand; }
+            set
+            {
+                _isPrimaryLeftHand = value;
+                OnPropertyChanged("IsPrimaryLeftHand");
+            }
+        }
+
+        private bool _isPrimaryRightHand;
+        public bool IsPrimaryRightHand
+        {
+            get { return _isPrimaryRightHand; }
+            set
+            {
+                _isPrimaryRightHand = value;
+                OnPropertyChanged("IsPrimaryRightHand");
+            }
+        }
+
+        #endregion
+
 
 
         public KinectController()
         {
-            sensorChooser = new KinectSensorChooser();
+            _sensorChooser = new KinectSensorChooser();
 
             QueryPrimaryUserCallback = this.OnQueryPrimaryUserCallback;
             PreEngagementUserColors = new Dictionary<int, Color>();
@@ -117,92 +353,302 @@ namespace Przewodnik.Utilities
             engagementConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementConfirmation);
             engagementHandoffConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementHandoffConfirmation);
 
-            sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
-            sensorChooser.Start();
+            _sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
+            _sensorChooser.Start();
         }
 
-        public Navigator Navigator
+
+        private void SensorChooserOnKinectChanged(object sender, KinectChangedEventArgs e)
         {
-            get
+            if (null != e.OldSensor)
             {
-                return _navigator;
+                try
+                {
+                    e.OldSensor.AllFramesReady -= AllFramesReady;
+
+                    e.OldSensor.SkeletonStream.AppChoosesSkeletons = false;
+                    e.OldSensor.DepthStream.Range = DepthRange.Default;
+                    e.OldSensor.SkeletonStream.EnableTrackingInNearRange = false;
+
+                    e.OldSensor.DepthStream.Disable();
+                    e.OldSensor.ColorStream.Disable();
+                    e.OldSensor.SkeletonStream.Disable();
+
+                    if (null != _backgroundRemovedColorStream)
+                    {
+                        _backgroundRemovedColorStream.BackgroundRemovedFrameReady -= BackgroundRemovedFrameReadyHandler;
+                        _backgroundRemovedColorStream.Dispose();
+                        _backgroundRemovedColorStream = null;
+                    }
+                }
+                catch (InvalidOperationException) { }
+
+                this.engagementStateManager.Reset();
             }
 
-            set
+            if (e.NewSensor != null)
             {
-                _navigator = value;
+                try
+                {
+                    e.NewSensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
+                    e.NewSensor.ColorStream.Enable();
+                    e.NewSensor.SkeletonStream.Enable();
+
+                    InteractionAdapter interactionAdapter = new InteractionAdapter();
+                    interactionStream = new InteractionStream(e.NewSensor, interactionAdapter);
+                    interactionStream.InteractionFrameReady += new EventHandler<InteractionFrameReadyEventArgs>(HandsInteractionFrameReady);
+                    userInfos = new UserInfo[InteractionFrame.UserInfoArrayLength];
+
+                    _backgroundRemovedColorStream = new BackgroundRemovedColorStream(e.NewSensor);
+                    _backgroundRemovedColorStream.Enable(ColorImageFormat.RgbResolution640x480Fps30, DepthImageFormat.Resolution640x480Fps30);
+
+                    if (null == skeletons)
+                    {
+                        skeletons = new Skeleton[e.NewSensor.SkeletonStream.FrameSkeletonArrayLength];
+                    }
+
+                    _backgroundRemovedColorStream.BackgroundRemovedFrameReady += BackgroundRemovedFrameReadyHandler;
+
+                    e.NewSensor.AllFramesReady += AllFramesReady;
+
+                    try
+                    {
+                        e.NewSensor.DepthStream.Range = DepthRange.Near;
+                        e.NewSensor.SkeletonStream.EnableTrackingInNearRange = true;
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        e.NewSensor.DepthStream.Range = DepthRange.Default;
+                        e.NewSensor.SkeletonStream.EnableTrackingInNearRange = false;
+                    }
+                    e.NewSensor.SkeletonStream.AppChoosesSkeletons = true;
+
+                }
+                catch (InvalidOperationException) { }
+            }
+
+            // NAVIGATE
+            Debug.WriteLine("Kinect sensor changes, reset to sleep screen.");
+            _navigator.GoSleep();
+            this.IsUserEngaged = false;
+        }
+
+
+        private void HandsInteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
+        {
+            using (InteractionFrame interactionFrame = e.OpenInteractionFrame())
+            {
+                if (interactionFrame != null)
+                {
+                    interactionFrame.CopyInteractionDataTo(this.userInfos);
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            foreach (UserInfo userInfo in userInfos)
+            {
+                foreach (InteractionHandPointer interactionHandPointer in userInfo.HandPointers)
+                {
+                    // track if the left hand or right hand is griped
+                    if (interactionHandPointer.HandType == InteractionHandType.Left)
+                    {
+                        IsPrimaryLeftHand = interactionHandPointer.IsPrimaryForUser;
+
+                        switch (interactionHandPointer.HandEventType)
+                        {
+                            case InteractionHandEventType.Grip:
+                                LeftHandInteractionType = interactionHandPointer.HandEventType;
+                                IsLeftHandGrip = true;
+                                break;
+                            case InteractionHandEventType.GripRelease:
+                                this.LeftHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsLeftHandGrip = false;
+                                break;
+                        }
+
+                    }
+                    else if (interactionHandPointer.HandType == InteractionHandType.Right)
+                    {
+                        IsPrimaryRightHand = interactionHandPointer.IsPrimaryForUser;
+
+                        switch (interactionHandPointer.HandEventType)
+                        {
+                            case InteractionHandEventType.Grip:
+                                this.RightHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsRightHandGrip = true;
+                                break;
+                            case InteractionHandEventType.GripRelease:
+                                this.RightHandInteractionType = interactionHandPointer.HandEventType;
+                                this.IsRightHandGrip = false;
+                                break;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        private void AllFramesReady(object sender, AllFramesReadyEventArgs e)
+        {
+            if (null == this._sensorChooser || null == this._sensorChooser.Kinect || this._sensorChooser.Kinect != sender)
+            {
+                return;
+            }
+
+            try
+            {
+                using (DepthImageFrame depthFrame = e.OpenDepthImageFrame())
+                {
+                    if (null != depthFrame)
+                    {
+                        _backgroundRemovedColorStream.ProcessDepth(depthFrame.GetRawPixelData(), depthFrame.Timestamp);
+                        interactionStream.ProcessDepth(depthFrame.GetRawPixelData(), depthFrame.Timestamp);
+                    }
+                }
+
+                using (ColorImageFrame colorFrame = e.OpenColorImageFrame())
+                {
+                    if (null != colorFrame)
+                    {
+                        _backgroundRemovedColorStream.ProcessColor(colorFrame.GetRawPixelData(), colorFrame.Timestamp);
+                    }
+                }
+
+                using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame())
+                {
+                    if (null != skeletonFrame)
+                    {
+                        if (null == skeletons || skeletons.Length != skeletonFrame.SkeletonArrayLength)
+                        {
+                            skeletons = new Skeleton[skeletonFrame.SkeletonArrayLength];
+                        }
+
+                        skeletonFrame.CopySkeletonDataTo(this.skeletons);
+
+                        _backgroundRemovedColorStream.ProcessSkeleton(this.skeletons, skeletonFrame.Timestamp);
+
+                        engagementStateManager.ChooseTrackedUsers(skeletons, skeletonFrame.Timestamp, this.recommendedUserTrackingIds);
+                        var sensor = sender as KinectSensor;
+                        if (null != sensor)
+                        {
+                            try
+                            {
+                                sensor.SkeletonStream.ChooseSkeletons(this.recommendedUserTrackingIds[0], this.recommendedUserTrackingIds[1]);
+
+                                Skeleton skeleton = GetPrimarySkeleton(skeletons);
+                                if (skeleton != null)
+                                {
+                                    var accelerometerReading = _sensorChooser.Kinect.AccelerometerGetCurrentReading();
+                                    interactionStream.ProcessSkeleton(skeletons, accelerometerReading, skeletonFrame.Timestamp);
+
+                                    LeftHandJoint = skeleton.Joints[JointType.HandLeft];
+                                    RightHandJoint = skeleton.Joints[JointType.HandRight];
+                                }
+
+                            }
+                            catch (InvalidOperationException) { }
+                        }
+                    }
+                }
+
+                ChooseSkeleton();
+            }
+            catch (InvalidOperationException) { }
+        }
+
+        private void BackgroundRemovedFrameReadyHandler(object sender, BackgroundRemovedColorFrameReadyEventArgs e)
+        {
+            using (var backgroundRemovedFrame = e.OpenBackgroundRemovedColorFrame())
+            {
+                if (backgroundRemovedFrame != null)
+                {
+                    if (null == ForegroundBitmap || ForegroundBitmap.PixelWidth != backgroundRemovedFrame.Width
+                        || ForegroundBitmap.PixelHeight != backgroundRemovedFrame.Height)
+                    {
+                        ForegroundBitmap = new WriteableBitmap(backgroundRemovedFrame.Width, backgroundRemovedFrame.Height, 96.0, 96.0, PixelFormats.Bgra32, null);
+                    }
+
+                    // Write the pixel data into our bitmap
+                    ForegroundBitmap.WritePixels(
+                        new Int32Rect(0, 0, ForegroundBitmap.PixelWidth, ForegroundBitmap.PixelHeight),
+                        backgroundRemovedFrame.GetRawPixelData(),
+                        ForegroundBitmap.PixelWidth * sizeof(int),
+                        0);
+                }
             }
         }
 
 
-
-        public Joint LeftHandJoint
+        private int _currentlyTrackedSkeletonId;
+        private void ChooseSkeleton()
         {
-            get { return this.leftHandJoint; }
-            set
+            var isTrackedSkeltonVisible = false;
+            var nearestDistance = float.MaxValue;
+            var nearestSkeleton = 0;
+
+            foreach (var skel in skeletons)
             {
-                leftHandJoint = value;
-                OnPropertyChanged("LeftHandJoint");
+                if (null == skel)
+                {
+                    continue;
+                }
+
+                if (skel.TrackingState != SkeletonTrackingState.Tracked)
+                {
+                    continue;
+                }
+
+                if (skel.TrackingId == _currentlyTrackedSkeletonId)
+                {
+                    isTrackedSkeltonVisible = true;
+                    break;
+                }
+
+                if (skel.Position.Z < nearestDistance)
+                {
+                    nearestDistance = skel.Position.Z;
+                    nearestSkeleton = skel.TrackingId;
+                }
+            }
+
+            if (!isTrackedSkeltonVisible && nearestSkeleton != 0)
+            {
+                _backgroundRemovedColorStream.SetTrackedPlayer(nearestSkeleton);
+                _currentlyTrackedSkeletonId = nearestSkeleton;
             }
         }
 
-        public Joint RightHandJoint
+        private Skeleton GetPrimarySkeleton(Skeleton[] skeletons)
         {
-            get { return this.rightHandJoint; }
-            set
+            Skeleton skeleton = null;
+            if (skeletons != null)
             {
-                this.rightHandJoint = value;
-                OnPropertyChanged("RightHandJoint");
+                for (int i = 0; i < skeletons.Length; i++)
+                {
+                    if (skeletons[i].TrackingState == SkeletonTrackingState.Tracked)
+                    {
+                        if (skeleton == null)
+                        {
+                            skeleton = skeletons[i];
+                        }
+                        else
+                        {
+                            if (skeleton.Position.Z > skeletons[i].Position.Z)
+                            {
+                                skeleton = skeletons[i];
+                            }
+                        }
+                    }
+                }
             }
-        }
-
-        public bool IsLeftHandGrip
-        {
-            get { return this.isLeftHandGrip; }
-            set
-            {
-                this.isLeftHandGrip = value;
-                OnPropertyChanged("IsLeftHandGrip");
-            }
-        }
-
-        public bool IsRightHandGrip
-        {
-            get { return this.isRightHandGrip; }
-            set
-            {
-                this.isRightHandGrip = value;
-                OnPropertyChanged("IsRightHandGrip");
-            }
-        }
-
-        public InteractionHandEventType LeftHandInteractionType
-        {
-            get { return this._leftHandInteractionType; }
-            set
-            {
-                this._leftHandInteractionType = value;
-                OnPropertyChanged("LeftHandInteractionType");
-            }
-        }
-
-        public InteractionHandEventType RightHandInteractionType
-        {
-            get { return this._rightHandInteractionType; }
-            set
-            {
-                this._rightHandInteractionType = value;
-                OnPropertyChanged("RightHandInteractionType");
-            }
+            return skeleton;
         }
 
 
 
-
-        public KinectSensorChooser KinectSensorChooser
-        {
-            get { return this.sensorChooser; }
-        }
 
         public ICommand ShutdownCommand
         {
@@ -219,7 +665,15 @@ namespace Przewodnik.Utilities
             get { return this.engagementHandoffConfirmationCommand; }
         }
 
+
+
         public QueryPrimaryUserTrackingIdCallback QueryPrimaryUserCallback { get; private set; }
+
+        private int OnQueryPrimaryUserCallback(int proposedTrackingId, IEnumerable<HandPointer> candidateHandPointers, long timestamp)
+        {
+            return this.engagementStateManager.QueryPrimaryUserCallback(proposedTrackingId, candidateHandPointers);
+        }
+
 
         public bool IsInEngagementOverrideMode
         {
@@ -312,6 +766,8 @@ namespace Przewodnik.Utilities
             }
         }
 
+
+
         public PromptState StartBannerState
         {
             get
@@ -354,117 +810,7 @@ namespace Przewodnik.Utilities
             }
         }
 
-        public PromptState LeftHandoffMessageState
-        {
-            get
-            {
-                return this.leftHandoffMessageState;
-            }
 
-            protected set
-            {
-                this.leftHandoffMessageState = value;
-                this.OnPropertyChanged("LeftHandoffMessageState");
-            }
-        }
-
-        public string LeftHandoffMessageText
-        {
-            get
-            {
-                return this.leftHandoffMessageText;
-            }
-
-            protected set
-            {
-                this.leftHandoffMessageText = value;
-                this.OnPropertyChanged("LeftHandoffMessageText");
-            }
-        }
-
-        public Brush LeftHandoffMessageBrush
-        {
-            get
-            {
-                return this.leftHandoffMessageBrush;
-            }
-
-            protected set
-            {
-                this.leftHandoffMessageBrush = value;
-                this.OnPropertyChanged("LeftHandoffMessageBrush");
-            }
-        }
-
-        public PromptState LeftHandoffConfirmationState
-        {
-            get
-            {
-                return this.leftHandoffConfirmationState;
-            }
-
-            protected set
-            {
-                this.leftHandoffConfirmationState = value;
-                this.OnPropertyChanged("LeftHandoffConfirmationState");
-            }
-        }
-
-        public PromptState RightHandoffMessageState
-        {
-            get
-            {
-                return this.rightHandoffMessageState;
-            }
-
-            protected set
-            {
-                this.rightHandoffMessageState = value;
-                this.OnPropertyChanged("RightHandoffMessageState");
-            }
-        }
-
-        public string RightHandoffMessageText
-        {
-            get
-            {
-                return this.rightHandoffMessageText;
-            }
-
-            protected set
-            {
-                this.rightHandoffMessageText = value;
-                this.OnPropertyChanged("RightHandoffMessageText");
-            }
-        }
-
-        public Brush RightHandoffMessageBrush
-        {
-            get
-            {
-                return this.rightHandoffMessageBrush;
-            }
-
-            protected set
-            {
-                this.rightHandoffMessageBrush = value;
-                this.OnPropertyChanged("RightHandoffMessageBrush");
-            }
-        }
-
-        public PromptState RightHandoffConfirmationState
-        {
-            get
-            {
-                return this.rightHandoffConfirmationState;
-            }
-
-            protected set
-            {
-                this.rightHandoffConfirmationState = value;
-                this.OnPropertyChanged("RightHandoffConfirmationState");
-            }
-        }
 
         public Color EngagedUserColor { get; set; }
 
@@ -483,260 +829,13 @@ namespace Przewodnik.Utilities
             this.engagementStateManager.UpdateHandPointers(handPointers);
         }
 
-        private void SensorChooserOnKinectChanged(object sender, KinectChangedEventArgs e)
-        {
-            KinectSensor oldSensor = e.OldSensor;
-            KinectSensor newSensor = e.NewSensor;
-
-            if (null != oldSensor)
-            {
-                try
-                {
-                    oldSensor.SkeletonFrameReady -= this.OnSkeletonFrameReady;
-                    oldSensor.SkeletonStream.AppChoosesSkeletons = false;
-                    oldSensor.DepthStream.Range = DepthRange.Default;
-                    oldSensor.SkeletonStream.EnableTrackingInNearRange = false;
-                    oldSensor.DepthStream.Disable();
-                    oldSensor.SkeletonStream.Disable();
-                }
-                catch (InvalidOperationException)
-                {
-                    // KinectSensor might enter an invalid state while enabling/disabling streams or stream features.
-                    // E.g.: sensor might be abruptly unplugged.
-                }
-
-                this.engagementStateManager.Reset();
-            }
-
-            if (null != newSensor)
-            {
-                try
-                {
-                    //newSensor.DepthStream.Enable(DepthImageFormat.Resolution640x480Fps30);
-                    newSensor.DepthStream.Enable();
-                    newSensor.DepthFrameReady += new EventHandler<DepthImageFrameReadyEventArgs>(SensorSkeletonDepthFrameReady);
-
-                    newSensor.SkeletonStream.Enable();
-
-                    try
-                    {
-                        newSensor.DepthStream.Range = DepthRange.Near;
-                        newSensor.SkeletonStream.EnableTrackingInNearRange = true;
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // Non Kinect for Windows devices do not support Near mode, so reset back to default mode.
-                        newSensor.DepthStream.Range = DepthRange.Default;
-                        newSensor.SkeletonStream.EnableTrackingInNearRange = false;
-                    }
-
-                    newSensor.SkeletonStream.AppChoosesSkeletons = true;
-                    newSensor.SkeletonFrameReady += this.OnSkeletonFrameReady;
-
-
-                    InteractionAdapter interactionAdapter = new InteractionAdapter();
-                    interactionStream = new InteractionStream(sensorChooser.Kinect, interactionAdapter);
-                    interactionStream.InteractionFrameReady += new EventHandler<InteractionFrameReadyEventArgs>(HandsInteractionFrameReady);
-                    userInfos = new UserInfo[InteractionFrame.UserInfoArrayLength];
-                }
-                catch (InvalidOperationException)
-                {
-                    // KinectSensor might enter an invalid state while enabling/disabling streams or stream features.
-                    // E.g.: sensor might be abruptly unplugged.
-                }
-            }
-
-            // Whenever the Kinect sensor changes, we have no controlling user, so reset to attract screen
-
-            // NAVIGATE
-            _navigator.GoSleep();
-            //MessageBox.Show("Start programu = INSTAGRAM", "Navigate");
-            this.IsUserEngaged = false;
-        }
-
-        class InteractionAdapter : IInteractionClient
-        {
-            public InteractionInfo GetInteractionInfoAtLocation(int skeletonTrackingId, InteractionHandType handType, double x, double y)
-            {
-                var interactionInfo = new InteractionInfo
-                {
-                    IsPressTarget = false,
-                    IsGripTarget = false,
-                };
-
-                return interactionInfo;
-            }
-        }
-
         private void Cleanup()
         {
-            this.sensorChooser.Stop();
+
+            this._sensorChooser.Stop();
         }
 
 
-        private void OnSkeletonFrameReady(object sender, SkeletonFrameReadyEventArgs e)
-        {
-            bool haveSkeletons = false;
-            long timestamp = 0;
-
-            using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame())
-            {
-                if (null != skeletonFrame)
-                {
-                    if ((null == this.skeletons) || (this.skeletons.Length != skeletonFrame.SkeletonArrayLength))
-                    {
-                        this.skeletons = new Skeleton[skeletonFrame.SkeletonArrayLength];
-                    }
-
-                    // Let engagement state manager choose which users to track.
-                    skeletonFrame.CopySkeletonDataTo(this.skeletons);
-                    timestamp = skeletonFrame.Timestamp;
-                    haveSkeletons = true;
-                }
-            }
-
-            if (haveSkeletons)
-            {
-                this.engagementStateManager.ChooseTrackedUsers(this.skeletons, timestamp, this.recommendedUserTrackingIds);
-
-                var sensor = sender as KinectSensor;
-                if (null != sensor)
-                {
-                    try
-                    {
-                        sensor.SkeletonStream.ChooseSkeletons(this.recommendedUserTrackingIds[0], this.recommendedUserTrackingIds[1]);
-
-                        Skeleton skeleton = GetPrimarySkeleton(skeletons);
-                        if (skeleton != null)
-                        {
-                            var accelerometerReading = sensorChooser.Kinect.AccelerometerGetCurrentReading();
-                            interactionStream.ProcessSkeleton(skeletons, accelerometerReading, timestamp);
-
-                            LeftHandJoint = skeleton.Joints[JointType.HandLeft];
-                            RightHandJoint = skeleton.Joints[JointType.HandRight];
-                        }
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // KinectSensor might enter an invalid state while choosing skeletons.
-                        // E.g.: sensor might be abruptly unplugged.
-                    }
-                }
-            }
-        }
-
-        private void HandsInteractionFrameReady(object sender, InteractionFrameReadyEventArgs e)
-        {
-            using (InteractionFrame interactionFrame = e.OpenInteractionFrame())
-            {
-                if (interactionFrame != null)
-                {
-                    interactionFrame.CopyInteractionDataTo(this.userInfos);
-                }
-                else
-                {
-                    return;
-                }
-            }
-
-            foreach (UserInfo userInfo in userInfos)
-            {
-                foreach (InteractionHandPointer interactionHandPointer in userInfo.HandPointers)
-                {
-                    // track if the left hand or right hand is griped
-                    if (interactionHandPointer.HandType == InteractionHandType.Left)
-                    {
-                        switch (interactionHandPointer.HandEventType)
-                        {
-                            case InteractionHandEventType.Grip:
-                                this.LeftHandInteractionType = interactionHandPointer.HandEventType;
-                                this.IsLeftHandGrip = true;
-                                break;
-                            case InteractionHandEventType.GripRelease:
-                                this.LeftHandInteractionType = interactionHandPointer.HandEventType;
-                                this.IsLeftHandGrip = false;
-                                break;
-                        }
-
-                    }
-                    else if (interactionHandPointer.HandType == InteractionHandType.Right)
-                    {
-                        switch (interactionHandPointer.HandEventType)
-                        {
-                            case InteractionHandEventType.Grip:
-                                this.RightHandInteractionType = interactionHandPointer.HandEventType;
-                                this.IsRightHandGrip = true;
-                                break;
-                            case InteractionHandEventType.GripRelease:
-                                this.RightHandInteractionType = interactionHandPointer.HandEventType;
-                                this.IsRightHandGrip = false;
-                                break;
-                        }
-                    }
-                }
-            }
-
-        }
-
-        private void SensorSkeletonDepthFrameReady(object sender, DepthImageFrameReadyEventArgs e)
-        {
-            // Even though we un-register all our event handlers when the sensor
-            // changes, there may still be an event for the old sensor in the queue
-            // due to the way the KinectSensor delivers events.  So check again here.
-            if (sensorChooser.Kinect != sender)
-            {
-                return;
-            }
-
-            using (DepthImageFrame depthFrame = e.OpenDepthImageFrame())
-            {
-                if (null != depthFrame)
-                {
-                    try
-                    {
-                        // Hand data to Interaction framework to be processed.
-                        interactionStream.ProcessDepth(depthFrame.GetRawPixelData(), depthFrame.Timestamp);
-                    }
-                    catch (InvalidOperationException)
-                    {
-                        // DepthFrame functions may throw when the sensor gets
-                        // into a bad state.  Ignore the frame in that case.
-                    }
-                }
-            }
-        }
-
-        private Skeleton GetPrimarySkeleton(Skeleton[] skeletons)
-        {
-            Skeleton skeleton = null;
-            if (skeletons != null)
-            {
-                for (int i = 0; i < skeletons.Length; i++)
-                {
-                    if (skeletons[i].TrackingState == SkeletonTrackingState.Tracked)
-                    {
-                        if (skeleton == null)
-                        {
-                            skeleton = skeletons[i];
-                        }
-                        else
-                        {
-                            if (skeleton.Position.Z > skeletons[i].Position.Z)
-                            {
-                                skeleton = skeletons[i];
-                            }
-                        }
-                    }
-                }
-            }
-            return skeleton;
-        }
-
-
-        private int OnQueryPrimaryUserCallback(int proposedTrackingId, IEnumerable<HandPointer> candidateHandPointers, long timestamp)
-        {
-            return this.engagementStateManager.QueryPrimaryUserCallback(proposedTrackingId, candidateHandPointers);
-        }
 
         private void OnEngagementConfirmation(RoutedEventArgs e)
         {
@@ -777,6 +876,8 @@ namespace Przewodnik.Utilities
             this.UpdateCurrentNavigationContextState();
         }
 
+
+
         private void UpdateUserColors()
         {
             this.PreEngagementUserColors.Clear();
@@ -804,6 +905,7 @@ namespace Przewodnik.Utilities
             }
         }
 
+
         private void UpdateUserEngaged()
         {
             this.IsUserEngaged = this.IsInEngagementOverrideMode
@@ -819,6 +921,7 @@ namespace Przewodnik.Utilities
         {
             this.IsUserTracked = this.IsInEngagementOverrideMode || (this.engagementStateManager.TrackedUserTrackingIds.Count > 0);
         }
+
 
         private void UpdateStartBannerState()
         {

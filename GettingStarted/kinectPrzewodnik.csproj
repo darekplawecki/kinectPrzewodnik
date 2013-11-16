@@ -61,6 +61,10 @@
     <Reference Include="Microsoft.Kinect.Toolkit">
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Kinect.Toolkit.BackgroundRemoval, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Kinect.Toolkit.BackgroundRemoval.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Kinect.Toolkit.Controls">
       <HintPath>..\..\..\..\..\..\..\Program Files\Microsoft SDKs\Kinect\Developer Toolkit v1.8.0\Assemblies\Microsoft.Kinect.Toolkit.Controls.dll</HintPath>
     </Reference>
@@ -140,12 +144,14 @@
     <Compile Include="Models\SleepScreenModel.cs" />
     <Compile Include="Models\TweetModel.cs" />
     <Compile Include="Models\WeatherModel.cs" />
+    <Compile Include="Utilities\AverageFilter.cs" />
     <Compile Include="Utilities\CommandOnEventAssociation.cs" />
     <Compile Include="Utilities\CommandOnEventHelper.cs" />
     <Compile Include="Utilities\CookieAwareWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilities\DataLoader\CalendarLoader.cs" />
+    <Compile Include="Utilities\DataLoader\MapLoader.cs" />
     <Compile Include="Utilities\DataLoader\DataLoader.cs" />
     <Compile Include="Utilities\DataLoader\DataLoaderEventArgs.cs" />
     <Compile Include="Utilities\DataLoader\InstagramLoader.cs" />
@@ -156,6 +162,7 @@
     <Compile Include="Utilities\InstagramAPIManager.cs" />
     <Compile Include="Utilities\KinectController.cs" />
     <Compile Include="Controls\PromptControl.cs" />
+    <Compile Include="Utilities\KinectHandUtilities.cs" />
     <Compile Include="Utilities\PromptState.cs" />
     <Compile Include="Utilities\Twitter\Extension.cs" />
     <Compile Include="Utilities\Twitter\TwitterConnectionException.cs" />
@@ -205,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PostcardPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TwitterPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -221,6 +232,9 @@
     </Compile>
     <Compile Include="Views\MapPage.xaml.cs">
       <DependentUpon>MapPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostcardPage.xaml.cs">
+      <DependentUpon>PostcardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TwitterPage.xaml.cs">
       <DependentUpon>TwitterPage.xaml</DependentUpon>
@@ -334,6 +348,12 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\hand.png" />
+    <Resource Include="Content\hand_grip.png" />
+    <Resource Include="Content\move.png" />
+    <Resource Include="Content\zoom.png" />
+    <Resource Include="Content\zoom_minus.png" />
+    <Resource Include="Content\zoom_plus.png" />
     <Resource Include="Content\Twitter\WrocławPrzewodnik.jpg" />
     <Resource Include="Content\Events\calendar.png" />
     <Resource Include="Content\Events\Icons\ico_art.png" />

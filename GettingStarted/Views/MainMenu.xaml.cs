@@ -57,6 +57,12 @@ namespace Przewodnik.Views
             pageFactory.NavigateTo(mapPage);
         }
 
+        private void postcardPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            IKinectPage postcardPage = pageFactory.GetPostcardPageGrid();
+            pageFactory.NavigateTo(postcardPage);
+        }
+
     }
 
 

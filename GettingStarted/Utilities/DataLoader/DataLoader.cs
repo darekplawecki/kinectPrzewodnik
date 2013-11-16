@@ -54,7 +54,7 @@ namespace Przewodnik.Utilities.DataLoader
 
         private void LoadMaps()
         {
-            Thread.Sleep(1000);
+            MapLoader ml = MapLoader.Instance;
             loaderEvents(this, new DataLoaderEventArgs(3, 5));
         }
 
@@ -69,5 +69,6 @@ namespace Przewodnik.Utilities.DataLoader
             WeatherLoader wl =  WeatherLoader.Instance;
             loaderEvents(this, new DataLoaderEventArgs(5, 5));
         }
+
     }
 }

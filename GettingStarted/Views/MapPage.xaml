@@ -10,9 +10,7 @@
         <ViewModels:MapViewModel/>
     </Grid.DataContext>
 
-    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50" >Mapa</TextBlock>
-
-    <Grid x:Name="MapGrid" Margin="0 150 0 0">
+    <Grid x:Name="MapGrid" Margin="0 0 0 0">
         <m:Map x:Name="MasterBingMap" CredentialsProvider="AoYws8aLN6--qMJ06VlJ6uj2rZWoiDKX1h7NESbZKANua_yepBlEBu3ZuybMUN9q" Center="{Binding MapCenterPoint, Mode=TwoWay}" ZoomLevel="{Binding MapZoomLevel,Mode=TwoWay}" Mode="Road">
             <Canvas Width="100" Height="50" 
               m:MapLayer.Position="51.105726, 17.030613" 
@@ -54,11 +52,22 @@
                 </TextBlock>
             </Canvas>
         </m:Map>
+
+        <Image x:Name="InteractioIcoZoom" Source="../Content/zoom.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
+        <Image x:Name="InteractioIcoZoomPlus" Source="../Content/zoom_plus.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomPlusVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
+        <Image x:Name="InteractioIcoZoomMinus" Source="../Content/zoom_minus.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomMinusVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
+        <Image x:Name="InteractioIcoMove" Source="../Content/move.png" Opacity="0.5" Visibility="{ Binding InteractionIcoMoveVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
     </Grid>
-    
+
     <StackPanel x:Name="LogMessage">
         <TextBlock x:Name="testMessageLeftHand" Width="1000" Height="200" FontSize="20" Foreground="Black" HorizontalAlignment="Center" Text="{Binding TestMessageHand}" />
     </StackPanel>
 
+    <Canvas x:Name="MyHandPointer">
+        <Image x:Name="leftHand" Visibility="{ Binding PointerLeftHandVisibility }" Canvas.Left="{Binding LeftHandX}" Canvas.Top="{Binding LeftHandY}" Width="86" Height="108" Source="../Content/hand.png" />
+        <Image x:Name="rightHand" Visibility="{ Binding PointerRightHandVisibility }" Canvas.Left="{Binding RightHandX}" Canvas.Top="{Binding RightHandY}" Width="86" Height="108" Source="../Content/hand.png" />
+        <Image x:Name="leftHandGrip" Visibility="{ Binding PointerLeftHandGripVisibility }" Canvas.Left="{Binding LeftHandX}" Canvas.Top="{Binding LeftHandY}" Width="71" Height="71" Source="../Content/hand_grip.png" />
+        <Image x:Name="rightHandGrip" Visibility="{ Binding PointerRightHandGripVisibility }" Canvas.Left="{Binding RightHandX}" Canvas.Top="{Binding RightHandY}" Width="71" Height="71" Source="../Content/hand_grip.png" />
+    </Canvas>
 
 </Grid>

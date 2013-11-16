@@ -151,7 +151,8 @@
                             Grid.Row="1" Grid.Column="2"
                             Width="Auto" Height="Auto"
                             VerticalContentAlignment="Top" 
-                            Background="{StaticResource LimeColor}">
+                            Background="{StaticResource LimeColor}"
+                            Click="postcardPageButton_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>

@@ -15,12 +15,11 @@ namespace Przewodnik.Views
     {
         private KinectPageFactory _pageFactory;
 
-        
+
         public MapPage(KinectPageFactory pageFactory)
         {
             InitializeComponent();
             _pageFactory = pageFactory;
-
 
             //addPin(51.105726, 17.030613, "Opera Wrocławska");
             //addPin(51.109588, 17.032255, "Ratusz");
@@ -41,13 +40,10 @@ namespace Przewodnik.Views
             MasterBingMap.Children.Add(pin);
         }
 
-
-
-
         public void OnNavigateTo()
         {
         }
+
     }
-
-
+    
 }
