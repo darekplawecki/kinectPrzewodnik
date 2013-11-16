@@ -268,6 +268,15 @@ namespace Przewodnik.Content.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to widokówka.
+        /// </summary>
+        internal static string widokowka {
+            get {
+                return ResourceManager.GetString("widokowka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to wydarzenia.
         /// </summary>
         internal static string wydarzenia {

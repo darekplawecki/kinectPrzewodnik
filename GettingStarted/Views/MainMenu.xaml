@@ -46,8 +46,8 @@
                 <Image Grid.Column="0" Source="../Content/Design/Images/home_attractions.jpg"></Image>
                 <StackPanel Margin="{DynamicResource BlockMargin}" Grid.Column="1">
                     <Image Source="../Content/Design/Images/ico_attractions.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="atrakcje turystyczne" Margin="{DynamicResource TextTopBottomMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
-                    <TextBlock Text="Niezbędnik każdego turysty, czyli co warto zobaczyć i zwiedzić we Wrocławiu!" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size24}" LineHeight="{DynamicResource Size24}"></TextBlock>
+                    <TextBlock Name="Atrakcje" Text="atrakcje turystyczne" Margin="{DynamicResource TextTopBottomMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <TextBlock Name="Atrakcje_opis" Text="Niezbędnik każdego turysty, czyli co warto zobaczyć i zwiedzić we Wrocławiu!" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size24}" LineHeight="{DynamicResource Size24}"></TextBlock>
                 </StackPanel>
             </Grid>
         </k:KinectTileButton>
@@ -67,7 +67,7 @@
                 <Image Grid.Row="0" Source="../Content/Design/Images/home_events.jpg"></Image>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                     <Image Source="../Content/Design/Images/ico_events.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="wydarzenia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <TextBlock Name="Wydarzenia" Text="wydarzenia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                 </StackPanel>
             </Grid>
 
@@ -89,7 +89,7 @@
                 <Image Grid.Row="0" Source="../Content/Design/Images/home_twitter.jpg"></Image>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                     <Image Source="../Content/Design/Images/ico_twitter.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="twitter" Margin="{DynamicResource TextTopBottomMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <TextBlock Name="Twitter" Text="twitter" Margin="{DynamicResource TextTopBottomMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                     <Grid>
                         <Grid.RowDefinitions>
                             <RowDefinition></RowDefinition>
@@ -119,7 +119,7 @@
                 <Image Grid.Row="0" Source="../Content/Design/Images/home_weather.jpg"></Image>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                     <Image Source="../Content/Design/Images/ico_weather.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="pogoda" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <TextBlock Name="Pogoda" Text="pogoda" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                 </StackPanel>
             </Grid>
 
@@ -139,7 +139,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="0">
                     <Image Source="../Content/Design/Images/ico_maps.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="plan miasta" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <TextBlock Name="Mapy" Text="plan miasta" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                 </StackPanel>
                 <Image Grid.Row="1" Source="../Content/Design/Images/home_maps.jpg"></Image>
             </Grid>
@@ -161,7 +161,7 @@
                 <Image Grid.Row="0" Source="../Content/Design/Images/home_objects.jpg"></Image>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                     <Image Source="../Content/Design/Images/ico_postcard.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Text="widokówka" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <TextBlock Name="Widokowka" Text="widokówka" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                 </StackPanel>
             </Grid>
 

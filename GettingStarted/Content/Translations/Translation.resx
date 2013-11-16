@@ -203,4 +203,7 @@
   <data name="ZOO_TITLE" xml:space="preserve">
     <value>ZOO</value>
   </data>
+  <data name="widokowka" xml:space="preserve">
+    <value>widokówka</value>
+  </data>
 </root>

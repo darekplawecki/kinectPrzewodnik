@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System;
+using Przewodnik.Content.Traslations;
 using Przewodnik.ViewModels;
 
 namespace Przewodnik.Views
@@ -15,7 +16,7 @@ namespace Przewodnik.Views
         {
             InitializeComponent();
             this.pageFactory = pageFactory;
-
+            prepareTranslation();
             //wvm = new WeatherViewModel();
             //BitmapImage bmi = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
             //weatherImage.Source = bmi;
@@ -61,6 +62,18 @@ namespace Przewodnik.Views
         {
             IKinectPage postcardPage = pageFactory.GetPostcardPageGrid();
             pageFactory.NavigateTo(postcardPage);
+        }
+
+        private void prepareTranslation()
+        {
+            Atrakcje.Text = AppResources.GetText("atrakcje_turystyczne");
+            Atrakcje_opis.Text = AppResources.GetText("atrakcje_turystyczne_description");
+            Wydarzenia.Text = AppResources.GetText("wydarzenia");
+            Twitter.Text = AppResources.GetText("twitter");
+            Pogoda.Text = AppResources.GetText("pogoda");
+            Mapy.Text = AppResources.GetText("plan_miasta");
+            Widokowka.Text = AppResources.GetText("widokowka");
+            
         }
 
     }
