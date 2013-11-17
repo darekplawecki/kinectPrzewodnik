@@ -23,15 +23,15 @@ namespace Przewodnik.Utilities.DataLoader
 
             for (int i = 0; i < 14; i++)
             {
-                //string parameter = dt.AddDays(i).ToString("yyyy-MM-dd");
-                //string link = "http://pik.wroclaw.pl/d" + parameter;
-                //var result = client.DownloadData(link);
-                //var html = System.Text.Encoding.Default.GetString(result); 
-
                 string parameter = dt.AddDays(i).ToString("yyyy-MM-dd");
-                StreamReader sr = new StreamReader("C:/Wydarzenie.txt");
-                var html = sr.ReadToEnd();
-                sr.Close();
+                string link = "http://pik.wroclaw.pl/d" + parameter;
+                var result = client.DownloadData(link);
+                var html = System.Text.Encoding.Default.GetString(result); 
+
+                //string parameter = dt.AddDays(i).ToString("yyyy-MM-dd");
+                //StreamReader sr = new StreamReader("C:/Wydarzenie.txt");
+                //var html = sr.ReadToEnd();
+                //sr.Close();
                                
                 WWWSourcesHashtable[parameter] = html;
             }

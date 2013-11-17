@@ -21,6 +21,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Size18"] = ConvertSize(18);
             Application.Current.Resources["Size24"] = ConvertSize(24);
             Application.Current.Resources["Size28"] = ConvertSize(28);
+            Application.Current.Resources["Size32"] = ConvertSize(32);
             Application.Current.Resources["Size36"] = ConvertSize(36);
             Application.Current.Resources["Size45"] = ConvertSize(45);
             Application.Current.Resources["Size50"] = ConvertSize(50);
@@ -41,6 +42,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["TextTopBottomMargin"] = new Thickness { Left = 0, Bottom = 0.02 * height, Right = 0, Top = 0.02 * height };
             Application.Current.Resources["TextTopBottomMarginSmaller"] = new Thickness { Left = 0, Bottom = 0.01150 * height, Right = 0, Top = 0.01150 * height };
             Application.Current.Resources["EventIconTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = 0.03041 * height }; // 35
+            Application.Current.Resources["LoaderTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = ConvertSize(90) };
 
             style = new Style { TargetType = typeof(TextBlock) };
             style.Setters.Add(new Setter(TextBlock.FontWeightProperty, FontWeights.Light));
@@ -54,6 +56,9 @@ namespace Przewodnik.Controls
             Application.Current.Resources["EventBlockSize"] = ConvertSize(1180);
             Application.Current.Resources["EventIconSize"] = ConvertSize(113);
             Application.Current.Resources["BackButtonSize"] = ConvertSize(252);
+            Application.Current.Resources["LoaderLogoWidth"] = ConvertSize(532);
+            Application.Current.Resources["LoaderWidth"] = ConvertSize(677);
+            Application.Current.Resources["LoaderHeight"] = ConvertSize(52);
             Application.Current.Resources["TweetHeight"] = new GridLength(0.15741 * height);
             Application.Current.Resources["TweetWidth"] = new GridLength(0.52083 * width);
 

@@ -241,4 +241,22 @@
   <data name="DT_minut_temu" xml:space="preserve">
     <value>minut temu</value>
   </data>
+  <data name="LOAD_events" xml:space="preserve">
+    <value>Pobieranie aktualnych wydarzeń</value>
+  </data>
+  <data name="LOAD_instagram" xml:space="preserve">
+    <value>Pobieranie zdjęć z Instagrama</value>
+  </data>
+  <data name="LOAD_maps" xml:space="preserve">
+    <value>Ładowanie map</value>
+  </data>
+  <data name="LOAD_twitter" xml:space="preserve">
+    <value>Ładowanie aktualnych twittów</value>
+  </data>
+  <data name="LOAD_weather" xml:space="preserve">
+    <value>Sprawdzanie frontów atmosferycznych</value>
+  </data>
+  <data name="LOAD_init" xml:space="preserve">
+    <value>Inicjalizacja...</value>
+  </data>
 </root>

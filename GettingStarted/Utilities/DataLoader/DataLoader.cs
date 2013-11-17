@@ -6,13 +6,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using Przewodnik.Content.Traslations;
 using Przewodnik.Utilities.Twitter;
 
 namespace Przewodnik.Utilities.DataLoader
 {
     class DataLoader
     {
-        public EventHandler loaderEvents;
+        public EventHandler beforeLoaderEvents;
+        public EventHandler afterLoaderEvents;
 
         public DataLoader()
         {
@@ -42,32 +44,37 @@ namespace Przewodnik.Utilities.DataLoader
 
         private void LoadInstagram()
         {
+            beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_instagram")));
             new InstagramLoader().LoadInstagram();
-            loaderEvents(this, new DataLoaderEventArgs(1, 5));
+            afterLoaderEvents(this, new AfterDataLoaderEventArgs(1, 5));
         }
 
         private void LoadTwitter()
         {
+            beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_twitter")));
             new TwitterLoader().LoadTwitter();
-            loaderEvents(this, new DataLoaderEventArgs(2, 5));
+            afterLoaderEvents(this, new AfterDataLoaderEventArgs(2, 5));
         }
 
         private void LoadMaps()
         {
+            beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_maps")));
             MapLoader ml = MapLoader.Instance;
-            loaderEvents(this, new DataLoaderEventArgs(3, 5));
+            afterLoaderEvents(this, new AfterDataLoaderEventArgs(3, 5));
         }
 
         private void LoadCalendar()
         {
+            beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_events")));
             CalendarLoader cl = CalendarLoader.Instance;
-            loaderEvents(this, new DataLoaderEventArgs(4, 5));
+            afterLoaderEvents(this, new AfterDataLoaderEventArgs(4, 5));
         }
 
         private void LoadWeather()
         {
-            WeatherLoader wl =  WeatherLoader.Instance;
-            loaderEvents(this, new DataLoaderEventArgs(5, 5));
+            beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_weather")));
+            WeatherLoader wl = WeatherLoader.Instance;
+            afterLoaderEvents(this, new AfterDataLoaderEventArgs(5, 5));
         }
 
     }

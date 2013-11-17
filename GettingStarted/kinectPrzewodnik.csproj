@@ -150,10 +150,11 @@
     <Compile Include="Utilities\CookieAwareWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Utilities\DataLoader\AfterDataLoaderEventArgs.cs" />
+    <Compile Include="Utilities\DataLoader\BeforeDataLoaderEventArgs.cs" />
     <Compile Include="Utilities\DataLoader\CalendarLoader.cs" />
     <Compile Include="Utilities\DataLoader\MapLoader.cs" />
     <Compile Include="Utilities\DataLoader\DataLoader.cs" />
-    <Compile Include="Utilities\DataLoader\DataLoaderEventArgs.cs" />
     <Compile Include="Utilities\DataLoader\InstagramLoader.cs" />
     <Compile Include="Utilities\DataLoader\TwitterLoader.cs" />
     <Compile Include="Utilities\DataLoader\WeatherLoader.cs" />
@@ -348,6 +349,19 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\SleepScreen\Instagram\21.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\22.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\23.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\24.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\25.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\26.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\27.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\28.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\29.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\30.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\31.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\32.jpg" />
+    <Resource Include="Content\SleepScreen\Instagram\33.jpg" />
     <Resource Include="Content\hand.png" />
     <Resource Include="Content\hand_grip.png" />
     <Resource Include="Content\move.png" />
@@ -463,6 +477,7 @@
     <Resource Include="Content\Attractions\Photos\zoo1_hover.jpg" />
     <Resource Include="Content\Design\Images\ico_postcard.png" />
     <Resource Include="Content\Design\Images\back-button.png" />
+    <Resource Include="Content\Design\Images\logo_vertical.png" />
     <Content Include="Content\Design\Sounds\button-enter.wav" />
     <Content Include="Content\Design\Sounds\button-select.wav" />
     <Resource Include="Content\Attractions\Photos\fontanna1.jpg" />

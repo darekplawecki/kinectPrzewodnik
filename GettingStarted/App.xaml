@@ -4,10 +4,10 @@
              xmlns:converters="clr-namespace:Przewodnik.Converters"
              xmlns:k="http://schemas.microsoft.com/kinect/2013"
              xmlns:core="clr-namespace:System;assembly=mscorlib">
-    
+
     <Application.Resources>
         <ResourceDictionary>
-            
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
                     <Style TargetType="ListBox">
@@ -53,6 +53,7 @@
                     <core:Double x:Key="Size18">18</core:Double>
                     <core:Double x:Key="Size24">24</core:Double>
                     <core:Double x:Key="Size28">28</core:Double>
+                    <core:Double x:Key="Size32">32</core:Double>
                     <core:Double x:Key="Size36">36</core:Double>
                     <core:Double x:Key="Size45">45</core:Double>
                     <core:Double x:Key="Size50">50</core:Double>
@@ -69,6 +70,7 @@
                     <Thickness x:Key="TextTopBottomMargin"/>
                     <Thickness x:Key="TextTopBottomMarginSmaller"/>
                     <Thickness x:Key="EventIconTopMargin"/>
+                    <Thickness x:Key="LoaderTopMargin"/>
                     <!-- images -->
                     <Style x:Key="Icon" TargetType="Image"></Style>
                     <!-- block sizes -->
@@ -78,6 +80,9 @@
                     <core:Double x:Key="EventBlockSize"></core:Double>
                     <core:Double x:Key="EventIconSize"></core:Double>
                     <core:Double x:Key="BackButtonSize"></core:Double>
+                    <core:Double x:Key="LoaderLogoWidth"></core:Double>
+                    <core:Double x:Key="LoaderWidth"></core:Double>
+                    <core:Double x:Key="LoaderHeight"></core:Double>
                     <GridLength x:Key="TweetHeight"/>
                     <GridLength x:Key="TweetWidth"/>
                     <!-- button styles -->
@@ -113,6 +118,6 @@
                 <ResourceDictionary Source="Controls/KinectButtonStyles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    
+
     </Application.Resources>
 </Application>

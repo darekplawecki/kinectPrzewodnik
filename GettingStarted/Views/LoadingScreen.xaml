@@ -4,13 +4,29 @@
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
     xmlns:converters="clr-namespace:Przewodnik.Converters"
     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
-    Background="SeaGreen"
+    Background="{StaticResource BackgroundGradientBrush}"
     Name="TwitterGrid">
     <StackPanel VerticalAlignment="Center">
-        <Image HorizontalAlignment="center" Source="/Content/Design/Images/logo.png" Height="187" Width="725"/>
-        <TextBlock x:Name="firstTextBlock" FontSize="50"
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center"><Run Text="Witamy"/></TextBlock>
+        <Image HorizontalAlignment="center" Source="/Content/Design/Images/logo_vertical.png" Width="{DynamicResource LoaderLogoWidth}"/>
+
+        <Grid HorizontalAlignment="Center" Width="{DynamicResource LoaderWidth}" Height="{DynamicResource LoaderHeight}" Margin="{DynamicResource LoaderTopMargin}">
+            <Border Name="mask" Background="White" CornerRadius="9"/>
+
+            <Grid Width="{DynamicResource LoaderWidth}" Height="{DynamicResource LoaderHeight}">
+                <Grid.OpacityMask>
+                    <VisualBrush Visual="{Binding ElementName=mask}"/>
+                </Grid.OpacityMask>
+
+                <Rectangle Width="{DynamicResource LoaderWidth}" Height="{DynamicResource LoaderHeight}" Fill="{StaticResource GrayColor}" />
+                <Rectangle Name="ProgressBar" Width="0" Height="{DynamicResource LoaderHeight}" Fill="{StaticResource BlueColor}"  HorizontalAlignment="Left" />
+            </Grid>
+
+        </Grid>
+
+        <Grid  Width="{DynamicResource LoaderWidth}">
+            <TextBlock x:Name="StatusLoader" Foreground="{StaticResource GrayColor}" FontSize="{DynamicResource Size32}" FontWeight="Light" LineHeight="{DynamicResource Size60}" LineStackingStrategy="BlockLineHeight" HorizontalAlignment="Left" VerticalAlignment="Center"><Run Text=""/></TextBlock>
+            <TextBlock x:Name="PercentLoader" Foreground="{StaticResource GrayColor}" FontSize="{DynamicResource Size32}" FontWeight="Light" LineHeight="{DynamicResource Size60}" LineStackingStrategy="BlockLineHeight" HorizontalAlignment="Right" VerticalAlignment="Center"><Run Text="0%"/></TextBlock>
+        </Grid>
     </StackPanel>
 </Grid>
 

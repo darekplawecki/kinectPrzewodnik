@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Net;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using Przewodnik.Content.Traslations;
 using Przewodnik.Utilities;
 using Przewodnik.Utilities.DataLoader;
 using Przewodnik.Utilities.Twitter;
@@ -20,6 +22,8 @@ namespace Przewodnik.Views
         public LoadingScreen(KinectPageFactory pageFactory)
         {
             InitializeComponent();
+            StatusLoader.Dispatcher.Invoke(new Action(() => StatusLoader.Text = AppResources.GetText("LOAD_init")));
+                
             this.pageFactory = pageFactory;
             dataLoader = new DataLoader();
         }
@@ -37,24 +41,46 @@ namespace Przewodnik.Views
             }
             else if (LoadEnded != null)
             {
-                dataLoader.loaderEvents += LoaderEvents;
+                dataLoader.beforeLoaderEvents += BeforeLoaderEvents;
+                dataLoader.afterLoaderEvents += AfterLoaderEvents;
                 if (dataLoader.Load()) LoadEnded(this, new EventArgs());
             }
         }
 
-        private void LoaderEvents(object sender, EventArgs eventArgs)
+        private void BeforeLoaderEvents(object sender, EventArgs eventArgs)
         {
             if (eventArgs != null)
             {
-                DataLoaderEventArgs args = eventArgs as DataLoaderEventArgs;
-                int percent = args.Many*100/args.Of;
-                TextWritter(percent.ToString()+"%");
+                BeforeDataLoaderEventArgs args = eventArgs as BeforeDataLoaderEventArgs;
+                StatusWritter(args.Status);
             }
+        }
+
+        private void AfterLoaderEvents(object sender, EventArgs eventArgs)
+        {
+            if (eventArgs != null)
+            {
+                AfterDataLoaderEventArgs args = eventArgs as AfterDataLoaderEventArgs;
+                int percent = args.Many * 100 / args.Of;
+                double loaderWidth = args.Many * (double)Application.Current.Resources["LoaderWidth"] / args.Of;
+                ProgressUpdater(loaderWidth);
+                TextWritter(percent.ToString() + "%");
+            }
+        }
+
+        public void StatusWritter(String status)
+        {
+            StatusLoader.Dispatcher.Invoke(new Action(() => StatusLoader.Text = status));
         }
 
         public void TextWritter(String text)
         {
-            firstTextBlock.Dispatcher.Invoke(new Action(() => firstTextBlock.Text = text));
+            PercentLoader.Dispatcher.Invoke(new Action(() => PercentLoader.Text = text));
+        }
+
+        public void ProgressUpdater(double width)
+        {
+            ProgressBar.Dispatcher.Invoke(new Action(() => ProgressBar.Width = width));
         }
 
         public static bool CheckForInternetConnection()
