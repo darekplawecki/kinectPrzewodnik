@@ -1,4 +1,5 @@
-﻿using Microsoft.Kinect.Toolkit.Controls;
+﻿using System.Globalization;
+using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Content.Traslations;
 using Przewodnik.ViewModels;
 using System;
@@ -71,25 +72,7 @@ namespace Przewodnik.Views
             string dayOfWeek = "";
 
             DateTime dt = new DateTime(Int32.Parse(year), Int32.Parse(month), Int32.Parse(day));
-
-            switch (dt.DayOfWeek)
-            {
-                case DayOfWeek.Monday: dayOfWeek = "poniedziałek";
-                    break;
-                case DayOfWeek.Tuesday: dayOfWeek = "wtorek";
-                    break;
-                case DayOfWeek.Wednesday: dayOfWeek = "środa";
-                    break;
-                case DayOfWeek.Thursday: dayOfWeek = "czwartek";
-                    break;
-                case DayOfWeek.Friday: dayOfWeek = "piątek";
-                    break;
-                case DayOfWeek.Saturday: dayOfWeek = "sobota";
-                    break;
-                case DayOfWeek.Sunday: dayOfWeek = "niedziela";
-                    break;
-            }
-
+            dayOfWeek = dt.ToString("dddd", AppResources.GetCultureInfo());
             return day + "." + month + "." + year + " (" + dayOfWeek + ")";
         }
 

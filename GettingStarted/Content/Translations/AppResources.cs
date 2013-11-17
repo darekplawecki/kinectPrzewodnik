@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Windows;
 
 namespace Przewodnik.Content.Traslations
@@ -9,6 +10,11 @@ namespace Przewodnik.Content.Traslations
         {
             CultureInfo cultureInfo = ((App)Application.Current).culture;
             return ((App)Application.Current).Rm.GetString(key, cultureInfo);
+        }
+
+        public static CultureInfo GetCultureInfo()
+        {
+            return ((App)Application.Current).culture;
         }
     }
 }

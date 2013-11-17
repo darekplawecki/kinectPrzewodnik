@@ -241,6 +241,60 @@ namespace Przewodnik.Content.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to godzin temu.
+        /// </summary>
+        internal static string DT_godzin_temu {
+            get {
+                return ResourceManager.GetString("DT_godzin_temu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to godzinę temu.
+        /// </summary>
+        internal static string DT_godzine_temu {
+            get {
+                return ResourceManager.GetString("DT_godzine_temu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to godziny temu.
+        /// </summary>
+        internal static string DT_godziny_temu {
+            get {
+                return ResourceManager.GetString("DT_godziny_temu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to minut temu.
+        /// </summary>
+        internal static string DT_minut_temu {
+            get {
+                return ResourceManager.GetString("DT_minut_temu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to minutę temu.
+        /// </summary>
+        internal static string DT_minute_temu {
+            get {
+                return ResourceManager.GetString("DT_minute_temu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to minuty temu.
+        /// </summary>
+        internal static string DT_minuty_temu {
+            get {
+                return ResourceManager.GetString("DT_minuty_temu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to atrakcje turystyczne.
         /// </summary>
         internal static string M_atrakcje_turystyczne {

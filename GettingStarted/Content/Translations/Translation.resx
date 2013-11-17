@@ -223,4 +223,22 @@
   <data name="W_wszystkie" xml:space="preserve">
     <value>wszystkie</value>
   </data>
+  <data name="DT_godzine_temu" xml:space="preserve">
+    <value>godzinę temu</value>
+  </data>
+  <data name="DT_godziny_temu" xml:space="preserve">
+    <value>godziny temu</value>
+  </data>
+  <data name="DT_godzin_temu" xml:space="preserve">
+    <value>godzin temu</value>
+  </data>
+  <data name="DT_minute_temu" xml:space="preserve">
+    <value>minutę temu</value>
+  </data>
+  <data name="DT_minuty_temu" xml:space="preserve">
+    <value>minuty temu</value>
+  </data>
+  <data name="DT_minut_temu" xml:space="preserve">
+    <value>minut temu</value>
+  </data>
 </root>
