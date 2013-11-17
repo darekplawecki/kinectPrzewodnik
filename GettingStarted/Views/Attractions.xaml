@@ -22,7 +22,7 @@
 
         <StackPanel Orientation="Horizontal">
 
-            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource BlueColor}" BorderThickness="0" Name="Rynek" Click="KinectTileButton_Click_1">
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource BlueColor}" BorderThickness="0" Name="Rynek" Click="KinectTileButton_Click_1"> 
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -37,13 +37,13 @@
                 </Grid>
             </k:KinectTileButton>
 
-            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource GreenColor}" BorderThickness="0" Name="OstrówTumski" Click="KinectTileButton_Click_1" >
+            <k:KinectTileButton Height="Auto" Width="{DynamicResource AttractionBlockSize}" VerticalContentAlignment="Top" Background="{StaticResource GreenColor}" BorderThickness="0" Name="OstrówTumski" Click="KinectTileButton_Click_1">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/ostrowtumski1_hover.jpg"></Image>
+                    <Image Name="OstrówTumskiImage" Grid.Row="0" Source="../Content/Attractions/Photos/ostrowtumski1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/ostrowtumski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Text="ostrów tumski" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -57,7 +57,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/halastulecia1_hover.jpg"></Image>
+                    <Image Name="HalaStuleciaImage" Grid.Row="0" Source="../Content/Attractions/Photos/halastulecia1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/halastulecia.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Name="HalaBlock" Text="hala stulecia" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -71,7 +71,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/palackrolewski1_hover.jpg"></Image>
+                    <Image Name="PałacKrólewskiImage" Grid.Row="0" Source="../Content/Attractions/Photos/palackrolewski1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/palackrolewski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Name="PalacBlock" Text="pałac królewski" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -85,7 +85,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/panoramaraclawicka1_hover.jpg"></Image>
+                    <Image Name="PanoramaRacławickaImage" Grid.Row="0" Source="../Content/Attractions/Photos/panoramaraclawicka1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/panoramaraclawicka.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Text="panorama racławicka" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -99,7 +99,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/ogrodjaponski1_hover.jpg"></Image>
+                    <Image Name="OgródJapońskiImage" Grid.Row="0" Source="../Content/Attractions/Photos/ogrodjaponski1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/ogrodjaponski.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Name="OgrodJBlock" Text="ogród japoński" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -113,7 +113,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/fontanna1_hover.jpg"></Image>
+                    <Image Name="FontannaMultimedialnaImage" Grid.Row="0" Source="../Content/Attractions/Photos/fontanna1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/fontanna.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Name="FontannaBlock" Text="fontanna multimedialna" Margin="{DynamicResource TextTopMargin}"  Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size50}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -127,7 +127,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/wyspaslodowa1_hover.jpg"></Image>
+                    <Image Name="WyspaSłodowaImage" Grid.Row="0" Source="../Content/Attractions/Photos/wyspaslodowa1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/wyspaslodowa.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Name="WyspaBlock" Text="wyspa słodowa" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -141,7 +141,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/zoo1_hover.jpg"></Image>
+                    <Image Name="ZOOImage" Grid.Row="0" Source="../Content/Attractions/Photos/zoo1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/zoo.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Text="zoo" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
@@ -155,7 +155,7 @@
                         <RowDefinition Height="Auto"></RowDefinition>
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="../Content/Attractions/Photos/ogrodbotaniczny1_hover.jpg"></Image>
+                    <Image Name="OgródBotanicznyImage" Grid.Row="0" Source="../Content/Attractions/Photos/ogrodbotaniczny1_hover.jpg"></Image>
                     <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
                         <Image Source="../Content/Attractions/Icons/ogrodbotaniczny.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
                         <TextBlock Name="OgrodBBlock" Text="ogród botaniczny" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>

@@ -18,6 +18,7 @@ using Przewodnik.Content.Traslations;
 using Przewodnik.Views;
 using Przewodnik;
 using Microsoft.Kinect.Toolkit.Controls;
+using System.Text.RegularExpressions;
 
 namespace GettingStarted
 {
@@ -29,6 +30,7 @@ namespace GettingStarted
         public Attractions(KinectPageFactory pageFactory)
         {
             InitializeComponent();
+            InitializeKinectButtonHover();
             this.pageFactory = pageFactory;
         }
 
@@ -49,8 +51,6 @@ namespace GettingStarted
             preprareTranslation();
         }
 
-
-
         private void preprareTranslation()
         {
             FontannaBlock.Text = AppResources.GetText("A_FONTANNA_TITLE");
@@ -60,6 +60,56 @@ namespace GettingStarted
             PalacBlock.Text = AppResources.GetText("A_PALAC_KROLEWSKI_TITLE");
             RynekBlock.Text = AppResources.GetText("A_RYNEK_TITLE");
             WyspaBlock.Text = AppResources.GetText("A_WYSPA_SLODOWA_TITLE");
+        }
+
+        private void OnHandPointerEnter(object sender, HandPointerEventArgs handPointerEventArgs)
+        {
+            KinectTileButton button = sender as KinectTileButton;
+            Image image = button.FindName(button.Name + "Image") as Image;
+
+            string pattern = "/Content/Attractions/Photos/(.*?)1_hover.jpg";
+            Match m = Regex.Match(image.Source.ToString(), @pattern);
+            string attraction_name = "";
+            if (m.Success) attraction_name = m.Groups[1].ToString();
+            
+            image.Source = new BitmapImage(new Uri("../Content/Attractions/Photos/" + attraction_name + "1.jpg", UriKind.Relative));
+        }
+
+        private void OnHandPointerLeave(object sender, HandPointerEventArgs handPointerEventArgs)
+        {
+            KinectTileButton button = sender as KinectTileButton;
+            Image image = button.FindName(button.Name + "Image") as Image;
+
+            string pattern = "/Content/Attractions/Photos/(.*?)1.jpg";
+            Match m = Regex.Match(image.Source.ToString(), @pattern);
+            string attraction_name = "";
+            if (m.Success) attraction_name = m.Groups[1].ToString();
+
+            image.Source = new BitmapImage(new Uri("../Content/Attractions/Photos/" + attraction_name + "1_hover.jpg", UriKind.Relative));
+        }
+
+        private void InitializeKinectButtonHover()
+        {
+            KinectRegion.AddHandPointerEnterHandler(Rynek, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(Rynek, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(OstrówTumski, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(OstrówTumski, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(HalaStulecia, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(HalaStulecia, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(PałacKrólewski, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(PałacKrólewski, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(PanoramaRacławicka, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(PanoramaRacławicka, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(OgródJapoński, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(OgródJapoński, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(FontannaMultimedialna, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(FontannaMultimedialna, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(WyspaSłodowa, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(WyspaSłodowa, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(ZOO, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(ZOO, OnHandPointerLeave);
+            KinectRegion.AddHandPointerEnterHandler(OgródBotaniczny, OnHandPointerEnter);
+            KinectRegion.AddHandPointerLeaveHandler(OgródBotaniczny, OnHandPointerLeave);
         }
 
     }

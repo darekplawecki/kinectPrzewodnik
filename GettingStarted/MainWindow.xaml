@@ -37,12 +37,6 @@
             QueryPrimaryUserTrackingIdCallback="{Binding QueryPrimaryUserCallback}">
             <Grid>
 
-                <!-- Small human frame -->
-                <Border Width="128" Height="96" VerticalAlignment="Top" BorderBrush="{StaticResource PostEngagementBackgroundUserBrush}" BorderThickness="1"
-                            Visibility="{Binding IsUserEngaged, Converter={StaticResource InvertibleBooleanToVisibilityConverter}}">
-                    <k:KinectUserViewer DefaultUserColor="{StaticResource PostEngagementBackgroundUserColor}" UserColoringMode="Manual" UserColors="{Binding PostEngagementUserColors}" ImageBackground="Transparent"/>
-                </Border>
-
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="0.18*" Name="TopRow"/>
@@ -51,9 +45,9 @@
 
                     <Grid Style="{StaticResource TopRow}" 
                           Grid.Row="0">
-                        <k:KinectTileButton Name="BackButton" Grid.Column="0" HorizontalAlignment="Left" Width="{DynamicResource BackButtonSize}" Height="{DynamicResource BackButtonSize}" Margin="30,0,0,0" Click="BackAction" Foreground="Transparent" Background="Transparent" BorderThickness="0">
+                        <k:KinectCircleButton Name="BackButton" Grid.Column="0" HorizontalAlignment="Left" Width="{DynamicResource BackButtonSize}" Height="{DynamicResource BackButtonSize}" Click="BackAction" Foreground="Transparent" Background="Transparent" BorderThickness="0">
                             <Image Source="/Content/Design/Images/back-button.png"></Image>
-                        </k:KinectTileButton>
+                        </k:KinectCircleButton>
 
                         <Image Grid.Column="1" HorizontalAlignment="Right" Source="/Content/Design/Images/logo.png"></Image>
                     </Grid>
@@ -61,6 +55,12 @@
                     <Grid Name="PageContentGrid" Grid.Row="1" Background="{StaticResource BackgroundGradientBrush}"></Grid>
 
                 </Grid>
+
+                <!-- Small human frame -->
+                <Border Width="128" Height="96" VerticalAlignment="Top" BorderBrush="{StaticResource PostEngagementBackgroundUserBrush}" BorderThickness="1"
+                            Visibility="{Binding IsUserEngaged, Converter={StaticResource InvertibleBooleanToVisibilityConverter}}">
+                    <k:KinectUserViewer DefaultUserColor="{StaticResource PostEngagementBackgroundUserColor}" UserColoringMode="Manual" UserColors="{Binding PostEngagementUserColors}" ImageBackground="Transparent"/>
+                </Border>
 
             </Grid>
         </k:KinectRegion>

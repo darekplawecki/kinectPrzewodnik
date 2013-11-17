@@ -21,7 +21,7 @@ namespace Przewodnik.Utilities.DataLoader
 
         public bool Load()
         {
-            //LoadInstagram();
+            LoadInstagram();
             LoadTwitter();
             LoadMaps();
             LoadCalendar();

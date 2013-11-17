@@ -75,21 +75,23 @@
                 </DataTemplate.Triggers>
             </DataTemplate>
         </Grid.Resources>
-        
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="640"></RowDefinition>
+            <RowDefinition Height="640"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="640"></ColumnDefinition>
+            <ColumnDefinition Width="640"></ColumnDefinition>
+            <ColumnDefinition Width="640"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        
+
         <ContentControl
                 x:Name="AttractCarousel1"
                 Grid.Row="0"
                 Grid.Column="0"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -97,6 +99,8 @@
                 x:Name="AttractCarousel2"
                 Grid.Row="0"
                 Grid.Column="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -104,6 +108,8 @@
                 x:Name="AttractCarousel3"
                 Grid.Row="0"
                 Grid.Column="2"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -111,6 +117,8 @@
                 x:Name="AttractCarousel4"
                 Grid.Row="1"
                 Grid.Column="0"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -118,6 +126,8 @@
                 x:Name="AttractCarousel5"
                 Grid.Row="1"
                 Grid.Column="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
 
@@ -125,6 +135,8 @@
                 x:Name="AttractCarousel6"
                 Grid.Row="1"
                 Grid.Column="2"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
                 ContentTemplate="{StaticResource FadeTransition}">
         </ContentControl>
     </Grid>

@@ -9,7 +9,7 @@ namespace Przewodnik.Controls
         double height;
 
         public DesignResources()
-        { 
+        {
             width = SystemParameters.PrimaryScreenWidth;
             height = SystemParameters.PrimaryScreenHeight;
         }
@@ -53,7 +53,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["EventCalendarBlockSize"] = ConvertSize(210);
             Application.Current.Resources["EventBlockSize"] = ConvertSize(1180);
             Application.Current.Resources["EventIconSize"] = ConvertSize(113);
-            Application.Current.Resources["BackButtonSize"] = ConvertSize(162);
+            Application.Current.Resources["BackButtonSize"] = ConvertSize(252);
             Application.Current.Resources["TweetHeight"] = new GridLength(0.15741 * height);
             Application.Current.Resources["TweetWidth"] = new GridLength(0.52083 * width);
 

@@ -170,6 +170,7 @@ namespace Przewodnik.Views
 
         private void FilterAll_Click(object sender, RoutedEventArgs e)
         {
+            emptyBlock.Visibility = Visibility.Hidden;
             FILTER = "";
             EventList.ItemsSource = null;
             EventList.ItemsSource = viewModel.modelList;
