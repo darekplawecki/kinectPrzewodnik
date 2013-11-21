@@ -127,6 +127,11 @@
     </ApplicationDefinition>
     <Compile Include="Content\Attractions\AttractionContent.cs" />
     <Compile Include="Content\Translations\AppResources.cs" />
+    <Compile Include="Content\Translations\Translation.en-US.Designer.cs">
+      <DependentUpon>Translation.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Content\Translations\Translation.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -287,6 +292,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Content\Translations\Translation.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Translation.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Content\Translations\Translation.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Translation.Designer.cs</LastGenOutput>

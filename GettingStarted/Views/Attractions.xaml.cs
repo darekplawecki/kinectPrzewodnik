@@ -53,6 +53,7 @@ namespace GettingStarted
 
         private void preprareTranslation()
         {
+            firstTextBlock.Text = AppResources.GetText("M_atrakcje_turystyczne");
             FontannaBlock.Text = AppResources.GetText("A_FONTANNA_TITLE");
             HalaBlock.Text = AppResources.GetText("A_HALA_STULECIA_TITLE");
             OgrodBBlock.Text = AppResources.GetText("A_OGROD_BOTANICZNY_TITLE");

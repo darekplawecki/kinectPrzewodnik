@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="M_atrakcje_turystyczne" xml:space="preserve">
+    <value>tourist attractions</value>
+    <comment>//mainMenu kafle</comment>
+  </data>
+  <data name="M_atrakcje_turystyczne_description" xml:space="preserve">
+    <value>Essential places for tourists to visit and sightsee.</value>
+  </data>
+  <data name="A_FONTANNA_DESCRIPTION" xml:space="preserve">
+    <value>The Wrocław Fountain is located in the historic Wrocław exhibition ground. It is next to the early modernist Centennial Hall, and encircled within the Wrocław Pergola. The 1 hectare (110,000 sq ft) fountain incorporates over 300 jets to create moving-dancing screens of water. They are used, with music and light, by a computerized multimedia program for animated water shows. The fountain is illuminated at night by 800 computer programmed coloured lights. The shows are available to see from May to October. During the winter When frozen in winter, the Wrocław Fountain becomes a 4,700 square metres (51,000 sq ft) ice skating rink. The official grand opening of the Wrocław Fountain took place on June 4th, 2009 on the 20th anniversary of the first free elections in the post-war Poland. Since then it has been admired by approximately 1,5 million visitors from Poland and abroad.</value>
+  </data>
+  <data name="A_FONTANNA_TITLE" xml:space="preserve">
+    <value>wroclaw fountain</value>
+  </data>
+  <data name="A_HALA_STULECIA_DESCRIPTION" xml:space="preserve">
+    <value>A historic building, constructed according to the plans of architect Max Berg in 1913, when the city was part of the German Empire. As an early landmark of reinforced concrete architecture, it was listed as a UNESCO World Heritage Site in 2006. The hall continues to be in active use for sporting events and concerts. After renovation in 2010 arena can hold 10 000 people. Open daily to visitors for a small entrance fee.</value>
+  </data>
+  <data name="A_HALA_STULECIA_TITLE" xml:space="preserve">
+    <value>centennial hall</value>
+  </data>
+  <data name="A_OGROD_BOTANICZNY_DESCRIPTION" xml:space="preserve">
+    <value>Originally established by Wroclaw University in 1811 as a scientific resource, the Botanical Gardens are still used for academic purposes but today also double as a leisure attraction for Wroclawians and visitors to the city. Occupying a large swath of land behind the churches of Ostrow Tumski, the gardens form an ideal retreat for anyone wanting to enjoy the beauty of nature but are too lazy to leave the city centre. Waterfalls, fountains, bridges, statues, and of course more shrubs, flowers and greenery than you can shake a twig at make for a more than pleasant stroll.</value>
+  </data>
+  <data name="A_OGROD_BOTANICZNY_TITLE" xml:space="preserve">
+    <value>botanical garden</value>
+  </data>
+  <data name="A_OGROD_JAPONSKI_DESCRIPTION" xml:space="preserve">
+    <value>The Japanese Garden is located in Szczytnicki Park. It was founded in 1909-1912 as an element of preparations for the World’s Fair (nowadays - EXPO) in 1913. Unfortunately, most of the decorations were only borrowed for the duration of the Fair. In 1994, in cooperation with the Japanese Embassy, works aiming at restoring the Japanese character of the place were initiated. Today it fully deserves its name - the park is designed diligently in accordance with the Japanese art of gardening. It is crossed by two cascades: ‘masculine’ with rapidly tumbling water and slowly flowing ‘feminines’, with two middle steps. The water from both cascades flows into the pond with a very diverse shoreline. The most interesting element of the Garden is a bridge capped with decorative roof. The southern part of the garden is inspired by Japanese home gardens and it includes a pavilion of Sukija type, pruned hedges and a part of a rock-grass type of garden. Some other interesting objects are the side entrance gate, the tea pavilion, stone bowls for water and original Japanese stone lanterns. The garden contains numerous species of plants coming from Japan and Asia Minor.</value>
+  </data>
+  <data name="A_OGROD_JAPONSKI_TITLE" xml:space="preserve">
+    <value>japanese garden</value>
+  </data>
+  <data name="A_OSTROW_TUMSKI_DESCRIPTION" xml:space="preserve">
+    <value>Ostrów Tumski is the oldest part of the city. The first constructions on Ostrów Tumski were built in the 10th century by the Piast dynasty, and were made from wood. Currently the most important church is the gothic St. John cathedral. Another worth seeing place is the Archidiecezjalne Museum that collects former church exhibits. Beyond plenty of interesting items, we can see Henrykowska Book from 13th century that contains the first sentence ever written in Polish.</value>
+  </data>
+  <data name="A_OSTROW_TUMSKI_TITLE" xml:space="preserve">
+    <value>ostrów tumski</value>
+  </data>
+  <data name="A_PALAC_KROLEWSKI_DESCRIPTION" xml:space="preserve">
+    <value>The Royal Palace was originally a palace of the Prussian monarchy, the palace now houses the city museum. In May 1945 the palace was heavily damaged during the siege of the city at the end of the Second World War. Breslau was transferred from Germany to Poland after the war and renamed Wrocław. In the 1960s the palace was partially demolished, while the remaining wings were adapted to host the Archeological Museum (until 1999) and the Ethnographic Museum (until 2004). In 2008 a renovation was finished and a new museum was established, presenting 1,000 year history of Wrocław.</value>
+  </data>
+  <data name="A_PALAC_KROLEWSKI_TITLE" xml:space="preserve">
+    <value>royal palace</value>
+  </data>
+  <data name="A_PANORAMA_RACLAWICKA_DESCRIPTION" xml:space="preserve">
+    <value>The Racławice Panorama  is a monumental (15 × 114 meter) cycloramic painting depicting the Battle of Racławice, during the Kościuszko Uprising. The painting is one of only a few preserved relics of a genre of 19th century mass culture, and the oldest in Poland. The panorama stands in a circular fashion and, with the viewer in the center, presents different scenes at various viewing angles. A special kind of perspective used in the painting and additional effects (lighting, artificial terrain) create a feeling of reality.</value>
+  </data>
+  <data name="A_PANORAMA_RACLAWICKA_TITLE" xml:space="preserve">
+    <value>raclawice panorama</value>
+  </data>
+  <data name="M_plan_miasta" xml:space="preserve">
+    <value>city map</value>
+  </data>
+  <data name="A_RYNEK_DESCRIPTION" xml:space="preserve">
+    <value>The Market Square, Wrocław (Polish: Rynek we Wrocławiu is a medieval market square in Wrocław, now the heart of a pedestrian zone. The square is rectangular with the dimensions 213 x 178m. It is one of the largest markets in Europe, with the largest town hall in Poland. The buildings around the square are built according to different styles: the middle part (German: Tritt) of the ring is occupied by a block of buildings consisting of the Town Hall, the New City Hall as well as numerous citizens' houses. The market square is an urban ensemble with the two diagonally contiguous areas - the Salt Market and the square in front of St. Elisabeth's Church. Eleven streets lead to the market: two to each corner, two narrow lanes and an opened out side square, Kurzy Targ ("Chicken Market").</value>
+  </data>
+  <data name="A_RYNEK_TITLE" xml:space="preserve">
+    <value>market square</value>
+  </data>
+  <data name="M_twitter" xml:space="preserve">
+    <value>twitter</value>
+  </data>
+  <data name="M_wydarzenia" xml:space="preserve">
+    <value>events</value>
+  </data>
+  <data name="A_WYSPA_SLODOWA_DESCRIPTION" xml:space="preserve">
+    <value>Słodowa Island (Malt Island) is a small islet on the Oder River within the Wrocław Old Town, situated nearby the Ostrów Tumski (Cathedral Island). Slodowa Island is a favourite chillout place for Wroclaw citizens and very popular among tourists. Every year student parties and picnics take place in here.</value>
+  </data>
+  <data name="A_WYSPA_SLODOWA_TITLE" xml:space="preserve">
+    <value>slodowa island</value>
+  </data>
+  <data name="A_ZOO_DESCRIPTION" xml:space="preserve">
+    <value>It is the oldest zoo in Poland, having been founded in 1865 as the Breslau Zoological Garden while the city was part of Prussia. It is also the largest (in terms of the number of animals) zoo in Poland. The zoo covers about 30 hectares (74 acres) in downtown Wrocław. It is home to over 7,100 animals representing more than 850 species. The zoo is an accredited member of the European Association of Zoos and Aquaria (EAZA) and the World Association of Zoos and Aquariums (WAZA). In 2015 there is a 150th anniversary of Wroclaw Zoo.</value>
+  </data>
+  <data name="A_ZOO_TITLE" xml:space="preserve">
+    <value>ZOO</value>
+  </data>
+  <data name="M_widokowka" xml:space="preserve">
+    <value>postcard</value>
+  </data>
+  <data name="W_brak_wydarzen" xml:space="preserve">
+    <value>No events for this category.</value>
+  </data>
+  <data name="W_dzieci" xml:space="preserve">
+    <value>kids</value>
+  </data>
+  <data name="W_inne" xml:space="preserve">
+    <value>others</value>
+  </data>
+  <data name="W_kino" xml:space="preserve">
+    <value>movies</value>
+  </data>
+  <data name="W_muzyka" xml:space="preserve">
+    <value>music</value>
+  </data>
+  <data name="W_nauka" xml:space="preserve">
+    <value>science</value>
+  </data>
+  <data name="W_sport" xml:space="preserve">
+    <value>sport</value>
+  </data>
+  <data name="W_teatr" xml:space="preserve">
+    <value>theatre</value>
+  </data>
+  <data name="W_wszystkie" xml:space="preserve">
+    <value>all</value>
+  </data>
+  <data name="DT_godzine_temu" xml:space="preserve">
+    <value>hour ago</value>
+  </data>
+  <data name="DT_godziny_temu" xml:space="preserve">
+    <value>hours ago</value>
+  </data>
+  <data name="DT_godzin_temu" xml:space="preserve">
+    <value>hours ago</value>
+  </data>
+  <data name="DT_minute_temu" xml:space="preserve">
+    <value>minute ago</value>
+  </data>
+  <data name="DT_minuty_temu" xml:space="preserve">
+    <value>minutes ago</value>
+  </data>
+  <data name="DT_minut_temu" xml:space="preserve">
+    <value>minutes ago</value>
+  </data>
+  <data name="LOAD_events" xml:space="preserve">
+    <value>Pobieranie aktualnych wydarzeń</value>
+  </data>
+  <data name="LOAD_instagram" xml:space="preserve">
+    <value>Pobieranie zdjęć z Instagrama</value>
+  </data>
+  <data name="LOAD_maps" xml:space="preserve">
+    <value>Ładowanie map</value>
+  </data>
+  <data name="LOAD_twitter" xml:space="preserve">
+    <value>Ładowanie aktualnych twittów</value>
+  </data>
+  <data name="LOAD_weather" xml:space="preserve">
+    <value>Sprawdzanie frontów atmosferycznych</value>
+  </data>
+  <data name="LOAD_init" xml:space="preserve">
+    <value>Inicjalizacja...</value>
+  </data>
+  <data name="B_atrakcje" xml:space="preserve">
+    <value>attractions</value>
+  </data>
+  <data name="B_centrum" xml:space="preserve">
+    <value>city center</value>
+  </data>
+  <data name="B_hotele" xml:space="preserve">
+    <value>hotels</value>
+  </data>
+  <data name="B_kina" xml:space="preserve">
+    <value>cinemas</value>
+  </data>
+  <data name="B_koscioly" xml:space="preserve">
+    <value>churches</value>
+  </data>
+  <data name="B_muzea" xml:space="preserve">
+    <value>museums</value>
+  </data>
+  <data name="B_parki" xml:space="preserve">
+    <value>parks</value>
+  </data>
+  <data name="B_teatry" xml:space="preserve">
+    <value>theatres</value>
+  </data>
+  <data name="B_transport" xml:space="preserve">
+    <value>transport</value>
+  </data>
+  <data name="B_urzedy" xml:space="preserve">
+    <value>departments</value>
+  </data>
+  <data name="B_zakupy" xml:space="preserve">
+    <value>shopping</value>
+  </data>
+  <data name="M_z_ostatniej_chwili" xml:space="preserve">
+    <value>breaking news</value>
+  </data>
+</root>

@@ -292,4 +292,7 @@
   <data name="B_zakupy" xml:space="preserve">
     <value>zakupy</value>
   </data>
+  <data name="M_z_ostatniej_chwili" xml:space="preserve">
+    <value>z ostatniej chwili...</value>
+  </data>
 </root>

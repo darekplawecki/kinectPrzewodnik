@@ -322,3 +322,6 @@ C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Prze
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.Content.Translations.Translation.resources
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.Properties.Resources.resources
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csproj.GenerateResource.Cache
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\en-US\Przewodnik.resources.dll
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.Content.Translations.Translation.en-US.resources
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\en-US\Przewodnik.resources.dll

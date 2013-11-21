@@ -502,6 +502,15 @@ namespace Przewodnik.Content.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to z ostatniej chwili....
+        /// </summary>
+        internal static string M_z_ostatniej_chwili {
+            get {
+                return ResourceManager.GetString("M_z_ostatniej_chwili", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Brak wydarzeń dla wybranej kategorii.
         /// </summary>
         internal static string W_brak_wydarzen {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using Przewodnik.Content.Traslations;
 using Przewodnik.Utilities.Twitter;
 
 namespace Przewodnik.Views
@@ -76,7 +77,7 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-
+            firstTextBlock.Text = AppResources.GetText("M_z_ostatniej_chwili");
         }
     }
 

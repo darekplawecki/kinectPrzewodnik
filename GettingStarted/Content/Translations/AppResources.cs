@@ -16,5 +16,10 @@ namespace Przewodnik.Content.Traslations
         {
             return ((App)Application.Current).culture;
         }
+
+        public static void SetCultureInfo(string culture)
+        {
+            ((App)Application.Current).culture = new CultureInfo(culture);
+        }
     }
 }

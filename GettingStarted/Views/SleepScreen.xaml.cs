@@ -9,6 +9,7 @@ using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Xaml;
+using Przewodnik.Content.Traslations;
 using Przewodnik.Utilities;
 using Przewodnik.Controls;
 using System.ComponentModel;
@@ -153,7 +154,12 @@ namespace Przewodnik.Views
 
         private void EnglishClicked(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("English");
+            AppResources.SetCultureInfo("en-US");
+        }
+
+        private void PolishClicked(object sender, RoutedEventArgs e)
+        {
+            AppResources.SetCultureInfo("pl-PL");
         }
     }
 }

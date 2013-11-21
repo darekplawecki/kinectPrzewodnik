@@ -169,7 +169,7 @@
 
         <StackPanel Orientation="Horizontal" Width="680" Height="330">
 
-            <k:KinectTileButton Background="{StaticResource KinectPurpleBrush}" BorderThickness="0" Width="330" Height="330" Margin="0,0,10,0">
+            <k:KinectTileButton Background="{StaticResource KinectPurpleBrush}" BorderThickness="0" Width="330" Height="330" Margin="0,0,10,0" Click="PolishClicked">
                 <u:CommandOnEventHelper.AssociationEntry>
                     <u:CommandOnEventAssociation Command="{Binding EngagementConfirmationCommand}" Event="Click"/>
                 </u:CommandOnEventHelper.AssociationEntry>

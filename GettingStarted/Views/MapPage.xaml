@@ -25,7 +25,7 @@
                                 <Image Source="../Content/Events/Icons/ico_home.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="centrum" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" 
+                            <TextBlock Name="centrum" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" 
                                    LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
@@ -36,7 +36,7 @@
                                 <Image Source="../Content/Events/Icons/ico_attractions.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="atrakcje" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="atrakcje" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -47,7 +47,7 @@
                                 <Image Source="../Content/Events/Icons/ico_church.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="kościoły" HorizontalAlignment="Center" 
+                            <TextBlock Name="koscioly" HorizontalAlignment="Center" 
                                    Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextTopMargin}" FontSize="{DynamicResource Size36}" 
                                    LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
@@ -59,7 +59,7 @@
                                 <Image Source="../Content/Events/Icons/ico_cinema.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="kina" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="kina" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -69,7 +69,7 @@
                                 <Image Source="../Content/Events/Icons/ico_hotel.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="hotele" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="hotele" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -79,7 +79,7 @@
                                 <Image Source="../Content/Events/Icons/ico_mall.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="zakupy" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="zakupy" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -89,7 +89,7 @@
                                 <Image Source="../Content/Events/Icons/ico_museum.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="muzea" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="muzea" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -99,7 +99,7 @@
                                 <Image Source="../Content/Events/Icons/ico_parks.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="parki" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="parki" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -109,7 +109,7 @@
                                 <Image Source="../Content/Events/Icons/ico_theatre.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="teatry" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="teatry" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -119,7 +119,7 @@
                                 <Image Source="../Content/Events/Icons/ico_transport.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="transport" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="transport" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -129,7 +129,7 @@
                                 <Image Source="../Content/Events/Icons/ico_office.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Text="urzędy" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="urzedy" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 

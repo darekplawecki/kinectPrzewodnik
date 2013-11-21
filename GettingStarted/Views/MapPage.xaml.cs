@@ -39,6 +39,7 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+            prepareTranslation();
         }
 
         private void addCanvas(double latitude, double longitude, string nameOfPlace, string color)
@@ -161,6 +162,21 @@ namespace Przewodnik.Views
         {
             cleanMap();
             showObjects(((KinectTileButton)sender).Name.ToString(), ((KinectTileButton)sender).Background.ToString());
+        }
+
+        private void prepareTranslation()
+        {
+            koscioly.Text = AppResources.GetText("B_koscioly");
+            hotele.Text = AppResources.GetText("B_hotele");
+            urzedy.Text = AppResources.GetText("B_urzedy");
+            muzea.Text = AppResources.GetText("B_muzea");
+            parki.Text = AppResources.GetText("B_parki");
+            zakupy.Text = AppResources.GetText("B_zakupy");
+            transport.Text = AppResources.GetText("B_transport");
+            kina.Text = AppResources.GetText("B_kina");
+            teatry.Text = AppResources.GetText("B_teatry");
+            centrum.Text = AppResources.GetText("B_centrum");
+            atrakcje.Text = AppResources.GetText("B_atrakcje");
         }
 
     }
