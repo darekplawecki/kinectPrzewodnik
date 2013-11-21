@@ -259,4 +259,37 @@
   <data name="LOAD_init" xml:space="preserve">
     <value>Inicjalizacja...</value>
   </data>
+  <data name="B_atrakcje" xml:space="preserve">
+    <value>atrakcje</value>
+  </data>
+  <data name="B_centrum" xml:space="preserve">
+    <value>centrum</value>
+  </data>
+  <data name="B_hotele" xml:space="preserve">
+    <value>hotele</value>
+  </data>
+  <data name="B_kina" xml:space="preserve">
+    <value>kina</value>
+  </data>
+  <data name="B_koscioly" xml:space="preserve">
+    <value>kościoły</value>
+  </data>
+  <data name="B_muzea" xml:space="preserve">
+    <value>muzea</value>
+  </data>
+  <data name="B_parki" xml:space="preserve">
+    <value>parki</value>
+  </data>
+  <data name="B_teatry" xml:space="preserve">
+    <value>teatry</value>
+  </data>
+  <data name="B_transport" xml:space="preserve">
+    <value>transport</value>
+  </data>
+  <data name="B_urzedy" xml:space="preserve">
+    <value>urzędy</value>
+  </data>
+  <data name="B_zakupy" xml:space="preserve">
+    <value>zakupy</value>
+  </data>
 </root>

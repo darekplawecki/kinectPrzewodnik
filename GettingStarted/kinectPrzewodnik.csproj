@@ -141,6 +141,7 @@
     <Compile Include="Models\AttractionModel.cs" />
     <Compile Include="Models\BingMap.cs" />
     <Compile Include="Models\CalendarModel.cs" />
+    <Compile Include="Models\PlacesModel.cs" />
     <Compile Include="Models\SleepScreenModel.cs" />
     <Compile Include="Models\TweetModel.cs" />
     <Compile Include="Models\WeatherModel.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="ViewModels\AttractionViewModel.cs" />
     <Compile Include="ViewModels\CalendarViewModel.cs" />
     <Compile Include="ViewModels\MapViewModel.cs" />
+    <Compile Include="ViewModels\PlacesViewModel.cs" />
     <Compile Include="ViewModels\SleepScreenViewModel.cs" />
     <Compile Include="ViewModels\TwitterViewModel.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -349,6 +351,17 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Events\Icons\ico_attractions.png" />
+    <Resource Include="Content\Events\Icons\ico_church.png" />
+    <Resource Include="Content\Events\Icons\ico_cinema.png" />
+    <Resource Include="Content\Events\Icons\ico_home.png" />
+    <Resource Include="Content\Events\Icons\ico_hotel.png" />
+    <Resource Include="Content\Events\Icons\ico_mall.png" />
+    <Resource Include="Content\Events\Icons\ico_museum.png" />
+    <Resource Include="Content\Events\Icons\ico_office.png" />
+    <Resource Include="Content\Events\Icons\ico_parks.png" />
+    <Resource Include="Content\Events\Icons\ico_theatre.png" />
+    <Resource Include="Content\Events\Icons\ico_transport.png" />
     <Resource Include="Content\SleepScreen\Instagram\21.jpg" />
     <Resource Include="Content\SleepScreen\Instagram\22.jpg" />
     <Resource Include="Content\SleepScreen\Instagram\23.jpg" />

@@ -331,8 +331,7 @@ namespace Przewodnik.ViewModels
                 else
                 {
                     InteractionIco(null);
-                    HandPointer(_kinectController.LeftHandJoint.TrackingState == JointTrackingState.Tracked ? "right" : "left");
-
+                    
                     _distanceTwoHand = GetHandDistance(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y, _kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
                     _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
                     _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
@@ -379,35 +378,6 @@ namespace Przewodnik.ViewModels
                     {
                         InteractionIcoZoomVisibility = InteractionIcoZoomPlusVisibility = InteractionIcoZoomMinusVisibility = Visibility.Hidden;
                         InteractionIcoMoveVisibility = Visibility.Visible;
-                    } break;
-            }
-
-        }
-
-        private void HandPointer(String type)
-        {
-
-            switch (type)
-            {
-                case "left":
-                    {
-                        PointerRightHandVisibility = PointerLeftHandGripVisibility = PointerRightHandGripVisibility = Visibility.Hidden;
-                        PointerLeftHandVisibility = Visibility.Visible;
-                    } break;
-                case "right":
-                    {
-                        PointerLeftHandVisibility = PointerLeftHandGripVisibility = PointerRightHandGripVisibility = Visibility.Hidden;
-                        PointerRightHandVisibility = Visibility.Visible;
-                    } break;
-                case "leftGrip":
-                    {
-                        PointerLeftHandVisibility = PointerRightHandVisibility = PointerRightHandGripVisibility = Visibility.Hidden;
-                        PointerLeftHandGripVisibility = Visibility.Visible;
-                    } break;
-                case "rightGrip":
-                    {
-                        PointerLeftHandVisibility = PointerLeftHandGripVisibility = PointerRightHandVisibility = Visibility.Hidden;
-                        PointerRightHandGripVisibility = Visibility.Visible;
                     } break;
             }
 
