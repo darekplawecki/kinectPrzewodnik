@@ -187,7 +187,6 @@ C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodni
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csproj.GenerateResource.Cache
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.exe
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.pdb
-C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\PostcardPage.g.cs
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\PostcardPage.baml
 C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\Przewodnik.exe.config

@@ -167,21 +167,43 @@
             Style="{StaticResource EngagementConfirmation}"
             State="{Binding EngagementConfirmationState}">
 
-        <k:KinectTileButton Background="{StaticResource KinectPurpleBrush}" Width="330" Height="330" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="0">
-            <u:CommandOnEventHelper.AssociationEntry>
-                <u:CommandOnEventAssociation Command="{Binding EngagementConfirmationCommand}" Event="Click"/>
-            </u:CommandOnEventHelper.AssociationEntry>
-            <Grid>
-                <TextBlock
+        <StackPanel Orientation="Horizontal" Width="680" Height="330">
+
+            <k:KinectTileButton Background="{StaticResource KinectPurpleBrush}" BorderThickness="0" Width="330" Height="330" Margin="0,0,10,0">
+                <u:CommandOnEventHelper.AssociationEntry>
+                    <u:CommandOnEventAssociation Command="{Binding EngagementConfirmationCommand}" Event="Click"/>
+                </u:CommandOnEventHelper.AssociationEntry>
+                <Grid>
+                    <TextBlock
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Background="Transparent"
                     FontSize="40"
                     Foreground="White"
                     TextWrapping="Wrap"
+                    TextAlignment="Center"
                     Text="Wciśnij aby rozpocząć"/>
-            </Grid>
-        </k:KinectTileButton>
+                </Grid>
+            </k:KinectTileButton>
+
+            <k:KinectTileButton Background="{StaticResource KinectPurpleBrush}" BorderThickness="0" Width="330" Height="330" Margin="10,0,0,0" Click="EnglishClicked">
+                <u:CommandOnEventHelper.AssociationEntry>
+                    <u:CommandOnEventAssociation Command="{Binding EngagementConfirmationCommand}" Event="Click"/>
+                </u:CommandOnEventHelper.AssociationEntry>
+                <Grid>
+                    <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="Transparent"
+                    FontSize="40"
+                    Foreground="White"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"
+                    Text="Press button to start"/>
+                </Grid>
+            </k:KinectTileButton>
+
+        </StackPanel>
     </c:PromptControl>
 
     <Grid Background="#CC4b0082" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,50,50,0">

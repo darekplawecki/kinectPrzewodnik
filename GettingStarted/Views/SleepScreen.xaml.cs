@@ -150,6 +150,11 @@ namespace Przewodnik.Views
         {
 
         }
+
+        private void EnglishClicked(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("English");
+        }
     }
 }
 
