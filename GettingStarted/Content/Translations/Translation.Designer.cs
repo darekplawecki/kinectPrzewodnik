@@ -304,6 +304,42 @@ namespace Przewodnik.Content.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to sciezka.
+        /// </summary>
+        internal static string B_sciezka {
+            get {
+                return ResourceManager.GetString("B_sciezka", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to rowerem.
+        /// </summary>
+        internal static string B_sciezka_rower {
+            get {
+                return ResourceManager.GetString("B_sciezka_rower", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to spacer.
+        /// </summary>
+        internal static string B_sciezka_spacer {
+            get {
+                return ResourceManager.GetString("B_sciezka_spacer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to zwiedzanie.
+        /// </summary>
+        internal static string B_sciezka_zwiedzanie {
+            get {
+                return ResourceManager.GetString("B_sciezka_zwiedzanie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to teatry.
         /// </summary>
         internal static string B_teatry {

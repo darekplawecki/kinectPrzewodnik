@@ -287,12 +287,24 @@
     <value>transport</value>
   </data>
   <data name="B_urzedy" xml:space="preserve">
-    <value>departments</value>
+    <value>offices</value>
   </data>
   <data name="B_zakupy" xml:space="preserve">
     <value>shopping</value>
   </data>
   <data name="M_z_ostatniej_chwili" xml:space="preserve">
     <value>breaking news</value>
+  </data>
+  <data name="B_sciezka" xml:space="preserve">
+    <value>sciezka</value>
+  </data>
+  <data name="B_sciezka_rower" xml:space="preserve">
+    <value>by bike</value>
+  </data>
+  <data name="B_sciezka_spacer" xml:space="preserve">
+    <value>walking</value>
+  </data>
+  <data name="B_sciezka_zwiedzanie" xml:space="preserve">
+    <value>sightseeing</value>
   </data>
 </root>

@@ -150,6 +150,18 @@ namespace Przewodnik.ViewModels
             modelList.Add(new PlacesModel(AppResources.GetText("B_muzea"), "Muzeum Hanny i Eugeniusza Geppertów", 17.030050, 51.108776));
             modelList.Add(new PlacesModel(AppResources.GetText("B_muzea"), "Muzeum Radia", 17.037251, 51.112873));
 
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Ratusz", 17.0322311941425, 51.10961550445235));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Katedra św. Jana Chrzciciela", 17.046696703543937, 51.11419350450952));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Kościół NPM na Piasku", 17.041355973478105, 51.1146234720666));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Uniwersytet Wrocławski", 17.033948718105233, 51.1139111756929));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Kościół garnizonowy św. Elżbiety", 17.030599531047102, 51.111284712340634));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Katedra św. Marii Magdaleny", 17.03463444004598, 51.10953700252115));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Kościół św. Wojciecha", 17.039982764821676, 51.10912274141305));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Muzeum Architektury", 17.041790898241427, 51.109468323679714));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Opera", 17.03049879828873, 51.105715113544804));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Kościół św. Stanisława, Wacława i Doroty", 17.028535421289828, 51.106954609209815));
+            modelList.Add(new PlacesModel(AppResources.GetText("B_sciezka"), "Biblioteka Uniwersytecka", 17.028417404093172, 51.10866222950187));
+
         }
 
     }

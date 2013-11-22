@@ -295,4 +295,16 @@
   <data name="M_z_ostatniej_chwili" xml:space="preserve">
     <value>z ostatniej chwili...</value>
   </data>
+  <data name="B_sciezka" xml:space="preserve">
+    <value>sciezka</value>
+  </data>
+  <data name="B_sciezka_rower" xml:space="preserve">
+    <value>rowerem</value>
+  </data>
+  <data name="B_sciezka_spacer" xml:space="preserve">
+    <value>spacer</value>
+  </data>
+  <data name="B_sciezka_zwiedzanie" xml:space="preserve">
+    <value>zwiedzanie</value>
+  </data>
 </root>

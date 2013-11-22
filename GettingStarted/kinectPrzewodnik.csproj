@@ -360,6 +360,9 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Events\Icons\ico_bicycle.png" />
+    <Resource Include="Content\Events\Icons\ico_touristic.png" />
+    <Resource Include="Content\Events\Icons\ico_walking.png" />
     <Resource Include="Content\Events\Icons\ico_attractions.png" />
     <Resource Include="Content\Events\Icons\ico_church.png" />
     <Resource Include="Content\Events\Icons\ico_cinema.png" />

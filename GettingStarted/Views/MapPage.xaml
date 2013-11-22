@@ -15,7 +15,7 @@
         <StackPanel Orientation="Vertical">
 
             <k:KinectScrollViewer x:Name="CategoryScrollViewer" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" 
-                              Background="Transparent" HoverBackground="Transparent" MaxHeight="150" MaxWidth="975" >
+                              Background="Transparent" HoverBackground="Transparent" MaxHeight="150" >
                 <StackPanel Orientation="Horizontal" Margin="-100, 0,-100,0" >
 
                     <k:KinectTileButton x:Name="B_centrum" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   
@@ -30,6 +30,36 @@
                         </StackPanel>
                     </k:KinectTileButton>
 
+                    <k:KinectTileButton x:Name="B_sciezka1" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource OrangeColor}" Click="sciezka1_Click">
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Image Source="../Content/Events/Icons/ico_walking.png" Style="{DynamicResource Icon}"></Image>
+                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                            </Grid>
+                            <TextBlock Name="spacer" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        </StackPanel>
+                    </k:KinectTileButton>
+
+                    <k:KinectTileButton x:Name="B_sciezka2" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource VioletColor}" Click="sciezka2_Click">
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Image Source="../Content/Events/Icons/ico_touristic.png" Style="{DynamicResource Icon}"></Image>
+                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                            </Grid>
+                            <TextBlock Name="zwiedzanie" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        </StackPanel>
+                    </k:KinectTileButton>
+
+                    <k:KinectTileButton x:Name="B_sciezka3" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource DarkGrayColor}" Click="sciezka3_Click">
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Image Source="../Content/Events/Icons/ico_bicycle.png" Style="{DynamicResource Icon}"></Image>
+                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                            </Grid>
+                            <TextBlock Name="rowerem" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        </StackPanel>
+                    </k:KinectTileButton>
+                    
                     <k:KinectTileButton x:Name="B_atrakcje" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource BlueColor}" Click="atrakcje_turystyczne_Click">
                         <StackPanel Orientation="Vertical">
                             <Grid>
