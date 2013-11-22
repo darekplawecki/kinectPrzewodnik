@@ -28,14 +28,22 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Size55"] = ConvertSize(55);
             Application.Current.Resources["Size60"] = ConvertSize(60);
             Application.Current.Resources["Size72"] = ConvertSize(72);
+            Application.Current.Resources["Size80"] = ConvertSize(80);
             Application.Current.Resources["Size90"] = ConvertSize(90);
+            Application.Current.Resources["Size150"] = ConvertSize(150);
 
             Style style = new Style { TargetType = typeof(Image) };
             style.Setters.Add(new Setter(Image.WidthProperty, ico_size));
             style.Setters.Add(new Setter(Image.HeightProperty, ico_size));
             Application.Current.Resources["Icon"] = style;
 
+            style = new Style { TargetType = typeof(Image) };
+            style.Setters.Add(new Setter(Image.WidthProperty, ConvertSize(123)));
+            style.Setters.Add(new Setter(Image.HeightProperty, ConvertSize(103)));
+            Application.Current.Resources["WeatherIcon"] = style;
+
             Application.Current.Resources["BlockMargin"] = new Thickness(0.02315 * height);
+            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(10), Bottom = ConvertSize(0), Right = ConvertSize(10), Top = ConvertSize(0) };
             Application.Current.Resources["BlockTwitterMargin"] = new Thickness { Left = 0.02315 * height, Bottom = 0.01389 * height, Right = 0.02315 * height, Top = 0.01389 * height };
             Application.Current.Resources["TextTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = 0.01150 * height };
             Application.Current.Resources["TextBottomMargin"] = new Thickness { Left = 0, Bottom = 0.01150 * height, Right = 0, Top = 0 };
@@ -61,6 +69,10 @@ namespace Przewodnik.Controls
             Application.Current.Resources["LoaderHeight"] = ConvertSize(52);
             Application.Current.Resources["TweetHeight"] = new GridLength(0.15741 * height);
             Application.Current.Resources["TweetWidth"] = new GridLength(0.52083 * width);
+            Application.Current.Resources["WeatherAreaWidth"] = ConvertSize(265);
+            Application.Current.Resources["WeatherAreaHeight"] = ConvertSize(165);
+            Application.Current.Resources["SnapshootIconSize"] = ConvertSize(168);
+            Application.Current.Resources["NavButtonsIconSize"] = ConvertSize(125);
 
         }
 

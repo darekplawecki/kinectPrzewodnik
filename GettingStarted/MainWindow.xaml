@@ -49,6 +49,50 @@
                             <Image Source="/Content/Design/Images/back-button.png"></Image>
                         </k:KinectCircleButton>
 
+                        <StackPanel Name="Weather" Width="{DynamicResource WeatherAreaWidth}" Height="{DynamicResource WeatherAreaHeight}" Background="{StaticResource LightGrayColor}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="60,0,0,0">
+                            <Grid Grid.Column="0" Margin="{DynamicResource BlockWeatherMargin}" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.62*"></RowDefinition>
+                                    <RowDefinition Height="0.38*"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.55*"></ColumnDefinition>
+                                    <ColumnDefinition Width="0.45*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <Image Name="WeatherImage" 
+                                       Grid.Column="0" 
+                                       Grid.Row="0"
+                                       Style="{DynamicResource WeatherIcon}">
+                                </Image>
+                                <TextBlock Name="WeatherDegree" 
+                                           Grid.Column="1" 
+                                           Grid.Row="0"
+                                           FontSize="{DynamicResource Size80}"
+                                           LineHeight="{DynamicResource Size90}"
+                                           LineStackingStrategy="BlockLineHeight"
+                                           FontWeight="Light"
+                                           Foreground="{StaticResource GrayColor2}"
+                                           HorizontalAlignment="Center"
+                                           VerticalAlignment="Center">
+                                </TextBlock>
+                                <TextBlock Name="WeatherInfo"
+                                           Grid.Column="0" 
+                                           Grid.Row="1"
+                                           Grid.ColumnSpan="2"
+                                           Style="{StaticResource TextBlockStyle}"
+                                           FontSize="{DynamicResource Size24}"
+                                           LineHeight="{DynamicResource Size24}"
+                                           Foreground="{StaticResource GrayColor2}"
+                                           HorizontalAlignment="Left"
+                                           VerticalAlignment="Center"
+                                           Margin="{DynamicResource BlockWeatherMargin}">
+                                </TextBlock>
+
+                            </Grid>
+                        </StackPanel>
+
                         <Image Grid.Column="1" HorizontalAlignment="Right" Source="/Content/Design/Images/logo.png"></Image>
                     </Grid>
 

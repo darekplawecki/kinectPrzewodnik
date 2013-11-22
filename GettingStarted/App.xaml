@@ -23,6 +23,8 @@
                     </Style>
                     <!-- colors -->
                     <SolidColorBrush x:Key="GrayColor" Color="#252525"/>
+                    <SolidColorBrush x:Key="GrayColor2" Color="#3a3a3a"/>
+                    <SolidColorBrush x:Key="LightGrayColor" Color="#dbdbdb"/>
                     <SolidColorBrush x:Key="BlueColor" Color="#3498db"/>
                     <SolidColorBrush x:Key="LightBlueColor" Color="#8ecaf3"/>
                     <SolidColorBrush x:Key="YellowColor" Color="#e1b700"/>
@@ -60,9 +62,12 @@
                     <core:Double x:Key="Size55">55</core:Double>
                     <core:Double x:Key="Size60">60</core:Double>
                     <core:Double x:Key="Size72">72</core:Double>
+                    <core:Double x:Key="Size80">80</core:Double>
                     <core:Double x:Key="Size90">90</core:Double>
+                    <core:Double x:Key="Size150">150</core:Double>
                     <!-- margins -->
                     <Thickness x:Key="BlockMargin"/>
+                    <Thickness x:Key="BlockWeatherMargin"/>
                     <Thickness x:Key="BlockTwitterMargin"/>
                     <Thickness x:Key="BlockCategoryEventMargin"/>
                     <Thickness x:Key="TextTopMargin"/>
@@ -73,6 +78,9 @@
                     <Thickness x:Key="LoaderTopMargin"/>
                     <!-- images -->
                     <Style x:Key="Icon" TargetType="Image"></Style>
+                    <Style x:Key="WeatherIcon" TargetType="Image"></Style>
+                    <Style x:Key="SnapshootIcon" TargetType="Image"></Style>
+                    <Style x:Key="NavButtonsIcon" TargetType="Image"></Style>
                     <!-- block sizes -->
                     <core:Double x:Key="AttractionBlockSize"></core:Double>
                     <core:Double x:Key="EventCategoryBlockSize"></core:Double>
@@ -83,8 +91,12 @@
                     <core:Double x:Key="LoaderLogoWidth"></core:Double>
                     <core:Double x:Key="LoaderWidth"></core:Double>
                     <core:Double x:Key="LoaderHeight"></core:Double>
+                    <core:Double x:Key="WeatherAreaHeight"/>
+                    <core:Double x:Key="WeatherAreaWidth"/>
                     <GridLength x:Key="TweetHeight"/>
                     <GridLength x:Key="TweetWidth"/>
+                    <core:Double x:Key="SnapshootIconSize"/>
+                    <core:Double x:Key="NavButtonsIconSize"/>
                     <!-- button styles -->
                     <Style TargetType="k:KinectTileButton">
                         <Setter Property="BorderThickness" Value="0"/>
@@ -108,6 +120,7 @@
                 </ResourceDictionary>
                 <ResourceDictionary>
                     <converters:MultiplicationConverter x:Key="MultiplicationConverter" />
+                    <converters:NegativeConverter x:Key="NegativeConverter" />
                     <converters:InvertibleBooleanToPromptStateConverter x:Key="InvertibleBooleanToPromptStateConverter" />
                     <converters:InvertibleBooleanToVisibilityConverter x:Key="InvertibleBooleanToVisibilityConverter" />
                     <ExponentialEase x:Key="ExponentialEasingFunction" EasingMode="EaseInOut" Exponent="2.0"/>
@@ -116,6 +129,7 @@
                 <ResourceDictionary Source="Controls/PromptControlStyles.xaml" />
                 <ResourceDictionary Source="Controls/ControlStyles.xaml" />
                 <ResourceDictionary Source="Controls/KinectButtonStyles.xaml" />
+                <ResourceDictionary Source="Controls/Transition.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 

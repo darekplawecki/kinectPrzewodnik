@@ -3,11 +3,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:k="http://schemas.microsoft.com/kinect/2013"
     xmlns:u="clr-namespace:Przewodnik.Utilities"
+    xmlns:c="clr-namespace:Przewodnik.Controls"
+    xmlns:cv="clr-namespace:Przewodnik.Converters"
     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
     Name="PostcardGrid">
 
-    <TextBlock x:Name="firstTextBlock" Margin="50 50 50 150" FontSize="50">Widokówka</TextBlock>
+    <ContentControl Name="BackgroundPhoto"/>
 
     <Image Name="MaskedColor" />
 
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
+        <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
+            <Image Source="../Content/Postcard/ico_prev.png"></Image>
+        </k:KinectTileButton>
+        <k:KinectTileButton Name="SnapshootButton" Grid.Column="0" Width="{DynamicResource SnapshootIconSize}" Height="{DynamicResource SnapshootIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="SnapshootButton_Click">
+            <Image Source="../Content/Postcard/ico_snapshoot.png"></Image>
+        </k:KinectTileButton>
+        <k:KinectTileButton Name="NextButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="NextButton_Click">
+            <Image Source="../Content/Postcard/ico_next.png"></Image>
+        </k:KinectTileButton>
+    </StackPanel>
+
+    <TextBlock Name="Counter" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="{DynamicResource Size150}" FontWeight="Black"></TextBlock>
 </Grid>

@@ -42,7 +42,7 @@ namespace Przewodnik.ViewModels
             {
                 temperature = m.Groups[1].ToString();
             }
-            return temperature + " °C";
+            return temperature + "°";
         }
 
         public static string GetDescription(string file)

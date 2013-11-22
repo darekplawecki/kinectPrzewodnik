@@ -7,6 +7,8 @@ using Przewodnik.Views;
 using Przewodnik.Utilities;
 using System.Windows.Media;
 using Przewodnik.Controls;
+using Przewodnik.ViewModels;
+using System.Windows.Media.Imaging;
 
 namespace Przewodnik
 {
@@ -33,11 +35,14 @@ namespace Przewodnik
         private MouseMovementDetector _movementDetector;
         private DesignResources _designResources;
 
+        private WeatherViewModel wvm;
+
         public MainWindow(KinectController controller)
         {
             _designResources = new DesignResources();
             _designResources.AdjustResolution();
             InitializeComponent();
+            LoadWeather();
             Loaded += OnLoaded;
 
             _navigator = new Navigator(this);
@@ -163,8 +168,16 @@ namespace Przewodnik
 
         public void ShowBackButton(bool enable)
         {
-            if (enable) BackButton.Visibility = System.Windows.Visibility.Visible;
-            else BackButton.Dispatcher.Invoke(new Action(() => BackButton.Visibility = System.Windows.Visibility.Hidden));
+            if (enable)
+            {
+                BackButton.Visibility = System.Windows.Visibility.Visible;
+                Weather.Visibility = System.Windows.Visibility.Hidden;
+            }
+            else
+            {
+                BackButton.Dispatcher.Invoke(new Action(() => BackButton.Visibility = System.Windows.Visibility.Hidden));
+                BackButton.Dispatcher.Invoke(new Action(() => Weather.Visibility = System.Windows.Visibility.Visible));
+            }
         }
 
         public void SetView(Grid grid)
@@ -180,6 +193,14 @@ namespace Przewodnik
         private void BackAction(object sender, RoutedEventArgs e)
         {
             _navigator.GoBack();
+        }
+
+        private void LoadWeather()
+        {
+            wvm = new WeatherViewModel();
+            WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
+            WeatherDegree.Text = wvm.wm.Temperature;
+            WeatherInfo.Text = wvm.wm.Description.ToLower();
         }
 
     }

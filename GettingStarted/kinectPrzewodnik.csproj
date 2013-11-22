@@ -143,6 +143,7 @@
     <Compile Include="Converters\InvertibleBooleanToPromptStateConverter.cs" />
     <Compile Include="Converters\InvertibleBooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\MultiplicationConverter.cs" />
+    <Compile Include="Converters\NegativeConverter.cs" />
     <Compile Include="Models\AttractionModel.cs" />
     <Compile Include="Models\BingMap.cs" />
     <Compile Include="Models\CalendarModel.cs" />
@@ -182,6 +183,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Controls\KinectButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Transition.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -360,6 +365,13 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Postcard\Background\background_1.jpg" />
+    <Resource Include="Content\Postcard\Background\background_2.jpg" />
+    <Resource Include="Content\Postcard\Background\background_3.jpg" />
+    <Resource Include="Content\Postcard\Background\background_4.jpg" />
+    <Resource Include="Content\Postcard\ico_next.png" />
+    <Resource Include="Content\Postcard\ico_prev.png" />
+    <Resource Include="Content\Postcard\ico_snapshoot.png" />
     <Resource Include="Content\Events\Icons\ico_bicycle.png" />
     <Resource Include="Content\Events\Icons\ico_touristic.png" />
     <Resource Include="Content\Events\Icons\ico_walking.png" />
@@ -409,14 +421,6 @@
     <Resource Include="Content\Events\timeline-circle.png" />
     <Resource Include="Content\Events\white-circle.png" />
     <Resource Include="Content\Wydarzenie.txt" />
-    <Resource Include="Content\PhotoBackground\photo_1.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_2.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_3.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_4.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_5.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_6.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_7.jpg" />
-    <Resource Include="Content\PhotoBackground\photo_8.jpg" />
     <Resource Include="Content\Weather\ico1.png" />
     <Resource Include="Content\Weather\ico10.png" />
     <Resource Include="Content\Weather\ico11.png" />
