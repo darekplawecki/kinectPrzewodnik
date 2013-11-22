@@ -6,9 +6,9 @@
     xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
     Name="MapPageGrid">
 
-    <Grid.DataContext>
+    <!--<Grid.DataContext>
         <ViewModels:MapViewModel/>
-    </Grid.DataContext>
+    </Grid.DataContext>-->
 
     <Grid x:Name="MapGrid" Margin="0 0 0 0">
 
@@ -59,7 +59,7 @@
                             <TextBlock Name="rowerem" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
-                    
+
                     <k:KinectTileButton x:Name="B_atrakcje" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource BlueColor}" Click="atrakcje_turystyczne_Click">
                         <StackPanel Orientation="Vertical">
                             <Grid>

@@ -6,6 +6,7 @@ using System.Windows.Shapes;
 using System.Windows;
 using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Content.Traslations;
+using Przewodnik.Models;
 
 namespace Przewodnik.Views
 {
@@ -13,6 +14,7 @@ namespace Przewodnik.Views
     {
         private KinectPageFactory _pageFactory;
         public PlacesViewModel pvm;
+        public MapViewModel mvm;
 
         public MapPage(KinectPageFactory pageFactory)
         {
@@ -20,6 +22,8 @@ namespace Przewodnik.Views
             _pageFactory = pageFactory;
 
             pvm = new PlacesViewModel();
+            mvm = new MapViewModel();
+            MapGrid.DataContext = mvm;
         }
 
         public Grid GetView()
@@ -526,12 +530,16 @@ namespace Przewodnik.Views
             MasterBingMap.Children.Add(polyline);
         }
 
-        private void home_Click(object sender, RoutedEventArgs e)
+        private void startLocation(int zoom)
         {
             cleanMap();
-            Location startLocation = new Location(51.109521, 17.046638);
-            MasterBingMap.SetView(startLocation, 14.0f);
+            mvm.defaultLocation();
+            MasterBingMap.ZoomLevel = zoom;
+        }
 
+        private void home_Click(object sender, RoutedEventArgs e)
+        {
+            startLocation(15);
         }
 
         private void cleanMap()
@@ -612,21 +620,21 @@ namespace Przewodnik.Views
 
         private void sciezka1_Click(object sender, RoutedEventArgs e)
         {
-            cleanMap();
+            startLocation(15);
             showObjects("B_sciezka", ((KinectTileButton)sender).Background.ToString());
             drawPolyline(firstPath());
         }
 
         private void sciezka2_Click(object sender, RoutedEventArgs e)
         {
-            cleanMap();
+            startLocation(15);
             showObjects("B_sciezka", ((KinectTileButton)sender).Background.ToString());
             drawPolyline(secondPath());
         }
 
         private void sciezka3_Click(object sender, RoutedEventArgs e)
         {
-            cleanMap();
+            startLocation(12);
             drawPolyline(thirdPath());
         }
 

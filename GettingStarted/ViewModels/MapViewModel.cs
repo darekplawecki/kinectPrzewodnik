@@ -8,7 +8,7 @@ using Przewodnik.Utilities.DataLoader;
 
 namespace Przewodnik.ViewModels
 {
-    class MapViewModel : ViewModelBase
+    public class MapViewModel : ViewModelBase
     {
 
         private const double ACCEPTED_HAND_MOVING = 0.05;
@@ -331,7 +331,7 @@ namespace Przewodnik.ViewModels
                 else
                 {
                     InteractionIco(null);
-                    
+
                     _distanceTwoHand = GetHandDistance(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y, _kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
                     _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
                     _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
@@ -382,6 +382,15 @@ namespace Przewodnik.ViewModels
             }
 
         }
+
+        public void defaultLocation()
+        {
+            BingMap.CenterLocation.Longitude = 17.046638;
+            BingMap.CenterLocation.Latitude = 51.109521;
+            MapCenterPoint = BingMap.CenterLocation;
+        }
+
+
 
     }
 }
