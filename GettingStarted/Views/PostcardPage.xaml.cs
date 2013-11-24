@@ -122,30 +122,33 @@ namespace Przewodnik.Views
 
         private void SnapshootButton_Click(object sender, RoutedEventArgs e)
         {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            int _counter = COUNTER;
-            timer.Tick += (s, ee) =>
+            if (_kinectController != null)
             {
-                if (_counter == 0)
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromSeconds(1);
+                int _counter = COUNTER;
+                timer.Tick += (s, ee) =>
                 {
-                    Counter.Dispatcher.Invoke(new Action(() => Counter.Text = ""));
-                    timer.Stop();
-                }
-                else if (_counter == 1)
-                {
-                    _counter--;
-                    Counter.Dispatcher.Invoke(new Action(() => Counter.Text = "SNAP!"));
-                    TakeSnapshot();
-                }
-                else
-                {
-                    _counter--;
-                    Counter.Dispatcher.Invoke(new Action(() => Counter.Text = _counter.ToString()));
-                }
-            };
-            timer.Start();
-            Counter.Dispatcher.Invoke(new Action(() => Counter.Text = _counter.ToString()));
+                    if (_counter == 0)
+                    {
+                        Counter.Dispatcher.Invoke(new Action(() => Counter.Text = ""));
+                        timer.Stop();
+                    }
+                    else if (_counter == 1)
+                    {
+                        _counter--;
+                        Counter.Dispatcher.Invoke(new Action(() => Counter.Text = "SNAP!"));
+                        TakeSnapshot();
+                    }
+                    else
+                    {
+                        _counter--;
+                        Counter.Dispatcher.Invoke(new Action(() => Counter.Text = _counter.ToString()));
+                    }
+                };
+                timer.Start();
+                Counter.Dispatcher.Invoke(new Action(() => Counter.Text = _counter.ToString()));
+            }
         }
 
         private void TakeSnapshot()

@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:k="http://schemas.microsoft.com/kinect/2013"
         xmlns:c="clr-namespace:Przewodnik.Controls"
+        xmlns:cv="clr-namespace:Przewodnik.Converters"
         xmlns:u="clr-namespace:Przewodnik.Utilities"
         xmlns:tk="clr-namespace:Microsoft.Kinect.Toolkit;assembly=Microsoft.Kinect.Toolkit"
         Title="Przewodnik turystyczny"
@@ -30,6 +31,15 @@
         </Grid>
     </Window.Resources>
     <Grid Name="TopTopGrid">
+        <Grid.Resources>
+            <Storyboard x:Key="SlideStoryboard">
+                <DoubleAnimation 
+						Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+						From="0" FillBehavior="Stop"
+						Duration="0:0:0.2"
+						DecelerationRatio="0.5"/>
+            </Storyboard>
+        </Grid.Resources>
         <k:KinectRegion
             Name="kinectRegion"
             KinectSensor="{Binding KinectSensorChooser.Kinect}"
@@ -43,55 +53,140 @@
                         <RowDefinition Height="0.82*" Name="ContentRow"/>
                     </Grid.RowDefinitions>
 
-                    <Grid Style="{StaticResource TopRow}" 
-                          Grid.Row="0">
+                    <Grid Style="{StaticResource TopRow}" Grid.Row="0">
                         <k:KinectCircleButton Name="BackButton" Grid.Column="0" HorizontalAlignment="Left" Width="{DynamicResource BackButtonSize}" Height="{DynamicResource BackButtonSize}" Click="BackAction" Foreground="Transparent" Background="Transparent" BorderThickness="0">
                             <Image Source="/Content/Design/Images/back-button.png"></Image>
                         </k:KinectCircleButton>
 
-                        <StackPanel Name="Weather" Width="{DynamicResource WeatherAreaWidth}" Height="{DynamicResource WeatherAreaHeight}" Background="{StaticResource LightGrayColor}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="60,0,0,0">
-                            <Grid Grid.Column="0" Margin="{DynamicResource BlockWeatherMargin}" Width="Auto" Height="Auto" HorizontalAlignment="Center" VerticalAlignment="Center">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="0.62*"></RowDefinition>
-                                    <RowDefinition Height="0.38*"></RowDefinition>
-                                </Grid.RowDefinitions>
+                        <Grid Name="Weather" ClipToBounds="True"  Background="{StaticResource LightGrayColor}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="60,0,0,0">
 
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="0.55*"></ColumnDefinition>
-                                    <ColumnDefinition Width="0.45*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
+                            <Grid Name="container" Width="{DynamicResource WeatherAreaWidth}" Height="{DynamicResource WeatherAreaHeight}">
+                                <Grid.RenderTransform>
+                                    <TranslateTransform Y="{Binding ElementName=container, Path=ActualHeight, Converter={x:Static cv:NegativeConverter.Instance}}" />
+                                </Grid.RenderTransform>
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding WeatherState}" Value="0">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard Storyboard="{StaticResource SlideStoryboard}" />
+                                                </DataTrigger.EnterActions>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding WeatherState}" Value="1">
+                                                <DataTrigger.EnterActions>
+                                                    <BeginStoryboard Storyboard="{StaticResource SlideStoryboard}" />
+                                                </DataTrigger.EnterActions>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
 
-                                <Image Name="WeatherImage" 
-                                       Grid.Column="0" 
-                                       Grid.Row="0"
-                                       Style="{DynamicResource WeatherIcon}">
-                                </Image>
-                                <TextBlock Name="WeatherDegree" 
-                                           Grid.Column="1" 
-                                           Grid.Row="0"
-                                           FontSize="{DynamicResource Size80}"
-                                           LineHeight="{DynamicResource Size90}"
-                                           LineStackingStrategy="BlockLineHeight"
-                                           FontWeight="Light"
-                                           Foreground="{StaticResource GrayColor2}"
-                                           HorizontalAlignment="Center"
-                                           VerticalAlignment="Center">
-                                </TextBlock>
-                                <TextBlock Name="WeatherInfo"
+                                <Grid Margin="{DynamicResource BlockWeatherMargin}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="0.58*"></RowDefinition>
+                                        <RowDefinition Height="0.42*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="0.55*"></ColumnDefinition>
+                                        <ColumnDefinition Width="0.45*"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Image Name="WeatherImage" 
                                            Grid.Column="0" 
-                                           Grid.Row="1"
-                                           Grid.ColumnSpan="2"
-                                           Style="{StaticResource TextBlockStyle}"
-                                           FontSize="{DynamicResource Size24}"
-                                           LineHeight="{DynamicResource Size24}"
-                                           Foreground="{StaticResource GrayColor2}"
-                                           HorizontalAlignment="Left"
-                                           VerticalAlignment="Center"
-                                           Margin="{DynamicResource BlockWeatherMargin}">
-                                </TextBlock>
+                                           Grid.Row="0"
+                                           Style="{DynamicResource WeatherIcon}">
+                                    </Image>
+                                    <TextBlock Name="WeatherDegree" 
+                                               Grid.Column="1" 
+                                               Grid.Row="0"
+                                               FontSize="{DynamicResource Size72}"
+                                               LineHeight="{DynamicResource Size90}"
+                                               LineStackingStrategy="BlockLineHeight"
+                                               FontWeight="Light"
+                                               Foreground="{StaticResource GrayColor2}"
+                                               HorizontalAlignment="Center"
+                                               VerticalAlignment="Center">
+                                    </TextBlock>
+                                    <TextBlock Name="WeatherInfo"
+                                               Grid.Column="0" 
+                                               Grid.Row="1"
+                                               Grid.ColumnSpan="2"
+                                               Style="{StaticResource TextBlockStyle}"
+                                               FontSize="{DynamicResource Size24}"
+                                               LineHeight="{DynamicResource Size24}"
+                                               Foreground="{StaticResource GrayColor2}"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Center">
+                                    </TextBlock>
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding WeatherState}" Value="0">
+                                                    <Setter Property="RenderTransform">
+                                                        <Setter.Value>
+                                                            <TranslateTransform Y="{Binding ElementName=container, Path=ActualHeight}" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                </Grid>
 
+                                <Grid Margin="{DynamicResource BlockWeatherMargin2}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Grid.Row="0" VerticalAlignment="Top">
+                                        <TextBlock Name="DayOfWeek"
+                                                   Style="{StaticResource TextBlockStyle}"
+                                                   FontSize="{DynamicResource Size45}"
+                                                   LineHeight="{DynamicResource Size45}"
+                                                   Foreground="{StaticResource GrayColor2}"
+                                                   HorizontalAlignment="Right">
+                                        </TextBlock>
+                                        <TextBlock Name="Today"
+                                                   Style="{StaticResource TextBlockStyle}"
+                                                   FontSize="{DynamicResource Size24}"
+                                                   LineHeight="{DynamicResource Size24}"
+                                                   Foreground="{StaticResource GrayColor2}"
+                                                   HorizontalAlignment="Right">
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+                                        <TextBlock Name="NameDayLabel"
+                                                   Style="{StaticResource TextBlockStyle}"
+                                                   FontSize="{DynamicResource Size24}"
+                                                   LineHeight="{DynamicResource Size24}"
+                                                   Foreground="{StaticResource GrayColor2}"
+                                                   HorizontalAlignment="Right">
+                                        </TextBlock>
+                                        <TextBlock Name="NameDay"
+                                                   Style="{StaticResource TextBlockStyle}"
+                                                   FontSize="{DynamicResource Size24}"
+                                                   LineHeight="{DynamicResource Size24}"
+                                                   Foreground="{StaticResource GrayColor2}"
+                                                   HorizontalAlignment="Right">
+                                        </TextBlock>
+                                    </StackPanel>
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding WeatherState}" Value="1">
+                                                    <Setter Property="RenderTransform">
+                                                        <Setter.Value>
+                                                            <TranslateTransform Y="{Binding ElementName=container, Path=ActualHeight}" />
+                                                        </Setter.Value>
+                                                    </Setter>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                </Grid>
                             </Grid>
-                        </StackPanel>
+                        </Grid>
 
                         <Image Grid.Column="1" HorizontalAlignment="Right" Source="/Content/Design/Images/logo.png"></Image>
                     </Grid>

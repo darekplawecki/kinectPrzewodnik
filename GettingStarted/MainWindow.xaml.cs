@@ -198,9 +198,18 @@ namespace Przewodnik
         private void LoadWeather()
         {
             wvm = new WeatherViewModel();
+
             WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
             WeatherDegree.Text = wvm.wm.Temperature;
             WeatherInfo.Text = wvm.wm.Description.ToLower();
+
+            DateTime dt = DateTime.Now;
+            NameDayLabel.Text = "Imieniny";
+            NameDay.Text = wvm.wm.NameDay;
+            DayOfWeek.Text = dt.ToString("dddd").ToLower();
+            Today.Text = dt.ToString("m").ToLower();
+
+            Weather.DataContext = wvm.wm;
         }
 
     }

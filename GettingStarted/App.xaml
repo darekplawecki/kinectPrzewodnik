@@ -68,6 +68,7 @@
                     <!-- margins -->
                     <Thickness x:Key="BlockMargin"/>
                     <Thickness x:Key="BlockWeatherMargin"/>
+                    <Thickness x:Key="BlockWeatherMargin2"/>
                     <Thickness x:Key="BlockTwitterMargin"/>
                     <Thickness x:Key="BlockCategoryEventMargin"/>
                     <Thickness x:Key="TextTopMargin"/>

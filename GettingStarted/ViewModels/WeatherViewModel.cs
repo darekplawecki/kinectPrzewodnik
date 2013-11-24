@@ -2,12 +2,15 @@
 using Przewodnik.Utilities.DataLoader;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Windows.Threading;
+using System;
 
 namespace Przewodnik.ViewModels
 {
     public class WeatherViewModel
     {
         public WeatherModel wm;
+        public DispatcherTimer timer;
 
         public WeatherViewModel()
         {
@@ -17,6 +20,21 @@ namespace Przewodnik.ViewModels
             wm.Temperature = GetTemperature(wl.html);
             wm.Description = GetDescription(wl.html);
             wm.NameDay = GetNameDayNames(wl.htmlNameDay);
+            wm.WeatherState = 0;
+
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(5);
+            timer.Tick += ChangeState;
+
+            timer.Start();
+        }
+
+        private void ChangeState(object sender, EventArgs e)
+        {
+            if (wm.WeatherState == 0)
+                wm.WeatherState = 1;
+            else
+                wm.WeatherState = 0;
         }
 
         public static string GetWheatherImage(string file)

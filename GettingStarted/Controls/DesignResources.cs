@@ -38,12 +38,13 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Icon"] = style;
 
             style = new Style { TargetType = typeof(Image) };
-            style.Setters.Add(new Setter(Image.WidthProperty, ConvertSize(123)));
-            style.Setters.Add(new Setter(Image.HeightProperty, ConvertSize(103)));
+            style.Setters.Add(new Setter(Image.WidthProperty, ConvertSize(110)));
+            style.Setters.Add(new Setter(Image.HeightProperty, ConvertSize(93)));
             Application.Current.Resources["WeatherIcon"] = style;
 
             Application.Current.Resources["BlockMargin"] = new Thickness(0.02315 * height);
-            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(10), Bottom = ConvertSize(0), Right = ConvertSize(10), Top = ConvertSize(0) };
+            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(20), Bottom = ConvertSize(10), Right = ConvertSize(20), Top = ConvertSize(10) };
+            Application.Current.Resources["BlockWeatherMargin2"] = new Thickness { Left = ConvertSize(15), Bottom = ConvertSize(15), Right = ConvertSize(15), Top = ConvertSize(15) };
             Application.Current.Resources["BlockTwitterMargin"] = new Thickness { Left = 0.02315 * height, Bottom = 0.01389 * height, Right = 0.02315 * height, Top = 0.01389 * height };
             Application.Current.Resources["TextTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = 0.01150 * height };
             Application.Current.Resources["TextBottomMargin"] = new Thickness { Left = 0, Bottom = 0.01150 * height, Right = 0, Top = 0 };

@@ -8,9 +8,12 @@
     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
     Name="PostcardGrid">
 
+    <c:Transition x:Name="transition" Source="{Binding ElementName=BackgroundPhoto, Path=Content}" />
     <ContentControl Name="BackgroundPhoto"/>
-
-    <Image Name="MaskedColor" />
+    
+    <Border BorderThickness="1" BorderBrush="{StaticResource GrayColor}">
+        <Image Name="MaskedColor" />
+    </Border>
 
     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
         <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">

@@ -28,7 +28,6 @@
             </Storyboard>
         </DataTemplate.Resources>
         <Grid ClipToBounds="True">
-            <c:Transition x:Name="transition" Source="{Binding}" />
             <Grid Name="container">
                 <Grid.RenderTransform>
                     <TranslateTransform X="{Binding ElementName=container, Path=ActualWidth, Converter={x:Static cv:NegativeConverter.Instance}}" />
@@ -90,7 +89,6 @@
             </Storyboard>
         </DataTemplate.Resources>
         <Grid ClipToBounds="True">
-            <c:Transition x:Name="transition" Source="{Binding}" />
             <Grid Name="container" Margin="0">
                 <Grid.RenderTransform>
                     <TranslateTransform X="{Binding ElementName=container, Path=ActualWidth}" />
