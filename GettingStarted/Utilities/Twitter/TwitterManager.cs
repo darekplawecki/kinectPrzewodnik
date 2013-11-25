@@ -112,5 +112,18 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
             //return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
             //return tweets[0].Date.ToString();
         }
+
+        public TweetModel GetHomeTweet(int index)
+        {
+            TweetModel homeTweet = null;
+            if (tweets != null && index < tweets.Count())
+            {
+                homeTweet = tweets[index];
+            }
+            //IValueConverter dateConverter = new DateTimeConverter();
+            return homeTweet;
+            //return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
+            //return tweets[0].Date.ToString();
+        }
     }
 }

@@ -57,6 +57,7 @@
                     <core:Double x:Key="Size28">28</core:Double>
                     <core:Double x:Key="Size32">32</core:Double>
                     <core:Double x:Key="Size36">36</core:Double>
+                    <core:Double x:Key="Size40">40</core:Double>
                     <core:Double x:Key="Size45">45</core:Double>
                     <core:Double x:Key="Size50">50</core:Double>
                     <core:Double x:Key="Size55">55</core:Double>

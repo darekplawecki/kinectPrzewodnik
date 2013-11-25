@@ -3,6 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:c="clr-namespace:Przewodnik.Controls"
         xmlns:cv="clr-namespace:Przewodnik.Converters">
+    
+    <Storyboard x:Key="SlideTranslateY">
+        <DoubleAnimation 
+						Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+						From="0" FillBehavior="Stop"
+						Duration="0:0:0.2"
+						DecelerationRatio="0.5"/>
+    </Storyboard>
+    
     <DataTemplate x:Key="NextImageTransition">
         <DataTemplate.Resources>
             <Visibility x:Key="Visible">Visible</Visibility>

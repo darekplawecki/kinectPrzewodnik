@@ -23,6 +23,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Size28"] = ConvertSize(28);
             Application.Current.Resources["Size32"] = ConvertSize(32);
             Application.Current.Resources["Size36"] = ConvertSize(36);
+            Application.Current.Resources["Size40"] = ConvertSize(40);
             Application.Current.Resources["Size45"] = ConvertSize(45);
             Application.Current.Resources["Size50"] = ConvertSize(50);
             Application.Current.Resources["Size55"] = ConvertSize(55);
@@ -64,7 +65,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["EventCalendarBlockSize"] = ConvertSize(210);
             Application.Current.Resources["EventBlockSize"] = ConvertSize(1180);
             Application.Current.Resources["EventIconSize"] = ConvertSize(113);
-            Application.Current.Resources["BackButtonSize"] = ConvertSize(252);
+            Application.Current.Resources["BackButtonSize"] = ConvertSize(200);
             Application.Current.Resources["LoaderLogoWidth"] = ConvertSize(532);
             Application.Current.Resources["LoaderWidth"] = ConvertSize(677);
             Application.Current.Resources["LoaderHeight"] = ConvertSize(52);

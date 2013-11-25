@@ -31,15 +31,6 @@
         </Grid>
     </Window.Resources>
     <Grid Name="TopTopGrid">
-        <Grid.Resources>
-            <Storyboard x:Key="SlideStoryboard">
-                <DoubleAnimation 
-						Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
-						From="0" FillBehavior="Stop"
-						Duration="0:0:0.2"
-						DecelerationRatio="0.5"/>
-            </Storyboard>
-        </Grid.Resources>
         <k:KinectRegion
             Name="kinectRegion"
             KinectSensor="{Binding KinectSensorChooser.Kinect}"
@@ -54,11 +45,11 @@
                     </Grid.RowDefinitions>
 
                     <Grid Style="{StaticResource TopRow}" Grid.Row="0">
-                        <k:KinectCircleButton Name="BackButton" Grid.Column="0" HorizontalAlignment="Left" Width="{DynamicResource BackButtonSize}" Height="{DynamicResource BackButtonSize}" Click="BackAction" Foreground="Transparent" Background="Transparent" BorderThickness="0">
+                        <k:KinectCircleButton Name="BackButton" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="{DynamicResource BackButtonSize}" Height="{DynamicResource BackButtonSize}" Click="BackAction" Foreground="Transparent" Background="Transparent" BorderThickness="0">
                             <Image Source="/Content/Design/Images/back-button.png"></Image>
                         </k:KinectCircleButton>
 
-                        <Grid Name="Weather" ClipToBounds="True"  Background="{StaticResource LightGrayColor}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="60,0,0,0">
+                        <Grid Name="Weather" ClipToBounds="True" Width="{DynamicResource WeatherAreaWidth}" Height="{DynamicResource WeatherAreaHeight}" Background="{StaticResource LightGrayColor}" HorizontalAlignment="Left" Margin="60,20,0,0">
 
                             <Grid Name="container" Width="{DynamicResource WeatherAreaWidth}" Height="{DynamicResource WeatherAreaHeight}">
                                 <Grid.RenderTransform>
@@ -69,12 +60,12 @@
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding WeatherState}" Value="0">
                                                 <DataTrigger.EnterActions>
-                                                    <BeginStoryboard Storyboard="{StaticResource SlideStoryboard}" />
+                                                    <BeginStoryboard Storyboard="{StaticResource SlideTranslateY}" />
                                                 </DataTrigger.EnterActions>
                                             </DataTrigger>
                                             <DataTrigger Binding="{Binding WeatherState}" Value="1">
                                                 <DataTrigger.EnterActions>
-                                                    <BeginStoryboard Storyboard="{StaticResource SlideStoryboard}" />
+                                                    <BeginStoryboard Storyboard="{StaticResource SlideTranslateY}" />
                                                 </DataTrigger.EnterActions>
                                             </DataTrigger>
                                         </Style.Triggers>
@@ -142,8 +133,8 @@
                                     <StackPanel Grid.Row="0" VerticalAlignment="Top">
                                         <TextBlock Name="DayOfWeek"
                                                    Style="{StaticResource TextBlockStyle}"
-                                                   FontSize="{DynamicResource Size45}"
-                                                   LineHeight="{DynamicResource Size45}"
+                                                   FontSize="{DynamicResource Size40}"
+                                                   LineHeight="{DynamicResource Size40}"
                                                    Foreground="{StaticResource GrayColor2}"
                                                    HorizontalAlignment="Right">
                                         </TextBlock>
