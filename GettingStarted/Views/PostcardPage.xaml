@@ -5,7 +5,8 @@
     xmlns:u="clr-namespace:Przewodnik.Utilities"
     xmlns:c="clr-namespace:Przewodnik.Controls"
     xmlns:cv="clr-namespace:Przewodnik.Converters"
-    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
+    xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing"
+    xmlns:wpf="clr-namespace:Gma.QrCodeNet.Encoding.Windows.WPF;assembly=Gma.QrCodeNet.Encoding"
     Name="PostcardGrid"
     ClipToBounds="True">
 
@@ -17,8 +18,14 @@
         <Image Name="CameraFrame" Source="../Content/Postcard/camera_frame_3.png" Stretch="Fill"></Image>
     </Grid>
 
+    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-200,-200,0,0">
+        <wpf:QrCodeImgControl HorizontalAlignment="Stretch" Margin="0" Name="qrControl" 
+                              VerticalAlignment="Stretch" Height="Auto" Width="Auto" Text="test" QuietZoneModule="Zero" 
+                              IsGrayImage="True" LightColor="#FFFFCCFF" DarkColor="#FF910000" Visibility="Hidden" />
+    </Canvas>
+
     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
-        <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
+        <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
             <Image Source="../Content/Postcard/ico_prev.png"></Image>
         </k:KinectTileButton>
         <k:KinectTileButton Name="SnapshootButton" Grid.Column="0" Width="{DynamicResource SnapshootIconSize}" Height="{DynamicResource SnapshootIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="SnapshootButton_Click">

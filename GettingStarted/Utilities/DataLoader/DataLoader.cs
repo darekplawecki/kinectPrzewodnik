@@ -18,7 +18,7 @@ namespace Przewodnik.Utilities.DataLoader
             LoadInstagram();
             LoadTwitter();
             LoadMaps();
-            LoadCalendar();
+            //LoadCalendar();
             LoadWeather();
             return true;
         }

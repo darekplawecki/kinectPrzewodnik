@@ -232,7 +232,9 @@ namespace Przewodnik.Views
                 if (SaveFTP(path, fileName))
                 {
                     // WYŚWIELTELENIE KODU QR
-                    MessageBox.Show("Wyświetlenie kodu QR.");
+                    qrControl.Text = "http://zpi.puchalski.pl/" + fileName;
+                    qrControl.Visibility = Visibility.Visible;
+
                 }
                 else
                 {

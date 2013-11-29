@@ -408,3 +408,4 @@ C:\Users\DJ\Documents\GitHub\kinectPrzewodnik-master\GettingStarted\obj\Debug\ki
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik_new\GettingStarted\bin\Debug\Przewodnik.exe.config
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik_new\GettingStarted\obj\Debug\Przewodnik.exe
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik_new\GettingStarted\obj\Debug\Przewodnik.pdb
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\Transition.baml
