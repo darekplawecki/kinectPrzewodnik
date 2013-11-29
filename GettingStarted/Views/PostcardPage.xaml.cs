@@ -4,13 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using System.Windows.Media;
 using System.Globalization;
 using System.IO;
-using System.Text;
 using System.Net;
 using Przewodnik.Content.Traslations;
 
@@ -32,6 +30,8 @@ namespace Przewodnik.Views
         // right = 1; left = -1; nomove = 0;
         private int _directionBackgroundPhotos;
 
+        private Boolean _quickStartState = true;
+        private int _quickStartStep;
 
         private KinectPageFactory pageFactory;
 
@@ -56,6 +56,18 @@ namespace Przewodnik.Views
 
             BackgroundPhoto.ContentTemplate = Application.Current.Resources["NextImageTransition"] as DataTemplate;
             BackgroundPhoto.Content = _backgroundPhotos[_actualBackgroundPhotosIndex];
+
+            // Samouczek
+            _quickStartStep = _quickStartState ? 1 : 0;
+            if (_quickStartStep == 1)
+            {
+                QuickStartCanvas.Visibility = Visibility.Visible;
+                QuickStartTextBlock.Text = "Aby zmienić tło, zaciśnij 1 pięść i przesuń w lewo lub prawo.";
+            }
+            else
+            {
+                QuickStartCanvas.Visibility = Visibility.Hidden;
+            }
         }
 
         private void KinectControllerPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -71,10 +83,25 @@ namespace Przewodnik.Views
                     if ((handDistance - ACCEPTED_HAND_MOVING) > _distanceTwoHand)
                     {
                         ZoomIn(10);
+
+                        // quickstart
+                        if (_quickStartStep == 3)
+                        {
+                            _quickStartStep = 0;
+                            _quickStartState = false;
+                            QuickStartCanvas.Visibility = Visibility.Hidden;
+                        }
                     }
                     else if ((handDistance + ACCEPTED_HAND_MOVING) < _distanceTwoHand)
                     {
                         ZoomOut(10);
+
+                        // quickstart
+                        if (_quickStartStep == 2)
+                        {
+                            _quickStartStep = 3;
+                            QuickStartTextBlock.Text = "Aby pomniejszyć tło, zaciśnij obie pięści, a następnie przybliż rece do siebie.";
+                        }
                     }
                     _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
                     _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
@@ -88,17 +115,24 @@ namespace Przewodnik.Views
                     {
                         if ((double)_kinectController.RightHandJoint.Position.X < _positionRightHand.X)
                         {
-                            if (_actualBackgroundPhotosIndex < (_backgroundPhotos.Count - 1) && (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1))
+                            if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1)
                             {
                                 TransitToNextImage();
                             }
                         }
                         else
                         {
-                            if (_actualBackgroundPhotosIndex > 0 && (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1))
+                            if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1)
                             {
                                 TransitToPreviousImage();
                             }
+                        }
+
+                        // quickstart
+                        if (_quickStartStep == 1)
+                        {
+                            _quickStartStep = 2;
+                            QuickStartTextBlock.Text = "Aby powiększyć tło, zaciśnij obie pięści, a następnie oddal rece od siebie.";
                         }
                     }
 
@@ -110,17 +144,24 @@ namespace Przewodnik.Views
                     {
                         if ((double)_kinectController.LeftHandJoint.Position.X < _positionLeftHand.X)
                         {
-                            if (_actualBackgroundPhotosIndex < (_backgroundPhotos.Count - 1) && (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1))
+                            if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1)
                             {
                                 TransitToNextImage();
                             }
                         }
                         else
                         {
-                            if (_actualBackgroundPhotosIndex > 0 && (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1))
+                            if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1)
                             {
                                 TransitToPreviousImage();
                             }
+                        }
+
+                        // quickstart
+                        if (_quickStartStep == 1)
+                        {
+                            _quickStartStep = 2;
+                            QuickStartTextBlock.Text = "Aby powiększyć zdjęcie, zaciśnij obie pięści, a następnie oddal rece od siebie.";
                         }
                     }
                 }
@@ -142,6 +183,7 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+          
         }
 
         private void SnapshootButton_Click(object sender, RoutedEventArgs e)
@@ -310,6 +352,11 @@ namespace Przewodnik.Views
 
         private void TransitToNextImage()
         {
+            if (_actualBackgroundPhotosIndex >= (_backgroundPhotos.Count - 1))
+            {
+                _actualBackgroundPhotosIndex = -1;
+            }
+
             BackgroundPhoto.ContentTemplate = Application.Current.Resources["NextImageTransition"] as DataTemplate;
             BackgroundPhoto.Content = _backgroundPhotos[++_actualBackgroundPhotosIndex];
             _directionBackgroundPhotos = 1;
@@ -317,6 +364,11 @@ namespace Przewodnik.Views
 
         private void TransitToPreviousImage()
         {
+            if (_actualBackgroundPhotosIndex <= 0)
+            {
+                _actualBackgroundPhotosIndex = _backgroundPhotos.Count;
+            }
+
             BackgroundPhoto.ContentTemplate = Application.Current.Resources["PreviousImageTransition"] as DataTemplate;
             BackgroundPhoto.Content = _backgroundPhotos[--_actualBackgroundPhotosIndex];
             _directionBackgroundPhotos = -1;

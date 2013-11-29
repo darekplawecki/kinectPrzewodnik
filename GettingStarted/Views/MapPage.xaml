@@ -6,10 +6,6 @@
     xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
     Name="MapPageGrid">
 
-    <!--<Grid.DataContext>
-        <ViewModels:MapViewModel/>
-    </Grid.DataContext>-->
-
     <Grid x:Name="MapGrid" Margin="0 0 0 0">
 
         <StackPanel Orientation="Vertical">
@@ -166,6 +162,9 @@
                 </StackPanel>
             </k:KinectScrollViewer>
             <m:Map x:Name="MasterBingMap" CredentialsProvider="AoYws8aLN6--qMJ06VlJ6uj2rZWoiDKX1h7NESbZKANua_yepBlEBu3ZuybMUN9q" Center="{Binding MapCenterPoint, Mode=TwoWay}" ZoomLevel="{Binding MapZoomLevel,Mode=TwoWay}" Mode="Road" MinHeight="800">
+                <Canvas x:Name="QuickStartCanvas" Visibility="{Binding QuickStartVisibility}">
+                    <TextBlock x:Name="QuickStartTextBlock" Text="{Binding QuickStartText}" FontSize="{DynamicResource Size150}"></TextBlock>
+                </Canvas>
             </m:Map>
         </StackPanel>
 
@@ -173,6 +172,7 @@
         <Image x:Name="InteractioIcoZoomPlus" Source="../Content/zoom_plus.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomPlusVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
         <Image x:Name="InteractioIcoZoomMinus" Source="../Content/zoom_minus.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomMinusVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
         <Image x:Name="InteractioIcoMove" Source="../Content/move.png" Opacity="0.5" Visibility="{ Binding InteractionIcoMoveVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
+
     </Grid>
 
 </Grid>

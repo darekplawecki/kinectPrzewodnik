@@ -41,4 +41,8 @@
             <DropShadowEffect ShadowDepth="2" BlurRadius="0" Color="#FF000000" />
         </TextBlock.Effect>
     </TextBlock>
+
+    <Canvas x:Name="QuickStartCanvas">
+        <TextBlock x:Name="QuickStartTextBlock" FontSize="{DynamicResource Size90}"></TextBlock>
+    </Canvas>
 </Grid>

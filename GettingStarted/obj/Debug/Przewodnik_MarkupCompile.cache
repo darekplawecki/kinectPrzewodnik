@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\
 Przewodnik
 none
 false
 DEBUG;TRACE
-C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\App.xaml
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\App.xaml
 14-312240880
 3-655646912
 70-283392825
-34-1251198666
+34-475871724
 Controls\ControlStyles.xaml;Controls\KinectButtonStyles.xaml;Controls\Transition.xaml;Views\AttractionArticle.xaml;Views\Attractions.xaml;Views\CalendarPage.xaml;Views\LoadingScreen.xaml;Views\MapPage.xaml;Views\PostcardPage.xaml;Views\TwitterPage.xaml;Views\MainMenu.xaml;Views\SleepScreen.xaml;Controls\PromptControlStyles.xaml;MainWindow.xaml;
 
 False

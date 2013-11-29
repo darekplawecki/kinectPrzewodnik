@@ -15,6 +15,10 @@ namespace Przewodnik.ViewModels
         private const double SPEED_ZOOMING = 0.01; // zalezy od parametru oraz jak zmienila sie odleglosc rak, od momentu zlapania
         private const double SPEED_MOVING = 1.0;
 
+        private MapLoader _loader;
+
+        private int _quickStartStep;
+
         private double _dependsMovementZoom;
 
         private KinectController _kinectController;
@@ -68,50 +72,6 @@ namespace Przewodnik.ViewModels
         private Point _positionRightHand;
         private Point _positionLeftHand;
 
-        private double _leftHandX;
-        public double LeftHandX
-        {
-            get { return _leftHandX; }
-            set
-            {
-                _leftHandX = value;
-                OnPropertyChanged("LeftHandX");
-            }
-        }
-
-        private double _leftHandY;
-        public double LeftHandY
-        {
-            get { return _leftHandY; }
-            set
-            {
-                _leftHandY = value;
-                OnPropertyChanged("LeftHandY");
-            }
-        }
-
-        private double _rightHandX;
-        public double RightHandX
-        {
-            get { return _rightHandX; }
-            set
-            {
-                _rightHandX = value;
-                OnPropertyChanged("RightHandX");
-            }
-        }
-
-        private double _rightHandY;
-        public double RightHandY
-        {
-            get { return _rightHandY; }
-            set
-            {
-                _rightHandY = value;
-                OnPropertyChanged("RightHandY");
-            }
-        }
-
 
         private Visibility _interactionIcoZoomVisibility;
         public Visibility InteractionIcoZoomVisibility
@@ -154,71 +114,39 @@ namespace Przewodnik.ViewModels
             }
         }
 
-        private Visibility _pointerLeftHandVisibility;
-        public Visibility PointerLeftHandVisibility
+        private Visibility _quickStartVisibility;
+        public Visibility QuickStartVisibility
         {
-            get { return _pointerLeftHandVisibility; }
+            get { return _quickStartVisibility; }
             set
             {
-                _pointerLeftHandVisibility = value;
-                OnPropertyChanged("PointerLeftHandVisibility");
+                _quickStartVisibility = value;
+                OnPropertyChanged("QuickStartVisibility");
             }
         }
-        private Visibility _pointerRightHandVisibility;
-        public Visibility PointerRightHandVisibility
+        private String _quickStartText;
+        public String QuickStartText
         {
-            get { return _pointerRightHandVisibility; }
+            get { return _quickStartText; }
             set
             {
-                _pointerRightHandVisibility = value;
-                OnPropertyChanged("PointerRightHandVisibility");
-            }
-        }
-        private Visibility _pointerLeftHandGripVisibility;
-        public Visibility PointerLeftHandGripVisibility
-        {
-            get { return _pointerLeftHandGripVisibility; }
-            set
-            {
-                _pointerLeftHandGripVisibility = value;
-                OnPropertyChanged("PointerLeftHandGripVisibility");
-            }
-        }
-        private Visibility _pointerRightHandGripVisibility;
-        public Visibility PointerRightHandGripVisibility
-        {
-            get { return _pointerRightHandGripVisibility; }
-            set
-            {
-                _pointerRightHandGripVisibility = value;
-                OnPropertyChanged("PointerRightHandGripVisibility");
+                _quickStartText = value;
+                OnPropertyChanged("QuickStartText");
             }
         }
 
-
-        private string _testMessageHand;
-        public string TestMessageHand
-        {
-            get { return this._testMessageHand; }
-            set
-            {
-                this._testMessageHand = value;
-                OnPropertyChanged("TestMessageHand");
-            }
-        }
 
 
         public MapViewModel()
         {
 
-            MapLoader loader = MapLoader.Instance;
-
+            _loader = MapLoader.Instance;
 
             InteractionIco(null);
 
-            _bingMap = loader.BingMap;
+            _bingMap = _loader.BingMap;
 
-            BingMap.CenterLocation = loader.StartLocation;
+            BingMap.CenterLocation = _loader.StartLocation;
             MapCenterPoint = BingMap.CenterLocation;
             MapZoomLevel = 14;
             computeDependsMovementZoom();
@@ -227,22 +155,23 @@ namespace Przewodnik.ViewModels
             _kinectController.PropertyChanged += KinectControllerPropertyChanged;
 
             _kinectHandUtilities = KinectHandUtilities.Instance;
+
+            // Samouczek
+            _quickStartStep = _loader.FirstRun ? 1 : 0;
+            if (_quickStartStep == 1)
+            {
+                QuickStartVisibility = Visibility.Visible;
+                QuickStartText = "Aby przesunąć mapę, zaciśnij 1 pięść i przesuń w wybranym kierunku.";
+            }
+            else
+            {
+                QuickStartVisibility = Visibility.Hidden;
+            }
+
         }
 
         void KinectControllerPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            Point[] points = _kinectHandUtilities.GetHandsPostion(_kinectController.LeftHandJoint, _kinectController.RightHandJoint);
-            LeftHandX = points[0].X;
-            LeftHandY = points[0].Y;
-            RightHandX = points[1].X;
-            RightHandY = points[1].Y;
-
-            TestMessageHand = "NL: (" + LeftHandX + ", " + LeftHandY + ")\n" +
-                                "NR: (" + RightHandX + ", " + RightHandY + ")\n" +
-                                "SL: (" + _kinectController.LeftHandJoint.Position.X + ", " + _kinectController.LeftHandJoint.Position.Y + ")\n" +
-                                "SR: (" + _kinectController.RightHandJoint.Position.X + ", " + _kinectController.RightHandJoint.Position.Y + ")\n" +
-                                "LHT: " + _kinectController.LeftHandJoint.TrackingState + " " + _kinectController.LeftHandJoint + "\n" +
-                                "RHT: " + _kinectController.RightHandJoint.TrackingState + " " + _kinectController.RightHandJoint + "\n";
 
             if (_kinectController.LeftHandJoint.TrackingState == JointTrackingState.Tracked || _kinectController.RightHandJoint.TrackingState == JointTrackingState.Tracked)
             {
@@ -260,6 +189,13 @@ namespace Przewodnik.ViewModels
                             MapZoomLevel = newZoom;
                             computeDependsMovementZoom();
                         }
+
+                        // quickstart
+                        if (_quickStartStep == 2)
+                        {
+                            _quickStartStep = 3;
+                            QuickStartText = "Aby pomniejszyć mapę, zaciśnij obie pięści, a następnie przybliż rece do siebie.";
+                        }
                     }
                     else if ((handDistance + ACCEPTED_HAND_MOVING) < _distanceTwoHand)
                     {
@@ -269,6 +205,14 @@ namespace Przewodnik.ViewModels
                         {
                             MapZoomLevel = newZoom;
                             computeDependsMovementZoom();
+                        }
+
+                        // quickstart
+                        if (_quickStartStep == 3)
+                        {
+                            _quickStartStep = 0;
+                            _loader.FirstRun = false;
+                            QuickStartVisibility = Visibility.Hidden;
                         }
                     }
                 }
@@ -285,6 +229,13 @@ namespace Przewodnik.ViewModels
                             BingMap.CenterLocation.Longitude -= (handDistaceX / _dependsMovementZoom) * SPEED_MOVING;
 
                         MapCenterPoint = BingMap.CenterLocation;
+
+                        // quickstart
+                        if (_quickStartStep == 1)
+                        {
+                            _quickStartStep = 2;
+                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                        }
                     }
 
                     double handDistaceY = Math.Abs((double)_kinectController.RightHandJoint.Position.Y - _positionRightHand.Y);
@@ -298,6 +249,13 @@ namespace Przewodnik.ViewModels
                             BingMap.CenterLocation.Latitude -= (handDistaceY / _dependsMovementZoom) * SPEED_MOVING;
 
                         MapCenterPoint = BingMap.CenterLocation;
+
+                        // quickstart
+                        if (_quickStartStep == 1)
+                        {
+                            _quickStartStep = 2;
+                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                        }
                     }
                 }
                 else if (_kinectController.IsLeftHandGrip && !_kinectController.IsRightHandGrip)
@@ -313,6 +271,13 @@ namespace Przewodnik.ViewModels
                             BingMap.CenterLocation.Longitude -= (handDistaceX / _dependsMovementZoom) * SPEED_MOVING;
 
                         MapCenterPoint = BingMap.CenterLocation;
+
+                        // quickstart
+                        if (_quickStartStep == 1)
+                        {
+                            _quickStartStep = 2;
+                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                        }
                     }
 
                     double handDistaceY = Math.Abs((double)_kinectController.LeftHandJoint.Position.Y - _positionLeftHand.Y);
@@ -326,6 +291,13 @@ namespace Przewodnik.ViewModels
                             BingMap.CenterLocation.Latitude -= (handDistaceY / _dependsMovementZoom) * SPEED_MOVING;
 
                         MapCenterPoint = BingMap.CenterLocation;
+
+                        // quickstart
+                        if (_quickStartStep == 1)
+                        {
+                            _quickStartStep = 2;
+                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                        }
                     }
                 }
                 else

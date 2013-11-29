@@ -15,6 +15,7 @@ using Przewodnik.Controls;
 using System.ComponentModel;
 using System.Windows.Data;
 using Przewodnik.ViewModels;
+using Przewodnik.Utilities.DataLoader;
 
 namespace Przewodnik.Views
 {
@@ -149,7 +150,7 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-
+            MapLoader.Instance.FirstRun = true;
         }
 
         private void EnglishClicked(object sender, RoutedEventArgs e)
