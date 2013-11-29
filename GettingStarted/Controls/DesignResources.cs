@@ -31,7 +31,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Size72"] = ConvertSize(72);
             Application.Current.Resources["Size80"] = ConvertSize(80);
             Application.Current.Resources["Size90"] = ConvertSize(90);
-            Application.Current.Resources["Size150"] = ConvertSize(150);
+            Application.Current.Resources["Size200"] = ConvertSize(200);
 
             Style style = new Style { TargetType = typeof(Image) };
             style.Setters.Add(new Setter(Image.WidthProperty, ico_size));
@@ -39,13 +39,12 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Icon"] = style;
 
             style = new Style { TargetType = typeof(Image) };
-            style.Setters.Add(new Setter(Image.WidthProperty, ConvertSize(110)));
-            style.Setters.Add(new Setter(Image.HeightProperty, ConvertSize(93)));
+            style.Setters.Add(new Setter(Image.WidthProperty, ConvertSize(141)));
+            style.Setters.Add(new Setter(Image.HeightProperty, ConvertSize(120)));
             Application.Current.Resources["WeatherIcon"] = style;
 
             Application.Current.Resources["BlockMargin"] = new Thickness(0.02315 * height);
-            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(20), Bottom = ConvertSize(10), Right = ConvertSize(20), Top = ConvertSize(10) };
-            Application.Current.Resources["BlockWeatherMargin2"] = new Thickness { Left = ConvertSize(15), Bottom = ConvertSize(15), Right = ConvertSize(15), Top = ConvertSize(15) };
+            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(15), Bottom = ConvertSize(0), Right = ConvertSize(15), Top = ConvertSize(0) };
             Application.Current.Resources["BlockTwitterMargin"] = new Thickness { Left = 0.02315 * height, Bottom = 0.01389 * height, Right = 0.02315 * height, Top = 0.01389 * height };
             Application.Current.Resources["TextTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = 0.01150 * height };
             Application.Current.Resources["TextBottomMargin"] = new Thickness { Left = 0, Bottom = 0.01150 * height, Right = 0, Top = 0 };
@@ -65,16 +64,17 @@ namespace Przewodnik.Controls
             Application.Current.Resources["EventCalendarBlockSize"] = ConvertSize(210);
             Application.Current.Resources["EventBlockSize"] = ConvertSize(1180);
             Application.Current.Resources["EventIconSize"] = ConvertSize(113);
-            Application.Current.Resources["BackButtonSize"] = ConvertSize(200);
             Application.Current.Resources["LoaderLogoWidth"] = ConvertSize(532);
             Application.Current.Resources["LoaderWidth"] = ConvertSize(677);
             Application.Current.Resources["LoaderHeight"] = ConvertSize(52);
             Application.Current.Resources["TweetHeight"] = new GridLength(0.15741 * height);
             Application.Current.Resources["TweetWidth"] = new GridLength(0.52083 * width);
-            Application.Current.Resources["WeatherAreaWidth"] = ConvertSize(265);
-            Application.Current.Resources["WeatherAreaHeight"] = ConvertSize(165);
+            Application.Current.Resources["WeatherAreaWidth"] = ConvertSize(300);
+            Application.Current.Resources["WeatherAreaHeight"] = ConvertSize(120);
             Application.Current.Resources["SnapshootIconSize"] = ConvertSize(168);
             Application.Current.Resources["NavButtonsIconSize"] = ConvertSize(125);
+            Application.Current.Resources["CameraWidth"] = ConvertSize(1067);
+            Application.Current.Resources["CameraHeight"] = ConvertSize(800);
 
         }
 

@@ -114,7 +114,7 @@ namespace Przewodnik
 
                 }
             }
-            catch (Exception){ }
+            catch (Exception) { }
 
 
             base.OnKeyUp(e);
@@ -201,7 +201,7 @@ namespace Przewodnik
 
             WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
             WeatherDegree.Text = wvm.wm.Temperature;
-            WeatherInfo.Text = wvm.wm.Description.ToLower();
+            //WeatherInfo.Text = wvm.wm.Description.ToLower();
 
             DateTime dt = DateTime.Now;
             NameDayLabel.Text = "Imieniny";

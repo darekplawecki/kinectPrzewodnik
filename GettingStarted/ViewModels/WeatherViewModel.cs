@@ -33,13 +33,15 @@ namespace Przewodnik.ViewModels
         {
             if (wm.WeatherState == 0)
                 wm.WeatherState = 1;
+            else if (wm.WeatherState == 1)
+                wm.WeatherState = 2;
             else
                 wm.WeatherState = 0;
         }
 
         public static string GetWheatherImage(string file)
         {
-            string pattern = "<span class=\"weatherIco size72x72 (.*?)\"></span>";
+            string pattern = "<span class=\"city_49413_icon weatherIco size40x40 (.*?)\"></span>";
             Match m = Regex.Match(file, @pattern);
             string weatherImage = "";
 

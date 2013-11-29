@@ -65,11 +65,10 @@
                     <core:Double x:Key="Size72">72</core:Double>
                     <core:Double x:Key="Size80">80</core:Double>
                     <core:Double x:Key="Size90">90</core:Double>
-                    <core:Double x:Key="Size150">150</core:Double>
+                    <core:Double x:Key="Size200">200</core:Double>
                     <!-- margins -->
                     <Thickness x:Key="BlockMargin"/>
                     <Thickness x:Key="BlockWeatherMargin"/>
-                    <Thickness x:Key="BlockWeatherMargin2"/>
                     <Thickness x:Key="BlockTwitterMargin"/>
                     <Thickness x:Key="BlockCategoryEventMargin"/>
                     <Thickness x:Key="TextTopMargin"/>
@@ -89,7 +88,6 @@
                     <core:Double x:Key="EventCalendarBlockSize"></core:Double>
                     <core:Double x:Key="EventBlockSize"></core:Double>
                     <core:Double x:Key="EventIconSize"></core:Double>
-                    <core:Double x:Key="BackButtonSize"></core:Double>
                     <core:Double x:Key="LoaderLogoWidth"></core:Double>
                     <core:Double x:Key="LoaderWidth"></core:Double>
                     <core:Double x:Key="LoaderHeight"></core:Double>
@@ -97,6 +95,8 @@
                     <core:Double x:Key="WeatherAreaWidth"/>
                     <GridLength x:Key="TweetHeight"/>
                     <GridLength x:Key="TweetWidth"/>
+                    <core:Double x:Key="CameraHeight"/>
+                    <core:Double x:Key="CameraWidth"/>
                     <core:Double x:Key="SnapshootIconSize"/>
                     <core:Double x:Key="NavButtonsIconSize"/>
                     <!-- button styles -->

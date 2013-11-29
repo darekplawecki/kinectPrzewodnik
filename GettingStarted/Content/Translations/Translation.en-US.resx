@@ -307,4 +307,7 @@
   <data name="B_sciezka_zwiedzanie" xml:space="preserve">
     <value>sightseeing</value>
   </data>
+  <data name="P_Snap" xml:space="preserve">
+    <value>Smile!</value>
+  </data>
 </root>

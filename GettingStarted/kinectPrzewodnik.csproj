@@ -365,6 +365,11 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Content\Postcard\camera_frame.png" />
+    <Resource Include="Content\Postcard\camera_frame_1.png" />
+    <Resource Include="Content\Postcard\camera_frame_2.png" />
+    <Resource Include="Content\Postcard\camera_frame_3.png" />
+    <Resource Include="Content\Postcard\postcard_border.png" />
     <Resource Include="Content\Postcard\Background\background_1.jpg" />
     <Resource Include="Content\Postcard\Background\background_2.jpg" />
     <Resource Include="Content\Postcard\Background\background_3.jpg" />

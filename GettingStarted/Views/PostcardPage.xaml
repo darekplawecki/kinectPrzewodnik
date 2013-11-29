@@ -6,14 +6,16 @@
     xmlns:c="clr-namespace:Przewodnik.Controls"
     xmlns:cv="clr-namespace:Przewodnik.Converters"
     xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
-    Name="PostcardGrid">
+    Name="PostcardGrid"
+    ClipToBounds="True">
 
     <c:Transition x:Name="transition" Source="{Binding ElementName=BackgroundPhoto, Path=Content}" />
-    <ContentControl Name="BackgroundPhoto"/>
-    
-    <Border BorderThickness="1" BorderBrush="{StaticResource GrayColor}">
-        <Image Name="MaskedColor" />
-    </Border>
+    <ContentControl Name="BackgroundPhoto" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+    <Grid Name="Camera" HorizontalAlignment="Center" VerticalAlignment="Center" Width="{DynamicResource CameraWidth}" Height="{DynamicResource CameraHeight}">
+        <Image Name="MaskedColor" Stretch="Fill"/>
+        <Image Name="CameraFrame" Source="../Content/Postcard/camera_frame_3.png" Stretch="Fill"></Image>
+    </Grid>
 
     <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
         <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
@@ -27,5 +29,9 @@
         </k:KinectTileButton>
     </StackPanel>
 
-    <TextBlock Name="Counter" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="{DynamicResource Size150}" FontWeight="Black"></TextBlock>
+    <TextBlock Name="Counter" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FFF" FontSize="{DynamicResource Size200}" FontWeight="Black">
+        <TextBlock.Effect>
+            <DropShadowEffect ShadowDepth="2" BlurRadius="0" Color="#FF000000" />
+        </TextBlock.Effect>
+    </TextBlock>
 </Grid>
