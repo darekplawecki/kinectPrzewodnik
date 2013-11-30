@@ -42,7 +42,6 @@ namespace Przewodnik
             }
             else if (page.Equals(sleepScreen))
             {
-                TwitterManager.Instance.GetHomeTimeline();
                 mainWindow.Sleep();
                 mainWindow.ShowBackButton(false);
             }

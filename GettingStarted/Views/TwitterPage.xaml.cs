@@ -17,8 +17,6 @@ namespace Przewodnik.Views
             InitializeComponent();
             this.pageFactory = pageFactory;
             PrepareTwitterContent();
-            //TwitterContent.Text = PrepareTwitterContent();
-
         }
 
         public void PrepareTwitterContent()

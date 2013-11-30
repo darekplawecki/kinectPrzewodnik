@@ -167,6 +167,7 @@
     <Compile Include="Utilities\DataLoader\MapLoader.cs" />
     <Compile Include="Utilities\DataLoader\DataLoader.cs" />
     <Compile Include="Utilities\DataLoader\InstagramLoader.cs" />
+    <Compile Include="Utilities\DataLoader\PeriodicLoader.cs" />
     <Compile Include="Utilities\DataLoader\TwitterLoader.cs" />
     <Compile Include="Utilities\DataLoader\WeatherLoader.cs" />
     <Compile Include="Utilities\EngagementStateManager.cs" />

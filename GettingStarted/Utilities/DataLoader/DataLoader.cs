@@ -13,7 +13,7 @@ namespace Przewodnik.Utilities.DataLoader
 
         }
 
-        public bool Load()
+        public bool EarlyLoad()
         {
             LoadInstagram();
             LoadTwitter();
@@ -21,6 +21,12 @@ namespace Przewodnik.Utilities.DataLoader
             LoadCalendar();
             LoadWeather();
             return true;
+        }
+
+        public void PeriodLoad()
+        {
+            new TwitterLoader().LoadTwitter();
+            //TODO tu do wstawienia jest ładowanie pogody
         }
 
         private void CalendarEventLoaded(object sender, EventArgs eventArgs)

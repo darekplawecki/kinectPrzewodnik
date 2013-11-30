@@ -14,6 +14,7 @@ using Microsoft.Expression.Media;
 using Microsoft.Expression.Shapes;
 using Microsoft.Kinect.Toolkit;
 using Microsoft.Kinect.Toolkit.Controls;
+using Przewodnik.Controls;
 using Przewodnik.Converters;
 using System;
 using System.Diagnostics;

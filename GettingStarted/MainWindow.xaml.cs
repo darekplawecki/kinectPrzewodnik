@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
+using Przewodnik.Utilities.DataLoader;
 using Przewodnik.Views;
 using Przewodnik.Utilities;
 using System.Windows.Media;
@@ -20,7 +24,7 @@ namespace Przewodnik
 
         private Navigator _navigator;
         private KinectPageFactory _pageFactory;
-
+        private PeriodicLoader _periodicLoader;
         private static KinectController _kinectController;
         public static KinectController KinectController
         {
@@ -64,6 +68,7 @@ namespace Przewodnik
             _movementDetector = new MouseMovementDetector(this);
             _movementDetector.IsMovingChanged += OnIsMouseMovingChangedNoWake;
             _movementDetector.Start();
+            _periodicLoader = new PeriodicLoader(300);
         }
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
@@ -149,6 +154,7 @@ namespace Przewodnik
             }
             else
             {
+                _periodicLoader.Start();
                 _movementDetector.IsMovingChanged -= OnIsMouseMovingChangedNoWake;
                 _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
                 _movementDetector.Start();

@@ -57,10 +57,10 @@ namespace Przewodnik.Utilities.Twitter
             if (tweets != null) tweetsCopy = Extension.Clone<TweetModel>(tweets);
 
             token = new Token(
-ConfigurationManager.AppSettings["token_AccessToken"],
-ConfigurationManager.AppSettings["token_AccessTokenSecret"],
-ConfigurationManager.AppSettings["token_ConsumerKey"],
-ConfigurationManager.AppSettings["token_ConsumerSecret"]);
+            ConfigurationManager.AppSettings["token_AccessToken"],
+            ConfigurationManager.AppSettings["token_AccessTokenSecret"],
+            ConfigurationManager.AppSettings["token_ConsumerKey"],
+            ConfigurationManager.AppSettings["token_ConsumerSecret"]);
             ITokenUser u;
 
             try
@@ -105,14 +105,6 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
 
         }
 
-        public String GetLastDate()
-        {
-            IValueConverter dateConverter = new DateTimeConverter();
-            return "dupa";
-            //return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
-            //return tweets[0].Date.ToString();
-        }
-
         public TweetModel GetHomeTweet(int index)
         {
             TweetModel homeTweet = null;
@@ -120,10 +112,7 @@ ConfigurationManager.AppSettings["token_ConsumerSecret"]);
             {
                 homeTweet = tweets[index];
             }
-            //IValueConverter dateConverter = new DateTimeConverter();
             return homeTweet;
-            //return dateConverter.Convert(tweets[0].Date, GetType(), null, null).ToString();
-            //return tweets[0].Date.ToString();
         }
     }
 }

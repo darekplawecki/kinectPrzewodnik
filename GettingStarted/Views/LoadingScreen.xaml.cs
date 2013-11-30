@@ -43,7 +43,7 @@ namespace Przewodnik.Views
             {
                 dataLoader.beforeLoaderEvents += BeforeLoaderEvents;
                 dataLoader.afterLoaderEvents += AfterLoaderEvents;
-                if (dataLoader.Load()) LoadEnded(this, new EventArgs());
+                if (dataLoader.EarlyLoad()) LoadEnded(this, new EventArgs());
             }
         }
 
