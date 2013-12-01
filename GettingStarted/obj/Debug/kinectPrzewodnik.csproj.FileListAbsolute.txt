@@ -294,7 +294,6 @@ C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\ko\M
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
-C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csprojResolveAssemblyReference.cache
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\ControlStyles.baml
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\KinectButtonStyles.baml
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\AttractionArticle.baml

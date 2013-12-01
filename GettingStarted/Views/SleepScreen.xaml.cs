@@ -37,8 +37,8 @@ namespace Przewodnik.Views
             Loaded += new RoutedEventHandler(ActualDateTime_Loaded);
             dt = DateTime.Now;
             Time.Text = dt.ToString("HH:mm");
-            DayAndMonth.Text = getDayAndMonth();
-            WeekDay.Text = getDayOfWeek();
+            DayAndMonth.Text = dt.ToString("m").ToLower();
+            WeekDay.Text = dt.ToString("dddd").ToLower();
         }
 
         private void ActualDateTime_Loaded(object sender, RoutedEventArgs e)
@@ -54,50 +54,9 @@ namespace Przewodnik.Views
         {
             dt = DateTime.Now;
             Time.Text = dt.ToString("HH:mm");
-            DayAndMonth.Text = getDayAndMonth();
-            WeekDay.Text = getDayOfWeek();
+            DayAndMonth.Text = dt.ToString("m").ToLower();
+            WeekDay.Text = dt.ToString("dddd").ToLower();
         }
-
-        private string getDayOfWeek()
-        {
-            switch (dt.DayOfWeek)
-            {
-                case DayOfWeek.Monday: return "poniedziałek";
-                case DayOfWeek.Tuesday: return "wtorek";
-                case DayOfWeek.Wednesday: return "środa";
-                case DayOfWeek.Thursday: return "czwartek";
-                case DayOfWeek.Friday: return "piątek";
-                case DayOfWeek.Saturday: return "sobota";
-                case DayOfWeek.Sunday: return "niedziela";
-                default: return "";
-            }
-
-        }
-
-        private string getDayAndMonth()
-        {
-            string dayAndMonth = dt.ToString("dd") + " ";
-
-            switch (dt.ToString("MM"))
-            {
-                case "1": dayAndMonth += "stycznia"; break;
-                case "2": dayAndMonth += "lutego"; break;
-                case "3": dayAndMonth += "marca"; break;
-                case "4": dayAndMonth += "kwietnia"; break;
-                case "5": dayAndMonth += "maja"; break;
-                case "6": dayAndMonth += "czerwca"; break;
-                case "7": dayAndMonth += "lipca"; break;
-                case "8": dayAndMonth += "sierpnia"; break;
-                case "9": dayAndMonth += "września"; break;
-                case "10": dayAndMonth += "października"; break;
-                case "11": dayAndMonth += "listopada"; break;
-                case "12": dayAndMonth += "grudnia"; break;
-                default: break;
-            }
-
-            return dayAndMonth;
-        }
-
 
         public void OpenMainMenu()
         {

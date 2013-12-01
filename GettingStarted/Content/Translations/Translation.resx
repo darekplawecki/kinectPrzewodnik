@@ -310,4 +310,25 @@
   <data name="P_Snap" xml:space="preserve">
     <value>Uśmiech!</value>
   </data>
+  <data name="S_Foto_pomniejszenie" xml:space="preserve">
+    <value>Aby pomniejszyć zdjęcie: zaciśnij obie pięści i powoli zbliżaj je do siebie.</value>
+  </data>
+  <data name="S_Foto_powiekszenie" xml:space="preserve">
+    <value>Aby powiększyć zdjęcie: zaciśnij obie pięści i powoli oddalaj je od siebie.</value>
+  </data>
+  <data name="S_Foto_przesuniecie" xml:space="preserve">
+    <value>Aby zmienić zdjęcie: zaciśnij jedną pięść i przesuń ją w prawo lub w lewo.</value>
+  </data>
+  <data name="S_Mapa_pominiecie" xml:space="preserve">
+    <value>pomiń</value>
+  </data>
+  <data name="S_Mapa_pomniejszenie" xml:space="preserve">
+    <value>Aby pomniejszyć mapę: zaciśnij obie pięści i powoli zbliżaj je do siebie.</value>
+  </data>
+  <data name="S_Mapa_powiekszenie" xml:space="preserve">
+    <value>Aby powiększyć mapę: zaciśnij obie pięści i powoli oddalaj je od siebie.</value>
+  </data>
+  <data name="S_Mapa_przesuniecie" xml:space="preserve">
+    <value>Aby przesunąć mapę: zaciśnij jedną pięść i przesuń ją w wybranym kierunku.</value>
+  </data>
 </root>

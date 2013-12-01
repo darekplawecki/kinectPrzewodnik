@@ -24,7 +24,7 @@
                               IsGrayImage="True" LightColor="#FFFFCCFF" DarkColor="#FF910000" Visibility="Hidden" />
     </Canvas>
 
-    <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
+    <StackPanel x:Name="NavigationButtons"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
         <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
             <Image Source="../Content/Postcard/ico_prev.png"></Image>
         </k:KinectTileButton>
@@ -43,6 +43,19 @@
     </TextBlock>
 
     <Canvas x:Name="QuickStartCanvas">
-        <TextBlock x:Name="QuickStartTextBlock" FontSize="{DynamicResource Size90}"></TextBlock>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock x:Name="QuickStartTextBlock" FontSize="{DynamicResource Size80}" TextWrapping="Wrap" Width="800" FontWeight="Light"
+                               TextAlignment="Center" Margin="100,50,100,0" Background="White" Opacity="0.8"></TextBlock>
+
+            <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource RedColor}" Click="QuickStartCancel_Click">
+                <StackPanel Orientation="Vertical">
+                    <Grid>
+                        <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
+                        <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                    </Grid>
+                    <TextBlock Name="pomin" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                </StackPanel>
+            </k:KinectTileButton>
+        </StackPanel>
     </Canvas>
 </Grid>

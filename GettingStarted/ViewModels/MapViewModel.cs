@@ -5,30 +5,24 @@ using Microsoft.Maps.MapControl.WPF;
 using Przewodnik.Models;
 using Przewodnik.Utilities;
 using Przewodnik.Utilities.DataLoader;
+using Przewodnik.Content.Traslations;
+using System.Windows.Threading;
 
 namespace Przewodnik.ViewModels
 {
     public class MapViewModel : ViewModelBase
     {
-
         private const double ACCEPTED_HAND_MOVING = 0.05;
         private const double SPEED_ZOOMING = 0.01; // zalezy od parametru oraz jak zmienila sie odleglosc rak, od momentu zlapania
         private const double SPEED_MOVING = 1.0;
 
-        private MapLoader _loader;
-
-        private int _quickStartStep;
-
+        public MapLoader _loader;
+        public int _quickStartStep;
         private double _dependsMovementZoom;
-
         private KinectController _kinectController;
         private KinectHandUtilities _kinectHandUtilities;
 
         #region "Map Component Properties"
-
-        /// <summary>
-        /// Componenet for Bing Map Control
-        /// </summary>
         private BingMap _bingMap;
         public BingMap BingMap
         {
@@ -39,7 +33,6 @@ namespace Przewodnik.ViewModels
                 OnPropertyChanged("BingMap");
             }
         }
-
         private Location _mapCenterPoint;
         public Location MapCenterPoint
         {
@@ -50,10 +43,6 @@ namespace Przewodnik.ViewModels
                 OnPropertyChanged("MapCenterPoint");
             }
         }
-
-        /// <summary>
-        /// Properties for Map Zoom Level
-        /// </summary>
         private double _mapZoomLevel;
         public double MapZoomLevel
         {
@@ -64,14 +53,12 @@ namespace Przewodnik.ViewModels
                 OnPropertyChanged("MapZoomLevel");
             }
         }
-
         #endregion
 
         // zmienne zapamietane w momencie zlapania dloni
         private double _distanceTwoHand;
         private Point _positionRightHand;
         private Point _positionLeftHand;
-
 
         private Visibility _interactionIcoZoomVisibility;
         public Visibility InteractionIcoZoomVisibility
@@ -113,7 +100,6 @@ namespace Przewodnik.ViewModels
                 OnPropertyChanged("InteractionIcoMoveVisibility");
             }
         }
-
         private Visibility _quickStartVisibility;
         public Visibility QuickStartVisibility
         {
@@ -122,6 +108,17 @@ namespace Przewodnik.ViewModels
             {
                 _quickStartVisibility = value;
                 OnPropertyChanged("QuickStartVisibility");
+            }
+        }
+
+        private Visibility _buttonVisibility;
+        public Visibility ButtonVisibility
+        {
+            get { return _buttonVisibility; }
+            set
+            {
+                _buttonVisibility = value;
+                OnPropertyChanged("ButtonVisibility");
             }
         }
         private String _quickStartText;
@@ -134,8 +131,6 @@ namespace Przewodnik.ViewModels
                 OnPropertyChanged("QuickStartText");
             }
         }
-
-
 
         public MapViewModel()
         {
@@ -161,7 +156,8 @@ namespace Przewodnik.ViewModels
             if (_quickStartStep == 1)
             {
                 QuickStartVisibility = Visibility.Visible;
-                QuickStartText = "Aby przesunąć mapę, zaciśnij 1 pięść i przesuń w wybranym kierunku.";
+                QuickStartText = AppResources.GetText("S_Mapa_przesuniecie");
+                _buttonVisibility = Visibility.Hidden;
             }
             else
             {
@@ -194,7 +190,8 @@ namespace Przewodnik.ViewModels
                         if (_quickStartStep == 2)
                         {
                             _quickStartStep = 3;
-                            QuickStartText = "Aby pomniejszyć mapę, zaciśnij obie pięści, a następnie przybliż rece do siebie.";
+                            StartTimer();
+                            QuickStartText = AppResources.GetText("S_Mapa_pomniejszenie");
                         }
                     }
                     else if ((handDistance + ACCEPTED_HAND_MOVING) < _distanceTwoHand)
@@ -213,6 +210,7 @@ namespace Przewodnik.ViewModels
                             _quickStartStep = 0;
                             _loader.FirstRun = false;
                             QuickStartVisibility = Visibility.Hidden;
+                            ButtonVisibility = Visibility.Visible;
                         }
                     }
                 }
@@ -234,7 +232,8 @@ namespace Przewodnik.ViewModels
                         if (_quickStartStep == 1)
                         {
                             _quickStartStep = 2;
-                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                            StartTimer();
+                            QuickStartText = AppResources.GetText("S_Mapa_powiekszenie");
                         }
                     }
 
@@ -254,7 +253,8 @@ namespace Przewodnik.ViewModels
                         if (_quickStartStep == 1)
                         {
                             _quickStartStep = 2;
-                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                            StartTimer();
+                            QuickStartText = AppResources.GetText("S_Mapa_powiekszenie");
                         }
                     }
                 }
@@ -276,7 +276,8 @@ namespace Przewodnik.ViewModels
                         if (_quickStartStep == 1)
                         {
                             _quickStartStep = 2;
-                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                            StartTimer();
+                            QuickStartText = AppResources.GetText("S_Mapa_powiekszenie");
                         }
                     }
 
@@ -296,7 +297,8 @@ namespace Przewodnik.ViewModels
                         if (_quickStartStep == 1)
                         {
                             _quickStartStep = 2;
-                            QuickStartText = "Aby powiększyć mapę, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                            StartTimer();
+                            QuickStartText = AppResources.GetText("S_Mapa_powiekszenie");
                         }
                     }
                 }
@@ -309,6 +311,33 @@ namespace Przewodnik.ViewModels
                     _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                 }
             }
+        }
+
+
+        private const int COUNTER = 3;
+
+        private void StartTimer()
+        {
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            int _counter = COUNTER;
+            QuickStartVisibility = Visibility.Hidden;
+            timer.Tick += (s, ee) =>
+            {
+                if (_counter == 0)
+                {
+                    QuickStartVisibility = Visibility.Visible;
+                    timer.Stop();
+
+                }
+                else
+                {
+                    _counter--;
+                    QuickStartVisibility = Visibility.Hidden;
+                }
+            };
+
+            timer.Start();
         }
 
         public double GetHandDistance(double x1, double y1, double x2, double y2)
@@ -361,8 +390,6 @@ namespace Przewodnik.ViewModels
             BingMap.CenterLocation.Latitude = 51.109521;
             MapCenterPoint = BingMap.CenterLocation;
         }
-
-
 
     }
 }

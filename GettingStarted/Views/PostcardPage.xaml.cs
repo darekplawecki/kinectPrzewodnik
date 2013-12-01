@@ -62,7 +62,10 @@ namespace Przewodnik.Views
             if (_quickStartStep == 1)
             {
                 QuickStartCanvas.Visibility = Visibility.Visible;
-                QuickStartTextBlock.Text = "Aby zmienić tło, zaciśnij 1 pięść i przesuń w lewo lub prawo.";
+                QuickStartTextBlock.Text = AppResources.GetText("S_Foto_przesuniecie");
+
+                CameraFrame.Visibility = Visibility.Hidden;
+                NavigationButtons.Visibility = Visibility.Hidden;
             }
             else
             {
@@ -90,6 +93,9 @@ namespace Przewodnik.Views
                             _quickStartStep = 0;
                             _quickStartState = false;
                             QuickStartCanvas.Visibility = Visibility.Hidden;
+
+                            CameraFrame.Visibility = Visibility.Visible;
+                            NavigationButtons.Visibility = Visibility.Visible;
                         }
                     }
                     else if ((handDistance + ACCEPTED_HAND_MOVING) < _distanceTwoHand)
@@ -100,7 +106,8 @@ namespace Przewodnik.Views
                         if (_quickStartStep == 2)
                         {
                             _quickStartStep = 3;
-                            QuickStartTextBlock.Text = "Aby pomniejszyć tło, zaciśnij obie pięści, a następnie przybliż rece do siebie.";
+                            StartTimer();
+                            QuickStartTextBlock.Text = AppResources.GetText("S_Foto_powiekszenie");
                         }
                     }
                     _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
@@ -132,7 +139,8 @@ namespace Przewodnik.Views
                         if (_quickStartStep == 1)
                         {
                             _quickStartStep = 2;
-                            QuickStartTextBlock.Text = "Aby powiększyć tło, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                            StartTimer();
+                            QuickStartTextBlock.Text = AppResources.GetText("S_Foto_pomniejszenie");
                         }
                     }
 
@@ -161,7 +169,8 @@ namespace Przewodnik.Views
                         if (_quickStartStep == 1)
                         {
                             _quickStartStep = 2;
-                            QuickStartTextBlock.Text = "Aby powiększyć zdjęcie, zaciśnij obie pięści, a następnie oddal rece od siebie.";
+                            StartTimer();
+                            QuickStartTextBlock.Text = AppResources.GetText("S_Foto_pomniejszenie");
                         }
                     }
                 }
@@ -176,6 +185,31 @@ namespace Przewodnik.Views
             }
         }
 
+        private void StartTimer()
+        {
+            DispatcherTimer timer;
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            int _counter = COUNTER;
+            QuickStartCanvas.Visibility = Visibility.Hidden;
+            timer.Tick += (s, ee) =>
+            {
+                if (_counter == 0)
+                {
+                    QuickStartCanvas.Visibility = Visibility.Visible;
+                    timer.Stop();
+
+                }
+                else
+                {
+                    _counter--;
+                    QuickStartCanvas.Visibility = Visibility.Hidden;
+                }
+            };
+
+            timer.Start();
+        }
+
         public Grid GetView()
         {
             return PostcardGrid;
@@ -183,7 +217,12 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-          
+            prepareTranslation();
+        }
+
+        private void prepareTranslation()
+        {
+            pomin.Text = AppResources.GetText("S_Mapa_pominiecie");
         }
 
         private void SnapshootButton_Click(object sender, RoutedEventArgs e)
@@ -388,6 +427,16 @@ namespace Przewodnik.Views
             {
                 TransitToNextImage();
             }
+        }
+
+        private void QuickStartCancel_Click(object sender, RoutedEventArgs e)
+        {
+            _quickStartStep = 0;
+            _quickStartState = false;
+            QuickStartCanvas.Visibility = Visibility.Hidden;
+
+            CameraFrame.Visibility = Visibility.Visible;
+            NavigationButtons.Visibility = Visibility.Visible;
         }
 
     }

@@ -310,4 +310,25 @@
   <data name="P_Snap" xml:space="preserve">
     <value>Smile!</value>
   </data>
+  <data name="S_Foto_pomniejszenie" xml:space="preserve">
+    <value>To decrease the cover photo: clench both fists and slowly move them away.</value>
+  </data>
+  <data name="S_Foto_powiekszenie" xml:space="preserve">
+    <value>To enlarge the cover photo: clench both fists and slowly bring them nearer.</value>
+  </data>
+  <data name="S_Foto_przesuniecie" xml:space="preserve">
+    <value>To change the cover photo: clench one fist and move it in the right or in the left direction.</value>
+  </data>
+  <data name="S_Mapa_pominiecie" xml:space="preserve">
+    <value>skip</value>
+  </data>
+  <data name="S_Mapa_pomniejszenie" xml:space="preserve">
+    <value>To decrease the map: clench both fists and slowly move them away.</value>
+  </data>
+  <data name="S_Mapa_powiekszenie" xml:space="preserve">
+    <value>To enlarge the map: clench both fists and slowly bring them nearer.</value>
+  </data>
+  <data name="S_Mapa_przesuniecie" xml:space="preserve">
+    <value>To move the map: clench one fist and move it in the chosen direction.</value>
+  </data>
 </root>
