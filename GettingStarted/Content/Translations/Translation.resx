@@ -331,4 +331,7 @@
   <data name="S_Mapa_przesuniecie" xml:space="preserve">
     <value>Aby przesunąć mapę: zaciśnij jedną pięść i przesuń ją w wybranym kierunku.</value>
   </data>
+  <data name="M_video" xml:space="preserve">
+    <value>video</value>
+  </data>
 </root>

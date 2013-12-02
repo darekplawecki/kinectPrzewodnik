@@ -21,6 +21,7 @@ namespace Przewodnik
         private IKinectPage _calendarPage;
         private IKinectPage _mapPage;
         private IKinectPage _postcardPage;
+        private IKinectPage _videoPlayer;
 
 
         public KinectPageFactory(Navigator navigator)
@@ -80,6 +81,12 @@ namespace Przewodnik
         {
             _postcardPage = new PostcardPage(this);
             return _postcardPage;
+        }
+
+        public IKinectPage GetVideoPlayer()
+        {
+            _videoPlayer = new VideoPlayer(this);
+            return _videoPlayer;
         }
 
         public void NavigateTo(IKinectPage page)

@@ -72,16 +72,21 @@ namespace Przewodnik.Views
             pageFactory.NavigateTo(postcardPage);
         }
 
+        private void videoPlayerButton_Click(object sender, RoutedEventArgs e)
+        {
+            IKinectPage videoPlayer = pageFactory.GetVideoPlayer();
+            pageFactory.NavigateTo(videoPlayer);
+        }
+
         private void prepareTranslation()
         {
             Atrakcje.Text = AppResources.GetText("M_atrakcje_turystyczne");
             Atrakcje_opis.Text = AppResources.GetText("M_atrakcje_turystyczne_description");
             Wydarzenia.Text = AppResources.GetText("M_wydarzenia");
             Twitter.Text = AppResources.GetText("M_twitter");
-            Pogoda.Text = AppResources.GetText("M_pogoda");
+            Video.Text = AppResources.GetText("M_video");
             Mapy.Text = AppResources.GetText("M_plan_miasta");
             Widokowka.Text = AppResources.GetText("M_widokowka");
-            
         }
 
         public void LoadTweets()

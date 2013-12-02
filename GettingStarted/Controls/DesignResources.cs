@@ -75,6 +75,10 @@ namespace Przewodnik.Controls
             Application.Current.Resources["NavButtonsIconSize"] = ConvertSize(125);
             Application.Current.Resources["CameraWidth"] = ConvertSize(1067);
             Application.Current.Resources["CameraHeight"] = ConvertSize(800);
+            Application.Current.Resources["VideoProgressBackgroundWidth"] = ConvertSize(1788);
+            Application.Current.Resources["VideoProgressBackgroundHeight"] = ConvertSize(90);
+            Application.Current.Resources["VideoProgressHeight"] = ConvertSize(15);
+            Application.Current.Resources["VideoButtonSize"] = ConvertSize(298);
 
         }
 

@@ -165,12 +165,13 @@
 
         </k:KinectTileButton>
 
-        <k:KinectTileButton x:Name="WeatherButton"
+        <k:KinectTileButton x:Name="VideoButton"
                             Margin="3"
                             Grid.Row="1" Grid.Column="0"
                             Width="Auto" Height="Auto" 
                             VerticalContentAlignment="Top" 
-                            Background="{StaticResource GreenColor}">
+                            Background="{StaticResource GreenColor}"
+                            Click="videoPlayerButton_Click">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"></RowDefinition>
@@ -178,8 +179,8 @@
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Source="../Content/Design/Images/home_weather.jpg"></Image>
                 <StackPanel Orientation="Vertical" Margin="{DynamicResource BlockMargin}" Grid.Row="1">
-                    <Image Source="../Content/Design/Images/ico_weather.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
-                    <TextBlock Name="Pogoda" Text="pogoda" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
+                    <Image Source="../Content/Design/Images/ico_video.png" HorizontalAlignment="Left" Style="{DynamicResource Icon}"></Image>
+                    <TextBlock Name="Video" Text="video" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size55}" LineHeight="{DynamicResource Size50}"></TextBlock>
                 </StackPanel>
             </Grid>
 

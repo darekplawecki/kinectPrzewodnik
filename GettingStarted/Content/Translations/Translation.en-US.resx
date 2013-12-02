@@ -331,4 +331,7 @@
   <data name="S_Mapa_przesuniecie" xml:space="preserve">
     <value>To move the map: clench one fist and move it in the chosen direction.</value>
   </data>
+  <data name="M_video" xml:space="preserve">
+    <value>video</value>
+  </data>
 </root>
