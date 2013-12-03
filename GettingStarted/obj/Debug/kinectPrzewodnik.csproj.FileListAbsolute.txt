@@ -85,7 +85,6 @@ C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\ko\Mi
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\ru\Microsoft.Expression.Drawing.resources.dll
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\zh-Hans\Microsoft.Expression.Drawing.resources.dll
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\bin\Debug\zh-Hant\Microsoft.Expression.Drawing.resources.dll
-C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csprojResolveAssemblyReference.cache
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\ControlStyles.baml
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\KinectButtonStyles.baml
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\AttractionArticle.baml
@@ -408,3 +407,6 @@ C:\Users\DJ\Documents\GitHub\kinectPrzewodnik_new\GettingStarted\bin\Debug\Przew
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik_new\GettingStarted\obj\Debug\Przewodnik.exe
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik_new\GettingStarted\obj\Debug\Przewodnik.pdb
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\Transition.baml
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.baml
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.g.cs
+C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\DesignResources.baml

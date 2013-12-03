@@ -156,7 +156,7 @@
     </c:PromptControl>
 
     <c:PromptControl
-        Text="Podnieś rękę aby rozpocząć"
+        Text="Podnieś rękę, aby rozpocząć.   Raise your hand to begin."
         Foreground="White"
         Background="{StaticResource KinectPurpleBrush}"
         Style="{StaticResource StartBanner}"

@@ -23,10 +23,14 @@
         <k:KinectCircleButton Name="ReplayButton" Foreground="Transparent" Background="Transparent" BorderThickness="0" Width="{DynamicResource VideoButtonSize}" Height="{DynamicResource VideoButtonSize}" Visibility="{Binding CanReplay, Converter={StaticResource InvertibleBooleanToVisibilityConverter}}" Click="PlayButton_Click">
             <Image Source="../Content/Design/Images/video_player_replay.png"></Image>
         </k:KinectCircleButton>
+
+        <k:KinectCircleButton Name="BackButton" Foreground="SkyBlue" Background="CadetBlue" BorderThickness="0" Width="200" Height="200" Click="backClicked">
+
+        </k:KinectCircleButton>
     </Grid>
-    
+
     <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,60" Width="{DynamicResource VideoProgressBackgroundWidth}" Height="{DynamicResource VideoProgressBackgroundHeight}">
-        
+
         <Rectangle Width="Auto" Height="Auto" Fill="{StaticResource GrayColor}" RadiusX="4" RadiusY="4" Opacity="0.7"></Rectangle>
 
         <Grid Grid.Column="1" Width="Auto" Height="Auto">

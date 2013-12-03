@@ -121,7 +121,7 @@
     <value>Type {0} does not support event: {1}</value>
   </data>
   <data name="EngagementHandoffGetStarted" xml:space="preserve">
-    <value>Podnieś rękę, aby rozpoczać.</value>
+    <value>Podnieś rękę, aby rozpoczać. Raise your hand to begin.</value>
   </data>
   <data name="EngagementHandoffKeepControl" xml:space="preserve">
     <value>Wciśnij przycisk aby odblokować</value>

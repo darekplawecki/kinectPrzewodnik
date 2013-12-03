@@ -164,12 +164,18 @@ namespace Przewodnik
 
         public void Wake()
         {
-            TopRow.Height = new GridLength(150);
+            ShowTopBar(true);
         }
         public void Sleep()
         {
             TopRow.Dispatcher.Invoke(new Action(() => TopRow.Height = new GridLength(0)));
             SetView(_pageFactory.GetSleepScreen().GetView());
+        }
+
+        public void ShowTopBar(bool show)
+        {
+            if (show) TopRow.Height = new GridLength(150);
+            else TopRow.Height = new GridLength(0);
         }
 
         public void ShowBackButton(bool enable)

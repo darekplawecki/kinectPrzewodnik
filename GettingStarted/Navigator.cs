@@ -8,7 +8,7 @@ namespace Przewodnik
 {
     public class Navigator
     {
-        private MainWindow mainWindow;
+        public MainWindow mainWindow;
         private Stack<IKinectPage> pagesHistory;
 
         private IKinectPage mainMenu;

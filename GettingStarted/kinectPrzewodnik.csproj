@@ -81,6 +81,10 @@
     <Reference Include="Microsoft.Practices.Prism">
       <HintPath>..\packages\TweetinviAPI.0.8.3.1\lib\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Speech, Version=11.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Microsoft SDKs\Speech\v11.0\Assembly\Microsoft.Speech.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.0.2.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\Newtonsoft.Json.dll</HintPath>
@@ -177,13 +181,22 @@
     <Compile Include="Controls\PromptControl.cs" />
     <Compile Include="Utilities\KinectHandUtilities.cs" />
     <Compile Include="Utilities\PromptState.cs" />
+    <Compile Include="Utilities\SoundRecognizer.cs" />
     <Compile Include="Utilities\Twitter\Extension.cs" />
     <Compile Include="Utilities\Twitter\TwitterConnectionException.cs" />
     <Compile Include="Utilities\Twitter\TwitterFollowers.cs" />
     <Compile Include="Utilities\Twitter\TwitterManager.cs" />
     <Compile Include="Utilities\UserActivityMeter.cs" />
     <Compile Include="Utilities\UserActivityRecord.cs" />
+    <Compile Include="ViewModels\VideoPlayerViewModel.cs" />
+    <Compile Include="Views\VideoPlayer.xaml.cs">
+      <DependentUpon>VideoPlayer.xaml</DependentUpon>
+    </Compile>
     <Page Include="Controls\ControlStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DesignResources.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -287,6 +300,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\VideoPlayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -492,7 +509,6 @@
     <Resource Include="Content\Design\Images\ico_events.png" />
     <Resource Include="Content\Design\Images\ico_maps.png" />
     <Resource Include="Content\Design\Images\ico_twitter.png" />
-    <Resource Include="Content\Design\Images\ico_weather.png" />
     <Resource Include="Content\Design\Images\logo.png" />
     <Resource Include="Content\Attractions\Icons\fontanna.png" />
     <Resource Include="Content\Attractions\Icons\halastulecia.png" />
@@ -517,6 +533,10 @@
     <Resource Include="Content\Design\Images\ico_postcard.png" />
     <Resource Include="Content\Design\Images\back-button.png" />
     <Resource Include="Content\Design\Images\logo_vertical.png" />
+    <Resource Include="Content\Design\Images\ico_video.png" />
+    <Resource Include="Content\Design\Images\video_player_pause.png" />
+    <Resource Include="Content\Design\Images\video_player_play.png" />
+    <Resource Include="Content\Design\Images\video_player_replay.png" />
     <Content Include="Content\Design\Sounds\button-enter.wav" />
     <Content Include="Content\Design\Sounds\button-select.wav" />
     <Resource Include="Content\Attractions\Photos\fontanna1.jpg" />

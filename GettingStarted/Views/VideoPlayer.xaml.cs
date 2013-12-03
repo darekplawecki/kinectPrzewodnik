@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using Microsoft.Kinect.Toolkit;
+using Przewodnik.Utilities;
 using Przewodnik.ViewModels;
 
 namespace Przewodnik.Views
@@ -28,17 +29,26 @@ namespace Przewodnik.Views
 
         VideoPlayerViewModel viewModel;
 
-        public VideoPlayer(KinectPageFactory pageFactory)
+        public SoundRecognizer sr;
+
+        private Navigator navigator;
+
+        public VideoPlayer(KinectPageFactory pageFactory, Navigator navigator)
         {
             InitializeComponent();
+            this.navigator = navigator;
 
+            sr = new SoundRecognizer(MainWindow.KinectController.KinectSensorChooser.Kinect);
+            sr.startSaid += playVideo;
+            sr.stopSaid += stopVideo;
+            sr.dontUnderstandSaid += dontUnderstand;
             viewModel = new VideoPlayerViewModel();
             VideoPlayerGrid.DataContext = viewModel;
 
             string[] parts = Environment.CurrentDirectory.Split(new string[] { "bin\\" }, StringSplitOptions.None);
             string projectPath = parts[0];
             Player.Source = new Uri(projectPath + "Content\\Videos\\wroclaw_promo.wmv");
-            
+
             progressTimer = new DispatcherTimer();
             progressTimer.Interval = TimeSpan.FromSeconds(1);
             progressTimer.Tick += OnProgressUpdateTick;
@@ -58,6 +68,8 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+            pageFactory.ShowTopBar(false);
+            sr.Start();
         }
 
         private void PlayVideo()
@@ -122,6 +134,31 @@ namespace Przewodnik.Views
         private void PauseButton_Click(object sender, RoutedEventArgs e)
         {
             PauseVideo();
+        }
+
+        private void stopVideo(object sender, EventArgs e)
+        {
+            PauseVideo();
+        }
+
+        private void dontUnderstand(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playVideo(object sender, EventArgs e)
+        {
+            PlayVideo();
+        }
+
+
+
+        private void backClicked(object sender, EventArgs e)
+        {
+            sr.Stop();
+            pageFactory.ShowTopBar(true);
+            navigator.GoBack();
+
         }
     }
 }
