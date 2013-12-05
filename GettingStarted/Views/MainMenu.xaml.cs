@@ -19,12 +19,16 @@ namespace Przewodnik.Views
 
         private TwitterManager twitterManager;
         public DispatcherTimer timer;
+        private bool isDone = false;
 
         public MainMenu(KinectPageFactory pageFactory)
         {
             InitializeComponent();
             this.pageFactory = pageFactory;
+        }
 
+        public void PrepareTwitter()
+        {
             TwitterGrid.DataContext = this;
 
             twitterManager = TwitterManager.Instance;
@@ -39,6 +43,11 @@ namespace Przewodnik.Views
         public void OnNavigateTo()
         {
             prepareTranslation();
+            if (!isDone)
+            {
+                isDone = true;
+                PrepareTwitter();
+            }
         }
 
         private void touristAttractions_Click(object sender, RoutedEventArgs e)
@@ -93,15 +102,13 @@ namespace Przewodnik.Views
         {
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(5);
-            twitterManager.GetHomeTimeline();
+            //twitterManager.GetHomeTimeline();
 
             int counter = 0;
             IValueConverter dateConverter = new Przewodnik.Converters.DateTimeConverter();
 
             if (twitterManager.tweets != null)
             {
-                Debug.WriteLine("dupa");
-                Debug.WriteLine("HELLO @" + twitterManager.GetHomeTweet(counter).Author);
                 Author_1.Text = "@" + twitterManager.GetHomeTweet(counter).Author;
                 Content_1.Text = twitterManager.GetHomeTweet(counter).Content;
                 Date_1.Text = dateConverter.Convert(twitterManager.GetHomeTweet(counter).Date, GetType(), null, null).ToString();

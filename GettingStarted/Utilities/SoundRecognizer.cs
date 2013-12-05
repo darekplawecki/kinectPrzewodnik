@@ -45,15 +45,8 @@ namespace Przewodnik.Utilities
 
         public void Start()
         {
-            try
-            {
-                this.sensor.Start();
-            }
-            catch (IOException e)
-            {
-                MessageBox.Show("e 65" + e.StackTrace);
-            }
 
+            this.sensor.Start();
 
             RecognizerInfo ri = GetKinectRecognizer();
 

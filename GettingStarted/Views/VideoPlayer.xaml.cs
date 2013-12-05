@@ -38,10 +38,17 @@ namespace Przewodnik.Views
             InitializeComponent();
             this.navigator = navigator;
 
-            sr = new SoundRecognizer(MainWindow.KinectController.KinectSensorChooser.Kinect);
-            sr.startSaid += playVideo;
-            sr.stopSaid += stopVideo;
-            sr.dontUnderstandSaid += dontUnderstand;
+            try
+            {
+                sr = new SoundRecognizer(MainWindow.KinectController.KinectSensorChooser.Kinect);
+                sr.startSaid += playVideo;
+                sr.stopSaid += stopVideo;
+                sr.dontUnderstandSaid += dontUnderstand;
+            }
+            catch (Exception e)
+            {
+                navigator.GoHome();
+            }
             viewModel = new VideoPlayerViewModel();
             VideoPlayerGrid.DataContext = viewModel;
 
@@ -69,7 +76,14 @@ namespace Przewodnik.Views
         public void OnNavigateTo()
         {
             pageFactory.ShowTopBar(false);
-            sr.Start();
+            try
+            {
+                sr.Start();
+            }
+            catch (Exception e)
+            {
+                navigator.GoHome();
+            }
         }
 
         private void PlayVideo()

@@ -19,7 +19,7 @@ namespace Przewodnik.ViewModels
             wm.WeatherImage = GetWheatherImage(wl.html);
             wm.Temperature = GetTemperature(wl.html);
             wm.Description = GetDescription(wl.html);
-            wm.NameDay = GetNameDayNames(wl.htmlNameDay);
+            //wm.NameDay = GetNameDayNames(wl.htmlNameDay);
             wm.WeatherState = 0;
 
             timer = new DispatcherTimer();
@@ -33,8 +33,6 @@ namespace Przewodnik.ViewModels
         {
             if (wm.WeatherState == 0)
                 wm.WeatherState = 1;
-            else if (wm.WeatherState == 1)
-                wm.WeatherState = 2;
             else
                 wm.WeatherState = 0;
         }

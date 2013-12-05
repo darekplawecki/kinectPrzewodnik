@@ -41,17 +41,17 @@ namespace Przewodnik
 
         private WeatherViewModel wvm;
 
+        private Thread _loaderThread;
+
         public MainWindow(KinectController controller)
         {
             _designResources = new DesignResources();
             _designResources.AdjustResolution();
             InitializeComponent();
-            LoadWeather();
             Loaded += OnLoaded;
 
             _navigator = new Navigator(this);
             _pageFactory = new KinectPageFactory(_navigator);
-
             _navigator.SetMainMenu(_pageFactory.GetMainMenu());
             _navigator.SetSleepScreen(_pageFactory.GetSleepScreen());
 
@@ -142,7 +142,9 @@ namespace Przewodnik
             _navigator.NavigateTo(loadingScreen);
             TopRow.Height = new GridLength(0);
             loadingScreen.LoadEnded += LoadEnded;
-            new Thread(loadingScreen.StartLoading).Start();
+            _loaderThread = new Thread(loadingScreen.StartLoading);
+            _loaderThread.Name = "EarlyLoader";
+            _loaderThread.Start();
         }
 
         private void LoadEnded(object sender, EventArgs e)
@@ -154,6 +156,7 @@ namespace Przewodnik
             }
             else
             {
+                LoadWeather();
                 _periodicLoader.Start();
                 _movementDetector.IsMovingChanged -= OnIsMouseMovingChangedNoWake;
                 _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
@@ -211,17 +214,14 @@ namespace Przewodnik
         {
             wvm = new WeatherViewModel();
 
-            WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
-            WeatherDegree.Text = wvm.wm.Temperature;
-            //WeatherInfo.Text = wvm.wm.Description.ToLower();
+            WeatherImage.Dispatcher.Invoke(new Action(() => WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative))));
+            WeatherDegree.Dispatcher.Invoke(new Action(() => WeatherDegree.Text = wvm.wm.Temperature));
 
             DateTime dt = DateTime.Now;
-            NameDayLabel.Text = "Imieniny";
-            NameDay.Text = wvm.wm.NameDay;
-            DayOfWeek.Text = dt.ToString("dddd").ToLower();
-            Today.Text = dt.ToString("m").ToLower();
+            DayOfWeek.Dispatcher.Invoke(new Action(() => DayOfWeek.Text = dt.ToString("dddd").ToLower()));
+            Today.Dispatcher.Invoke(new Action(() => Today.Text = dt.ToString("m").ToLower()));
 
-            Weather.DataContext = wvm.wm;
+            Weather.Dispatcher.Invoke(new Action(() =>  Weather.DataContext = wvm.wm));
         }
 
     }

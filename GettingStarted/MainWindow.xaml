@@ -68,11 +68,6 @@
                                                     <BeginStoryboard Storyboard="{StaticResource SlideTranslateY}" />
                                                 </DataTrigger.EnterActions>
                                             </DataTrigger>
-                                            <DataTrigger Binding="{Binding WeatherState}" Value="2">
-                                                <DataTrigger.EnterActions>
-                                                    <BeginStoryboard Storyboard="{StaticResource SlideTranslateY}" />
-                                                </DataTrigger.EnterActions>
-                                            </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
                                 </Grid.Style>
@@ -152,42 +147,6 @@
                                     </Grid.Style>
                                 </Grid>
 
-                                <Grid Margin="{DynamicResource BlockWeatherMargin}">
-                                    <StackPanel VerticalAlignment="Center">
-                                        <TextBlock Name="NameDayLabel"
-                                                       Grid.Row="0"
-                                                       Style="{StaticResource TextBlockStyle}"
-                                                       FontSize="{DynamicResource Size28}"
-                                                       LineHeight="{DynamicResource Size28}"
-                                                       Foreground="{StaticResource GrayColor2}"
-                                                       HorizontalAlignment="Left">
-                                        </TextBlock>
-                                        <TextBlock Name="NameDay"
-                                                       Grid.Row="1"
-                                                       Style="{StaticResource TextBlockStyle}"
-                                                       FontSize="{DynamicResource Size32}"
-                                                       LineHeight="{DynamicResource Size32}"
-                                                       Foreground="{StaticResource GrayColor2}"
-                                                       HorizontalAlignment="Left">
-                                        </TextBlock>
-                                    </StackPanel>
-                                    <Grid.Style>
-                                        <Style TargetType="Grid">
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding WeatherState}" Value="2">
-                                                    <Setter Property="RenderTransform">
-                                                        <Setter.Value>
-                                                            <TranslateTransform Y="{Binding ElementName=container, Path=ActualHeight}" />
-                                                        </Setter.Value>
-                                                    </Setter>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding WeatherState}" Value="1">
-                                                    <Setter Property="Visibility" Value="Hidden"/>
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </Grid.Style>
-                                </Grid>
 
                             </Grid>
                         </Grid>
