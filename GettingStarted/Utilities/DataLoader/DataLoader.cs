@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using Przewodnik.Content.Traslations;
 
 namespace Przewodnik.Utilities.DataLoader
@@ -18,7 +19,7 @@ namespace Przewodnik.Utilities.DataLoader
             LoadInstagram();
             LoadTwitter();
             LoadMaps();
-            //LoadCalendar();
+            if (!LoadCalendar()) return false;
             LoadWeather();
             return true;
         }
@@ -59,12 +60,20 @@ namespace Przewodnik.Utilities.DataLoader
             afterLoaderEvents(this, new AfterDataLoaderEventArgs(3, 10));
         }
 
-        private void LoadCalendar()
+        private bool LoadCalendar()
         {
-            beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_events")));
-            CalendarLoader cl = CalendarLoader.Instance;
-            cl.calendarEventLoaded += CalendarEventLoaded;
-            cl.LoadEvents();
+            try
+            {
+                beforeLoaderEvents(this, new BeforeDataLoaderEventArgs(AppResources.GetText("LOAD_events")));
+                CalendarLoader cl = CalendarLoader.Instance;
+                cl.calendarEventLoaded += CalendarEventLoaded;
+                cl.LoadEvents();
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
         }
 
         private void LoadWeather()

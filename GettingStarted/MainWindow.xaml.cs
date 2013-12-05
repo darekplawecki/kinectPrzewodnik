@@ -74,7 +74,6 @@ namespace Przewodnik
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
-            AppResources.SetCultureInfo("pl-PL");
             double height = SystemParameters.PrimaryScreenHeight;
             double width = SystemParameters.PrimaryScreenWidth;
             if (width < MinimumScreenWidth || height < MinimumScreenHeight)
@@ -154,7 +153,7 @@ namespace Przewodnik
             if (e == null)
             {
                 MessageBox.Show("Brak połączenia z Internetem. Sprawdź swoje łącze i spróbuj ponownie");
-                this.Close();
+                this.Dispatcher.Invoke(new Action(() => this.Close()));
             }
             else
             {
