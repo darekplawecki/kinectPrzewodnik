@@ -6,6 +6,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Threading;
+using Przewodnik.Content.Traslations;
 using Przewodnik.Utilities.DataLoader;
 using Przewodnik.Views;
 using Przewodnik.Utilities;
@@ -73,6 +74,7 @@ namespace Przewodnik
 
         private void OnLoaded(object sender, RoutedEventArgs routedEventArgs)
         {
+            AppResources.SetCultureInfo("pl-PL");
             double height = SystemParameters.PrimaryScreenHeight;
             double width = SystemParameters.PrimaryScreenWidth;
             if (width < MinimumScreenWidth || height < MinimumScreenHeight)
@@ -86,9 +88,9 @@ namespace Przewodnik
                 {
                     MinHeight = height;
                     MinWidth = width;
+                    EarlyLoad();
                 }
             }
-            EarlyLoad();
         }
 
         protected override void OnKeyUp(KeyEventArgs e)

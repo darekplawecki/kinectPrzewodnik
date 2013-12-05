@@ -16,5 +16,5 @@ C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\App.xaml
 35-966562988
 Controls\ControlStyles.xaml;Controls\DesignResources.xaml;Controls\KinectButtonStyles.xaml;Controls\Transition.xaml;Views\AttractionArticle.xaml;Views\Attractions.xaml;Views\CalendarPage.xaml;Views\LoadingScreen.xaml;Views\MapPage.xaml;Views\PostcardPage.xaml;Views\TwitterPage.xaml;Views\MainMenu.xaml;Views\SleepScreen.xaml;Controls\PromptControlStyles.xaml;MainWindow.xaml;Views\VideoPlayer.xaml;
 
-True
+False
 
