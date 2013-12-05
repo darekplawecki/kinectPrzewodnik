@@ -411,3 +411,6 @@ C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.g.cs
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\DesignResources.baml
 C:\Users\Maciej\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csprojResolveAssemblyReference.cache
+C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\DesignResources.baml
+C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.baml
+C:\Users\Prezes\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.g.cs

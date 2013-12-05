@@ -53,6 +53,12 @@ namespace Przewodnik.Views
             _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_2.jpg", UriKind.Relative)) });
             _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_3.jpg", UriKind.Relative)) });
             _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_4.jpg", UriKind.Relative)) });
+            _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_5.jpg", UriKind.Relative)) });
+            _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_6.JPG", UriKind.Relative)) });
+            _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_7.jpg", UriKind.Relative)) });
+            _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_8.jpg", UriKind.Relative)) });
+            _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_9.jpg", UriKind.Relative)) });
+            _backgroundPhotos.Add(new Image { Source = new BitmapImage(new Uri("../Content/Postcard/Background/background_10.jpg", UriKind.Relative)) });
 
             BackgroundPhoto.ContentTemplate = Application.Current.Resources["NextImageTransition"] as DataTemplate;
             BackgroundPhoto.Content = _backgroundPhotos[_actualBackgroundPhotosIndex];
@@ -313,8 +319,11 @@ namespace Przewodnik.Views
                 if (SaveFTP(path, fileName))
                 {
                     // WYŚWIELTELENIE KODU QR
+                    Picture.Source = new BitmapImage(new Uri(path + fileName));
                     qrControl.Text = "http://zpi.puchalski.pl/" + fileName;
                     qrControl.Visibility = Visibility.Visible;
+                    CameraFrame.Visibility = Visibility.Hidden;
+                    NavigationButtons.Visibility = Visibility.Hidden;
 
                 }
                 else
@@ -438,6 +447,15 @@ namespace Przewodnik.Views
             CameraFrame.Visibility = Visibility.Visible;
             NavigationButtons.Visibility = Visibility.Visible;
         }
+
+        private void NewPhotoButton_Click(object sender, RoutedEventArgs e)
+        {
+            qrControl.Visibility = Visibility.Hidden;
+            CameraFrame.Visibility = Visibility.Visible;
+            NavigationButtons.Visibility = Visibility.Visible;
+        }
+
+
 
     }
 }

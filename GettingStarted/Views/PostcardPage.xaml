@@ -18,12 +18,6 @@
         <Image Name="CameraFrame" Source="../Content/Postcard/camera_frame_3.png" Stretch="Fill"></Image>
     </Grid>
 
-    <Canvas VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-200,-200,0,0">
-        <wpf:QrCodeImgControl HorizontalAlignment="Stretch" Margin="0" Name="qrControl" 
-                              VerticalAlignment="Stretch" Height="Auto" Width="Auto" Text="test" QuietZoneModule="Zero" 
-                              IsGrayImage="True" LightColor="#FFFFCCFF" DarkColor="#FF910000" Visibility="Hidden" />
-    </Canvas>
-
     <StackPanel x:Name="NavigationButtons"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
         <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
             <Image Source="../Content/Postcard/ico_prev.png"></Image>
@@ -58,4 +52,37 @@
             </k:KinectTileButton>
         </StackPanel>
     </Canvas>
+
+    <Rectangle Width="1920" Height="1080" Fill="#ebebeb" Opacity="0.7" Visibility="{Binding ElementName=qrControl, Path=Visibility}"/>
+    <Grid Name="CodeQRArea" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding ElementName=qrControl, Path=Visibility}" Width="{DynamicResource CodeQRAreaWidth}" Height="{DynamicResource CodeQRAreaHeight}">
+        <Rectangle Fill="{StaticResource GrayColor}" Opacity="0.7" RadiusX="10" RadiusY="10" Stretch="Fill" Width="Auto" Height="Auto"/>
+
+        <StackPanel Orientation="Horizontal" Margin="{DynamicResource BlockMarginBigger}">
+            <Image Name="Picture" Width="{DynamicResource PictureWidth}" Height="{DynamicResource PictureHeight}"></Image>
+            <Grid Width="{DynamicResource CodeQRAreaWidthRight}" Height="Auto" HorizontalAlignment="Center" Margin="{DynamicResource BlockMarginLeft}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Width="{DynamicResource CodeQRAreaWidthRight}" Name="ScanCodeText" Foreground="White" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size60}" LineHeight="{DynamicResource Size65}" TextAlignment="Center" Text="Zeskanuj kod, aby pobrać zdjęcie na swój telefon." HorizontalAlignment="Center"></TextBlock>
+
+                <StackPanel Grid.Row="1" Orientation="Horizontal" Width="{DynamicResource CodeQRAreaWidthRight}">
+                    <Grid Width="{DynamicResource QRSize}" Height="{DynamicResource QRSize}" HorizontalAlignment="Center" Margin="{DynamicResource BlockMargin}">
+                        <Canvas Name="qrCanvas" VerticalAlignment="Center" HorizontalAlignment="Center" Width="{DynamicResource QRSize}" Height="{DynamicResource QRSize}" Margin="0">
+                            <wpf:QrCodeImgControl HorizontalAlignment="Stretch" Margin="0" Name="qrControl"
+                                              VerticalAlignment="Stretch" Height="{DynamicResource QRSize}" Width="{DynamicResource QRSize}" QuietZoneModule="Zero" 
+                                              IsGrayImage="True" LightColor="#FFFFCCFF" DarkColor="#FF910000" Visibility="Hidden"/>
+                        </Canvas>
+                    </Grid>
+
+                    <k:KinectTileButton Name="NewPhotoButton" Width="{DynamicResource QRSize}" Height="{DynamicResource QRSize}" Margin="15,0,0,0" Background="{StaticResource GrayColor}" Padding="{DynamicResource BlockMarginBigger}" Click="NewPhotoButton_Click">
+                        <TextBlock Foreground="White" Style="{DynamicResource TextBlockStyle}" FontSize="{StaticResource Size60}" LineHeight="{DynamicResource Size65}" TextAlignment="Center" Text="nowe zdjęcie" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                    </k:KinectTileButton>
+                </StackPanel>
+
+
+            </Grid>
+        </StackPanel>
+    </Grid>
 </Grid>

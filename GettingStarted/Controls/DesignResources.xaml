@@ -4,117 +4,126 @@
         xmlns:core="clr-namespace:System;assembly=mscorlib"
         xmlns:k="http://schemas.microsoft.com/kinect/2013">
 
-        <Style TargetType="ListBox">
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
-        <Style x:Key="OldTextBlock" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
-        <Style x:Key="OldGrid" TargetType="Grid">
-            <Setter Property="Background" Value="Transparent"/>
-        </Style>
-        <!-- colors -->
-        <SolidColorBrush x:Key="GrayColor" Color="#252525"/>
-        <SolidColorBrush x:Key="GrayColor2" Color="#3a3a3a"/>
-        <SolidColorBrush x:Key="LightGrayColor" Color="#dbdbdb"/>
-        <SolidColorBrush x:Key="BlueColor" Color="#3498db"/>
-        <SolidColorBrush x:Key="LightBlueColor" Color="#8ecaf3"/>
-        <SolidColorBrush x:Key="YellowColor" Color="#e1b700"/>
-        <SolidColorBrush x:Key="LightYellowColor" Color="#f1e29f"/>
-        <SolidColorBrush x:Key="OrangeColor" Color="#e56c19"/>
-        <SolidColorBrush x:Key="LightOrangeColor" Color="#f1b48a"/>
-        <SolidColorBrush x:Key="GreenColor" Color="#2ecc71"/>
-        <SolidColorBrush x:Key="LightGreenColor" Color="#a6efc5"/>
-        <SolidColorBrush x:Key="PurpleColor" Color="#8e44ad"/>
-        <SolidColorBrush x:Key="LightPurpleColor" Color="#c48fda"/>
-        <SolidColorBrush x:Key="LimeColor" Color="#1abc9c"/>
-        <SolidColorBrush x:Key="LightLimeColor" Color="#85decc"/>
-        <SolidColorBrush x:Key="RedColor" Color="#e74c3c"/>
-        <SolidColorBrush x:Key="LightRedColor" Color="#ed968d"/>
-        <SolidColorBrush x:Key="PinkColor" Color="#e671b5"/>
-        <SolidColorBrush x:Key="VioletColor" Color="#8133d8"/>
-        <SolidColorBrush x:Key="AzureColor" Color="#7a9df4"/>
-        <SolidColorBrush x:Key="DarkGrayColor" Color="#555555"/>
-        <!-- default textblock -->
-        <Style x:Key="TextBlockStyle" TargetType="TextBlock">
-            <Setter Property="Foreground" Value="#FFFFFF"/>
-            <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="FontWeight" Value="Light"/>
-        </Style>
-        <Style x:Key="PageTitle" TargetType="TextBlock"></Style>
-        <!-- sizes -->
-        <core:Double x:Key="Size18">18</core:Double>
-        <core:Double x:Key="Size24">24</core:Double>
-        <core:Double x:Key="Size28">28</core:Double>
-        <core:Double x:Key="Size32">32</core:Double>
-        <core:Double x:Key="Size36">36</core:Double>
-        <core:Double x:Key="Size40">40</core:Double>
-        <core:Double x:Key="Size45">45</core:Double>
-        <core:Double x:Key="Size50">50</core:Double>
-        <core:Double x:Key="Size55">55</core:Double>
-        <core:Double x:Key="Size60">60</core:Double>
-        <core:Double x:Key="Size72">72</core:Double>
-        <core:Double x:Key="Size80">80</core:Double>
-        <core:Double x:Key="Size90">90</core:Double>
-        <core:Double x:Key="Size200">200</core:Double>
-        <!-- margins -->
-        <Thickness x:Key="BlockMargin"/>
-        <Thickness x:Key="BlockWeatherMargin"/>
-        <Thickness x:Key="BlockTwitterMargin"/>
-        <Thickness x:Key="BlockCategoryEventMargin"/>
-        <Thickness x:Key="TextTopMargin"/>
-        <Thickness x:Key="TextBottomMargin"/>
-        <Thickness x:Key="TextTopBottomMargin"/>
-        <Thickness x:Key="TextTopBottomMarginSmaller"/>
-        <Thickness x:Key="EventIconTopMargin"/>
-        <Thickness x:Key="LoaderTopMargin"/>
-        <!-- images -->
-        <Style x:Key="Icon" TargetType="Image"></Style>
-        <Style x:Key="WeatherIcon" TargetType="Image"></Style>
-        <Style x:Key="SnapshootIcon" TargetType="Image"></Style>
-        <Style x:Key="NavButtonsIcon" TargetType="Image"></Style>
-        <!-- block sizes -->
-        <core:Double x:Key="AttractionBlockSize"/>
-        <core:Double x:Key="EventCategoryBlockSize"/>
-        <core:Double x:Key="EventCalendarBlockSize"/>
-        <core:Double x:Key="EventBlockSize"/>
-        <core:Double x:Key="EventIconSize"/>
-        <core:Double x:Key="LoaderLogoWidth"/>
-        <core:Double x:Key="LoaderWidth"/>
-        <core:Double x:Key="LoaderHeight"/>
-        <core:Double x:Key="WeatherAreaHeight"/>
-        <core:Double x:Key="WeatherAreaWidth"/>
-        <GridLength x:Key="TweetHeight"/>
-        <GridLength x:Key="TweetWidth"/>
-        <core:Double x:Key="CameraHeight"/>
-        <core:Double x:Key="CameraWidth"/>
-        <core:Double x:Key="SnapshootIconSize"/>
-        <core:Double x:Key="NavButtonsIconSize"/>
-        <core:Double x:Key="VideoProgressBackgroundWidth"/>
-        <core:Double x:Key="VideoProgressBackgroundHeight"/>
-        <core:Double x:Key="VideoProgressHeight"/>
-        <core:Double x:Key="VideoButtonSize"/>
-        <!-- button styles -->
-        <Style TargetType="k:KinectTileButton">
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-        <Style x:Key="CalendarButton" TargetType="k:KinectTileButton">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="#333333"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Width" Value="{DynamicResource EventCategoryBlockSize}"/>
-            <Setter Property="Height" Value="{DynamicResource EventCalendarBlockSize}"/>
-        </Style>
-        <!-- application background -->
-        <Style TargetType="Grid" x:Key="TopRow">
-            <Setter Property="Background" Value="#EBEBEB"/>
-        </Style>
-        <LinearGradientBrush x:Key="BackgroundGradientBrush" StartPoint="0.5, 1" EndPoint="0.5, 0">
-            <GradientStop Color="#EBEBEB" Offset="0.0" />
-            <GradientStop Color="#FFFFFF" Offset="0.5" />
-            <GradientStop Color="#EBEBEB" Offset="1.0" />
-        </LinearGradientBrush>
-    </ResourceDictionary>
+    <Style TargetType="ListBox">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <Style x:Key="OldTextBlock" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <Style x:Key="OldGrid" TargetType="Grid">
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    <!-- colors -->
+    <SolidColorBrush x:Key="GrayColor" Color="#252525"/>
+    <SolidColorBrush x:Key="GrayColor2" Color="#3a3a3a"/>
+    <SolidColorBrush x:Key="LightGrayColor" Color="#dbdbdb"/>
+    <SolidColorBrush x:Key="BlueColor" Color="#3498db"/>
+    <SolidColorBrush x:Key="LightBlueColor" Color="#8ecaf3"/>
+    <SolidColorBrush x:Key="YellowColor" Color="#e1b700"/>
+    <SolidColorBrush x:Key="LightYellowColor" Color="#f1e29f"/>
+    <SolidColorBrush x:Key="OrangeColor" Color="#e56c19"/>
+    <SolidColorBrush x:Key="LightOrangeColor" Color="#f1b48a"/>
+    <SolidColorBrush x:Key="GreenColor" Color="#2ecc71"/>
+    <SolidColorBrush x:Key="LightGreenColor" Color="#a6efc5"/>
+    <SolidColorBrush x:Key="PurpleColor" Color="#8e44ad"/>
+    <SolidColorBrush x:Key="LightPurpleColor" Color="#c48fda"/>
+    <SolidColorBrush x:Key="LimeColor" Color="#1abc9c"/>
+    <SolidColorBrush x:Key="LightLimeColor" Color="#85decc"/>
+    <SolidColorBrush x:Key="RedColor" Color="#e74c3c"/>
+    <SolidColorBrush x:Key="LightRedColor" Color="#ed968d"/>
+    <SolidColorBrush x:Key="PinkColor" Color="#e671b5"/>
+    <SolidColorBrush x:Key="VioletColor" Color="#8133d8"/>
+    <SolidColorBrush x:Key="AzureColor" Color="#7a9df4"/>
+    <SolidColorBrush x:Key="DarkGrayColor" Color="#555555"/>
+    <!-- default textblock -->
+    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="#FFFFFF"/>
+        <Setter Property="LineStackingStrategy" Value="BlockLineHeight"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontWeight" Value="Light"/>
+    </Style>
+    <Style x:Key="PageTitle" TargetType="TextBlock"></Style>
+    <!-- sizes -->
+    <core:Double x:Key="Size18">18</core:Double>
+    <core:Double x:Key="Size24">24</core:Double>
+    <core:Double x:Key="Size28">28</core:Double>
+    <core:Double x:Key="Size32">32</core:Double>
+    <core:Double x:Key="Size36">36</core:Double>
+    <core:Double x:Key="Size40">40</core:Double>
+    <core:Double x:Key="Size45">45</core:Double>
+    <core:Double x:Key="Size50">50</core:Double>
+    <core:Double x:Key="Size55">55</core:Double>
+    <core:Double x:Key="Size60">60</core:Double>
+    <core:Double x:Key="Size65">65</core:Double>
+    <core:Double x:Key="Size72">72</core:Double>
+    <core:Double x:Key="Size80">80</core:Double>
+    <core:Double x:Key="Size90">90</core:Double>
+    <core:Double x:Key="Size200">200</core:Double>
+    <!-- margins -->
+    <Thickness x:Key="BlockMargin"/>
+    <Thickness x:Key="BlockMarginLeft"/>
+    <Thickness x:Key="BlockMarginBigger"/>
+    <Thickness x:Key="BlockWeatherMargin"/>
+    <Thickness x:Key="BlockTwitterMargin"/>
+    <Thickness x:Key="BlockCategoryEventMargin"/>
+    <Thickness x:Key="TextTopMargin"/>
+    <Thickness x:Key="TextBottomMargin"/>
+    <Thickness x:Key="TextTopBottomMargin"/>
+    <Thickness x:Key="TextTopBottomMarginSmaller"/>
+    <Thickness x:Key="EventIconTopMargin"/>
+    <Thickness x:Key="LoaderTopMargin"/>
+    <!-- images -->
+    <Style x:Key="Icon" TargetType="Image"></Style>
+    <Style x:Key="WeatherIcon" TargetType="Image"></Style>
+    <Style x:Key="SnapshootIcon" TargetType="Image"></Style>
+    <Style x:Key="NavButtonsIcon" TargetType="Image"></Style>
+    <!-- block sizes -->
+    <core:Double x:Key="AttractionBlockSize"/>
+    <core:Double x:Key="EventCategoryBlockSize"/>
+    <core:Double x:Key="EventCalendarBlockSize"/>
+    <core:Double x:Key="EventBlockSize"/>
+    <core:Double x:Key="EventIconSize"/>
+    <core:Double x:Key="LoaderLogoWidth"/>
+    <core:Double x:Key="LoaderWidth"/>
+    <core:Double x:Key="LoaderHeight"/>
+    <core:Double x:Key="WeatherAreaHeight"/>
+    <core:Double x:Key="WeatherAreaWidth"/>
+    <GridLength x:Key="TweetHeight"/>
+    <GridLength x:Key="TweetWidth"/>
+    <core:Double x:Key="CameraHeight"/>
+    <core:Double x:Key="CameraWidth"/>
+    <core:Double x:Key="SnapshootIconSize"/>
+    <core:Double x:Key="NavButtonsIconSize"/>
+    <core:Double x:Key="CodeQRAreaHeight"/>
+    <core:Double x:Key="CodeQRAreaWidth"/>
+    <core:Double x:Key="PictureHeight"/>
+    <core:Double x:Key="PictureWidth"/>
+    <core:Double x:Key="QRSize"/>
+    <core:Double x:Key="CodeQRAreaWidthRight"/>
+    <core:Double x:Key="VideoProgressBackgroundWidth"/>
+    <core:Double x:Key="VideoProgressBackgroundHeight"/>
+    <core:Double x:Key="VideoProgressHeight"/>
+    <core:Double x:Key="VideoButtonSize"/>
+    <!-- button styles -->
+    <Style TargetType="k:KinectTileButton">
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>
+    <Style x:Key="CalendarButton" TargetType="k:KinectTileButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#333333"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Width" Value="{DynamicResource EventCategoryBlockSize}"/>
+        <Setter Property="Height" Value="{DynamicResource EventCalendarBlockSize}"/>
+    </Style>
+    <!-- application background -->
+    <Style TargetType="Grid" x:Key="TopRow">
+        <Setter Property="Background" Value="#EBEBEB"/>
+    </Style>
+    <LinearGradientBrush x:Key="BackgroundGradientBrush" StartPoint="0.5, 1" EndPoint="0.5, 0">
+        <GradientStop Color="#EBEBEB" Offset="0.0" />
+        <GradientStop Color="#FFFFFF" Offset="0.5" />
+        <GradientStop Color="#EBEBEB" Offset="1.0" />
+    </LinearGradientBrush>
+</ResourceDictionary>

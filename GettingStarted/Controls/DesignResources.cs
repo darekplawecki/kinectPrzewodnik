@@ -28,6 +28,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["Size50"] = ConvertSize(50);
             Application.Current.Resources["Size55"] = ConvertSize(55);
             Application.Current.Resources["Size60"] = ConvertSize(60);
+            Application.Current.Resources["Size65"] = ConvertSize(65);
             Application.Current.Resources["Size72"] = ConvertSize(72);
             Application.Current.Resources["Size80"] = ConvertSize(80);
             Application.Current.Resources["Size90"] = ConvertSize(90);
@@ -44,7 +45,9 @@ namespace Przewodnik.Controls
             Application.Current.Resources["WeatherIcon"] = style;
 
             Application.Current.Resources["BlockMargin"] = new Thickness(0.02315 * height);
-            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(15), Bottom = ConvertSize(0), Right = ConvertSize(15), Top = ConvertSize(0) };
+            Application.Current.Resources["BlockMarginLeft"] = new Thickness(ConvertSize(40));
+            Application.Current.Resources["BlockMarginBigger"] = new Thickness { Left = ConvertSize(40), Bottom = 0, Right = 0, Top = 0 };
+            Application.Current.Resources["BlockWeatherMargin"] = new Thickness { Left = ConvertSize(15), Bottom = 0, Right = ConvertSize(15), Top = 0 };
             Application.Current.Resources["BlockTwitterMargin"] = new Thickness { Left = 0.02315 * height, Bottom = 0.01389 * height, Right = 0.02315 * height, Top = 0.01389 * height };
             Application.Current.Resources["TextTopMargin"] = new Thickness { Left = 0, Bottom = 0, Right = 0, Top = 0.01150 * height };
             Application.Current.Resources["TextBottomMargin"] = new Thickness { Left = 0, Bottom = 0.01150 * height, Right = 0, Top = 0 };
@@ -75,6 +78,12 @@ namespace Przewodnik.Controls
             Application.Current.Resources["NavButtonsIconSize"] = ConvertSize(125);
             Application.Current.Resources["CameraWidth"] = ConvertSize(1067);
             Application.Current.Resources["CameraHeight"] = ConvertSize(800);
+            Application.Current.Resources["CodeQRAreaWidth"] = ConvertSize(1500);
+            Application.Current.Resources["CodeQRAreaHeight"] = ConvertSize(560);
+            Application.Current.Resources["PictureWidth"] = ConvertSize(640);
+            Application.Current.Resources["PictureHeight"] = ConvertSize(480);
+            Application.Current.Resources["QRSize"] = ConvertSize(315);
+            Application.Current.Resources["CodeQRAreaWidthRight"] = ConvertSize(740);
             Application.Current.Resources["VideoProgressBackgroundWidth"] = ConvertSize(1788);
             Application.Current.Resources["VideoProgressBackgroundHeight"] = ConvertSize(90);
             Application.Current.Resources["VideoProgressHeight"] = ConvertSize(15);

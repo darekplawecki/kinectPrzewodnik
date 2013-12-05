@@ -104,9 +104,6 @@
                                                         </Setter.Value>
                                                     </Setter>
                                                 </DataTrigger>
-                                                <DataTrigger Binding="{Binding WeatherState}" Value="2">
-                                                    <Setter Property="Visibility" Value="Hidden"/>
-                                                </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </Grid.Style>
@@ -138,9 +135,6 @@
                                                             <TranslateTransform Y="{Binding ElementName=container, Path=ActualHeight}" />
                                                         </Setter.Value>
                                                     </Setter>
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{Binding WeatherState}" Value="0">
-                                                    <Setter Property="Visibility" Value="Hidden"/>
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
