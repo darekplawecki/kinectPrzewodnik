@@ -7,20 +7,33 @@ using System;
 
 namespace Przewodnik.ViewModels
 {
-    public class WeatherViewModel
+    public class WeatherViewModel : ViewModelBase
     {
         public WeatherModel wm;
         public DispatcherTimer timer;
+
+        private int state;
+        public int WeatherState
+        {
+            get
+            {
+                return state;
+            }
+
+            set
+            {
+                state = value;
+                OnPropertyChanged("WeatherState");
+            }
+        }
 
         public WeatherViewModel()
         {
             WeatherLoader wl = WeatherLoader.Instance;
             wm = new WeatherModel();
-            wm.WeatherImage = GetWheatherImage(wl.html);
-            wm.Temperature = GetTemperature(wl.html);
-            wm.Description = GetDescription(wl.html);
-            //wm.NameDay = GetNameDayNames(wl.htmlNameDay);
-            wm.WeatherState = 0;
+            wm.WeatherImage = wl.html != "" ? GetWheatherImage(wl.html) : "../Content/Weather/ico4.png";
+            wm.Temperature = wl.html != "" ? GetTemperature(wl.html) : "-°";
+            WeatherState = 0;
 
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromSeconds(5);
@@ -31,10 +44,10 @@ namespace Przewodnik.ViewModels
 
         private void ChangeState(object sender, EventArgs e)
         {
-            if (wm.WeatherState == 0)
-                wm.WeatherState = 1;
+            if (WeatherState == 0)
+                WeatherState = 1;
             else
-                wm.WeatherState = 0;
+                WeatherState = 0;
         }
 
         public static string GetWheatherImage(string file)
@@ -61,40 +74,6 @@ namespace Przewodnik.ViewModels
                 temperature = m.Groups[1].ToString();
             }
             return temperature + "°";
-        }
-
-        public static string GetDescription(string file)
-        {
-            string pattern = "<span class=\"strong\"><strong>(.*?)</strong></span>";
-            Match m = Regex.Match(file, @pattern);
-            string description = "";
-
-            if (m.Success)
-            {
-                description = m.Groups[1].ToString();
-            }
-
-            byte[] bytes = Encoding.Default.GetBytes(description);
-            description = Encoding.UTF8.GetString(bytes);
-
-            return description;
-        }
-
-        public static string GetNameDayNames(string file)
-        {
-            string pattern = "<div id=\"nameDay\" class=\"small\">(.*?)</div>";
-            Match m = Regex.Match(file, @pattern);
-            string nameDayNames = "";
-
-            if (m.Success)
-            {
-                nameDayNames = m.Groups[1].ToString();
-            }
-
-            byte[] bytes = Encoding.Default.GetBytes(nameDayNames);
-            nameDayNames = Encoding.UTF8.GetString(bytes);
-
-            return nameDayNames;
         }
 
     }

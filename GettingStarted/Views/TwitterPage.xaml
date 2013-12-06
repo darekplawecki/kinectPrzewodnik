@@ -20,12 +20,15 @@
 
     <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" x:Name="firstTextBlock" Style="{DynamicResource PageTitle}" FontSize="{DynamicResource Size72}">z ostatniej chwili...</TextBlock>
 
+    <StackPanel Grid.Row="1" Grid.Column="1">
+        <TextBlock Name="ErrorContent" Text="" FontSize="{DynamicResource Size36}"></TextBlock>
+        <TextBlock Name="TwitterContent" Text=""></TextBlock>
+    </StackPanel>
+
     <k:KinectScrollViewer Grid.Row="1" Grid.Column="1" Name="ScrollViewer" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" ContentMargin="0" Background="Transparent" HoverBackground="Transparent">
 
-        <StackPanel Margin="0,-40,0,0" Orientation="Vertical" Width="Auto">
+        <StackPanel Margin="0,0,0,0" Orientation="Vertical" Width="Auto">
             <!--<k:KinectCircleButton Height="30" Click="RefreshIt_Action"></k:KinectCircleButton>-->
-            <TextBlock Name="ErrorContent" Text="" FontSize="20"></TextBlock>
-            <TextBlock Name="TwitterContent" Text=""></TextBlock>
             <ListBox x:Name="MainList" HorizontalAlignment="Stretch" VerticalAlignment="Top" Background="Transparent" HorizontalContentAlignment="Stretch" BorderThickness="0">
                 <ListBox.Resources>
                     <converters:DateTimeConverter x:Key="dateConverter" />

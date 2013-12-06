@@ -106,6 +106,7 @@
     <core:Double x:Key="VideoProgressBackgroundHeight"/>
     <core:Double x:Key="VideoProgressHeight"/>
     <core:Double x:Key="VideoButtonSize"/>
+    <core:Double x:Key="MicrophoneAreaHeight"/>
     <!-- button styles -->
     <Style TargetType="k:KinectTileButton">
         <Setter Property="BorderThickness" Value="0"/>

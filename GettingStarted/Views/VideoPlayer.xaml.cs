@@ -37,7 +37,7 @@ namespace Przewodnik.Views
         {
             InitializeComponent();
             this.navigator = navigator;
-
+            
             try
             {
                 sr = new SoundRecognizer(MainWindow.KinectController.KinectSensorChooser.Kinect);
@@ -49,6 +49,7 @@ namespace Przewodnik.Views
             {
                 navigator.GoHome();
             }
+            
             viewModel = new VideoPlayerViewModel();
             VideoPlayerGrid.DataContext = viewModel;
 
@@ -76,6 +77,7 @@ namespace Przewodnik.Views
         public void OnNavigateTo()
         {
             pageFactory.ShowTopBar(false);
+            
             try
             {
                 sr.Start();
@@ -153,16 +155,18 @@ namespace Przewodnik.Views
         private void stopVideo(object sender, EventArgs e)
         {
             PauseVideo();
+            MicrophoneStatusPlay.Text = "Powiedz START, aby odtwarzać dalej";
         }
 
         private void dontUnderstand(object sender, EventArgs e)
         {
-
+            MicrophoneStatusPlay.Text = "Nie rozumiem. Powtórz proszę!";
         }
 
         private void playVideo(object sender, EventArgs e)
         {
             PlayVideo();
+            MicrophoneStatusPlay.Text = "Powiedz STOP, aby zatrzymać";
         }
 
 

@@ -27,7 +27,7 @@ namespace Przewodnik.Utilities.DataLoader
         public void PeriodLoad()
         {
             new TwitterLoader().LoadTwitter();
-            //TODO tu do wstawienia jest ładowanie pogody
+            WeatherLoader.Instance.LoadWeather();
         }
 
         private void CalendarEventLoaded(object sender, EventArgs eventArgs)

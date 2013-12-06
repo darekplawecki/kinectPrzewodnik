@@ -151,11 +151,12 @@ namespace Przewodnik
             if (e == null)
             {
                 MessageBox.Show("Brak połączenia z Internetem. Sprawdź swoje łącze i spróbuj ponownie");
-                this.Dispatcher.Invoke(new Action(() => this.Close()));
+                this.Close();
             }
             else
             {
-                LoadWeather();
+                SetActualWeather();
+                WeatherLoader.Instance.loadWeather += LoadWeather;
                 _periodicLoader.Start();
                 _movementDetector.IsMovingChanged -= OnIsMouseMovingChangedNoWake;
                 _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;
@@ -209,18 +210,25 @@ namespace Przewodnik
             _navigator.GoBack();
         }
 
-        private void LoadWeather()
+        private void LoadWeather(object sender, EventArgs e)
+        {
+            SetActualWeather();
+        }
+
+        private void SetActualWeather()
         {
             wvm = new WeatherViewModel();
-
-            WeatherImage.Dispatcher.Invoke(new Action(() => WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative))));
-            WeatherDegree.Dispatcher.Invoke(new Action(() => WeatherDegree.Text = wvm.wm.Temperature));
-
             DateTime dt = DateTime.Now;
-            DayOfWeek.Dispatcher.Invoke(new Action(() => DayOfWeek.Text = dt.ToString("dddd").ToLower()));
-            Today.Dispatcher.Invoke(new Action(() => Today.Text = dt.ToString("m").ToLower()));
 
-            Weather.Dispatcher.Invoke(new Action(() =>  Weather.DataContext = wvm.wm));
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                WeatherImage.Source = new BitmapImage(new Uri(wvm.wm.WeatherImage, UriKind.Relative));
+                WeatherDegree.Text = wvm.wm.Temperature;
+                DayOfWeek.Text = dt.ToString("dddd", AppResources.GetCultureInfo()).ToLower();
+                Today.Text = dt.ToString("m", AppResources.GetCultureInfo()).ToLower();
+            }));
+
+            this.Dispatcher.BeginInvoke(new ThreadStart(() => Weather.DataContext = wvm));
         }
 
     }

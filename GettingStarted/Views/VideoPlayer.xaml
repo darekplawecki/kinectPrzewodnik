@@ -11,6 +11,24 @@
 
     <MediaElement x:Name="Player" Width="Auto" Height="Auto" Stretch="Fill" LoadedBehavior="Manual" ScrubbingEnabled="False" />
 
+    <k:KinectCircleButton Name="BackButton" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Click="backClicked" Foreground="Transparent" Background="Transparent" BorderThickness="0">
+        <Image Source="/Content/Design/Images/back-button.png"></Image>
+    </k:KinectCircleButton>
+
+    <Grid HorizontalAlignment="Right" VerticalAlignment="Top" Height="{DynamicResource MicrophoneAreaHeight}" Margin="0,30,30,0">
+        <Rectangle Width="Auto" Height="Auto" Fill="{StaticResource GrayColor}" RadiusX="4" RadiusY="4" Opacity="0.6"></Rectangle>
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15">
+            <Grid>
+                <TextBlock x:Name="MicrophoneStatusPlay" Text="Powiedz STOP, aby zatrzymać" VerticalAlignment="Center"
+                                           FontSize="{DynamicResource Size36}" LineStackingStrategy="BlockLineHeight" LineHeight="{DynamicResource Size45}" FontWeight="Light" Foreground="White" >
+                </TextBlock>
+            </Grid>
+
+            <Image Source="../Content/Design/Images/microphone.png" Margin="30,0,0,0"></Image>
+        </StackPanel>
+    </Grid>
+
     <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <k:KinectCircleButton Name="PlayButton" Foreground="Transparent" Background="Transparent" BorderThickness="0" Width="{DynamicResource VideoButtonSize}" Height="{DynamicResource VideoButtonSize}" Visibility="{Binding CanResume, Converter={StaticResource InvertibleBooleanToVisibilityConverter}}" Click="PlayButton_Click">
             <Image Source="../Content/Design/Images/video_player_play.png"></Image>
@@ -24,14 +42,11 @@
             <Image Source="../Content/Design/Images/video_player_replay.png"></Image>
         </k:KinectCircleButton>
 
-        <k:KinectCircleButton Name="BackButton" Foreground="SkyBlue" Background="CadetBlue" BorderThickness="0" Width="200" Height="200" Click="backClicked">
-
-        </k:KinectCircleButton>
     </Grid>
 
-    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,60" Width="{DynamicResource VideoProgressBackgroundWidth}" Height="{DynamicResource VideoProgressBackgroundHeight}">
+    <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,30" Width="{DynamicResource VideoProgressBackgroundWidth}" Height="{DynamicResource VideoProgressBackgroundHeight}">
 
-        <Rectangle Width="Auto" Height="Auto" Fill="{StaticResource GrayColor}" RadiusX="4" RadiusY="4" Opacity="0.7"></Rectangle>
+        <Rectangle Width="Auto" Height="Auto" Fill="{StaticResource GrayColor}" RadiusX="4" RadiusY="4" Opacity="0.6"></Rectangle>
 
         <Grid Grid.Column="1" Width="Auto" Height="Auto">
             <Grid.ColumnDefinitions>

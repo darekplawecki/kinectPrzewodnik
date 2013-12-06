@@ -544,6 +544,7 @@
     <Resource Include="Content\Design\Images\video_player_pause.png" />
     <Resource Include="Content\Design\Images\video_player_play.png" />
     <Resource Include="Content\Design\Images\video_player_replay.png" />
+    <Resource Include="Content\Design\Images\microphone.png" />
     <Content Include="Content\Design\Sounds\button-enter.wav" />
     <Content Include="Content\Design\Sounds\button-select.wav" />
     <Resource Include="Content\Attractions\Photos\fontanna1.jpg" />

@@ -88,6 +88,7 @@ namespace Przewodnik.Controls
             Application.Current.Resources["VideoProgressBackgroundHeight"] = ConvertSize(90);
             Application.Current.Resources["VideoProgressHeight"] = ConvertSize(15);
             Application.Current.Resources["VideoButtonSize"] = ConvertSize(298);
+            Application.Current.Resources["MicrophoneAreaHeight"] = ConvertSize(80);
 
         }
 
