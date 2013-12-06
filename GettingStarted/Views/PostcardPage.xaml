@@ -17,7 +17,7 @@
         <Image Name="MaskedColor" Stretch="Fill"/>
         <Image Name="CameraFrame" Source="../Content/Postcard/camera_frame_3.png" Stretch="Fill"></Image>
     </Grid>
-
+    
     <StackPanel x:Name="NavigationButtons"  Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,50">
         <k:KinectTileButton Name="PrevButton" Grid.Column="0" Width="{DynamicResource NavButtonsIconSize}" Height="{DynamicResource NavButtonsIconSize}" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="Transparent" Background="Transparent" BorderThickness="0" Click="PrevButton_Click">
             <Image Source="../Content/Postcard/ico_prev.png"></Image>
@@ -47,7 +47,7 @@
                         <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
                         <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                     </Grid>
-                    <TextBlock Name="pomin" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    <TextBlock Name="QuickStartCancelText" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                 </StackPanel>
             </k:KinectTileButton>
         </StackPanel>
@@ -85,4 +85,18 @@
             </Grid>
         </StackPanel>
     </Grid>
+
+    <Canvas x:Name="InfoMessageCanvas" VerticalAlignment="Center" HorizontalAlignment="Center" Width="600" Height="600" Visibility="Hidden" >
+        <TextBlock x:Name="InfoMessageTextBlock"
+                   FontSize="{DynamicResource Size60}"
+                   TextWrapping="Wrap"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" 
+                   FontWeight="Light"
+                   TextAlignment="Center"
+                   Width="600"
+                   Background="White"
+                   Opacity="0.8" />
+    </Canvas>
+    
 </Grid>

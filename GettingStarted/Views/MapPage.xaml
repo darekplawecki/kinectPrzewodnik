@@ -8,53 +8,17 @@
 
     <Grid x:Name="MapGrid" Margin="0 0 0 0">
 
-        <StackPanel Orientation="Vertical">
+        <m:Map x:Name="MasterBingMap" CredentialsProvider="AoYws8aLN6--qMJ06VlJ6uj2rZWoiDKX1h7NESbZKANua_yepBlEBu3ZuybMUN9q" Center="{Binding MapCenterPoint, Mode=TwoWay}" ZoomLevel="{Binding MapZoomLevel,Mode=TwoWay}" Mode="Road" MinHeight="800">
+        </m:Map>
 
-            <k:KinectScrollViewer x:Name="CategoryScrollViewer" Visibility="{Binding ButtonVisibility}" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" 
-                              Background="Transparent" HoverBackground="Transparent" MaxHeight="150" >
-                <StackPanel Orientation="Horizontal" Margin="-100, 0,-100,0" >
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-                    <k:KinectTileButton x:Name="B_centrum" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   
-                                    Background="{StaticResource RedColor}" Click="home_Click" >
-                        <StackPanel Orientation="Vertical">
-                            <Grid VerticalAlignment="Top">
-                                <Image Source="../Content/Events/Icons/ico_home.png" Style="{DynamicResource Icon}"></Image>
-                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                            </Grid>
-                            <TextBlock Name="centrum" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" 
-                                   LineHeight="{DynamicResource Size36}"></TextBlock>
-                        </StackPanel>
-                    </k:KinectTileButton>
-
-                    <k:KinectTileButton x:Name="B_sciezka1" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource OrangeColor}" Click="sciezka1_Click">
-                        <StackPanel Orientation="Vertical">
-                            <Grid>
-                                <Image Source="../Content/Events/Icons/ico_walking.png" Style="{DynamicResource Icon}"></Image>
-                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                            </Grid>
-                            <TextBlock Name="spacer" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
-                        </StackPanel>
-                    </k:KinectTileButton>
-
-                    <k:KinectTileButton x:Name="B_sciezka2" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource VioletColor}" Click="sciezka2_Click">
-                        <StackPanel Orientation="Vertical">
-                            <Grid>
-                                <Image Source="../Content/Events/Icons/ico_touristic.png" Style="{DynamicResource Icon}"></Image>
-                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                            </Grid>
-                            <TextBlock Name="zwiedzanie" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
-                        </StackPanel>
-                    </k:KinectTileButton>
-
-                    <k:KinectTileButton x:Name="B_sciezka3" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource DarkGrayColor}" Click="sciezka3_Click">
-                        <StackPanel Orientation="Vertical">
-                            <Grid>
-                                <Image Source="../Content/Events/Icons/ico_bicycle.png" Style="{DynamicResource Icon}"></Image>
-                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                            </Grid>
-                            <TextBlock Name="rowerem" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
-                        </StackPanel>
-                    </k:KinectTileButton>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left">
+                <StackPanel Orientation="Vertical" Margin="10, 10, 0, 0" >
 
                     <k:KinectTileButton x:Name="B_atrakcje" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource BlueColor}" Click="atrakcje_turystyczne_Click">
                         <StackPanel Orientation="Vertical">
@@ -66,26 +30,13 @@
                         </StackPanel>
                     </k:KinectTileButton>
 
-                    <k:KinectTileButton x:Name="B_koscioly" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   
-                                    Background="{StaticResource GreenColor}" Click="koscioly_Click">
-                        <StackPanel Orientation="Vertical">
-                            <Grid VerticalAlignment="Top">
-                                <Image Source="../Content/Events/Icons/ico_church.png" Style="{DynamicResource Icon}"></Image>
-                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                            </Grid>
-                            <TextBlock Name="koscioly" HorizontalAlignment="Center" 
-                                   Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextTopMargin}" FontSize="{DynamicResource Size36}" 
-                                   LineHeight="{DynamicResource Size36}"></TextBlock>
-                        </StackPanel>
-                    </k:KinectTileButton>
-
-                    <k:KinectTileButton x:Name="B_kina" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource LightRedColor}" Click="kina_Click">
+                    <k:KinectTileButton x:Name="B_muzea" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource YellowColor}" Click="muzea_Click">
                         <StackPanel Orientation="Vertical">
                             <Grid>
-                                <Image Source="../Content/Events/Icons/ico_cinema.png" Style="{DynamicResource Icon}"></Image>
+                                <Image Source="../Content/Events/Icons/ico_museum.png" Style="{DynamicResource Icon}"></Image>
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
-                            <TextBlock Name="kina" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                            <TextBlock Name="muzea" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -99,6 +50,32 @@
                         </StackPanel>
                     </k:KinectTileButton>
 
+                    <k:KinectTileButton x:Name="B_koscioly" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   
+                                        Background="{StaticResource GreenColor}" Click="koscioly_Click">
+                        <StackPanel Orientation="Vertical">
+                            <Grid VerticalAlignment="Top">
+                                <Image Source="../Content/Events/Icons/ico_church.png" Style="{DynamicResource Icon}"></Image>
+                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                            </Grid>
+                            <TextBlock Name="koscioly" HorizontalAlignment="Center" 
+                                        Style="{DynamicResource TextBlockStyle}" Margin="{DynamicResource TextTopMargin}" FontSize="{DynamicResource Size36}" 
+                                        LineHeight="{DynamicResource Size36}"></TextBlock>
+                        </StackPanel>
+                    </k:KinectTileButton>
+
+                    <k:KinectTileButton x:Name="B_kina" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource LightRedColor}" Click="kina_Click">
+                        <StackPanel Orientation="Vertical">
+                            <Grid>
+                                <Image Source="../Content/Events/Icons/ico_cinema.png" Style="{DynamicResource Icon}"></Image>
+                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                            </Grid>
+                            <TextBlock Name="kina" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                        </StackPanel>
+                    </k:KinectTileButton>
+
+                </StackPanel>
+                <StackPanel Orientation="Vertical" Margin="0, 10, 0, 0" >
+
                     <k:KinectTileButton x:Name="B_zakupy" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource PinkColor}" Click="centra_handlowe_Click">
                         <StackPanel Orientation="Vertical">
                             <Grid>
@@ -106,16 +83,6 @@
                                 <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                             </Grid>
                             <TextBlock Name="zakupy" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
-                        </StackPanel>
-                    </k:KinectTileButton>
-
-                    <k:KinectTileButton x:Name="B_muzea" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource YellowColor}" Click="muzea_Click">
-                        <StackPanel Orientation="Vertical">
-                            <Grid>
-                                <Image Source="../Content/Events/Icons/ico_museum.png" Style="{DynamicResource Icon}"></Image>
-                                <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                            </Grid>
-                            <TextBlock Name="muzea" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
                         </StackPanel>
                     </k:KinectTileButton>
 
@@ -160,30 +127,85 @@
                     </k:KinectTileButton>
 
                 </StackPanel>
-            </k:KinectScrollViewer>
-            <m:Map x:Name="MasterBingMap" CredentialsProvider="AoYws8aLN6--qMJ06VlJ6uj2rZWoiDKX1h7NESbZKANua_yepBlEBu3ZuybMUN9q" Center="{Binding MapCenterPoint, Mode=TwoWay}" ZoomLevel="{Binding MapZoomLevel,Mode=TwoWay}" Mode="Road" MinHeight="800">
-                <Canvas x:Name="QuickStartCanvas" Visibility="{Binding QuickStartVisibility}" >
-                    <StackPanel Orientation="Horizontal" >
+            </StackPanel>
 
-                        <TextBlock x:Name="QuickStartTextBlock" Text="{Binding QuickStartText}" FontSize="{DynamicResource Size80}"  
-                               TextWrapping="Wrap" Width="800" FontWeight="Light"
-                               TextAlignment="Center" Margin="100,50,100,0" Background="White" Opacity="0.8"></TextBlock>
+            <StackPanel Grid.Column="1"  Orientation="Vertical" HorizontalAlignment="Right" Margin="0, 10, 10, 0">
 
-                        <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource RedColor}" Click="QuickStartCancel_Click">
-                            <StackPanel Orientation="Vertical">
-                                <Grid>
-                                    <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
-                                    <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
-                                </Grid>
-                                <TextBlock Name="pomin" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
-                            </StackPanel>
-                        </k:KinectTileButton>
-
+                <k:KinectTileButton x:Name="B_centrum" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   
+                                        Background="{StaticResource RedColor}" Click="home_Click" >
+                    <StackPanel Orientation="Vertical">
+                        <Grid VerticalAlignment="Top">
+                            <Image Source="../Content/Events/Icons/ico_home.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Name="centrum" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" 
+                                       LineHeight="{DynamicResource Size36}"></TextBlock>
                     </StackPanel>
-                </Canvas>
-            </m:Map>
+                </k:KinectTileButton>
 
-        </StackPanel>
+                <k:KinectTileButton Visibility="Hidden" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource OrangeColor}" Click="sciezka1_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_walking.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+
+                <k:KinectTileButton x:Name="B_sciezka1" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource OrangeColor}" Click="sciezka1_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_walking.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Name="spacer" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+
+                <k:KinectTileButton x:Name="B_sciezka2" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource VioletColor}" Click="sciezka2_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_touristic.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Name="zwiedzanie" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+
+                <k:KinectTileButton x:Name="B_sciezka3" Visibility="{Binding ButtonVisibility}" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource DarkGrayColor}" Click="sciezka3_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_bicycle.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Name="rowerem" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+
+            </StackPanel>
+
+        </Grid>
+
+        <Canvas x:Name="QuickStartCanvas" Visibility="{Binding QuickStartVisibility}" >
+            <StackPanel Orientation="Horizontal" >
+
+                <TextBlock x:Name="QuickStartTextBlock" Text="{Binding QuickStartText}" FontSize="{DynamicResource Size80}"  
+                            TextWrapping="Wrap" Width="800" FontWeight="Light"
+                            TextAlignment="Center" Margin="100,50,100,0" Background="White" Opacity="0.8"></TextBlock>
+
+                <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource RedColor}" Click="QuickStartCancel_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Grid>
+                            <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
+                        </Grid>
+                        <TextBlock Name="pomin" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
+                    </StackPanel>
+                </k:KinectTileButton>
+
+            </StackPanel>
+        </Canvas>
 
         <Image x:Name="InteractioIcoZoom" Source="../Content/zoom.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />
         <Image x:Name="InteractioIcoZoomPlus" Source="../Content/zoom_plus.png" Opacity="0.5" Visibility="{ Binding InteractionIcoZoomPlusVisibility}" VerticalAlignment="Center" HorizontalAlignment="Center" Width="128" Height="128" />

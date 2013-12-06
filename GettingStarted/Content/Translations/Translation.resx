@@ -334,4 +334,7 @@
   <data name="M_video" xml:space="preserve">
     <value>video</value>
   </data>
+  <data name="P_blad_serwera" xml:space="preserve">
+    <value>Wystąpił problem z serwerem zewnętrznym, zdjęcie nie zostało załadowane.</value>
+  </data>
 </root>

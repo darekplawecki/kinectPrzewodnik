@@ -72,14 +72,18 @@ namespace Przewodnik
 
         public IKinectPage GetMapPageGrid()
         {
-            _mapPage = new MapPage(this);
+            if (_mapPage == null) _mapPage = new MapPage(this);
             return _mapPage;
         }
 
         public IKinectPage GetPostcardPageGrid()
         {
-            _postcardPage = new PostcardPage(this);
+            if (_postcardPage == null) _postcardPage = new PostcardPage(this);
             return _postcardPage;
+        }
+        public IKinectPage PostcardPage
+        {
+            get { return _postcardPage; }
         }
 
         public IKinectPage GetVideoPlayer()

@@ -27,8 +27,8 @@ namespace Przewodnik.Utilities.DataLoader
         }
 
 
-        BingMap _bingMap;
-        Location _startLocation = new Location(51.109521, 17.046638);
+        private BingMap _bingMap;
+        private Location _startLocation = new Location(51.110493, 17.028451);
 
         private Boolean _firstRun = true;
 

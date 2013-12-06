@@ -12,7 +12,7 @@ namespace Przewodnik.ViewModels
 {
     public class MapViewModel : ViewModelBase
     {
-        private const double ACCEPTED_HAND_MOVING = 0.05;
+        private const double ACCEPTED_HAND_MOVING = 0.06;
         private const double SPEED_ZOOMING = 0.01; // zalezy od parametru oraz jak zmienila sie odleglosc rak, od momentu zlapania
         private const double SPEED_MOVING = 1.0;
 
@@ -50,6 +50,7 @@ namespace Przewodnik.ViewModels
             set
             {
                 _mapZoomLevel = value;
+                computeDependsMovementZoom();
                 OnPropertyChanged("MapZoomLevel");
             }
         }
@@ -141,11 +142,6 @@ namespace Przewodnik.ViewModels
 
             _bingMap = _loader.BingMap;
 
-            BingMap.CenterLocation = _loader.StartLocation;
-            MapCenterPoint = BingMap.CenterLocation;
-            MapZoomLevel = 14;
-            computeDependsMovementZoom();
-
             _kinectController = MainWindow.KinectController;
             _kinectController.PropertyChanged += KinectControllerPropertyChanged;
 
@@ -157,10 +153,11 @@ namespace Przewodnik.ViewModels
             {
                 QuickStartVisibility = Visibility.Visible;
                 QuickStartText = AppResources.GetText("S_Mapa_przesuniecie");
-                _buttonVisibility = Visibility.Hidden;
+                ButtonVisibility = Visibility.Hidden;
             }
             else
             {
+                ButtonVisibility = Visibility.Visible;
                 QuickStartVisibility = Visibility.Hidden;
             }
 
@@ -183,7 +180,8 @@ namespace Przewodnik.ViewModels
                         if (newZoom <= 19)
                         {
                             MapZoomLevel = newZoom;
-                            computeDependsMovementZoom();
+                            _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
+                            _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                         }
 
                         // quickstart
@@ -201,7 +199,8 @@ namespace Przewodnik.ViewModels
                         if (newZoom >= 3)
                         {
                             MapZoomLevel = newZoom;
-                            computeDependsMovementZoom();
+                            _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
+                            _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                         }
 
                         // quickstart
@@ -319,22 +318,12 @@ namespace Przewodnik.ViewModels
         private void StartTimer()
         {
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            int _counter = COUNTER;
+            timer.Interval = TimeSpan.FromMilliseconds(700);
             QuickStartVisibility = Visibility.Hidden;
             timer.Tick += (s, ee) =>
             {
-                if (_counter == 0)
-                {
-                    QuickStartVisibility = Visibility.Visible;
-                    timer.Stop();
-
-                }
-                else
-                {
-                    _counter--;
-                    QuickStartVisibility = Visibility.Hidden;
-                }
+                QuickStartVisibility = Visibility.Visible;
+                timer.Stop();
             };
 
             timer.Start();
@@ -386,9 +375,14 @@ namespace Przewodnik.ViewModels
 
         public void defaultLocation()
         {
-            BingMap.CenterLocation.Longitude = 17.046638;
-            BingMap.CenterLocation.Latitude = 51.109521;
+            defaultLocation(14);
+        }
+
+        public void defaultLocation(int zoom)
+        {
+            BingMap.CenterLocation = new Location(_loader.StartLocation);
             MapCenterPoint = BingMap.CenterLocation;
+            MapZoomLevel = zoom;
         }
 
     }

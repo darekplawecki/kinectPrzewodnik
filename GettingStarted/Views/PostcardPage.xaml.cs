@@ -17,7 +17,8 @@ namespace Przewodnik.Views
 
     partial class PostcardPage : IKinectPage
     {
-        private const double ACCEPTED_HAND_MOVING = 0.05;
+        private const double ACCEPTED_HAND_MOVING = 0.2;
+
         private const int COUNTER = 3;
 
         private double _distanceTwoHand;
@@ -31,9 +32,17 @@ namespace Przewodnik.Views
         private int _directionBackgroundPhotos;
 
         private Boolean _quickStartState = true;
+        public Boolean QuickStartState
+        {
+            get { return _quickStartState; }
+            set
+            {
+                _quickStartState = value;
+            }
+        }
         private int _quickStartStep;
 
-        private KinectPageFactory pageFactory;
+        private KinectPageFactory _pageFactory;
 
         private KinectController _kinectController;
 
@@ -41,7 +50,7 @@ namespace Przewodnik.Views
         public PostcardPage(KinectPageFactory pageFactory)
         {
             InitializeComponent();
-            this.pageFactory = pageFactory;
+            _pageFactory = pageFactory;
 
             _kinectController = MainWindow.KinectController;
             _kinectController.PropertyChanged += KinectControllerPropertyChanged;
@@ -63,20 +72,7 @@ namespace Przewodnik.Views
             BackgroundPhoto.ContentTemplate = Application.Current.Resources["NextImageTransition"] as DataTemplate;
             BackgroundPhoto.Content = _backgroundPhotos[_actualBackgroundPhotosIndex];
 
-            // Samouczek
-            _quickStartStep = _quickStartState ? 1 : 0;
-            if (_quickStartStep == 1)
-            {
-                QuickStartCanvas.Visibility = Visibility.Visible;
-                QuickStartTextBlock.Text = AppResources.GetText("S_Foto_przesuniecie");
-
-                CameraFrame.Visibility = Visibility.Hidden;
-                NavigationButtons.Visibility = Visibility.Hidden;
-            }
-            else
-            {
-                QuickStartCanvas.Visibility = Visibility.Hidden;
-            }
+            prepareTranslation();
         }
 
         private void KinectControllerPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -131,6 +127,8 @@ namespace Przewodnik.Views
                             if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1)
                             {
                                 TransitToNextImage();
+                                _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
+                                _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                             }
                         }
                         else
@@ -138,6 +136,8 @@ namespace Przewodnik.Views
                             if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1)
                             {
                                 TransitToPreviousImage();
+                                _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
+                                _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                             }
                         }
 
@@ -161,6 +161,8 @@ namespace Przewodnik.Views
                             if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1)
                             {
                                 TransitToNextImage();
+                                _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
+                                _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                             }
                         }
                         else
@@ -168,6 +170,8 @@ namespace Przewodnik.Views
                             if (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1)
                             {
                                 TransitToPreviousImage();
+                                _positionRightHand = new Point(_kinectController.RightHandJoint.Position.X, _kinectController.RightHandJoint.Position.Y);
+                                _positionLeftHand = new Point(_kinectController.LeftHandJoint.Position.X, _kinectController.LeftHandJoint.Position.Y);
                             }
                         }
 
@@ -193,24 +197,13 @@ namespace Przewodnik.Views
 
         private void StartTimer()
         {
-            DispatcherTimer timer;
-            timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromSeconds(1);
-            int _counter = COUNTER;
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(700);
             QuickStartCanvas.Visibility = Visibility.Hidden;
             timer.Tick += (s, ee) =>
             {
-                if (_counter == 0)
-                {
-                    QuickStartCanvas.Visibility = Visibility.Visible;
-                    timer.Stop();
-
-                }
-                else
-                {
-                    _counter--;
-                    QuickStartCanvas.Visibility = Visibility.Hidden;
-                }
+                QuickStartCanvas.Visibility = Visibility.Visible;
+                timer.Stop();
             };
 
             timer.Start();
@@ -223,12 +216,30 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-            prepareTranslation();
+            // Samouczek
+            _quickStartStep = _quickStartState ? 1 : 0;
+            if (_quickStartStep == 1)
+            {
+                QuickStartCanvas.Visibility = Visibility.Visible;
+                QuickStartTextBlock.Text = AppResources.GetText("S_Foto_przesuniecie");
+
+                CameraFrame.Visibility = Visibility.Hidden;
+                NavigationButtons.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                CameraFrame.Visibility = Visibility.Visible;
+                NavigationButtons.Visibility = Visibility.Visible;
+
+                QuickStartCanvas.Visibility = Visibility.Hidden;
+            }
+
+            qrControl.Visibility = Visibility.Hidden;
         }
 
         private void prepareTranslation()
         {
-            pomin.Text = AppResources.GetText("S_Mapa_pominiecie");
+            QuickStartCancelText.Text = AppResources.GetText("S_Mapa_pominiecie");
         }
 
         private void SnapshootButton_Click(object sender, RoutedEventArgs e)
@@ -244,8 +255,8 @@ namespace Przewodnik.Views
                     if (_counter == 0)
                     {
                         Counter.Dispatcher.Invoke(new Action(() => Counter.Text = ""));
-                        timer.Stop();
                         CameraFrame.Visibility = Visibility.Visible;
+                        timer.Stop();
                     }
                     else if (_counter == 1)
                     {
@@ -322,6 +333,7 @@ namespace Przewodnik.Views
                     Picture.Source = new BitmapImage(new Uri(path + fileName));
                     qrControl.Text = "http://zpi.puchalski.pl/" + fileName;
                     qrControl.Visibility = Visibility.Visible;
+
                     CameraFrame.Visibility = Visibility.Hidden;
                     NavigationButtons.Visibility = Visibility.Hidden;
 
@@ -329,8 +341,20 @@ namespace Przewodnik.Views
                 else
                 {
                     // WYŚWIETLENIE BŁĘDU O PROBLEMIE Z INTERNETEM, BRAK QR!!
-                    MessageBox.Show("Błąd z zapisem zdjęcia na serwerze. Nie ma QR.");
+                    DispatcherTimer timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromSeconds(4);
+                    InfoMessageTextBlock.Text = AppResources.GetText("P_blad_serwera");
+                    InfoMessageCanvas.Visibility = Visibility.Visible;
+                    timer.Tick += (s, ee) =>
+                    {
+                        InfoMessageCanvas.Visibility = Visibility.Hidden;
+                        timer.Stop();
+                    };
+                    timer.Start();
+
                 }
+
+                // Usunięcie pliku z dysku
                 File.Delete(path + fileName);
 
             }
@@ -424,18 +448,12 @@ namespace Przewodnik.Views
 
         private void PrevButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_actualBackgroundPhotosIndex > 0 && (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == 1))
-            {
-                TransitToPreviousImage();
-            }
+            TransitToPreviousImage();
         }
 
         private void NextButton_Click(object sender, RoutedEventArgs e)
         {
-            if (_actualBackgroundPhotosIndex < (_backgroundPhotos.Count - 1) && (_directionBackgroundPhotos == 0 || _directionBackgroundPhotos == -1))
-            {
-                TransitToNextImage();
-            }
+            TransitToNextImage();
         }
 
         private void QuickStartCancel_Click(object sender, RoutedEventArgs e)

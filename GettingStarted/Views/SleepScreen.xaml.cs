@@ -110,6 +110,8 @@ namespace Przewodnik.Views
         public void OnNavigateTo()
         {
             MapLoader.Instance.FirstRun = true;
+            if (pageFactory.PostcardPage != null)
+                ((PostcardPage)pageFactory.PostcardPage).QuickStartState = true; 
         }
 
         private void EnglishClicked(object sender, RoutedEventArgs e)

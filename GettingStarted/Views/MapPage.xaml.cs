@@ -7,6 +7,7 @@ using System.Windows;
 using Microsoft.Kinect.Toolkit.Controls;
 using Przewodnik.Content.Traslations;
 using Przewodnik.Models;
+using System;
 
 namespace Przewodnik.Views
 {
@@ -25,6 +26,8 @@ namespace Przewodnik.Views
             pvm = new PlacesViewModel();
             mvm = new MapViewModel();
             MapGrid.DataContext = mvm;
+
+            prepareTranslation();
         }
 
         //Variable to track GripInterationStatus
@@ -63,7 +66,8 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
-            prepareTranslation();
+            cleanMap();
+            mvm.defaultLocation();
         }
 
         private void addCanvas(double latitude, double longitude, string nameOfPlace, string color)
@@ -119,13 +123,13 @@ namespace Przewodnik.Views
         private void startLocation(int zoom)
         {
             cleanMap();
-            mvm.defaultLocation();
-            MasterBingMap.ZoomLevel = zoom;
+            mvm.defaultLocation(zoom);
         }
 
         private void home_Click(object sender, RoutedEventArgs e)
         {
-            startLocation(15);
+            cleanMap();
+            mvm.defaultLocation();
         }
 
         private void cleanMap()

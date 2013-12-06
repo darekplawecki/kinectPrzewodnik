@@ -556,6 +556,15 @@ namespace Przewodnik.Content.Translations {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Wystąpił problem z serwerem zewnętrznym, zdjęcie nie zostało załadowane..
+        /// </summary>
+        internal static string P_blad_serwera {
+            get {
+                return ResourceManager.GetString("P_blad_serwera", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Uśmiech!.
         /// </summary>
         internal static string P_Snap {

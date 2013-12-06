@@ -31,8 +31,6 @@ namespace Przewodnik
         {
             get
             {
-                if (_kinectController == null)
-                { _kinectController = new KinectController(); }
                 return _kinectController;
             }
         }
