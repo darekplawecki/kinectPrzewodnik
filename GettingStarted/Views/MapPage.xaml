@@ -194,10 +194,10 @@
                             TextWrapping="Wrap" Width="800" FontWeight="Light"
                             TextAlignment="Center" Margin="100,50,100,0" Background="White" Opacity="0.8"></TextBlock>
 
-                <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource RedColor}" Click="QuickStartCancel_Click">
+                <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource GreenColor}" Click="QuickStartCancel_Click">
                     <StackPanel Orientation="Vertical">
                         <Grid>
-                            <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
+                            <Image Source="../Content/Events/Icons/ico_skip.png" Style="{DynamicResource Icon}"></Image>
                             <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                         </Grid>
                         <TextBlock Name="pomin" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>

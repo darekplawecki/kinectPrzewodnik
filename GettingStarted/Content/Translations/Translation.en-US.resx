@@ -337,4 +337,10 @@
   <data name="P_blad_serwera" xml:space="preserve">
     <value>Problem with an external server, the image was not loaded.</value>
   </data>
+  <data name="P_nowe_zdjecie" xml:space="preserve">
+    <value>new photo</value>
+  </data>
+  <data name="P_zeskanuj" xml:space="preserve">
+    <value>Scan the QR-code to download the picture to your phone.</value>
+  </data>
 </root>

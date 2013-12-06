@@ -85,8 +85,8 @@ namespace Przewodnik
                 {
                     MinHeight = height;
                     MinWidth = width;
-                    EarlyLoad();
                 }
+                EarlyLoad();
             }
         }
 

@@ -41,10 +41,10 @@
             <TextBlock x:Name="QuickStartTextBlock" FontSize="{DynamicResource Size80}" TextWrapping="Wrap" Width="800" FontWeight="Light"
                                TextAlignment="Center" Margin="100,50,100,0" Background="White" Opacity="0.8"></TextBlock>
 
-            <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource RedColor}" Click="QuickStartCancel_Click">
+            <k:KinectTileButton x:Name="QuickStartCancel" Width="{DynamicResource EventCategoryBlockSize}" Height="{DynamicResource EventCategoryBlockSize}"   Background="{StaticResource GreenColor}" Click="QuickStartCancel_Click">
                 <StackPanel Orientation="Vertical">
                     <Grid>
-                        <Image Source="../Content/Events/Icons/ico_inne.png" Style="{DynamicResource Icon}"></Image>
+                        <Image Source="../Content/Events/Icons/ico_skip.png" Style="{DynamicResource Icon}"></Image>
                         <Image Source="../Content/Events/white-circle.png" Style="{DynamicResource Icon}"></Image>
                     </Grid>
                     <TextBlock Name="QuickStartCancelText" HorizontalAlignment="Center" Margin="{DynamicResource TextTopMargin}" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size36}" LineHeight="{DynamicResource Size36}"></TextBlock>
@@ -55,7 +55,7 @@
 
     <Rectangle Width="1920" Height="1080" Fill="#ebebeb" Opacity="0.7" Visibility="{Binding ElementName=qrControl, Path=Visibility}"/>
     <Grid Name="CodeQRArea" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding ElementName=qrControl, Path=Visibility}" Width="{DynamicResource CodeQRAreaWidth}" Height="{DynamicResource CodeQRAreaHeight}">
-        <Rectangle Fill="{StaticResource GrayColor}" Opacity="0.7" RadiusX="10" RadiusY="10" Stretch="Fill" Width="Auto" Height="Auto"/>
+        <Rectangle Fill="Black" Opacity="0.7" RadiusX="10" RadiusY="10" Stretch="Fill" Width="Auto" Height="Auto"/>
 
         <StackPanel Orientation="Horizontal" Margin="{DynamicResource BlockMarginBigger}">
             <Image Name="Picture" Width="{DynamicResource PictureWidth}" Height="{DynamicResource PictureHeight}"></Image>
@@ -65,7 +65,10 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <TextBlock Grid.Row="0" Width="{DynamicResource CodeQRAreaWidthRight}" Name="ScanCodeText" Foreground="White" Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size60}" LineHeight="{DynamicResource Size65}" TextAlignment="Center" Text="Zeskanuj kod, aby pobrać zdjęcie na swój telefon." HorizontalAlignment="Center"></TextBlock>
+                <TextBlock Grid.Row="0" Width="{DynamicResource CodeQRAreaWidthRight}" Name="ScanCodeText" Foreground="White" 
+                           Style="{DynamicResource TextBlockStyle}" FontSize="{DynamicResource Size60}" 
+                           LineHeight="{DynamicResource Size65}" TextAlignment="Center" 
+                           HorizontalAlignment="Center"></TextBlock>
 
                 <StackPanel Grid.Row="1" Orientation="Horizontal" Width="{DynamicResource CodeQRAreaWidthRight}">
                     <Grid Width="{DynamicResource QRSize}" Height="{DynamicResource QRSize}" HorizontalAlignment="Center" Margin="{DynamicResource BlockMargin}">
@@ -77,7 +80,9 @@
                     </Grid>
 
                     <k:KinectTileButton Name="NewPhotoButton" Width="{DynamicResource QRSize}" Height="{DynamicResource QRSize}" Margin="15,0,0,0" Background="{StaticResource GrayColor}" Padding="{DynamicResource BlockMarginBigger}" Click="NewPhotoButton_Click">
-                        <TextBlock Foreground="White" Style="{DynamicResource TextBlockStyle}" FontSize="{StaticResource Size60}" LineHeight="{DynamicResource Size65}" TextAlignment="Center" Text="nowe zdjęcie" HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
+                        <TextBlock Name="NewPhotoTextBlock" Foreground="White" Style="{DynamicResource TextBlockStyle}" FontSize="{StaticResource Size60}" 
+                                   LineHeight="{DynamicResource Size65}" TextAlignment="Center" 
+                                   HorizontalAlignment="Center" VerticalAlignment="Center" ></TextBlock>
                     </k:KinectTileButton>
                 </StackPanel>
 

@@ -240,6 +240,8 @@ namespace Przewodnik.Views
         private void prepareTranslation()
         {
             QuickStartCancelText.Text = AppResources.GetText("S_Mapa_pominiecie");
+            ScanCodeText.Text = AppResources.GetText("P_zeskanuj");
+            NewPhotoTextBlock.Text = AppResources.GetText("P_nowe_zdjecie");
         }
 
         private void SnapshootButton_Click(object sender, RoutedEventArgs e)

@@ -421,3 +421,6 @@ C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrz
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\en-US\Przewodnik.resources.dll
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.exe
 C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodnik.pdb
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\DesignResources.baml
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.baml
+C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.g.cs
