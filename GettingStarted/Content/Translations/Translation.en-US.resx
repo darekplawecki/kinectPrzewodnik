@@ -341,6 +341,15 @@
     <value>new photo</value>
   </data>
   <data name="P_zeskanuj" xml:space="preserve">
-    <value>Scan the QR-code to download the picture to your phone.</value>
+    <value>Scan code to get the picture to your phone.</value>
+  </data>
+  <data name="V_dontunderstand" xml:space="preserve">
+    <value>I don't understand. Please repeat!</value>
+  </data>
+  <data name="V_start" xml:space="preserve">
+    <value>Say START to play</value>
+  </data>
+  <data name="V_stop" xml:space="preserve">
+    <value>Say STOP to pause</value>
   </data>
 </root>

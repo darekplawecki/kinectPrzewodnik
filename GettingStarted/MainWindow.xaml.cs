@@ -54,13 +54,13 @@ namespace Przewodnik
             _navigator.SetMainMenu(_pageFactory.GetMainMenu());
             _navigator.SetSleepScreen(_pageFactory.GetSleepScreen());
 
-
             _kinectController = controller;
             _kinectController.EngagedUserColor = (Color)this.Resources["EngagedUserColor"];
             _kinectController.TrackedUserColor = (Color)this.Resources["TrackedUserColor"];
             _kinectController.EngagedUserMessageBrush = (Brush)this.Resources["EngagedUserMessageBrush"];
             _kinectController.TrackedUserMessageBrush = (Brush)this.Resources["TrackedUserMessageBrush"];
             _kinectController.Navigator = _navigator;
+            //_kinectController.StartKinect();
             kinectRegion.HandPointersUpdated += (sender, args) => _kinectController.OnHandPointersUpdated(this.kinectRegion.HandPointers);
             DataContext = _kinectController;
 
@@ -86,8 +86,9 @@ namespace Przewodnik
                     MinHeight = height;
                     MinWidth = width;
                 }
-                EarlyLoad();
             }
+            EarlyLoad();
+
         }
 
         protected override void OnKeyUp(KeyEventArgs e)
@@ -157,6 +158,7 @@ namespace Przewodnik
             {
                 SetActualWeather();
                 WeatherLoader.Instance.loadWeather += LoadWeather;
+                Application.Current.Dispatcher.Invoke(new Action(() => { _kinectController.StartKinect(); }));
                 _periodicLoader.Start();
                 _movementDetector.IsMovingChanged -= OnIsMouseMovingChangedNoWake;
                 _movementDetector.IsMovingChanged += OnIsMouseMovingChanged;

@@ -424,3 +424,7 @@ C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Przewodni
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Controls\DesignResources.baml
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.baml
 C:\Users\Jadwiga\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\Views\VideoPlayer.g.cs
+D:\kinectPrzewodnik — kopia\GettingStarted\bin\Debug\Przewodnik.exe.config
+D:\kinectPrzewodnik — kopia\GettingStarted\obj\Debug\Przewodnik.exe
+D:\kinectPrzewodnik — kopia\GettingStarted\obj\Debug\Przewodnik.pdb
+C:\Users\DJ\Documents\GitHub\kinectPrzewodnik\GettingStarted\obj\Debug\kinectPrzewodnik.csprojResolveAssemblyReference.cache

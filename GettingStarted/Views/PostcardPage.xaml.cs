@@ -72,7 +72,6 @@ namespace Przewodnik.Views
             BackgroundPhoto.ContentTemplate = Application.Current.Resources["NextImageTransition"] as DataTemplate;
             BackgroundPhoto.Content = _backgroundPhotos[_actualBackgroundPhotosIndex];
 
-            prepareTranslation();
         }
 
         private void KinectControllerPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -216,6 +215,8 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+            prepareTranslation();
+
             // Samouczek
             _quickStartStep = _quickStartState ? 1 : 0;
             if (_quickStartStep == 1)

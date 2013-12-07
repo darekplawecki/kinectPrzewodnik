@@ -332,7 +332,7 @@
     <value>Aby przesunąć mapę: zaciśnij jedną pięść i przesuń ją w wybranym kierunku.</value>
   </data>
   <data name="M_video" xml:space="preserve">
-    <value>video</value>
+    <value>wideo</value>
   </data>
   <data name="P_blad_serwera" xml:space="preserve">
     <value>Wystąpił problem z serwerem zewnętrznym, zdjęcie nie zostało załadowane.</value>
@@ -342,5 +342,14 @@
   </data>
   <data name="P_zeskanuj" xml:space="preserve">
     <value>Zeskanuj kod, aby pobrać zdjęcie na swój telefon.</value>
+  </data>
+  <data name="V_dontunderstand" xml:space="preserve">
+    <value>Nie rozumiem. Powtórz proszę!</value>
+  </data>
+  <data name="V_start" xml:space="preserve">
+    <value>Powiedz START, aby odtwarzać dalej</value>
+  </data>
+  <data name="V_stop" xml:space="preserve">
+    <value>Powiedz STOP, aby zatrzymać</value>
   </data>
 </root>

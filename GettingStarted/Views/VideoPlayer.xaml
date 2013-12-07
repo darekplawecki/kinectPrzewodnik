@@ -20,7 +20,7 @@
 
         <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="15">
             <Grid>
-                <TextBlock x:Name="MicrophoneStatusPlay" Text="Powiedz STOP, aby zatrzymać" VerticalAlignment="Center"
+                <TextBlock x:Name="MicrophoneStatusPlay" VerticalAlignment="Center"
                                            FontSize="{DynamicResource Size36}" LineStackingStrategy="BlockLineHeight" LineHeight="{DynamicResource Size45}" FontWeight="Light" Foreground="White" >
                 </TextBlock>
             </Grid>

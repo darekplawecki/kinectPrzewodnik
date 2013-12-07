@@ -352,7 +352,10 @@ namespace Przewodnik.Utilities
             shutdownCommand = new RelayCommand(this.Cleanup);
             engagementConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementConfirmation);
             engagementHandoffConfirmationCommand = new RelayCommand<RoutedEventArgs>(this.OnEngagementHandoffConfirmation);
+        }
 
+        public void StartKinect()
+        {
             _sensorChooser.KinectChanged += SensorChooserOnKinectChanged;
             _sensorChooser.Start();
         }
@@ -572,6 +575,11 @@ namespace Przewodnik.Utilities
                     }
 
                     // Write the pixel data into our bitmap
+                    //ForegroundBitmap.Dispatcher.Invoke(new Action(() =>  ForegroundBitmap.WritePixels(
+                    //    new Int32Rect(0, 0, ForegroundBitmap.PixelWidth, ForegroundBitmap.PixelHeight),
+                    //    backgroundRemovedFrame.GetRawPixelData(),
+                    //    ForegroundBitmap.Dispatcher.Invoke(new Action(() =>  ForegroundBitmap.PixelWidth)) * sizeof(int),
+                    //    0)));
                     ForegroundBitmap.WritePixels(
                         new Int32Rect(0, 0, ForegroundBitmap.PixelWidth, ForegroundBitmap.PixelHeight),
                         backgroundRemovedFrame.GetRawPixelData(),

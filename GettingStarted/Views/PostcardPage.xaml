@@ -55,7 +55,7 @@
 
     <Rectangle Width="1920" Height="1080" Fill="#ebebeb" Opacity="0.7" Visibility="{Binding ElementName=qrControl, Path=Visibility}"/>
     <Grid Name="CodeQRArea" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding ElementName=qrControl, Path=Visibility}" Width="{DynamicResource CodeQRAreaWidth}" Height="{DynamicResource CodeQRAreaHeight}">
-        <Rectangle Fill="Black" Opacity="0.7" RadiusX="10" RadiusY="10" Stretch="Fill" Width="Auto" Height="Auto"/>
+        <Rectangle Fill="Black" Opacity="0.4" RadiusX="10" RadiusY="10" Stretch="Fill" Width="Auto" Height="Auto"/>
 
         <StackPanel Orientation="Horizontal" Margin="{DynamicResource BlockMarginBigger}">
             <Image Name="Picture" Width="{DynamicResource PictureWidth}" Height="{DynamicResource PictureHeight}"></Image>

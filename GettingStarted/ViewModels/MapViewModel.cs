@@ -147,19 +147,7 @@ namespace Przewodnik.ViewModels
 
             _kinectHandUtilities = KinectHandUtilities.Instance;
 
-            // Samouczek
-            _quickStartStep = _loader.FirstRun ? 1 : 0;
-            if (_quickStartStep == 1)
-            {
-                QuickStartVisibility = Visibility.Visible;
-                QuickStartText = AppResources.GetText("S_Mapa_przesuniecie");
-                ButtonVisibility = Visibility.Hidden;
-            }
-            else
-            {
-                ButtonVisibility = Visibility.Visible;
-                QuickStartVisibility = Visibility.Hidden;
-            }
+            
 
         }
 
@@ -380,6 +368,20 @@ namespace Przewodnik.ViewModels
 
         public void defaultLocation(int zoom)
         {
+            // Samouczek
+            _quickStartStep = _loader.FirstRun ? 1 : 0;
+            if (_quickStartStep == 1)
+            {
+                QuickStartVisibility = Visibility.Visible;
+                QuickStartText = AppResources.GetText("S_Mapa_przesuniecie");
+                ButtonVisibility = Visibility.Hidden;
+            }
+            else
+            {
+                ButtonVisibility = Visibility.Visible;
+                QuickStartVisibility = Visibility.Hidden;
+            }
+
             BingMap.CenterLocation = new Location(_loader.StartLocation);
             MapCenterPoint = BingMap.CenterLocation;
             MapZoomLevel = zoom;

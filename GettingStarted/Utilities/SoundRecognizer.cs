@@ -75,7 +75,7 @@ namespace Przewodnik.Utilities
             }
             else
             {
-                MessageBox.Show("No speech recognizer 101");
+                //MessageBox.Show("No speech recognizer 101");
             }
         }
 
@@ -115,7 +115,6 @@ namespace Przewodnik.Utilities
 
         private void SpeechRejected(object sender, SpeechRecognitionRejectedEventArgs e)
         {
-            MessageBox.Show("Nieczaje rejected");
             dontUnderstandSaid(this, new EventArgs());
         }
     }

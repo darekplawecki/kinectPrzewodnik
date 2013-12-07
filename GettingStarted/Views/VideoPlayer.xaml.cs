@@ -17,6 +17,7 @@ using System.Windows.Threading;
 using Microsoft.Kinect.Toolkit;
 using Przewodnik.Utilities;
 using Przewodnik.ViewModels;
+using Przewodnik.Content.Traslations;
 
 namespace Przewodnik.Views
 {
@@ -76,6 +77,7 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+            MicrophoneStatusPlay.Text = AppResources.GetText("V_stop");
             pageFactory.ShowTopBar(false);
             
             try
@@ -155,18 +157,18 @@ namespace Przewodnik.Views
         private void stopVideo(object sender, EventArgs e)
         {
             PauseVideo();
-            MicrophoneStatusPlay.Text = "Powiedz START, aby odtwarzać dalej";
+            MicrophoneStatusPlay.Text = AppResources.GetText("V_start");
         }
 
         private void dontUnderstand(object sender, EventArgs e)
         {
-            MicrophoneStatusPlay.Text = "Nie rozumiem. Powtórz proszę!";
+            MicrophoneStatusPlay.Text = AppResources.GetText("V_dontunderstand");
         }
 
         private void playVideo(object sender, EventArgs e)
         {
             PlayVideo();
-            MicrophoneStatusPlay.Text = "Powiedz STOP, aby zatrzymać";
+            MicrophoneStatusPlay.Text = AppResources.GetText("V_stop");
         }
 
 

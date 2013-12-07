@@ -23,11 +23,10 @@ namespace Przewodnik.Views
             KinectRegion.AddQueryInteractionStatusHandler(MasterBingMap, OnQuery);
             _pageFactory = pageFactory;
 
-            pvm = new PlacesViewModel();
             mvm = new MapViewModel();
             MapGrid.DataContext = mvm;
 
-            prepareTranslation();
+            
         }
 
         //Variable to track GripInterationStatus
@@ -66,6 +65,9 @@ namespace Przewodnik.Views
 
         public void OnNavigateTo()
         {
+            prepareTranslation();
+            pvm = new PlacesViewModel();
+
             cleanMap();
             mvm.defaultLocation();
         }
