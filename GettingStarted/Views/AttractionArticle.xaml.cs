@@ -78,6 +78,10 @@ namespace Przewodnik.Views
                 string projectPath = parts[0];
                 
                 frame.Source = new Uri(projectPath + viewModel.GetModel().Camera);
+                frame.Width = 638;
+                frame.Height = 328;
+                frame.VerticalAlignment = VerticalAlignment.Center;
+                frame.HorizontalAlignment = HorizontalAlignment.Center;
 
                 bigImageGrid.Children.Add(frame);
             }

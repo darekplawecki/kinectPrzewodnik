@@ -31,7 +31,7 @@
             <ColumnDefinition Width="3*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Name="bigImageGrid" Grid.ColumnSpan="3" Grid.Row="0"></Grid>
+        <Grid Name="bigImageGrid" Grid.ColumnSpan="3" Grid.Row="0" Background="White"></Grid>
 
         <k:KinectTileButton Background="Transparent" Grid.Column="0" Grid.Row="1" Width="Auto" Height="Auto" VerticalContentAlignment="Top"  BorderThickness="0" Name="FirstImageButton" Click="KinectTileButton_Click">
             <StackPanel>
