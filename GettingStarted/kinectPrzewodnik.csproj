@@ -387,6 +387,7 @@
     <Resource Include="Content\SleepScreen\Instagram\9.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Videos\wroclaw_promo.wmv" />
     <Resource Include="Content\Events\Icons\ico_skip.png" />
     <Resource Include="Content\Postcard\Background\background_10.jpg" />
     <Resource Include="Content\Postcard\Background\background_5.jpg" />

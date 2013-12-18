@@ -173,7 +173,7 @@ namespace Przewodnik.Views
             KinoBlock.Text = AppResources.GetText("W_kino");
             MuzykaBlock.Text = AppResources.GetText("W_muzyka");
             NaukaBlock.Text = AppResources.GetText("W_nauka");
-            TeatrBlock.Text = AppResources.GetText("W_sport");
+            TeatrBlock.Text = AppResources.GetText("W_teatr");
             emptyBlock.Text = AppResources.GetText("W_brak_wydarzen");
             WszystkieBlock.Text = AppResources.GetText("W_wszystkie");
 
